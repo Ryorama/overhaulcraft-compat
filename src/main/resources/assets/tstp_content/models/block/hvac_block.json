@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "tstp_content:blocks/side",
+    "up": "tstp_content:blocks/side",
+    "north": "tstp_content:blocks/hvac_side",
+    "east": "tstp_content:blocks/hvac_side",
+    "south": "tstp_content:blocks/hvac_side",
+    "west": "tstp_content:blocks/hvac_side",
+    "particle": "tstp_content:blocks/side"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tstp_content:block/hvac_block"
+    }
+  }
+}

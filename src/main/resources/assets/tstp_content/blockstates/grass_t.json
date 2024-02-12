@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "": [
+      { "model": "tstp_content:block/plants/grass/01" },
+      { "model": "tstp_content:block/plants/grass/02" },
+      { "model": "tstp_content:block/plants/grass/03" },
+      { "model": "tstp_content:block/plants/grass/04" },
+      { "model": "tstp_content:block/plants/grass/05" },
+      { "model": "tstp_content:block/plants/grass/06" },
+      { "model": "tstp_content:block/plants/grass/07" },
+      { "model": "tstp_content:block/plants/grass/08" },
+      { "model": "tstp_content:block/plants/grass/09" },
+      { "model": "tstp_content:block/plants/grass/10" },
+      { "model": "tstp_content:block/plants/grass/11" },
+      { "model": "tstp_content:block/plants/grass/12" },
+      { "model": "tstp_content:block/plants/grass/13" },
+      { "model": "tstp_content:block/plants/grass/14" },
+      { "model": "tstp_content:block/plants/grass/15" },
+      { "model": "tstp_content:block/plants/grass/16" },
+      { "model": "tstp_content:block/plants/grass/17" },
+      { "model": "tstp_content:block/plants/grass/18" },
+      { "model": "tstp_content:block/plants/grass/19" },
+      { "model": "tstp_content:block/plants/grass/20" },
+      { "model": "tstp_content:block/plants/grass/21" },
+      { "model": "tstp_content:block/plants/grass/22" }
+    ]
+  }
+}

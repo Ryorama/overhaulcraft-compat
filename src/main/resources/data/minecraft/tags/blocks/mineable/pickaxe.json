@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "tstp_content:grass_block",
+    "tstp_content:dirt_block",
+    "tstp_content:stone_block",
+    "tstp_content:copper_ore",
+    "tstp_content:iron_ore",
+    "tstp_content:sand",
+    "tstp_content:snow",
+    "tstp_content:ice",
+    "tstp_content:hvac_block"
+  ]
+}

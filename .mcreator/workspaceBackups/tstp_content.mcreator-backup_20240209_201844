@@ -1,0 +1,501 @@
+{
+  "mod_elements": [
+    {
+      "name": "DirtBlock",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dirt_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/block/dirt_block.json",
+          "src/main/resources/assets/tstp_content/blockstates/dirt_block.json",
+          "src/main/resources/assets/tstp_content/models/item/dirt_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/DirtBlockBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "GrassBlock",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grass_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/item/grass_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/GrassBlockBlock.java",
+          "src/main/resources/assets/tstp_content/blockstates/grass_block.json",
+          "src/main/resources/assets/tstp_content/models/block/grass_block.json"
+        ]
+      }
+    },
+    {
+      "name": "StoneBlock",
+      "type": "block",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/blockstates/stone_block.json",
+          "src/main/resources/assets/tstp_content/models/item/stone_block.json",
+          "src/main/resources/assets/tstp_content/models/block/stone_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/StoneBlockBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "CopperOre",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copper_ore",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/world/features/ores/CopperOreFeature.java",
+          "src/main/resources/data/tstp_content/forge/biome_modifier/copper_ore_biome_modifier.json",
+          "src/main/java/com/ryorama/tstpcontent/block/CopperOreBlock.java",
+          "src/main/resources/assets/tstp_content/blockstates/copper_ore.json",
+          "src/main/resources/assets/tstp_content/models/block/copper_ore.json",
+          "src/main/resources/assets/tstp_content/models/item/copper_ore.json"
+        ]
+      }
+    },
+    {
+      "name": "IronOre",
+      "type": "block",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_ore",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/tstp_content/forge/biome_modifier/iron_ore_biome_modifier.json",
+          "src/main/resources/assets/tstp_content/models/block/iron_ore.json",
+          "src/main/resources/assets/tstp_content/models/item/iron_ore.json",
+          "src/main/resources/assets/tstp_content/blockstates/iron_ore.json",
+          "src/main/java/com/ryorama/tstpcontent/block/IronOreBlock.java",
+          "src/main/java/com/ryorama/tstpcontent/world/features/ores/IronOreFeature.java"
+        ]
+      }
+    },
+    {
+      "name": "Copper",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copper",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/item/CopperItem.java",
+          "src/main/resources/assets/tstp_content/models/item/copper.json"
+        ]
+      }
+    },
+    {
+      "name": "IronItem",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_item",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/item/IronItemItem.java",
+          "src/main/resources/assets/tstp_content/models/item/iron_item.json"
+        ]
+      }
+    },
+    {
+      "name": "CopperBar",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "copper_bar",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/item/CopperBarItem.java",
+          "src/main/resources/assets/tstp_content/models/item/copper_bar.json"
+        ]
+      }
+    },
+    {
+      "name": "IronBar",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_bar",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/item/IronBarItem.java",
+          "src/main/resources/assets/tstp_content/models/item/iron_bar.json"
+        ]
+      }
+    },
+    {
+      "name": "Cactus",
+      "type": "block",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cactus",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/blockstates/cactus.json",
+          "src/main/resources/assets/tstp_content/models/block/cactus.json",
+          "src/main/java/com/ryorama/tstpcontent/block/CactusBlock.java",
+          "src/main/resources/assets/tstp_content/models/item/cactus.json"
+        ]
+      }
+    },
+    {
+      "name": "ForestLog",
+      "type": "block",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forest_log",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/blockstates/forest_log.json",
+          "src/main/resources/assets/tstp_content/models/block/forest_log.json",
+          "src/main/resources/assets/tstp_content/models/item/forest_log.json",
+          "src/main/java/com/ryorama/tstpcontent/block/ForestLogBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "ForestLeaves",
+      "type": "block",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forest_leaves",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/item/forest_leaves.json",
+          "src/main/resources/assets/tstp_content/models/block/forest_leaves.json",
+          "src/main/java/com/ryorama/tstpcontent/block/ForestLeavesBlock.java",
+          "src/main/resources/assets/tstp_content/blockstates/forest_leaves.json"
+        ]
+      }
+    },
+    {
+      "name": "Sand",
+      "type": "block",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sand",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/block/sand.json",
+          "src/main/resources/assets/tstp_content/blockstates/sand.json",
+          "src/main/java/com/ryorama/tstpcontent/block/SandBlock.java",
+          "src/main/resources/assets/tstp_content/models/item/sand.json"
+        ]
+      }
+    },
+    {
+      "name": "TerrariaDim",
+      "type": "dimension",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terraria_dim",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/tstp_content/dimension_type/terraria_dim.json",
+          "src/main/java/com/ryorama/tstpcontent/world/dimension/TerrariaDimDimension.java",
+          "src/main/resources/data/tstp_content/dimension/terraria_dim.json"
+        ]
+      }
+    },
+    {
+      "name": "TerrariaForest",
+      "type": "biome",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terraria_forest",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/world/biome/TerrariaForestBiome.java"
+        ]
+      }
+    },
+    {
+      "name": "TerrariaDesert",
+      "type": "biome",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terraria_desert",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/world/biome/TerrariaDesertBiome.java"
+        ]
+      }
+    },
+    {
+      "name": "Snow",
+      "type": "block",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "snow",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/block/SnowBlock.java",
+          "src/main/resources/assets/tstp_content/blockstates/snow.json",
+          "src/main/resources/assets/tstp_content/models/block/snow.json",
+          "src/main/resources/assets/tstp_content/models/item/snow.json"
+        ]
+      }
+    },
+    {
+      "name": "TerrairaArctic",
+      "type": "biome",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terraira_arctic",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/world/biome/TerrairaArcticBiome.java"
+        ]
+      }
+    },
+    {
+      "name": "Ice",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ice",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/world/features/ores/IceFeature.java",
+          "src/main/resources/data/tstp_content/forge/biome_modifier/ice_biome_modifier.json",
+          "src/main/resources/assets/tstp_content/blockstates/ice.json",
+          "src/main/resources/assets/tstp_content/models/block/ice.json",
+          "src/main/java/com/ryorama/tstpcontent/block/IceBlock.java",
+          "src/main/resources/assets/tstp_content/models/item/ice.json"
+        ]
+      }
+    },
+    {
+      "name": "Mushroomt",
+      "type": "item",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mushroomt",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/item/mushroomt.json",
+          "src/main/java/com/ryorama/tstpcontent/item/MushroomtItem.java"
+        ]
+      }
+    },
+    {
+      "name": "MushroomTBlock",
+      "type": "plant",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mushroom_t_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/block/mushroom_t_block.json",
+          "src/main/java/com/ryorama/tstpcontent/world/features/plants/MushroomTBlockFeature.java",
+          "src/main/resources/assets/tstp_content/blockstates/mushroom_t_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/MushroomTBlockBlock.java",
+          "src/main/resources/data/tstp_content/forge/biome_modifier/mushroom_t_block_biome_modifier.json",
+          "src/main/resources/assets/tstp_content/models/item/mushroom_t_block.json"
+        ]
+      }
+    },
+    {
+      "name": "Grass",
+      "type": "plant",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grass",
+      "metadata": {
+        "files": [
+          "src/main/java/com/ryorama/tstpcontent/block/GrassBlock.java",
+          "src/main/resources/assets/tstp_content/models/item/grass.json",
+          "src/main/resources/assets/tstp_content/blockstates/grass.json",
+          "src/main/resources/data/tstp_content/forge/biome_modifier/grass_biome_modifier.json",
+          "src/main/java/com/ryorama/tstpcontent/world/features/plants/GrassFeature.java",
+          "src/main/resources/assets/tstp_content/models/block/grass.json"
+        ]
+      }
+    },
+    {
+      "name": "LifeCrystal",
+      "type": "item",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "life_crystal",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/item/life_crystal.json",
+          "src/main/java/com/ryorama/tstpcontent/item/LifeCrystalItem.java"
+        ]
+      }
+    },
+    {
+      "name": "HVACBlock",
+      "type": "block",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hvac_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/tstp_content/models/block/hvac_block.json",
+          "src/main/resources/assets/tstp_content/models/item/hvac_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/entity/HVACBlockBlockEntity.java",
+          "src/main/resources/assets/tstp_content/blockstates/hvac_block.json",
+          "src/main/java/com/ryorama/tstpcontent/block/HVACBlockBlock.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "crystal_destroy",
+      "files": [
+        "crystal_destroy"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "dig0",
+      "files": [
+        "dig0"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "grass",
+      "files": [
+        "grass"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "health_crystal",
+      "files": [
+        "health_crystal"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "icehit",
+      "files": [
+        "icehit"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "snowhit1",
+      "files": [
+        "snowhit1"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "tink0",
+      "files": [
+        "tink0"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "tink1",
+      "files": [
+        "tink1"
+      ],
+      "category": "block",
+      "subtitle": ""
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "biome.tstp_content.terraira_arctic": "Terraira Arctic",
+      "block.tstp_content.stone_block": "Stone Block",
+      "subtitles.snowhit1": "",
+      "subtitles.grass": "",
+      "block.tstp_content.snow": "Snow",
+      "subtitles.crystal_destroy": "",
+      "block.tstp_content.copper_ore": "Copper Ore",
+      "item.tstp_content.copper": "Copper Ore",
+      "biome.tstp_content.terraria_desert": "Terraria Desert",
+      "block.tstp_content.sand": "Sand",
+      "item.tstp_content.terraria_dim": "Terraria Dim Portal Igniter",
+      "item.tstp_content.iron_bar": "Iron Bar",
+      "item.tstp_content.life_crystal": "Life Crystal",
+      "block.tstp_content.grass": "Grass",
+      "block.tstp_content.grass_block": "Grass Block",
+      "block.tstp_content.dirt_block": "Dirt Block",
+      "block.tstp_content.forest_log": "Forest Log",
+      "subtitles.health_crystal": "",
+      "block.tstp_content.iron_ore": "Iron Ore",
+      "item.tstp_content.iron_item": "Iron Ore",
+      "block.tstp_content.hvac_block": "HVAC System",
+      "biome.tstp_content.terraria_forest": "Terraria Forest",
+      "block.tstp_content.mushroom_t_block": "Mushroom T Block",
+      "subtitles.dig0": "",
+      "subtitles.tink1": "",
+      "subtitles.tink0": "",
+      "item.tstp_content.copper_bar": "Copper Bar",
+      "item.tstp_content.mushroomt": "Mushroom",
+      "block.tstp_content.cactus": "Cactus",
+      "subtitles.icehit": "",
+      "block.tstp_content.forest_leaves": "Forest Leaves",
+      "block.tstp_content.ice": "Ice"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "tstp_content",
+    "modName": "TSTP Content",
+    "version": "1.0.0",
+    "author": "Ryorama, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.19.2",
+    "modElementsPackage": "com.ryorama.tstpcontent",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300110610
+}

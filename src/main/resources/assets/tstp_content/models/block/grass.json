@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "tstp_content:blocks/sappling",
+    "particle": "tstp_content:blocks/sappling"
+  },
+  "render_type": "cutout"
+}
