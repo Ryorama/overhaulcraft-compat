@@ -2,6 +2,7 @@ package com.ryorama.tstpcontent.block;
 
 import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
 import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
+import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import com.starfish_studios.hamsters.block.HamsterWheelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,22 +23,26 @@ public class HamsterWheelGeneratorBlock extends HamsterWheelBlock {
     @Override
     public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
         super.tick(blockstate, world, pos, random);
-        int x = pos.getX();
-        int y = pos.getY();
-        int z = pos.getZ();
-
         if (isOccupied(world, pos)) {
-            BlockEntity _ent = world.getBlockEntity(new BlockPos(x, y, z));
+            BlockEntity _ent = world.getBlockEntity(pos);
             int _amount = 10;
             if (_ent != null) {
                 _ent.getCapability(ForgeCapabilities.ENERGY, Direction.DOWN).ifPresent(capability -> capability.receiveEnergy(_amount, false));
             }
         }
+
+        world.scheduleTick(pos, this, 20);
+    }
+
+    @Override
+    public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+        super.onPlace(blockstate, world, pos, oldState, moving);
+        world.scheduleTick(pos, this, 20);
     }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new HamsterWheelGeneratorBlockEntity(pos, state);
+        return TstpContentModBlockEntities.HAMSTER_WHEEL_GENERATOR.get().create(pos, state);
     }
 
     @Override

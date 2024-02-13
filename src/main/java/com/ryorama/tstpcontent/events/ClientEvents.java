@@ -13,7 +13,6 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        TstpContentMod.LOGGER.info("Render Reg");
         event.registerBlockEntityRenderer(TstpContentModBlockEntities.HAMSTER_WHEEL_GENERATOR.get(), HamsterWheelGeneratorRenderer::new);
     }
 }

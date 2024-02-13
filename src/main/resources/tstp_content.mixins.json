@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.ryorama.tstpcontent.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "tstp_content.mixins.refmap.json",
+  "mixins": [
+    "HamsterMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
