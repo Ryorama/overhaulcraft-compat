@@ -4,6 +4,7 @@
  */
 package com.ryorama.tstpcontent.init;
 
+import com.ryorama.tstpcontent.item.*;
 import com.starfish_studios.hamsters.Hamsters;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,12 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
-import com.ryorama.tstpcontent.item.MushroomtItem;
-import com.ryorama.tstpcontent.item.LifeCrystalItem;
-import com.ryorama.tstpcontent.item.IronItemItem;
-import com.ryorama.tstpcontent.item.IronBarItem;
-import com.ryorama.tstpcontent.item.CopperItem;
-import com.ryorama.tstpcontent.item.CopperBarItem;
 import com.ryorama.tstpcontent.TstpContentMod;
 
 public class TstpContentModItems {
@@ -44,7 +39,7 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> GRASS = block(TstpContentModBlocks.GRASS, null);
 	public static final RegistryObject<Item> LIFE_CRYSTAL = REGISTRY.register("life_crystal", () -> new LifeCrystalItem());
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Item> HAMSTER_WHEEL_GENERATOR = block(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR, Hamsters.hamsterCreativeTab);
+	public static final RegistryObject<Item> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> new HamsterWheelGeneratorItem(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get(), new Item.Properties().tab(Hamsters.hamsterCreativeTab)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
