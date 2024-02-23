@@ -81,7 +81,7 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.0'
     implementation fg.deobf('com.github.glitchfiend:ToughAsNails:1.19-8.0.0.78')
-    implementation fg.deobf('ichttt.mods.firstaid:FirstAid-828f423191af722dba911c7c5b21ee923aa2db2d:1.12.0')
+    implementation fg.deobf('curse.maven:firstaid-276837:3952683')
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
     implementation fg.deobf('curse.maven:hamsters-952435:5121309')
     implementation fg.deobf('curse.maven:ad_astra-635042:4643668')
