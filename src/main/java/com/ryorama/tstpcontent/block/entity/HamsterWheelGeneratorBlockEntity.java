@@ -2,8 +2,6 @@ package com.ryorama.tstpcontent.block.entity;
 
 import com.ryorama.tstpcontent.block.HamsterWheelGeneratorBlock;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
-import com.starfish_studios.hamsters.block.HamsterWheelBlock;
-import com.starfish_studios.hamsters.block.entity.HamsterWheelBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -77,7 +75,7 @@ public class HamsterWheelGeneratorBlockEntity extends BlockEntity implements IAn
         return this.saveWithFullMetadata();
     }
 
-    private final EnergyStorage energyStorage = new EnergyStorage(5000, 0, 50, 0) {
+    private final EnergyStorage energyStorage = new EnergyStorage(5000, 50, 50, 0) {
         @Override
         public int receiveEnergy(int maxReceive, boolean simulate) {
             int retval = super.receiveEnergy(maxReceive, simulate);

@@ -18,7 +18,6 @@ public class HamsterWheelGeneratorItem extends BlockItem implements IAnimatable 
         super(block, properties);
     }
 
-
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
