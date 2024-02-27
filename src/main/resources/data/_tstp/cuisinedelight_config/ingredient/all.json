@@ -389,6 +389,9 @@
       "effects": [],
       "ingredient": [
         {
+          "item": "candylands:raw_sugar_cod"
+        },
+        {
           "item": "croptopia:molasses"
         },
         {
@@ -401,13 +404,7 @@
           "item": "croptopia:olive_oil"
         },
         {
-          "item": "minecraft:water_bottle"
-        },
-        {
           "item": "croptopia:water_bottle"
-        },
-        {
-          "item": "candylands:raw_sugar_cod"
         }
       ],
       "max_time": 360,
