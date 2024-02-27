@@ -112,6 +112,10 @@
     "human_meat:human_meat": {
       "next": "human_meat:cooked_human_meat",
       "stage": "COOKED"
+    },
+    "candylands:raw_sugar_cod": {
+      "next": "candylands:cooked_sugar_cod",
+      "stage": "COOKED"
     }
   }
 }
