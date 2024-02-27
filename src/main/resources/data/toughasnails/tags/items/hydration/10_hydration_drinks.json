@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+		"croptopia:banana_smoothie",
+		"croptopia:chocolate_milkshake",
+		"croptopia:fruit_smoothie",
+		"croptopia:kale_smoothie",
+		"croptopia:pumpkin_spice_latte",
+		"croptopia:strawberry_smoothie",
+		"croptopia:coffee",
+		"croptopia:horchata",
+		"croptopia:water_bottle",
+		"croptopia:milk_bottle",
+		"croptopia:soy_milk",
+		"farmersrespite:coffee",
+		"croptopia_additions:cherry_soda",
+		"croptopia_additions:cola",
+		"croptopia_additions:grape_soda",
+		"croptopia_additions:lemon_lime_soda",
+		"croptopia_additions:orange_soda",
+		"delightful:berry_matcha_latte",
+		"delightful:matcha_latte",
+		"ends_delight:dragon_breath_soda",
+		"farmersdelight:hot_cocoa",
+		"farmersdelight:milk_bottle",
+		"fastfooddelight:cola_soda",
+		"fastfooddelight:creaming_soda",
+		"fastfooddelight:iced_tea",
+		"fastfooddelight:lemon_soda",
+		"fastfooddelight:orange_soda",
+		"pineapple_delight:pineapple_milk_shake"
+   ]
+}

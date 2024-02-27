@@ -39,6 +39,8 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> GRASS = block(TstpContentModBlocks.GRASS, null);
 	public static final RegistryObject<Item> LIFE_CRYSTAL = REGISTRY.register("life_crystal", () -> new LifeCrystalItem());
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> OSTRUM_MACHINE_CASING = block(TstpContentModBlocks.OSTRUM_MACHINE_CASING, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> new HamsterWheelGeneratorItem(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get(), new Item.Properties().tab(Hamsters.hamsterCreativeTab)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {

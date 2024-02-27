@@ -1,0 +1,1 @@
+FF + Hex color to decimal

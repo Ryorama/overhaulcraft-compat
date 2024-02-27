@@ -1,10 +1,7 @@
 {
   "biome.tstp_content.terraira_arctic": "Terraira Arctic",
   "block.tstp_content.stone_block": "Stone Block",
-  "subtitles.snowhit1": "",
-  "subtitles.grass": "",
   "block.tstp_content.snow": "Snow",
-  "subtitles.crystal_destroy": "",
   "block.tstp_content.copper_ore": "Copper Ore",
   "item.tstp_content.copper": "Copper Ore",
   "biome.tstp_content.terraria_desert": "Terraria Desert",
@@ -23,13 +20,25 @@
   "block.tstp_content.hvac_block": "HVAC System",
   "biome.tstp_content.terraria_forest": "Terraria Forest",
   "block.tstp_content.mushroom_t_block": "Mushroom T Block",
-  "subtitles.dig0": "",
-  "subtitles.tink1": "",
-  "subtitles.tink0": "",
   "item.tstp_content.copper_bar": "Copper Bar",
   "block.tstp_content.cactus": "Cactus",
-  "subtitles.icehit": "",
   "block.tstp_content.forest_leaves": "Forest Leaves",
   "block.tstp_content.ice": "Ice",
-  "block.tstp_content.hamster_wheel_generator": "Hamster Wheel Generator"
+  "block.tstp_content.hamster_wheel_generator": "Hamster Wheel Generator",
+  "block.tstp_content.ostrum_machine_casing": "Ostrum Machine Casing",
+  "block.tstp_content.calorite_machine_casing": "Calorite Machine Casing",
+
+  "block.gtceu.cryo_freezer": "Cryo Freezer",
+  "gtceu.cryo_freezer": "Cryo Freezer",
+
+  "block.gtceu.basic_drilling_rig": "Baisc Ore Drilling Rig",
+  "gtceu.basic_drilling_rig": "Baisc Ore Drilling Rig",
+
+  "gui.tstp_content.text.galaxytwo": "Andromeda",
+  "gui.tstp_content.text.solarsystemtwo": "Tor",
+
+  "material.boron_carbide": "Boron Carbide",
+  "material.desh": "Desh",
+  "material.ostrum": "Ostrum",
+  "material.calorite": "Calorite"
 }

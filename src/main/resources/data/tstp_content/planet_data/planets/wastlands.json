@@ -1,0 +1,16 @@
+{
+  "translation": "Wastelands",
+  "galaxy": "ad_astra:milky_way",
+  "solar_system": "ad_astra:proxima_centauri",
+  "world": "tstp_content:wastland_planet",
+  "orbit_world": "tstp_content:wastlands_orbit",
+  "rocket_tier": 3,
+  "gravity": 9.806,
+  "has_atmosphere": true,
+  "days_in_year": 365,
+  "temperature": 15,
+  "solar_power": 13,
+  "orbit_solar_power": 15,
+  "has_oxygen": true,
+  "button_color": "grey"
+}

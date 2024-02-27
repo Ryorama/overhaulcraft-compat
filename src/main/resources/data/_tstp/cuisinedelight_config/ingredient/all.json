@@ -1,0 +1,422 @@
+{
+  "_class": "dev.xkmc.cuisinedelight.content.logic.IngredientConfig",
+  "entries": [
+    {
+      "type": "VEG",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "croptopia:artichoke"
+        },
+        {
+          "item": "croptopia:asparagus"
+        },
+        {
+          "item": "croptopia:barley"
+        },
+        {
+          "item": "croptopia:basil"
+        },
+        {
+          "item": "croptopia:bellpepper"
+        },
+        {
+          "item": "croptopia:blackbean"
+        },
+        {
+          "item": "croptopia:blackberry"
+        },
+        {
+          "item": "croptopia:blueberry"
+        },
+        {
+          "item": "croptopia:broccoli"
+        },
+        {
+          "item": "croptopia:cabbage"
+        },
+        {
+          "item": "croptopia:cantaloupe"
+        },
+        {
+          "item": "croptopia:cauliflower"
+        },
+        {
+          "item": "croptopia:celery"
+        },
+        {
+          "item": "croptopia:chile_pepper"
+        },
+        {
+          "item": "croptopia:coffee_beans"
+        },
+        {
+          "item": "croptopia:corn"
+        },
+        {
+          "item": "croptopia:cranberry"
+        },
+        {
+          "item": "croptopia:cucumber"
+        },
+        {
+          "item": "croptopia:currant"
+        },
+        {
+          "item": "croptopia:eggplant"
+        },
+        {
+          "item": "croptopia:elderberry"
+        },
+        {
+          "item": "croptopia:garlic"
+        },
+        {
+          "item": "croptopia:grape"
+        },
+        {
+          "item": "croptopia:greenbean"
+        },
+        {
+          "item": "croptopia:greenonion"
+        },
+        {
+          "item": "croptopia:honeydew"
+        },
+        {
+          "item": "croptopia:kale"
+        },
+        {
+          "item": "croptopia:kiwi"
+        },
+        {
+          "item": "croptopia:leek"
+        },
+        {
+          "item": "croptopia:lettuce"
+        },
+        {
+          "item": "croptopia:olive"
+        },
+        {
+          "item": "croptopia:onion"
+        },
+        {
+          "item": "croptopia:peanut"
+        },
+        {
+          "item": "croptopia:pineapple"
+        },
+        {
+          "item": "croptopia:radish"
+        },
+        {
+          "item": "croptopia:raspberry"
+        },
+        {
+          "item": "croptopia:rhubarb"
+        },
+        {
+          "item": "croptopia:rutabaga"
+        },
+        {
+          "item": "croptopia:saguaro"
+        },
+        {
+          "item": "croptopia:soybean"
+        },
+        {
+          "item": "croptopia:spinach"
+        },
+        {
+          "item": "croptopia:squash"
+        },
+        {
+          "item": "croptopia:strawberry"
+        },
+        {
+          "item": "croptopia:sweetpotato"
+        },
+        {
+          "item": "croptopia:tea_leaves"
+        },
+        {
+          "item": "croptopia:tomatillo"
+        },
+        {
+          "item": "croptopia:tomato"
+        },
+        {
+          "item": "croptopia:turnip"
+        },
+        {
+          "item": "croptopia:yam"
+        },
+        {
+          "item": "croptopia:zucchini"
+        },
+        {
+          "item": "croptopia:almond"
+        },
+        {
+          "item": "croptopia:apricot"
+        },
+        {
+          "item": "croptopia:avocado"
+        },
+        {
+          "item": "croptopia:cashew"
+        },
+        {
+          "item": "croptopia:cherry"
+        },
+        {
+          "item": "croptopia:coconut"
+        },
+        {
+          "item": "croptopia:date"
+        },
+        {
+          "item": "croptopia:dragonfruit"
+        },
+        {
+          "item": "croptopia:fig"
+        },
+        {
+          "item": "croptopia:grapefruit"
+        },
+        {
+          "item": "croptopia:kumquat"
+        },
+        {
+          "item": "croptopia:lemon"
+        },
+        {
+          "item": "croptopia:lime"
+        },
+        {
+          "item": "croptopia:mango"
+        },
+        {
+          "item": "croptopia:nectarine"
+        },
+        {
+          "item": "croptopia:nutmeg"
+        },
+        {
+          "item": "croptopia:orange"
+        },
+        {
+          "item": "croptopia:peach"
+        },
+        {
+          "item": "croptopia:pear"
+        },
+        {
+          "item": "croptopia:pecan"
+        },
+        {
+          "item": "croptopia:persimmon"
+        },
+        {
+          "item": "croptopia:plum"
+        },
+        {
+          "item": "croptopia:starfruit"
+        },
+        {
+          "item": "croptopia:walnut"
+        },
+        {
+          "item": "alexsmobs:banana"
+        }
+      ],
+      "max_time": 360,
+      "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 2,
+      "stir_time": 60
+    },
+    {
+      "type": "CARB",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "tstp_content:mushroom_t"
+        }
+      ],
+      "max_time": 360,
+      "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 2,
+      "stir_time": 60
+    },
+    {
+      "type": "SEAFOOD",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "croptopia:anchovy"
+        },
+        {
+          "item": "croptopia:calamari"
+        },
+        {
+          "item": "croptopia:clam"
+        },
+        {
+          "item": "croptopia:crab"
+        },
+        {
+          "item": "croptopia:glowing_calamari"
+        },
+        {
+          "item": "croptopia:oyster"
+        },
+        {
+          "item": "croptopia:roe"
+        },
+        {
+          "item": "croptopia:shrimp"
+        },
+        {
+          "item": "croptopia:tuna"
+        },
+        {
+          "item": "alexsmobs:lobster_tail"
+        },
+        {
+          "item": "alexsmobs:raw_catfish"
+        },
+        {
+          "item": "alexsdelight:raw_catfish_slice"
+        },
+        {
+          "item": "alexsmobs:rainbow_jelly"
+        },
+        {
+          "item": "alexsmobs:blobfish"
+        }
+      ],
+      "max_time": 240,
+      "min_time": 120,
+      "nutrition": 10,
+      "overcook_penalty": 0.5,
+      "raw_penalty": 1.0,
+      "size": 2,
+      "stir_time": 80
+    },
+    {
+      "type": "MEAT",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "croptopia:bacon"
+        },
+        {
+          "item": "croptopia:ground_pork"
+        },
+        {
+          "item": "croptopia:frog_legs"
+        },
+        {
+          "item": "alexsmobs:moose_ribs"
+        },
+        {
+          "item": "alexsmobs:kangaroo_meat"
+        },
+        {
+          "item": "alexsdelight:kangaroo_shank"
+        },
+        {
+          "item": "alexsdelight:loose_moose_rib"
+        },
+        {
+          "item": "alexsdelight:raw_bison"
+        },
+        {
+          "item": "alexsdelight:bison_mince"
+        },
+        {
+          "item": "alexsdelight:raw_bunfungus"
+        },
+        {
+          "item": "alexsdelight:raw_bunfungus_drumstick"
+        },
+        {
+          "item": "human_meat:human_meat"
+        },
+        {
+          "item": "human_meat:inhuman_meat"
+        }
+      ],
+      "max_time": 240,
+      "min_time": 120,
+      "nutrition": 10,
+      "overcook_penalty": 0.5,
+      "raw_penalty": 1.0,
+      "size": 2,
+      "stir_time": 80
+    },
+    {
+      "type": "NONE",
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "level": 3,
+          "time": 4000
+        }
+      ],
+      "ingredient": [
+        {
+          "item": "tstp_content:life_crystal"
+        }
+      ],
+      "max_time": 360,
+      "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 2,
+      "stir_time": 60
+    },
+    {
+      "type": "NONE",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "croptopia:molasses"
+        },
+        {
+          "item": "croptopia:soy_sauce"
+        },
+        {
+          "item": "croptopia:milk_bottle"
+        },
+        {
+          "item": "croptopia:olive_oil"
+        },
+        {
+          "item": "minecraft:water_bottle"
+        },
+        {
+          "item": "croptopia:water_bottle"
+        },
+        {
+          "item": "candylands:raw_sugar_cod"
+        }
+      ],
+      "max_time": 360,
+      "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 1,
+      "stir_time": 60
+    }
+  ]
+}

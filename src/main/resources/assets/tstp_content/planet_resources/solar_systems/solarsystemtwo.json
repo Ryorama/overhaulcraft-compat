@@ -1,0 +1,13 @@
+{
+  "galaxy": "tstp_content:galaxytwo",
+  "solar_system": "tstp_content:solarsystemtwo",
+  "sun": "tstp_content:textures/sky/sun_red.png",
+  "sun_scale": 15,
+  "button_color": "blue",
+  "ring_color": {
+    "r": 36,
+    "g": 50,
+    "b": 123,
+    "a": 200
+  }
+}

@@ -5,6 +5,8 @@
 package com.ryorama.tstpcontent.init;
 
 import com.ryorama.tstpcontent.block.*;
+import com.ryorama.tstpcontent.block.casings.CaloriteMachineCasing;
+import com.ryorama.tstpcontent.block.casings.OstrumMachineCasing;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,4 +32,8 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> GRASS = REGISTRY.register("grass", () -> new GrassBlock());
 	public static final RegistryObject<Block> HVAC_BLOCK = REGISTRY.register("hvac_block", () -> new HVACBlockBlock());
 	public static final RegistryObject<Block> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> new HamsterWheelGeneratorBlock());
+	public static final RegistryObject<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new OstrumMachineCasing());
+	public static final RegistryObject<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new CaloriteMachineCasing());
+
+
 }

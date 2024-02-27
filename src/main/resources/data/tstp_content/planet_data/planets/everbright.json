@@ -1,0 +1,16 @@
+{
+  "translation": "Everbright",
+  "galaxy": "tstp_content:galaxytwo",
+  "solar_system": "tstp_content:solarsystemtwo",
+  "world": "blue_skies:everbright",
+  "orbit_world": "tstp_content:everbright_orbit",
+  "rocket_tier": 4,
+  "gravity": 9.806,
+  "has_atmosphere": true,
+  "days_in_year": 365,
+  "temperature": 15,
+  "solar_power": 13,
+  "orbit_solar_power": 15,
+  "has_oxygen": true,
+  "button_color": "turquoise"
+}

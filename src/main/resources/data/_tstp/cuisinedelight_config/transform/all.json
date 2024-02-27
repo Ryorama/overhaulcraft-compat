@@ -1,0 +1,117 @@
+{
+  "_class": "dev.xkmc.cuisinedelight.content.logic.CookTransformConfig",
+  "fluidTransform": {
+	"croptopia:molasses": {
+      "color": -5737119
+    },
+	"croptopia:soy_sauce": {
+      "color": -7114911
+    },
+	"croptopia:milk_bottle": {
+      "color": -1
+    },
+	"croptopia:olive_oil": {
+      "color": -539065
+    },
+    "croptopia:water_bottle": {
+      "color": -13017142
+    },
+    "minecraft:water_bottle": {
+      "color": -13017142
+    }
+  },
+  "itemTransform": {
+    "croptopia:anchovy": {
+      "next": "croptopia:cooked_anchovy",
+      "stage": "COOKED"
+    },
+    "croptopia:calamari": {
+      "next": "croptopia:cooked_calamari",
+      "stage": "COOKED"
+    }, 
+	"croptopia:glowing_calamari": {
+      "next": "croptopia:cooked_calamari",
+      "stage": "COOKED"
+    },
+    "croptopia:tuna": {
+      "next": "croptopia:cooked_tuna",
+      "stage": "COOKED"
+    },
+    "croptopia:shrimp": {
+      "next": "croptopia:cooked_shrimp",
+      "stage": "COOKED"
+    },
+	"croptopia:crab": {
+      "next": "croptopia:steamed_crab",
+      "stage": "COOKED"
+    },
+	"croptopia:clam": {
+      "next": "croptopia:steamed_clams",
+      "stage": "COOKED"
+    },
+	"croptopia:bacon": {
+      "next": "croptopia:cooked_bacon",
+      "stage": "COOKED"
+    },
+	"croptopia:frog_legs": {
+      "next": "croptopia:fried_frog_legs",
+      "stage": "COOKED"
+    },	
+	"alexsmobs:moose_ribs": {
+      "next": "alexsmobs:cooked_moose_ribs",
+      "stage": "COOKED"
+    },
+    "alexsmobs:kangaroo_meat": {
+      "next": "alexsmobs:cooked_kangaroo_meat",
+      "stage": "COOKED"
+    },
+    "alexsdelight:kangaroo_shank": {
+      "next": "alexsdelight:cooked_shrimp",
+      "stage": "COOKED"
+    },
+	"alexsdelight:loose_moose_rib": {
+      "next": "alexsdelight:cooked_loose_moose_rib",
+      "stage": "COOKED"
+    },
+	"alexsdelight:bison_mince": {
+      "next": "alexsdelight:bison_patty",
+      "stage": "COOKED"
+    },
+	"alexsdelight:raw_bison": {
+      "next": "alexsdelight:cooked_bison",
+      "stage": "COOKED"
+    },
+	"alexsdelight:raw_bunfungus": {
+      "next": "alexsdelight:cooked_bunfungus",
+      "stage": "COOKED"
+    },
+    "alexsdelight:raw_bunfungus_drumstick": {
+      "next": "alexsdelight:cooked_bunfungus_drumstick",
+      "stage": "COOKED"
+    },
+	"alexsdelight:raw_catfish_slice": {
+      "next": "alexsdelight:cooked_catfish_slice",
+      "stage": "COOKED"
+    },
+	"alexsmobs:lobster_tail": {
+      "next": "alexsmobs:cooked_lobster_tail",
+      "stage": "COOKED"
+    },
+	"alexsmobs:raw_catfish": {
+      "next": "alexsmobs:cooked_catfish",
+      "stage": "COOKED"
+    },
+    "croptopia:sweetpotato": {
+      "next": "croptopia:baked_sweet_potato",
+      "stage": "COOKED"
+    },
+	"croptopia:yam": {
+      "next": "croptopia:baked_yam",
+      "stage": "COOKED"
+    },
+    "human_meat:human_meat": {
+      "next": "human_meat:cooked_human_meat",
+      "stage": "COOKED"
+    }
+  }
+}
