@@ -241,7 +241,13 @@
     },
     {
       "type": "CARB",
-      "effects": [],
+      "effects": [
+        {
+          "effect": "minecraft:regeneration",
+          "level": 3,
+          "time": 4000
+        }
+      ],
       "ingredient": [
         {
           "item": "tstp_content:mushroom_t"
@@ -389,9 +395,6 @@
       "effects": [],
       "ingredient": [
         {
-          "item": "candylands:raw_sugar_cod"
-        },
-        {
           "item": "croptopia:molasses"
         },
         {
@@ -409,6 +412,22 @@
       ],
       "max_time": 360,
       "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 1,
+      "stir_time": 60
+    },
+    {
+      "type": "NONE",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "candylands:raw_sugar_cod"
+        }
+      ],
+      "max_time": 240,
+      "min_time": 120,
       "nutrition": 5,
       "overcook_penalty": 0.2,
       "raw_penalty": 0.0,

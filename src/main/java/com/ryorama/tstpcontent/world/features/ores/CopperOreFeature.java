@@ -1,6 +1,9 @@
 
 package com.ryorama.tstpcontent.world.features.ores;
 
+import com.ryorama.tstpcontent.world.features.TstpFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockStateMatchTest;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
@@ -28,33 +31,26 @@ import java.util.List;
 
 import com.ryorama.tstpcontent.init.TstpContentModBlocks;
 
-public class CopperOreFeature extends OreFeature {
+public class CopperOreFeature extends TstpFeature {
 	public static CopperOreFeature FEATURE = null;
-	public static Holder<ConfiguredFeature<OreConfiguration, ?>> CONFIGURED_FEATURE = null;
-	public static Holder<PlacedFeature> PLACED_FEATURE = null;
-
 	public static Feature<?> feature() {
 		FEATURE = new CopperOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("tstp_content:copper_ore", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(Blocks.STONE.defaultBlockState()), TstpContentModBlocks.COPPER_ORE.get().defaultBlockState()),
-						OreConfiguration.target(new BlockStateMatchTest(TstpContentModBlocks.STONE_BLOCK.get().defaultBlockState()), TstpContentModBlocks.COPPER_ORE.get().defaultBlockState()),
-						OreConfiguration.target(new BlockStateMatchTest(TstpContentModBlocks.GRASS_BLOCK.get().defaultBlockState()), TstpContentModBlocks.COPPER_ORE.get().defaultBlockState()),
-						OreConfiguration.target(new BlockStateMatchTest(TstpContentModBlocks.DIRT_BLOCK.get().defaultBlockState()), TstpContentModBlocks.COPPER_ORE.get().defaultBlockState())), 16));
-		PLACED_FEATURE = PlacementUtils.register("tstp_content:copper_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(10), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(64)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("tstp_content:terraria_dim")));
 
 	public CopperOreFeature() {
-		super(OreConfiguration.CODEC);
+		super();
 	}
 
-	public boolean place(FeaturePlaceContext<OreConfiguration> context) {
+	@Override
+	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel world = context.level();
-		if (!generate_dimensions.contains(world.getLevel().dimension()))
-			return false;
-		return super.place(context);
+		if (generate_dimensions.contains(world.getLevel().dimension())) {
+			if (context.random().nextIntBetweenInclusive(0, 50) == 0 && world.getBlockState(context.origin()) == TstpContentModBlocks.GRASS_BLOCK.get().defaultBlockState() || world.getBlockState(context.origin()) == TstpContentModBlocks.DIRT_BLOCK.get().defaultBlockState() && world.getBlockState(context.origin()) == TstpContentModBlocks.STONE_BLOCK.get().defaultBlockState())
+				placeOre(world, context.random(), context.origin(), context.random().nextIntBetweenInclusive(5, 8), world.getBlockState(context.origin()), TstpContentModBlocks.COPPER_ORE.get().defaultBlockState());
+		}
+		return true;
 	}
 }

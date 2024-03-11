@@ -35,6 +35,15 @@
       }
     ]
   },
+  "eat": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "tstp_content:eat",
+        "stream": false
+      }
+    ]
+  },
   "icehit": {
     "category": "block",
     "sounds": [

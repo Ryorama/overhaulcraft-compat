@@ -1,6 +1,8 @@
 
 package com.ryorama.tstpcontent.world.features.ores;
 
+import com.ryorama.tstpcontent.world.features.TstpFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockStateMatchTest;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
@@ -27,30 +29,26 @@ import java.util.List;
 
 import com.ryorama.tstpcontent.init.TstpContentModBlocks;
 
-public class IceFeature extends OreFeature {
+public class IceFeature extends TstpFeature {
 	public static IceFeature FEATURE = null;
-	public static Holder<ConfiguredFeature<OreConfiguration, ?>> CONFIGURED_FEATURE = null;
-	public static Holder<PlacedFeature> PLACED_FEATURE = null;
-
 	public static Feature<?> feature() {
 		FEATURE = new IceFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("tstp_content:ice", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TstpContentModBlocks.SNOW.get().defaultBlockState()), TstpContentModBlocks.ICE.get().defaultBlockState())), 16));
-		PLACED_FEATURE = PlacementUtils.register("tstp_content:ice", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(10), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(64)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("tstp_content:terraria_dim")));
 
 	public IceFeature() {
-		super(OreConfiguration.CODEC);
+		super();
 	}
 
-	public boolean place(FeaturePlaceContext<OreConfiguration> context) {
+	@Override
+	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel world = context.level();
-		if (!generate_dimensions.contains(world.getLevel().dimension()))
-			return false;
-		return super.place(context);
+		if (generate_dimensions.contains(world.getLevel().dimension())) {
+			if (context.random().nextIntBetweenInclusive(0, 50) == 0 && world.getBlockState(context.origin()) == TstpContentModBlocks.SNOW.get().defaultBlockState())
+				placeOre(world, context.random(), context.origin(), context.random().nextIntBetweenInclusive(5, 8), world.getBlockState(context.origin()), TstpContentModBlocks.ICE.get().defaultBlockState());
+		}
+		return true;
 	}
 }
