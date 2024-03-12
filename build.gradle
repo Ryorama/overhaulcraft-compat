@@ -87,6 +87,7 @@ dependencies {
     implementation fg.deobf('curse.maven:ad_astra-635042:4643668')
     implementation fg.deobf('curse.maven:tfmg-693815:5079953')
     implementation fg.deobf('curse.maven:gtceu-890405:4968903')
+    implementation fg.deobf('curse.maven:lodestone-616457:4636991')
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
 }
 

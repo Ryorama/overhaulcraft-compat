@@ -1,6 +1,6 @@
 package com.ryorama.tstpcontent.client.model;
 
-import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HamsterWheelGeneratorBlockEntity;
 import com.starfish_studios.hamsters.Hamsters;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

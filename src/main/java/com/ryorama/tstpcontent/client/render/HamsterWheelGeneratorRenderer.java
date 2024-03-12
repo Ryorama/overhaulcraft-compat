@@ -2,7 +2,7 @@ package com.ryorama.tstpcontent.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HamsterWheelGeneratorBlockEntity;
 import com.ryorama.tstpcontent.client.model.HamsterWheelGeneratorModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

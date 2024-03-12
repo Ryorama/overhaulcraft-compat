@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HVACBlockBlockEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;

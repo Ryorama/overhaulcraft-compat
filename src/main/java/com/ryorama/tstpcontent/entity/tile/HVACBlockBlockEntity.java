@@ -1,4 +1,4 @@
-package com.ryorama.tstpcontent.block.entity;
+package com.ryorama.tstpcontent.entity.tile;
 
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;

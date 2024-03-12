@@ -1,8 +1,25 @@
 package com.ryorama.tstpcontent.utils;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.ryorama.tstpcontent.TstpContentMod;
 import net.minecraft.Util;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.RenderStateShard;
+import team.lodestar.lodestone.registry.client.LodestoneRenderTypeRegistry;
+import team.lodestar.lodestone.systems.rendering.rendeertype.RenderTypeProvider;
 
 public class MathHelper {
+
+    protected static final RenderStateShard.TransparencyStateShard NO_TRANSPARENCY = new RenderStateShard.TransparencyStateShard("no_transparency", () -> {
+        RenderSystem.disableBlend();
+    }, () -> {
+    });
+
+    public static final RenderTypeProvider TRIANGLE = new RenderTypeProvider((texture) ->
+            LodestoneRenderTypeRegistry.createGenericRenderType(TstpContentMod.MODID + ":triangle", "triangle", DefaultVertexFormat.POSITION_COLOR_TEX, new RenderStateShard.ShaderStateShard(GameRenderer::getPositionColorLightmapShader), NO_TRANSPARENCY, texture)
+    );
+
     private static final float[] SINE_TABLE = (float[]) Util.make(new float[65536], (sineTable) -> {
         for (int i = 0; i < sineTable.length; ++i) {
             sineTable[i] = (float) Math.sin((double) i * Math.PI * 2.0 / 65536.0);

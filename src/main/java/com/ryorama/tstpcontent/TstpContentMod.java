@@ -13,7 +13,7 @@
  */
 package com.ryorama.tstpcontent;
 
-import com.ryorama.tstpcontent.events.ClientEvents;
+import com.ryorama.tstpcontent.init.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -39,12 +39,6 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-import com.ryorama.tstpcontent.init.TstpContentModSounds;
-import com.ryorama.tstpcontent.init.TstpContentModItems;
-import com.ryorama.tstpcontent.init.TstpContentModFeatures;
-import com.ryorama.tstpcontent.init.TstpContentModBlocks;
-import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
-import com.ryorama.tstpcontent.init.TstpContentModBiomes;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod("tstp_content")
@@ -61,6 +55,7 @@ public class TstpContentMod {
 		TstpContentModBlocks.REGISTRY.register(bus);
 		TstpContentModItems.REGISTRY.register(bus);
 
+		TstpContentModEntities.REGISTRY.register(bus);
 		TstpContentModBlockEntities.REGISTRY.register(bus);
 		TstpContentModFeatures.REGISTRY.register(bus);
 

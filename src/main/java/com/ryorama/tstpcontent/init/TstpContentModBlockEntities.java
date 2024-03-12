@@ -4,7 +4,7 @@
  */
 package com.ryorama.tstpcontent.init;
 
-import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HamsterWheelGeneratorBlockEntity;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
-import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HVACBlockBlockEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
 
 public class TstpContentModBlockEntities {

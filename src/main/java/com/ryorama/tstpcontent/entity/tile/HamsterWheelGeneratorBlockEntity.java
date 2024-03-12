@@ -1,4 +1,4 @@
-package com.ryorama.tstpcontent.block.entity;
+package com.ryorama.tstpcontent.entity.tile;
 
 import com.ryorama.tstpcontent.block.HamsterWheelGeneratorBlock;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;

@@ -1,6 +1,6 @@
 package com.ryorama.tstpcontent.block;
 
-import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
+import com.ryorama.tstpcontent.entity.tile.HamsterWheelGeneratorBlockEntity;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import com.starfish_studios.hamsters.block.HamsterWheelBlock;
 import net.minecraft.core.BlockPos;
