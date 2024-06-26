@@ -1,6 +1,5 @@
 {
   "crystal_destroy": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:crystal_destroy",
@@ -9,7 +8,6 @@
     ]
   },
   "dig0": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:dig0",
@@ -17,8 +15,15 @@
       }
     ]
   },
+  "eat": {
+    "sounds": [
+      {
+        "name": "tstp_content:eat",
+        "stream": false
+      }
+    ]
+  },
   "grass": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:grass",
@@ -27,7 +32,6 @@
     ]
   },
   "health_crystal": {
-    "category": "player",
     "sounds": [
       {
         "name": "tstp_content:health_crystal",
@@ -35,17 +39,7 @@
       }
     ]
   },
-  "eat": {
-    "category": "player",
-    "sounds": [
-      {
-        "name": "tstp_content:eat",
-        "stream": false
-      }
-    ]
-  },
   "icehit": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:icehit",
@@ -54,7 +48,6 @@
     ]
   },
   "snowhit1": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:snowhit1",
@@ -63,7 +56,6 @@
     ]
   },
   "tink0": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:tink0",
@@ -72,7 +64,6 @@
     ]
   },
   "tink1": {
-    "category": "block",
     "sounds": [
       {
         "name": "tstp_content:tink1",

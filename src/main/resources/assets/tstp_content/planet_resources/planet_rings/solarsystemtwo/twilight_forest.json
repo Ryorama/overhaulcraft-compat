@@ -1,8 +1,0 @@
-{
-  "galaxy": "tstp_content:galaxytwo",
-  "solar_system": "tstp_content:solarsystemtwo",
-  "texture": "tstp_content:textures/sky/twilight_forest.png",
-  "speed": 687,
-  "scale": 14,
-  "radius": 3.0
-}

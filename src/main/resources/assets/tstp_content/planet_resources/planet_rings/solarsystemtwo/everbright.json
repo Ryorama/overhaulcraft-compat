@@ -1,8 +1,0 @@
-{
-  "galaxy": "tstp_content:galaxytwo",
-  "solar_system": "tstp_content:solarsystemtwo",
-  "texture": "tstp_content:textures/sky/everbright.png",
-  "speed": 539,
-  "scale": 12,
-  "radius": 2.0
-}

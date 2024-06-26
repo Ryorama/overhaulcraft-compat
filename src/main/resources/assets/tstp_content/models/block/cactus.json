@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "tstp_content:blocks/cactus_block_top",
-    "up": "tstp_content:blocks/cactus_block_top",
-    "north": "tstp_content:blocks/cactus_block",
-    "east": "tstp_content:blocks/cactus_block",
-    "south": "tstp_content:blocks/cactus_block",
-    "west": "tstp_content:blocks/cactus_block",
-    "particle": "tstp_content:blocks/cactus_block_top"
+    "down": "tstp_content:block/cactus_block_top",
+    "up": "tstp_content:block/cactus_block_top",
+    "north": "tstp_content:block/cactus_block",
+    "east": "tstp_content:block/cactus_block",
+    "south": "tstp_content:block/cactus_block",
+    "west": "tstp_content:block/cactus_block",
+    "particle": "tstp_content:block/cactus_block_top"
   },
   "render_type": "solid"
 }

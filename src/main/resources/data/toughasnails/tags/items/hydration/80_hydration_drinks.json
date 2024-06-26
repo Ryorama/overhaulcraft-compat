@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-	"candylands:molten_chocolate_bucket",
-	"candylands:hot_jam_bucket",
-	"candylands:maple_syrup_bucket"
+
   ]
 }

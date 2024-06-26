@@ -1,40 +1,43 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'org.spongepowered.mixin'
+
+plugins {
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+}
 
 version = '1.0'
 group = 'com.ryorama.tstp_content'
 archivesBaseName = 'tstp_content'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+apply plugin: 'org.spongepowered.mixin'
 
 mixin {
     add sourceSets.main, "tstp_content.mixins.refmap.json"
 }
 
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
 minecraft {
-    mappings channel: 'official', version: '1.19.2'
+    mappings channel: 'official', version: '1.20.1'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    copyIdeResources = true
 
     runs {
         client {
             workingDirectory project.file('run')
-            arg "--mixin=tstp_content.mixins.json"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            arg "--mixin=tstp_content.mixins.json"
 
             mods {
                 examplemod {
@@ -45,10 +48,10 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            arg "--mixin=tstp_content.mixins.json"
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            arg "--mixin=tstp_content.mixins.json"
 
             mods {
                 examplemod {
@@ -58,6 +61,7 @@ minecraft {
         }
     }
 }
+
 repositories {
     maven { url = 'https://maven.minecraftforge.net/' }
     maven {
@@ -77,37 +81,19 @@ repositories {
     mavenLocal()
 }
 
-
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.0'
-    implementation fg.deobf('com.github.glitchfiend:ToughAsNails:1.19-8.0.0.78')
-    implementation fg.deobf('curse.maven:firstaid-276837:3952683')
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
-    implementation fg.deobf('curse.maven:hamsters-952435:5121309')
-    implementation fg.deobf('curse.maven:ad_astra-635042:4643668')
-    implementation fg.deobf('curse.maven:tfmg-693815:5079953')
-    implementation fg.deobf('curse.maven:gtceu-890405:4968903')
-    implementation fg.deobf('curse.maven:lodestone-616457:4636991')
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
+    implementation fg.deobf('curse.maven:firstaid-276837:5127567')
+    implementation fg.deobf('curse.maven:geckolib-388172:5386948')
+    implementation fg.deobf('curse.maven:hamsters-952435:5121303')
+    implementation fg.deobf('curse.maven:lodestone-616457:5365395')
+    implementation fg.deobf('curse.maven:thorium_reactors-775514:5155197')
+    implementation fg.deobf('curse.maven:ballistix-443915:5022909')
+    implementation fg.deobf('curse.maven:electrodynamics-316867:5022907')
+    implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
+    implementation fg.deobf('curse.maven:cannibalscalling-776031:5382184')
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
-}
-
-jar {
-    from('/') {
-        include 'LICENSE.txt'
-    }
-
-    manifest {
-        attributes([
-                "Specification-Title": "tstp_content",
-                "Specification-Vendor": "Ryorama",
-                "Specification-Version": "1", // We are version 1 of ourselves
-                "Implementation-Title": project.name,
-                "Implementation-Version": project.version,
-                "Implementation-Vendor" :"Ryorama",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "tstp_content.mixins.json"
-        ])
-    }
 }
 
 tasks.withType(JavaCompile).configureEach {

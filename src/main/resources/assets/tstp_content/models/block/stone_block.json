@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "tstp_content:blocks/stone_block",
-    "particle": "tstp_content:blocks/stone_block"
-  },
-  "render_type": "solid"
-}

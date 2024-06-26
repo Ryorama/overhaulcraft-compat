@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "tstp_content:blocks/plants/grass/08"
+    "cross": "tstp_content:block/plants/grass/08"
   },
   "render_type": "cutout"
 }

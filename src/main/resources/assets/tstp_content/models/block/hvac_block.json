@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "tstp_content:blocks/side",
-    "up": "tstp_content:blocks/side",
-    "north": "tstp_content:blocks/hvac_side",
-    "east": "tstp_content:blocks/hvac_side",
-    "south": "tstp_content:blocks/hvac_side",
-    "west": "tstp_content:blocks/hvac_side",
-    "particle": "tstp_content:blocks/side"
+    "down": "tstp_content:block/side",
+    "up": "tstp_content:block/side",
+    "north": "tstp_content:block/hvac_side",
+    "east": "tstp_content:block/hvac_side",
+    "south": "tstp_content:block/hvac_side",
+    "west": "tstp_content:block/hvac_side",
+    "particle": "tstp_content:block/side"
   },
   "render_type": "solid"
 }

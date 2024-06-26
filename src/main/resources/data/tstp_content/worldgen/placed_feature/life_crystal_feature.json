@@ -1,0 +1,12 @@
+{
+  "feature": "tstp_content:life_crystal_feature",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      }
+    }
+  ]
+}

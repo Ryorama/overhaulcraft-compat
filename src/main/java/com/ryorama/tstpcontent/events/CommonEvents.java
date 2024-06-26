@@ -1,9 +1,9 @@
 package com.ryorama.tstpcontent.events;
 
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.init.TstpContentModEntities;
-import net.minecraft.world.entity.Mob;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.mcreator.cannibalscalling.init.CannibalsCallingModItems;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -11,7 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 public class CommonEvents {
 
     @SubscribeEvent
-    public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(TstpContentModEntities.NUCLEAR_EXPLOSION_EFFECT.get(), Mob.createMobAttributes().build());
+    public static void addItemsToCreativeTabs(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
+            event.accept(CannibalsCallingModItems.HUMAN_MEAT.get());
+            event.accept(CannibalsCallingModItems.COOKED_HUMAN_MEAT.get());
+            event.accept(CannibalsCallingModItems.INHUMAN_MEAT.get());
+        }
     }
 }

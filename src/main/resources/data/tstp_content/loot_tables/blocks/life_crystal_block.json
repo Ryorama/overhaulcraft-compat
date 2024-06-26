@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "tstp_content:blocks/life_crystal_block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tstp_content:life_crystal"
+        }
+      ]
+    }
+  ]
+}

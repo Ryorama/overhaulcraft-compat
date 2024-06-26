@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "tstp_content:blocks/mushroom",
-    "particle": "tstp_content:blocks/mushroom"
-  },
-  "render_type": "cutout"
-}

@@ -12,21 +12,20 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LifeCrystalItem extends Item {
 	public LifeCrystalItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		if (!world.isClientSide()) {
-			world.playSound(null, entity.blockPosition(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystaluse")), SoundSource.PLAYERS, 1, 1);
+			world.playSound(null, entity.blockPosition(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:health_crystal")), SoundSource.PLAYERS, 1, 1);
 		} else {
-			world.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystaluse")), SoundSource.PLAYERS, 1, 1, false);
+			world.playLocalSound(entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:health_crystal")), SoundSource.PLAYERS, 1, 1, false);
 		}
 
 		if (entity.getAttribute(Attributes.MAX_HEALTH).getBaseValue() < 60) {

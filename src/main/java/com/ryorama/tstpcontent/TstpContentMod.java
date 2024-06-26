@@ -1,25 +1,12 @@
-/*
- *    MCreator note:
- *
- *    If you lock base mod element files, you can edit this file and it won't get overwritten.
- *    If you change your modid or package, you need to apply these changes to this file MANUALLY.
- *
- *    Settings in @Mod annotation WON'T be changed in case of the base mod element
- *    files lock too, so you need to set them manually here in such case.
- *
- *    If you do not lock base mod element files in Workspace settings, this file
- *    will be REGENERATED on each build.
- *
- */
 package com.ryorama.tstpcontent;
 
-import com.ryorama.tstpcontent.init.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.fml.util.thread.SidedThreadGroups;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,7 +26,11 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-import software.bernie.geckolib3.GeckoLib;
+import com.ryorama.tstpcontent.init.TstpContentModTabs;
+import com.ryorama.tstpcontent.init.TstpContentModSounds;
+import com.ryorama.tstpcontent.init.TstpContentModItems;
+import com.ryorama.tstpcontent.init.TstpContentModBlocks;
+import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 
 @Mod("tstp_content")
 public class TstpContentMod {
@@ -47,23 +38,23 @@ public class TstpContentMod {
 	public static final String MODID = "tstp_content";
 
 	public TstpContentMod() {
-		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-
+		// Start of user code block mod constructor
+		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
-
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		TstpContentModSounds.REGISTRY.register(bus);
 		TstpContentModBlocks.REGISTRY.register(bus);
+		TstpContentModBlockEntities.REGISTRY.register(bus);
 		TstpContentModItems.REGISTRY.register(bus);
 
-		TstpContentModEntities.REGISTRY.register(bus);
-		TstpContentModBlockEntities.REGISTRY.register(bus);
-		TstpContentModFeatures.REGISTRY.register(bus);
+		TstpContentModTabs.REGISTRY.register(bus);
 
-		TstpContentModBiomes.REGISTRY.register(bus);
-
-		GeckoLib.initialize();
+		// Start of user code block mod init
+		// End of user code block mod init
 	}
 
+	// Start of user code block mod methods
+	// End of user code block mod methods
 	private static final String PROTOCOL_VERSION = "1";
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	private static int messageID = 0;
@@ -76,7 +67,8 @@ public class TstpContentMod {
 	private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
 
 	public static void queueServerWork(int tick, Runnable action) {
-		workQueue.add(new AbstractMap.SimpleEntry(action, tick));
+		if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
+			workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
 	}
 
 	@SubscribeEvent

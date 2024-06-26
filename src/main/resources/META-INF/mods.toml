@@ -1,22 +1,25 @@
 modLoader="javafml"
-loaderVersion="[43,)"
-license="Academic Free License v3.0"
+loaderVersion="[47,)"
+license="Not specified"
 
 [[mods]]
 modId="tstp_content"
 version="1.0.0"
 displayName="TSTP Content"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="Ryorama, MCreator"
+displayURL=""
+credits=""
+authors="Ryorama"
+description="Custom Content and Compat for The Self Torture Pack"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
 
 [[dependencies.tstp_content]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2]"
+    versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
-
 
 
 

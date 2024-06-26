@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tstp_content:blocks/iron",
-    "particle": "tstp_content:blocks/iron"
+    "all": "tstp_content:block/iron",
+    "particle": "tstp_content:block/iron"
   },
   "render_type": "solid"
 }

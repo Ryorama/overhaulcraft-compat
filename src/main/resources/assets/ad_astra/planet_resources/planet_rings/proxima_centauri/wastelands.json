@@ -1,8 +1,0 @@
-{
-  "galaxy": "ad_astra:milky_way",
-  "solar_system": "ad_astra:proxima_centauri",
-  "texture": "tstp_content:textures/sky/wastelands.png",
-  "speed": 523,
-  "scale": 12,
-  "radius": 3.0
-}

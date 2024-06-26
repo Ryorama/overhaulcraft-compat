@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tstp_content:blocks/sappling"
+    "layer0": "tstp_content:block/01_grass"
   }
 }

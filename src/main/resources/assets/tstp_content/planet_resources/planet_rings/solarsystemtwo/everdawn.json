@@ -1,8 +1,0 @@
-{
-  "galaxy": "tstp_content:galaxytwo",
-  "solar_system": "tstp_content:solarsystemtwo",
-  "texture": "tstp_content:textures/sky/everdawn.png",
-  "speed": 284,
-  "scale": 12,
-  "radius": 1.0
-}

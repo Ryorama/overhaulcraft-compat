@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "tstp_content.mixins.refmap.json",
   "mixins": [
-    "HamsterMixin",
-    "LivingEntityMixin"
+
   ],
   "client": [
   ],

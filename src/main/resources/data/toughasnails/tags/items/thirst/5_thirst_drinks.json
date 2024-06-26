@@ -10,7 +10,6 @@
 		"croptopia:strawberry_smoothie",
 		"croptopia:coffee",
 		"croptopia:horchata",
-		"farmersrespite:coffee",
 		"croptopia_additions:cherry_soda",
 		"croptopia_additions:cola",
 		"croptopia_additions:grape_soda",
@@ -20,11 +19,6 @@
 		"delightful:matcha_latte",
 		"ends_delight:dragon_breath_soda",
 		"farmersdelight:hot_cocoa",
-		"fastfooddelight:cola_soda",
-		"fastfooddelight:creaming_soda",
-		"fastfooddelight:iced_tea",
-		"fastfooddelight:lemon_soda",
-		"fastfooddelight:orange_soda",
 		"pineapple_delight:pineapple_milk_shake"
    ]
 }

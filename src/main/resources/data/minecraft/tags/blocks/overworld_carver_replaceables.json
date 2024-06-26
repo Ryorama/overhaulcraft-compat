@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "tstp_content:stone_block",
-    "tstp_content:sand",
-    "tstp_content:grass_block",
     "tstp_content:dirt_block",
-    "tstp_content:snow"
+    "tstp_content:snow",
+    "tstp_content:sand_block",
+    "tstp_content:grass_block",
+    "tstp_content:stone"
   ]
 }

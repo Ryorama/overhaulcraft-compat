@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "tstp_content:desert_terraria",
+    "tstp_content:forest_terraria",
+    "tstp_content:snow_terraria"
+  ],
+  "features": "tstp_content:life_crystal_feature",
+  "step": "underground_decoration"
+}

@@ -107,12 +107,200 @@
       "stage": "COOKED"
     },
     "human_meat:human_meat": {
-      "next": "human_meat:cooked_human_meat",
+      "next": "cannibals_calling:cooked_human_meat",
       "stage": "COOKED"
     },
-    "candylands:raw_sugar_cod": {
-      "next": "candylands:cooked_sugar_cod",
+    "alexscaves:dinosaur_chop": {
+      "next": "alexscaves:cooked_dinosaur_chop",
       "stage": "COOKED"
+    },
+    "alexscaves:trilocaris_tail": {
+      "next": "alexscaves:cooked_trilocaris_tail",
+      "stage": "COOKED"
+    },
+    "minecraft:turtle_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "minecraft:sniffer_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "naturalist:alligator_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "naturalist:duck_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "naturalist:tortoise_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "earthmobsmod:fancy_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "earthmobsmod:duck_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_red": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_green": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_bronze": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "naturalist:alligator_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "naturalist:duck_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_gray": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_blue": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_white": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_sapphire": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_black": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_copper": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_amythest": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_electric": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:dragonegg_silver": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:myrmex_desert_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:myrmex_jungle_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "iceandfire:hippogryph_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "aether:black_moa_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "aether:blue_moa_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "aether:white_moa_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexsmobs:emu_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexsmobs:caiman_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexsmobs:platypus_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexsmobs:terrapin_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexsmobs:crocodile_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "biomesoplenty:spider_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "autumnity:turkey_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "quark:egg_parrot_red_blue": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "quark:egg_parrot_blue": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "quark:egg_parrot_green": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "quark:egg_parrot_grey": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "quark:egg_parrot_yellow_blue": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:tremorzilla_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:atlatitan_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:relicheirus_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:tremorsaurus_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:grottoceratops_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:vallumraptor_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "alexscaves:subterranodon_egg": {
+      "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
     }
   }
 }

@@ -229,6 +229,28 @@
         },
         {
           "item": "alexsmobs:banana"
+        },
+        {
+          "item": "alexscaves:fiddlehead"
+        },
+        {
+          "item": "alexscaves:tree_star"
+        }
+      ],
+      "max_time": 360,
+      "min_time": 0,
+      "nutrition": 5,
+      "overcook_penalty": 0.2,
+      "raw_penalty": 0.0,
+      "size": 2,
+      "stir_time": 60
+    },
+    {
+      "type": "CARB",
+      "effects": [],
+      "ingredient": [
+        {
+          "item": "alexscaves:pine_nuts"
         }
       ],
       "max_time": 360,
@@ -250,7 +272,7 @@
       ],
       "ingredient": [
         {
-          "item": "tstp_content:mushroom_t"
+          "item": "tstp_content:mushroom"
         }
       ],
       "max_time": 360,
@@ -354,10 +376,157 @@
           "item": "alexsdelight:raw_bunfungus_drumstick"
         },
         {
-          "item": "human_meat:human_meat"
+          "item": "cannibals_calling:human_meat"
         },
         {
-          "item": "human_meat:inhuman_meat"
+          "item": "cannibals_calling:inhuman_meat"
+        },
+        {
+          "item": "alexscaves:dinosaur_chop"
+        },
+        {
+          "item": "alexscaves:trilocaris_tail"
+        },
+        {
+          "item": "naturalist:alligator_egg"
+        },
+        {
+          "item": "naturalist:duck_egg"
+        },
+        {
+          "item": "naturalist:tortoise_egg"
+        },
+        {
+          "item": "minecraft:turtle_egg"
+        },
+        {
+          "item": "minecraft:sniffer_egg"
+        },
+        {
+          "item": "earthmobsmod:fancy_egg"
+        },
+        {
+          "item": "earthmobsmod:duck_egg"
+        },
+        {
+          "item": "iceandfire:dragonegg_red"
+        },
+        {
+          "item": "iceandfire:dragonegg_green"
+        },
+        {
+          "item": "iceandfire:dragonegg_bronze"
+        },
+        {
+          "item": "iceandfire:dragonegg_gray"
+        },
+        {
+          "item": "iceandfire:dragonegg_blue"
+        },
+        {
+          "item": "iceandfire:dragonegg_white"
+        },
+        {
+          "item": "iceandfire:dragonegg_sapphire"
+        },
+        {
+          "item": "iceandfire:dragonegg_black"
+        },
+        {
+          "item": "iceandfire:dragonegg_copper"
+        },
+        {
+          "item": "iceandfire:dragonegg_amythest"
+        },
+        {
+          "item": "iceandfire:dragonegg_electric"
+        },
+        {
+          "item": "iceandfire:dragonegg_silver"
+        },
+        {
+          "item": "iceandfire:myrmex_desert_egg"
+        },
+        {
+          "item": "iceandfire:myrmex_jungle_egg"
+        },
+        {
+          "item": "iceandfire:dragonegg_white"
+        },
+        {
+          "item": "iceandfire:deathworm_egg"
+        },
+        {
+          "item": "iceandfire:deathworm_egg_giant"
+        },
+        {
+          "item": "iceandfire:hippogryph_egg"
+        },
+        {
+          "item": "aether:black_moa_egg"
+        },
+        {
+          "item": "aether:blue_moa_egg"
+        },
+        {
+          "item": "aether:white_moa_egg"
+        },
+        {
+          "item": "alexsmobs:emu_egg"
+        },
+        {
+          "item": "alexsmobs:caiman_egg"
+        },
+        {
+          "item": "alexsmobs:platypus_egg"
+        },
+        {
+          "item": "alexsmobs:terrapin_egg"
+        },
+        {
+          "item": "alexsmobs:crocodile_egg"
+        },
+        {
+          "item": "biomesoplenty:spider_egg"
+        },
+        {
+          "item": "autumnity:turkey_egg"
+        },
+        {
+          "item": "quark:egg_parrot_red_blue"
+        },
+        {
+          "item": "quark:egg_parrot_blue"
+        },
+        {
+          "item": "quark:egg_parrot_green"
+        },
+        {
+          "item": "quark:egg_parrot_grey"
+        },
+        {
+          "item": "quark:egg_parrot_yellow_blue"
+        },
+        {
+          "item": "alexscaves:tremorzilla_egg"
+        },
+        {
+          "item": "alexscaves:atlatitan_egg"
+        },
+        {
+          "item": "alexscaves:relicheirus_egg"
+        },
+        {
+          "item": "alexscaves:tremorsaurus_egg"
+        },
+        {
+          "item": "alexscaves:grottoceratops_egg"
+        },
+        {
+          "item": "alexscaves:vallumraptor_egg"
+        },
+        {
+          "item": "alexscaves:subterranodon_egg"
         }
       ],
       "max_time": 240,
@@ -412,22 +581,6 @@
       ],
       "max_time": 360,
       "min_time": 0,
-      "nutrition": 5,
-      "overcook_penalty": 0.2,
-      "raw_penalty": 0.0,
-      "size": 1,
-      "stir_time": 60
-    },
-    {
-      "type": "NONE",
-      "effects": [],
-      "ingredient": [
-        {
-          "item": "candylands:raw_sugar_cod"
-        }
-      ],
-      "max_time": 240,
-      "min_time": 120,
       "nutrition": 5,
       "overcook_penalty": 0.2,
       "raw_penalty": 0.0,
