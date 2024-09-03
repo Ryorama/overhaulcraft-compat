@@ -31,6 +31,8 @@ import com.ryorama.tstpcontent.init.TstpContentModSounds;
 import com.ryorama.tstpcontent.init.TstpContentModItems;
 import com.ryorama.tstpcontent.init.TstpContentModBlocks;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
+import org.valkyrienskies.mod.client.IVSCamera;
+import org.valkyrienskies.mod.common.ValkyrienSkiesMod;
 
 @Mod("tstp_content")
 public class TstpContentMod {
@@ -38,8 +40,7 @@ public class TstpContentMod {
 	public static final String MODID = "tstp_content";
 
 	public TstpContentMod() {
-		// Start of user code block mod constructor
-		// End of user code block mod constructor
+		//ValkyrienSkiesMod.getVsCore().teleportShip();
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		TstpContentModSounds.REGISTRY.register(bus);
@@ -48,13 +49,8 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 
 		TstpContentModTabs.REGISTRY.register(bus);
-
-		// Start of user code block mod init
-		// End of user code block mod init
 	}
 
-	// Start of user code block mod methods
-	// End of user code block mod methods
 	private static final String PROTOCOL_VERSION = "1";
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	private static int messageID = 0;

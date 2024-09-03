@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class LifeCrystalItem extends Item {
@@ -29,10 +30,12 @@ public class LifeCrystalItem extends Item {
 		}
 
 		if (entity.getAttribute(Attributes.MAX_HEALTH).getBaseValue() < 60) {
-			entity.getAttribute(Attributes.MAX_HEALTH).setBaseValue(((Player) entity).getAttribute(Attributes.MAX_HEALTH).getBaseValue() + 2);
+			entity.getAttribute(Attributes.MAX_HEALTH).setBaseValue(entity.getAttribute(Attributes.MAX_HEALTH).getBaseValue() + 2);
 
-			PlayerDamageModel playerDamageModel = (PlayerDamageModel) CommonUtils.getDamageModel(entity);
-			playerDamageModel.runScaleLogic(entity);
+			if (ModList.get().isLoaded("firstaid")) {
+				PlayerDamageModel playerDamageModel = (PlayerDamageModel) CommonUtils.getDamageModel(entity);
+				playerDamageModel.runScaleLogic(entity);
+			}
 
 			if (!entity.isCreative()) {
 				entity.getItemInHand(hand).shrink(1);

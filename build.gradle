@@ -8,8 +8,11 @@ buildscript {
 }
 
 plugins {
+    id 'idea'
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.22'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.22'
 }
 
 version = '1.0'
@@ -78,6 +81,14 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    maven {
+        name = "Valkyrien Skies Internal"
+        url = 'https://maven.valkyrienskies.org'
+    }
+    maven {
+        name = 'Kotlin for Forge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+    }
     mavenLocal()
 }
 
@@ -93,6 +104,16 @@ dependencies {
     implementation fg.deobf('curse.maven:electrodynamics-316867:5022907')
     implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
     implementation fg.deobf('curse.maven:cannibalscalling-776031:5382184')
+    implementation fg.deobf('curse.maven:furniture-897116:5651939')
+    implementation fg.deobf('curse.maven:framework-549225:5680064')
+    implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
+
+    compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}")
+    implementation 'thedarkcolour:kotlinforforge:4.10.0'
+
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
 }
 

@@ -22,6 +22,7 @@ import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.fml.ModList;
 import toughasnails.api.potion.TANEffects;
 
 import java.util.Comparator;
@@ -86,7 +87,9 @@ public class HVACBlockBlock extends Block implements EntityBlock {
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof LivingEntity _entity)
-						_entity.addEffect(new MobEffectInstance(TANEffects.CLIMATE_CLEMENCY.get(), 100, 1, false, false));
+						if (ModList.get().isLoaded("toughasnails")) {
+							_entity.addEffect(new MobEffectInstance(TANEffects.CLIMATE_CLEMENCY.get(), 100, 1, false, false));
+						}
 					{
 						BlockEntity _ent = world.getBlockEntity(new BlockPos(x, y, z));
 						int _amount = 1000;
