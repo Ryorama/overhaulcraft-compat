@@ -5,11 +5,11 @@ license="Not specified"
 [[mods]]
 modId="tstp_content"
 version="1.0.0"
-displayName="TSTP Content"
+displayName="Overhaul Compat"
 displayURL=""
 credits=""
 authors="Ryorama"
-description="Custom Content and Compat for The Self Torture Pack"
+description="Custom Content and Compat for The Minecraft: Overhaul/OverhaulCraft pack"
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
