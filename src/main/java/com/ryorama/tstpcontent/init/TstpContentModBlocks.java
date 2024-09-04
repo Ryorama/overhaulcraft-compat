@@ -4,10 +4,9 @@
  */
 package com.ryorama.tstpcontent.init;
 
+import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
-import com.mrcrayfish.furniture.refurbished.block.ElectricityGeneratorBlock;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
-import com.mrcrayfish.furniture.refurbished.util.Utils;
 import com.ryorama.tstpcontent.block.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.block.Block;
 
 import com.ryorama.tstpcontent.TstpContentMod;
 
+@RegistryContainer
 public class TstpContentModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, TstpContentMod.MODID);
 	public static final RegistryObject<Block> GRASS_BLOCK = REGISTRY.register("grass_block", () -> new GrassBlockBlock());
@@ -42,13 +42,13 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> HVAC_BLOCK = REGISTRY.register("hvac_block", () -> new HVACBlockBlock());
 	public static final RegistryEntry<RFElectricityGeneratorBlock> LIGHT_RF_ELECTRICITY_GENERATOR = RegistryEntry.blockWithItem(new ResourceLocation("tstp_content", "light_rf_electricity_generator"), () -> {
 		return new RFElectricityGeneratorBlock(MetalType.LIGHT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
-			return (Boolean)state.getValue(ElectricityGeneratorBlock.POWERED) ? 2 : 0;
+			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
 
 	public static final RegistryEntry<RFElectricityGeneratorBlock> DARK_RF_ELECTRICITY_GENERATOR = RegistryEntry.blockWithItem(new ResourceLocation("tstp_content", "dark_rf_electricity_generator"), () -> {
 		return new RFElectricityGeneratorBlock(MetalType.DARK, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
-			return (Boolean)state.getValue(ElectricityGeneratorBlock.POWERED) ? 2 : 0;
+			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
 }

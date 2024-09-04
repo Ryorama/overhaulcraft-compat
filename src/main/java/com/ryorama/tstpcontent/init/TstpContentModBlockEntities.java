@@ -4,9 +4,8 @@
  */
 package com.ryorama.tstpcontent.init;
 
+import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
-import com.mrcrayfish.furniture.refurbished.blockentity.ElectricityGeneratorBlockEntity;
-import com.mrcrayfish.furniture.refurbished.core.ModBlocks;
 import com.ryorama.tstpcontent.block.entity.RFElectricityGeneratorBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
@@ -19,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
 
+@RegistryContainer
 public class TstpContentModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, TstpContentMod.MODID);
 	public static final RegistryObject<BlockEntityType<?>> HVAC_BLOCK = register("hvac_block", TstpContentModBlocks.HVAC_BLOCK, HVACBlockBlockEntity::new);

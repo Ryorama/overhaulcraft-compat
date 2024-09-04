@@ -26,9 +26,9 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.CALORITE_MACHINE_CASING.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get().asItem());
 				tabData.accept(TstpContentModBlocks.HVAC_BLOCK.get().asItem());
-			})
-
-					.build());
+				tabData.accept(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get().asItem());
+				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
+			}).build());
 	public static final RegistryObject<CreativeModeTab> TSTP_CONTENT_TERRARIA = REGISTRY.register("tstp_content_terraria",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_content_terraria")).icon(() -> new ItemStack(TstpContentModBlocks.GRASS_BLOCK.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.DIRT_BLOCK.get().asItem());
@@ -48,9 +48,7 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModItems.WOOD.get());
 				tabData.accept(TstpContentModItems.LIFE_CRYSTAL.get());
 				tabData.accept(TstpContentModBlocks.LIFE_CRYSTAL_BLOCK.get().asItem());
-			})
-
-					.build());
+			}).build());
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {

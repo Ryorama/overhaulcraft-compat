@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:redstone"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "III",
+    "IRI",
+    "IFI"
+  ],
+  "result": {
+    "item": "tstp_content:light_rf_electricity_generator"
+  },
+  "show_notification": true
+}

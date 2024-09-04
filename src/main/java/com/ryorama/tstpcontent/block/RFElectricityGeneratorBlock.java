@@ -4,9 +4,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.mrcrayfish.furniture.refurbished.block.FurnitureHorizontalEntityBlock;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
-import com.mrcrayfish.furniture.refurbished.blockentity.ElectricityGeneratorBlockEntity;
-import com.mrcrayfish.furniture.refurbished.core.ModBlockEntities;
 import com.mrcrayfish.furniture.refurbished.data.tag.BlockTagSupplier;
+import com.ryorama.tstpcontent.block.entity.RFElectricityGeneratorBlockEntity;
+import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -46,7 +46,7 @@ public class RFElectricityGeneratorBlock extends FurnitureHorizontalEntityBlock 
     @Override
     protected Map<BlockState, VoxelShape> generateShapes(ImmutableList<BlockState> immutableList) {
         return ImmutableMap.copyOf((Map)immutableList.stream().collect(Collectors.toMap((state) -> {
-            return immutableList;
+            return state;
         }, (o) -> {
             return Shapes.block();
         })));
@@ -59,20 +59,20 @@ public class RFElectricityGeneratorBlock extends FurnitureHorizontalEntityBlock 
 
     @Nullable
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new ElectricityGeneratorBlockEntity(pos, state);
+        return new RFElectricityGeneratorBlockEntity(pos, state);
     }
 
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide() ? createTicker(type, ModBlockEntities.ELECTRICITY_GENERATOR.get(), ElectricityGeneratorBlockEntity::clientTick) : null;
+        return createTicker(type, TstpContentModBlockEntities.RF_ELECTRICITY_GENERATOR.get(), RFElectricityGeneratorBlockEntity::tick);
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource source) {
-        if ((Boolean)state.getValue(POWERED)) {
-            Direction direction = (Direction)state.getValue(DIRECTION);
+        if (state.getValue(POWERED)) {
+            Direction direction = state.getValue(DIRECTION);
             Vec3 vec = (new Vec3(3.5, 16.0, 3.5)).scale(0.0625);
             vec = vec.yRot((float)direction.get2DDataValue() * -1.5707964F - 1.5707964F);
-            vec = vec.add((double)pos.getX(), (double)pos.getY(), (double)pos.getZ()).add(0.5, 0.0, 0.5);
+            vec = vec.add(pos.getX(), pos.getY(), pos.getZ()).add(0.5, 0.0, 0.5);
             level.addParticle(ParticleTypes.SMOKE, vec.x, vec.y, vec.z, 0.0, 0.0, 0.0);
             level.addParticle(ParticleTypes.SMOKE, vec.x, vec.y, vec.z, 0.0, 0.0, 0.0);
         }

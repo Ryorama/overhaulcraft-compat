@@ -95,11 +95,6 @@ public class HVACBlockBlockEntity extends RandomizableContainerBlockEntity imple
 	}
 
 	@Override
-	public Component getDisplayName() {
-		return Component.literal("HVAC Block");
-	}
-
-	@Override
 	protected NonNullList<ItemStack> getItems() {
 		return this.stacks;
 	}
