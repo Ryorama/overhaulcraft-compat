@@ -36,6 +36,7 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> IRON = REGISTRY.register("iron", () -> new IronItemItem());
 	public static final RegistryObject<Item> COPPER = REGISTRY.register("copper", () -> new CopperItemItem());
 	public static final RegistryObject<Item> MUSHROOM = REGISTRY.register("mushroom", () -> new MushroomItem());
+	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> MUSHROOM_PLANT = block(TstpContentModBlocks.MUSHROOM_PLANT);
 	public static final RegistryObject<Item> WOOD = REGISTRY.register("wood", () -> new WoodItem());
 	public static final RegistryObject<Item> LIFE_CRYSTAL = REGISTRY.register("life_crystal", () -> new LifeCrystalItem());

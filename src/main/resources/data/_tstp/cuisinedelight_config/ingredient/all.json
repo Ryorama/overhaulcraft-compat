@@ -502,7 +502,7 @@
           "item": "quark:egg_parrot_green"
         },
         {
-          "item": "quark:egg_parrot_grey"
+          "item": "quark:egg_parrot_gray"
         },
         {
           "item": "quark:egg_parrot_yellow_blue"
@@ -527,6 +527,9 @@
         },
         {
           "item": "alexscaves:subterranodon_egg"
+        },
+        {
+          "item": "minecraft:dragon_egg"
         }
       ],
       "max_time": 240,

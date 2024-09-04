@@ -266,7 +266,7 @@
       "next": "cuisinedelight:fried_egg",
       "stage": "RAW"
     },
-    "quark:egg_parrot_grey": {
+    "quark:egg_parrot_gray": {
       "next": "cuisinedelight:fried_egg",
       "stage": "RAW"
     },
@@ -300,6 +300,10 @@
     },
     "alexscaves:subterranodon_egg": {
       "next": "cuisinedelight:fried_egg",
+      "stage": "RAW"
+    },
+    "minecraft:dragon_egg": {
+      "next": "tstp_content:fried_dragon_egg",
       "stage": "RAW"
     }
   }

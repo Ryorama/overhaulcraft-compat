@@ -92,9 +92,9 @@
       "name": "tstp_content:terraria_dim",
       "sea_level": 63,
       "legacy_random_source": false,
-      "disable_mob_generation": false,
-      "aquifers_enabled": true,
-      "ore_veins_enabled": true,
+      "disable_mob_generation": true,
+      "aquifers_enabled": false,
+      "ore_veins_enabled": false,
       "default_block": {
         "Name": "tstp_content:stone"
       },
