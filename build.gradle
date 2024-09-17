@@ -103,7 +103,6 @@ dependencies {
     implementation fg.deobf('curse.maven:ballistix-443915:5022909')
     implementation fg.deobf('curse.maven:electrodynamics-316867:5022907')
     implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
-    implementation fg.deobf('curse.maven:cannibalscalling-776031:5382184')
     implementation fg.deobf('curse.maven:furniture-897116:5651939')
     implementation fg.deobf('curse.maven:framework-549225:5680064')
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")

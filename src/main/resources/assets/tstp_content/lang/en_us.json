@@ -38,10 +38,6 @@
   "block.tstp_content.ice": "Ice",
   "block.tstp_content.light_rf_electricity_generator": "Light RF Electricity Generator",
   "block.tstp_content.dark_rf_electricity_generator": "Dark RF Electricity Generator",
-  "item.cannibals_calling.cooked_human_meat": "Cooked Human Meat",
-  "item.cannibals_calling.cured_flesh": "Cured Flesh",
-  "item.cannibals_calling.human_meat": "Human Meat",
-  "item.cannibals_calling.inhuman_meat": "Inhuman Meat",
 
   "block.gtceu.cryo_freezer": "Cryo Freezer",
   "gtceu.cryo_freezer": "Cryo Freezer",

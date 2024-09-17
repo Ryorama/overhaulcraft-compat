@@ -106,10 +106,6 @@
       "next": "croptopia:baked_yam",
       "stage": "COOKED"
     },
-    "human_meat:human_meat": {
-      "next": "cannibals_calling:cooked_human_meat",
-      "stage": "COOKED"
-    },
     "alexscaves:dinosaur_chop": {
       "next": "alexscaves:cooked_dinosaur_chop",
       "stage": "COOKED"
