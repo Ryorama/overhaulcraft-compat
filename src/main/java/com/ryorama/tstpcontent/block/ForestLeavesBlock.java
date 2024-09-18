@@ -12,9 +12,4 @@ public class ForestLeavesBlock extends Block {
 	public ForestLeavesBlock() {
 		super(BlockBehaviour.Properties.of().ignitedByLava().sound(SoundType.GRASS).strength(1f, 10f));
 	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 15;
-	}
 }

@@ -19,9 +19,4 @@ public class SnowBlock extends Block {
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:snowhit1"))))
 				.strength(1f, 10f));
 	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 15;
-	}
 }

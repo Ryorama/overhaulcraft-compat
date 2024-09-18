@@ -20,9 +20,4 @@ public class CopperOreBlock extends Block {
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:tink0"))))
 				.strength(1f, 10f).requiresCorrectToolForDrops());
 	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 15;
-	}
 }

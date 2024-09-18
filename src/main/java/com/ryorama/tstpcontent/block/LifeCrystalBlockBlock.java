@@ -33,7 +33,7 @@ public class LifeCrystalBlockBlock extends Block {
 
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+		return 8;
 	}
 
 	@Override
