@@ -524,6 +524,27 @@
         },
         {
           "item": "minecraft:dragon_egg"
+        },
+        {
+          "item": "extrameat:raw_axolotl_chop"
+        },
+        {
+          "item": "extrameat:raw_parrot"
+        },
+        {
+          "item": "extrameat:raw_frog_leg"
+        },
+        {
+          "item": "extrameat:raw_bee"
+        },
+        {
+          "item": "extrameat:raw_ribs"
+        },
+        {
+          "item": "extrameat:raw_tadpole"
+        },
+        {
+          "item": "extrameat:allay_goop"
         }
       ],
       "max_time": 240,

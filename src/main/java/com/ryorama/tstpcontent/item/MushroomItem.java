@@ -29,7 +29,9 @@ public class MushroomItem extends Item {
 		}
 
 		entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 2, 2, false, false));
-		entity.getItemInHand(hand).shrink(1);
+		if (!entity.isCreative()) {
+			entity.getItemInHand(hand).shrink(1);
+		}
 
 		return InteractionResultHolder.pass(entity.getItemInHand(hand));
 	}

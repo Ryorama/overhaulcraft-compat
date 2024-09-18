@@ -301,6 +301,31 @@
     "minecraft:dragon_egg": {
       "next": "tstp_content:fried_dragon_egg",
       "stage": "RAW"
+    },
+
+    "extrameat:raw_axolotl_chop": {
+      "next": "extrameat:cooked_axolotl_chop",
+      "stage": "RAW"
+    },
+    "extrameat:raw_parrot": {
+      "next": "extrameat:cooked_parrot",
+      "stage": "RAW"
+    },
+    "extrameat:raw_frog_leg": {
+      "next": "extrameat:cooked_frog_leg",
+      "stage": "RAW"
+    },
+    "extrameat:raw_bee": {
+      "next": "extrameat:cooked_bee",
+      "stage": "RAW"
+    },
+    "extrameat:raw_ribs": {
+      "next": "extrameat:cooked_ribs",
+      "stage": "RAW"
+    },
+    "extrameat:raw_tadpole": {
+      "next": "extrameat:cooked_tadpole",
+      "stage": "RAW"
     }
   }
 }
