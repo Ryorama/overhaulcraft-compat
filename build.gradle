@@ -116,6 +116,25 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
 }
 
+jar {
+    from('/') {
+        include 'LICENSE.txt'
+    }
+
+    manifest {
+        attributes([
+                "Specification-Title": "tstp_content",
+                "Specification-Vendor": "Ryorama",
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.version,
+                "Implementation-Vendor" :"Ryorama",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "tstp_content.mixins.json"
+        ])
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }

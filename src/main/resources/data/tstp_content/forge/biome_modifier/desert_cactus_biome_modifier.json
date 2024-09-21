@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "tstp_content:desert_terraria",
-  "features": "tstp_content:desert_cactus",
-  "step": "surface_structures"
-}

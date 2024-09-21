@@ -23,7 +23,7 @@ public class LifeCrystalBlockBlock extends Block {
 				.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystal_destroy")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.stone.step")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystal_destroy")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystal_destroy")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:crystal_destroy"))))
-				.strength(1f, 10f).lightLevel(s -> 8).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+				.strength(1f, 1f).lightLevel(s -> 8).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
