@@ -6,7 +6,8 @@
   "mixins": [
     "ChunkGeneratorMixin",
     "BlockStoreBuilderMixin",
-    "PotionExpiryMixin"
+    "PotionExpiryMixin",
+    "RenderEnqueueMixin"
   ],
   "client": [
   ],
