@@ -22,11 +22,17 @@ import com.ryorama.tstpcontent.TstpContentMod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TstpContentModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TstpContentMod.MODID);
-	public static final RegistryObject<CreativeModeTab> TSTP_GENERAL = REGISTRY.register("tstp_general",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_general")).icon(() -> new ItemStack(TstpContentModBlocks.HVAC_BLOCK.get())).displayItems((parameters, tabData) -> {
+	public static final RegistryObject<CreativeModeTab> TSTP_GT = REGISTRY.register("tstp_gt",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_gt")).icon(() -> new ItemStack(TstpContentModBlocks.CALORITE_MACHINE_CASING.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.CALORITE_MACHINE_CASING.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get().asItem());
+			}).build());
+	public static final RegistryObject<CreativeModeTab> TSTP_TAS = REGISTRY.register("tstp_tas",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_tas")).icon(() -> new ItemStack(TstpContentModBlocks.HVAC_BLOCK.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.HVAC_BLOCK.get().asItem());
+			}).build());
+	public static final RegistryObject<CreativeModeTab> TSTP_MRCF = REGISTRY.register("tstp_mrcf",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_mrcf")).icon(() -> new ItemStack(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get().asItem());
 				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
 			}).build());

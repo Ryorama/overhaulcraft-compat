@@ -7,6 +7,7 @@ import com.thevortex.potionsmaster.init.ModPotions;
 import com.thevortex.potionsmaster.init.ModRegistry;
 import com.thevortex.potionsmaster.items.potions.recipes.oresight.CoalPotionRecipe;
 import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
+import com.thevortex.potionsmaster.render.util.xray.Controller;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -66,8 +67,6 @@ public class TstpContentMod {
 
 	public void setup(FMLCommonSetupEvent event) {
 		registerPotions();
-		LOGGER.info("BlockStoreBuilderList: " + BlockStoreBuilder.list);
-		LOGGER.info("OreRefs: " + OresRef.RANDOMIUM.toString());
 	}
 
 	private static final String PROTOCOL_VERSION = "1";
@@ -81,26 +80,12 @@ public class TstpContentMod {
 
 	private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
 
-	public static void queueServerWork(int tick, Runnable action) {
-		if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
-			workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
-	}
-
 	private static void registerPotions() {
 		BrewingRecipeRegistry.addRecipe(new RandomiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.RANDOMIUM_SIGHT.get())));
 	}
 
 	@SubscribeEvent
 	public void tick(TickEvent.ServerTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
-			workQueue.forEach(work -> {
-				work.setValue(work.getValue() - 1);
-				if (work.getValue() == 0)
-					actions.add(work);
-			});
-			actions.forEach(e -> e.getKey().run());
-			workQueue.removeAll(actions);
-		}
+
 	}
 }

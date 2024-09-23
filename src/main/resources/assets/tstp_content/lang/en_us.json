@@ -5,14 +5,16 @@
   "subtitles.crystal_destroy": "Destroy Life Crystal",
   "block.tstp_content.copper_ore": "Copper Ore",
   "item.tstp_content.copper": "Copper",
-  "item_group.tstp_content.tstp_content_terraria": "TSTP Content Terraria",
   "item.tstp_content.wood": "Wood",
   "block.tstp_content.calorite_machine_casing": "Calorite Machine Casing",
   "item.tstp_content.mushroom": "Mushroom",
   "item.tstp_content.fried_dragon_egg": "Fried Dragon Egg",
   "item.tstp_content.life_crystal": "Life Crystal",
   "block.tstp_content.grass": "Grass",
-  "item_group.tstp_content.tstp_general": "TSTP General",
+  "item_group.tstp_content.tstp_gt": "OverhaulCraft: GT Component",
+  "item_group.tstp_content.tstp_tas": "OverhaulCraft: Tough As Nails Component",
+  "item_group.tstp_content.tstp_mrcf": "OverhaulCraft: Furniture Refurbished Component",
+  "item_group.tstp_content.tstp_content_terraria": "OverhaulCraft: Terrarian Component",
   "subtitles.eat": "Eat",
   "biome.tstp_content.snow_terraria": "Terrarian Tundra",
   "block.tstp_content.life_crystal_block": "Life Crystal",
@@ -91,5 +93,5 @@
   "planet.adastraextra.uranus": "Uranus",
   "planet.adastraextra.uranus_orbit": "Uranus Orbit",
 
-  "effect.tstp_content.randomiumpotioneffect": "RandomiumSight"
+  "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight"
 }
