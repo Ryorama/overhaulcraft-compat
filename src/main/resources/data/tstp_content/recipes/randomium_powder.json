@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "potionsmaster:pestle"
+    },
+    {
+      "item": "randomium:randomium_ore"
+    },
+    {
+      "item":"potionsmaster:ender_powder"
+    },
+    {
+      "item": "potionsmaster:tile_mortar"
+    }
+  ],
+  "result": {
+    "item": "tstp_content:randomium_powder"
+  }
+}

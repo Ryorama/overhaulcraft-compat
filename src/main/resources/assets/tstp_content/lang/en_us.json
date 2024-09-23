@@ -38,6 +38,11 @@
   "block.tstp_content.ice": "Ice",
   "block.tstp_content.light_rf_electricity_generator": "Light RF Electricity Generator",
   "block.tstp_content.dark_rf_electricity_generator": "Dark RF Electricity Generator",
+  "item.tstp_content.calcinatedrandomium_powder": "Calcinated Randomium Powder",
+  "item.tstp_content.randomium_powder": "Randomium Powder",
+  "item.minecraft.potion.effect.randomium_sight": "RandomiumSight",
+  "item.minecraft.splash_potion.effect.randomium_sight": "Splash Potion of RandomiumSight",
+  "item.minecraft.lingering_potion.effect.randomium_sight": "Lingering Potion of RandomiumSight",
 
   "block.gtceu.cryo_freezer": "Cryo Freezer",
   "gtceu.cryo_freezer": "Cryo Freezer",
@@ -84,5 +89,7 @@
   "planet.adastraextra.thebe": "Thebe",
   "planet.adastraextra.thebe_orbit": "Thebe Orbit",
   "planet.adastraextra.uranus": "Uranus",
-  "planet.adastraextra.uranus_orbit": "Uranus Orbit"
+  "planet.adastraextra.uranus_orbit": "Uranus Orbit",
+
+  "effect.tstp_content.randomiumpotioneffect": "RandomiumSight"
 }

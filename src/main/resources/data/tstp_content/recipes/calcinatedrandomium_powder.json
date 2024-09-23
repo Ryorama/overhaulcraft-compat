@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tstp_content:randomium_powder"
+  },
+  "result": "tstp_content:calcinatedrandomium_powder",
+  "experience": 0.75,
+  "cookingtime": 800
+}

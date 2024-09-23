@@ -4,6 +4,7 @@
  */
 package com.ryorama.tstpcontent.init;
 
+import com.thevortex.potionsmaster.init.ModRegistry;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.common.Mod;
@@ -54,6 +55,10 @@ public class TstpContentModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			tabData.accept(TstpContentModBlocks.MUSHROOM_PLANT.get().asItem());
+		}
+		if (tabData.getTabKey() == ModRegistry.CREATIVE_TAB.getKey()) {
+			tabData.accept(TstpContentModItems.RANDOMIUM_POWDER);
+			tabData.accept(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
 		}
 	}
 }

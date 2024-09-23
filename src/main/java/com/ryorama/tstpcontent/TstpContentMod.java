@@ -1,5 +1,20 @@
 package com.ryorama.tstpcontent;
 
+import com.ryorama.tstpcontent.init.*;
+import com.ryorama.tstpcontent.item.recipes.oresight.RandomiumPotionRecipe;
+import com.ryorama.tstpcontent.reference.OresRef;
+import com.thevortex.potionsmaster.init.ModPotions;
+import com.thevortex.potionsmaster.init.ModRegistry;
+import com.thevortex.potionsmaster.items.potions.recipes.oresight.CoalPotionRecipe;
+import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -26,11 +41,6 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-import com.ryorama.tstpcontent.init.TstpContentModTabs;
-import com.ryorama.tstpcontent.init.TstpContentModSounds;
-import com.ryorama.tstpcontent.init.TstpContentModItems;
-import com.ryorama.tstpcontent.init.TstpContentModBlocks;
-import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import org.valkyrienskies.mod.client.IVSCamera;
 import org.valkyrienskies.mod.common.ValkyrienSkiesMod;
 
@@ -40,15 +50,24 @@ public class TstpContentMod {
 	public static final String MODID = "tstp_content";
 
 	public TstpContentMod() {
-		//ValkyrienSkiesMod.getVsCore().teleportShip();
+		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		TstpContentModSounds.REGISTRY.register(bus);
+		TstpContentModEffects.REGISTRY.register(bus);
 		TstpContentModBlocks.REGISTRY.register(bus);
 		TstpContentModBlockEntities.REGISTRY.register(bus);
 		TstpContentModItems.REGISTRY.register(bus);
-
+		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
+
+		modBus.addListener(this::setup);
+	}
+
+	public void setup(FMLCommonSetupEvent event) {
+		registerPotions();
+		LOGGER.info("BlockStoreBuilderList: " + BlockStoreBuilder.list);
+		LOGGER.info("OreRefs: " + OresRef.RANDOMIUM.toString());
 	}
 
 	private static final String PROTOCOL_VERSION = "1";
@@ -65,6 +84,10 @@ public class TstpContentMod {
 	public static void queueServerWork(int tick, Runnable action) {
 		if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
 			workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
+	}
+
+	private static void registerPotions() {
+		BrewingRecipeRegistry.addRecipe(new RandomiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.RANDOMIUM_SIGHT.get())));
 	}
 
 	@SubscribeEvent

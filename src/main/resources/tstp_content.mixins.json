@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "tstp_content.mixins.refmap.json",
   "mixins": [
-    "ChunkGeneratorMixin"
+    "ChunkGeneratorMixin",
+    "BlockStoreBuilderMixin",
+    "PotionExpiryMixin"
   ],
   "client": [
   ],

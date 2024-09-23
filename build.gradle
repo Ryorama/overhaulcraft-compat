@@ -105,6 +105,8 @@ dependencies {
     implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
     implementation fg.deobf('curse.maven:furniture-897116:5651939')
     implementation fg.deobf('curse.maven:framework-549225:5680064')
+    implementation fg.deobf('curse.maven:potion_master-356801:4722415')
+
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
 
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
