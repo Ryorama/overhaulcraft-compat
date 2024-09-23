@@ -7,7 +7,12 @@ modId="tstp_content"
 version="1.0.0"
 displayName="Overhaul Compat"
 displayURL=""
-credits="The people behind the Forge modloader</br>The developers of all mods used</br>The developer of the classic TerraMine mod for various block textures"
+credits='''
+The people behind the Forge modloader
+The developers of all mods used
+The developer of the classic TerraMine mod for various block textures
+thevortex for help with custom ore sight potions
+'''
 authors="Ryorama"
 description="Custom Content and Compat for The Minecraft: Overhaul/OverhaulCraft pack"
 

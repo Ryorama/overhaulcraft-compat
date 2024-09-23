@@ -302,30 +302,112 @@
       "next": "tstp_content:fried_dragon_egg",
       "stage": "RAW"
     },
-
     "extrameat:raw_axolotl_chop": {
       "next": "extrameat:cooked_axolotl_chop",
-      "stage": "RAW"
+      "stage": "COOKED"
     },
     "extrameat:raw_parrot": {
       "next": "extrameat:cooked_parrot",
-      "stage": "RAW"
+      "stage": "COOKED"
     },
     "extrameat:raw_frog_leg": {
       "next": "extrameat:cooked_frog_leg",
-      "stage": "RAW"
+      "stage": "COOKED"
     },
     "extrameat:raw_bee": {
       "next": "extrameat:cooked_bee",
-      "stage": "RAW"
+      "stage": "COOKED"
     },
     "extrameat:raw_ribs": {
       "next": "extrameat:cooked_ribs",
-      "stage": "RAW"
+      "stage": "COOKED"
     },
     "extrameat:raw_tadpole": {
       "next": "extrameat:cooked_tadpole",
-      "stage": "RAW"
+      "stage": "COOKED"
+    },
+    "aquaculture:fish_fillet_raw": {
+      "next": "aquaculture:fish_fillet_cooked",
+      "stage": "COOKED"
+    },
+    "blue_skies:municipal_monkfish": {
+      "next": "blue_skies:cooked_municipal_monkfish",
+      "stage": "COOKED"
+    },
+    "blue_skies:charscale_moki": {
+      "next": "blue_skies:cooked_charscale_moki",
+      "stage": "COOKED"
+    },
+    "blue_skies:horizofin_tunid": {
+      "next": "blue_skies:cooked_horizofin_tunid",
+      "stage": "COOKED"
+    },
+    "extrameat:raw_ribs": {
+      "next": "extrameat:cooked_ribs",
+      "stage": "COOKED"
+    },
+    "extrameat:raw_tadpole": {
+      "next": "extrameat:cooked_tadpole",
+      "stage": "COOKED"
+    },
+    "naturalist:bass": {
+      "next": "naturalist:cooked_bass",
+      "stage": "COOKED"
+    },
+    "naturalist:catfish": {
+      "next": "naturalist:cooked_catfish",
+      "stage": "COOKED"
+    },
+    "quark:crab_leg": {
+      "next": "quark:cooked_crab_leg",
+      "stage": "COOKED"
+    },
+    "aetherdelight:raw_aerfillet": {
+      "next": "aetherdelight:cooked_aerfillet",
+      "stage": "COOKED"
+    },
+
+
+
+    "blue_skies:carabeef": {
+      "next": "blue_skies:cooked_carabeef",
+      "stage": "COOKED"
+    },
+    "blue_skies:venison": {
+      "next": "blue_skies:cooked_venison",
+      "stage": "COOKED"
+    },
+    "blue_skies:monitor_tail": {
+      "next": "blue_skies:cooked_monitor_tail",
+      "stage": "COOKED"
+    },
+    "ends_delight:raw_ender_sausage": {
+      "next": "ends_delight:ender_sausage",
+      "stage": "COOKED"
+    },
+    "naturalist:duck": {
+      "next": "naturalist:cooked_duck",
+      "stage": "COOKED"
+    },
+    "naturalist:venison": {
+      "next": "naturalist:cooked_venison",
+      "stage": "COOKED"
+    },
+    "naturalist:lizard_tail": {
+      "next": "naturalist:cooked_lizard_tail",
+      "stage": "COOKED"
+    },
+    "autumnity:turkey": {
+      "next": "autumnity:cooked_turkey",
+      "stage": "COOKED"
+    },
+    "autumnity:turkey_piece": {
+      "next": "autumnity:cooked_turkey_piece",
+      "stage": "COOKED"
+    },
+    "rats:raw_rat": {
+      "next": "rats:cooked_rat",
+      "stage": "COOKED"
     }
   }
 }

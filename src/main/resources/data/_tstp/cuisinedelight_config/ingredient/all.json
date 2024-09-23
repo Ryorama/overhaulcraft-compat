@@ -328,6 +328,33 @@
         },
         {
           "item": "alexsmobs:blobfish"
+        },
+        {
+          "item": "aquaculture:fish_fillet_raw"
+        },
+        {
+          "item": "blue_skies:grittle_flatfish"
+        },
+        {
+          "item": "blue_skies:municipal_monkfish"
+        },
+        {
+          "item": "blue_skies:charscale_moki"
+        },
+        {
+          "item": "blue_skies:horizofin_tunid"
+        },
+        {
+          "item": "naturalist:bass"
+        },
+        {
+          "item": "naturalist:catfish"
+        },
+        {
+          "item": "quark:crab_leg"
+        },
+        {
+          "item": "aetherdelight:raw_aerfillet"
         }
       ],
       "max_time": 240,
@@ -545,6 +572,63 @@
         },
         {
           "item": "extrameat:allay_goop"
+        },
+        {
+          "item": "blue_skies:carabeef"
+        },
+        {
+          "item": "blue_skies:venison"
+        },
+        {
+          "item": "ends_delight:raw_ender_sausage"
+        },
+        {
+          "item": "naturalist:duck"
+        },
+        {
+          "item": "naturalist:venison"
+        },
+        {
+          "item": "naturalist:lizard_tail"
+        },
+        {
+          "item": "naturalist:caterpillar"
+        },
+        {
+          "item": "naturalist:butterfly"
+        },
+        {
+          "item": "autumnity:turkey"
+        },
+        {
+          "item": "autumnity:turkey_piece"
+        },
+        {
+          "item": "rats:raw_rat"
+        },
+        {
+          "item": "blue_skies:monitor_tail"
+        },
+        {
+          "item": "iceandfire:fire_dragon_flesh"
+        },
+        {
+          "item": "iceandfire:ice_dragon_flesh"
+        },
+        {
+          "item": "iceandfire:lightning_dragon_flesh"
+        },
+        {
+          "item": "iceandfire:fire_dragon_heart"
+        },
+        {
+          "item": "iceandfire:ice_dragon_heart"
+        },
+        {
+          "item": "iceandfire:lightning_dragon_heart"
+        },
+        {
+          "item": "iceandfire:cyclops_eye"
         }
       ],
       "max_time": 240,

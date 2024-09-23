@@ -5,7 +5,7 @@
       "item": "potionsmaster:pestle"
     },
     {
-      "item": "randomium:randomium_ore"
+      "tag": "forge:ores/randomium"
     },
     {
       "item":"potionsmaster:ender_powder"
