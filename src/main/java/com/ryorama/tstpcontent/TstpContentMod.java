@@ -8,6 +8,7 @@ import com.thevortex.potionsmaster.init.ModRegistry;
 import com.thevortex.potionsmaster.items.potions.recipes.oresight.CoalPotionRecipe;
 import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
 import com.thevortex.potionsmaster.render.util.xray.Controller;
+import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -49,6 +50,8 @@ import org.valkyrienskies.mod.common.ValkyrienSkiesMod;
 public class TstpContentMod {
 	public static final Logger LOGGER = LogManager.getLogger(TstpContentMod.class);
 	public static final String MODID = "tstp_content";
+	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
+
 
 	public TstpContentMod() {
 		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();

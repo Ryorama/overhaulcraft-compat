@@ -8,7 +8,14 @@ import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.tstpcontent.block.*;
+import com.ryorama.tstpcontent.block.cuisine_delight.DarkPotBlock;
+import com.ryorama.tstpcontent.block.cuisine_delight.DarkPotModelGen;
+import com.ryorama.tstpcontent.block.cuisine_delight.entity.DarkPotBlockEntity;
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import dev.xkmc.l2modularblock.DelegateBlock;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -51,4 +58,19 @@ public class TstpContentModBlocks {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
+
+	public static final BlockEntry<DelegateBlock> DARK_POT;
+	public static final BlockEntityEntry<DarkPotBlockEntity> BE_DARK_POT;
+
+	static {
+		DARK_POT = TstpContentMod.REGISTRATE.block("dark_cooking_pot", p -> DelegateBlock.newBaseBlock(
+						BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
+								.strength(0.5F, 6.0F).sound(SoundType.LANTERN),
+						DarkPotBlock.ENTITY, DarkPotBlock.STATE, DarkPotBlock.TRAY))
+				.blockstate(DarkPotModelGen::build)
+				.defaultLang().simpleItem().register();
+
+		BE_DARK_POT = TstpContentMod.REGISTRATE.blockEntity("dark_cooking_pot", DarkPotBlockEntity::new)
+				.validBlock(DARK_POT).register();
+	}
 }

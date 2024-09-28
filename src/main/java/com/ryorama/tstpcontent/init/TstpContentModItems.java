@@ -4,8 +4,13 @@
  */
 package com.ryorama.tstpcontent.init;
 
+import com.ryorama.tstpcontent.item.cuisinedelight.DarkPotItem;
 import com.thevortex.potionsmaster.items.powders.base.BasePowder;
 import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
+import com.tterrag.registrate.providers.ProviderType;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,7 +55,13 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);
 	public static final RegistryObject<Item> OSTRUM_MACHINE_CASING = block(TstpContentModBlocks.OSTRUM_MACHINE_CASING);
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK);
+	public static final ItemEntry<DarkPotItem> DARK_POT;
 
+	static {
+		DARK_POT = TstpContentMod.REGISTRATE.item("dark_cooking_pot", p -> new DarkPotItem(TstpContentModBlocks.DARK_POT.get(), p.stacksTo(1)))
+				.model((ctx, pvd) -> pvd.getBuilder(ctx.getName()).parent(new ModelFile.UncheckedModelFile("builtin/entity")))
+				.setData(ProviderType.LANG, NonNullBiConsumer.noop()).register();
+	}
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
 	}
