@@ -2,19 +2,12 @@ package com.ryorama.tstpcontent;
 
 import com.ryorama.tstpcontent.init.*;
 import com.ryorama.tstpcontent.item.recipes.oresight.RandomiumPotionRecipe;
-import com.ryorama.tstpcontent.reference.OresRef;
-import com.thevortex.potionsmaster.init.ModPotions;
-import com.thevortex.potionsmaster.init.ModRegistry;
-import com.thevortex.potionsmaster.items.potions.recipes.oresight.CoalPotionRecipe;
-import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
-import com.thevortex.potionsmaster.render.util.xray.Controller;
 import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.util.thread.SidedThreadGroups;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -38,13 +30,8 @@ import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.List;
 import java.util.Collection;
-import java.util.ArrayList;
 import java.util.AbstractMap;
-
-import org.valkyrienskies.mod.client.IVSCamera;
-import org.valkyrienskies.mod.common.ValkyrienSkiesMod;
 
 @Mod("tstp_content")
 public class TstpContentMod {
@@ -64,6 +51,7 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
+
 
 		modBus.addListener(this::setup);
 	}

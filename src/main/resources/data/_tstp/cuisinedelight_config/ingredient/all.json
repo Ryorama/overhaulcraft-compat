@@ -355,6 +355,9 @@
         },
         {
           "item": "aetherdelight:raw_aerfillet"
+        },
+        {
+          "item": "rats:ratfish"
         }
       ],
       "max_time": 240,
