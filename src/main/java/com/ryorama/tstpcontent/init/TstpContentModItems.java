@@ -10,6 +10,7 @@ import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
+import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -37,6 +38,7 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> LIFE_CRYSTAL = REGISTRY.register("life_crystal", () -> new LifeCrystalItem());
 	public static final RegistryObject<Item> RANDOMIUM_POWDER = REGISTRY.register("randomium_powder", () -> new BasePowder(new Item.Properties()));
 	public static final RegistryObject<Item> CALCINATED_RANDOMIUM_POWDER = REGISTRY.register("calcinatedrandomium_powder", () -> new CalcinatedPowder(new Item.Properties()));
+	public static final RegistryObject<Item> MUSIC_DISC_1 = REGISTRY.register("music_disc_1", () -> new RecordItem(14, TstpContentModSounds.UNIVERSAL_COLLAPSE_EPIC.get(), new Item.Properties().stacksTo(1), 239 * 20));
 
 	public static final RegistryObject<Item> GRASS_BLOCK = block(TstpContentModBlocks.GRASS_BLOCK);
 	public static final RegistryObject<Item> DIRT_BLOCK = block(TstpContentModBlocks.DIRT_BLOCK);

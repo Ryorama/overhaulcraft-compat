@@ -39,7 +39,7 @@
       "origin_x": 300,
       "origin_y": 1425,
       "origin_z": 80300,
-      "overlay_texture_id": "cosmos:uranus_bar",
+      "overlay_texture_id": "uranus_bar",
       "shipbit_y": 24,
       "ship_min_y": 120
     }

@@ -21,7 +21,7 @@
       "origin_x": -152000,
       "origin_y": 2080,
       "origin_z": 300,
-      "overlay_texture_id": "cosmos:jb_bar",
+      "overlay_texture_id": "jb_bar",
       "shipbit_y": 32,
       "ship_min_y": 120
     }

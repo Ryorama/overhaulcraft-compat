@@ -24,4 +24,5 @@ public class TstpContentModSounds {
 	public static final RegistryObject<SoundEvent> SNOWHIT1 = REGISTRY.register("snowhit1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("tstp_content", "snowhit1")));
 	public static final RegistryObject<SoundEvent> TINK0 = REGISTRY.register("tink0", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("tstp_content", "tink0")));
 	public static final RegistryObject<SoundEvent> TINK1 = REGISTRY.register("tink1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("tstp_content", "tink1")));
+	public static final RegistryObject<SoundEvent> UNIVERSAL_COLLAPSE_EPIC = REGISTRY.register("universal_collapse_epic", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("tstp_content", "universal_collapse_epic")));
 }

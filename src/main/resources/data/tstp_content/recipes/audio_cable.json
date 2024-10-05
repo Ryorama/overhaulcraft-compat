@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "forge:leather"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "  R",
+    " L ",
+    "R  "
+  ],
+  "result": {
+    "item": "phonos:audio_cable"
+  },
+  "show_notification": true
+}

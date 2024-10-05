@@ -39,7 +39,7 @@
       "origin_x": 90100,
       "origin_y": 1120,
       "origin_z": 90100,
-      "overlay_texture_id": "cosmos:neptune_bar",
+      "overlay_texture_id": "neptune_bar",
       "shipbit_y": 24,
       "ship_min_y": 120
     }

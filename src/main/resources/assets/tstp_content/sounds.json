@@ -70,5 +70,13 @@
         "stream": false
       }
     ]
+  },
+  "universal_collapse_epic": {
+    "subtitle": "universal_collapse_epic.sub",
+    "sounds": [
+      {
+        "name": "tstp_content:music/universal_collapse_epic"
+      }
+    ]
   }
 }

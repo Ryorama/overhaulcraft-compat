@@ -128,7 +128,7 @@ dependencies {
     }
 
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
-    implementation fg.deobf(files('libs/Cosmic-Horizons_0.0.4.jar'))
+    implementation fg.deobf(files('libs/Cosmic-Horizons_0.0.5.jar'))
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
     implementation fg.deobf('curse.maven:geckolib-388172:5386948')
@@ -146,6 +146,9 @@ dependencies {
     implementation fg.deobf('curse.maven:farmers_delight-398521:5051242')
     implementation fg.deobf('curse.maven:farmers_delight-398521:5051242')
     implementation fg.deobf('curse.maven:enhanced_celestials-438447:5695587')
+    implementation fg.deobf('curse.maven:bos-757062:4727499')
+    implementation fg.deobf('curse.maven:architectury-419699:5137938')
+    implementation fg.deobf('curse.maven:butchery-973620:5746912')
 
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
 

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "tag": "create:seats"
+    },
+    "I": {
+      "tag": "forge:ingots/steel"
+    },
+    "E": {
+      "item": "ad_astra:steel_engine"
+    },
+    "T": {
+      "item": "ad_astra:steel_tank"
+    },
+    "G": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "pattern": [
+    "IGI",
+    "ISI",
+    "ETE"
+  ],
+  "result": {
+    "item": "cosmos:steel_space_nodule"
+  },
+  "show_notification": true
+}

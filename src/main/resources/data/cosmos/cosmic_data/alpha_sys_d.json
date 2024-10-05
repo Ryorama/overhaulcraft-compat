@@ -105,8 +105,6 @@
     "weather": false,
     "clouds": false,
     "sky_objects": false,
-    "gravity": 0,
-    "air_resistance": 1
   },
   "gui_data": {
     "alpha_sys": {

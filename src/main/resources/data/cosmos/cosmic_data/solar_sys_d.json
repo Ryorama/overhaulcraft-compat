@@ -36,7 +36,7 @@
       "scale": 400,
       "texture_id": "mercury",
       "collision": true,
-      "travel_to": "cosmos:mercury_wasteland",
+      "travel_to": "ad_astra:mercury",
       "glowing": false,
       "ringed": false
     },
@@ -51,7 +51,7 @@
       "scale": 830,
       "texture_id": "venus",
       "collision": true,
-      "travel_to": "cosmos:venuslands",
+      "travel_to": "ad_astra:venus",
       "glowing": false,
       "ringed": false
     },
@@ -81,7 +81,7 @@
       "scale": 300,
       "texture_id": "moon",
       "collision": true,
-      "travel_to": "cosmos:earth_moon",
+      "travel_to": "ad_astra:moon",
       "glowing": false,
       "ringed": false
     },
@@ -96,7 +96,7 @@
       "scale": 530,
       "texture_id": "mars",
       "collision": true,
-      "travel_to": "cosmos:marslands",
+      "travel_to": "ad_astra:mars",
       "glowing": false,
       "ringed": false
     },
@@ -229,6 +229,21 @@
       "travel_to": "cosmos:plutowastelands",
       "glowing": false,
       "ringed": false
+    },
+    "terrarian": {
+      "object_name": "Terrarian",
+      "x": -18100,
+      "y": 530,
+      "z": 7900,
+	  "yaw": 14,
+	  "pitch": -165,
+      "roll": 12,
+      "scale": 900,
+      "texture_id": "terrarian",
+      "collision": true,
+      "travel_to": "tstp_content:terraria_dim",
+      "glowing": false,
+      "ringed": false
     }
   },
   "attached_dimention_id": "cosmos:solar_sys_d",
@@ -264,7 +279,7 @@
           "travel_x": 100,
           "travel_y": 600,
           "travel_z": 100,
-          "unlocking_dimension": "cosmos:mercury_wasteland",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -305,7 +320,7 @@
           "travel_x": -9000,
           "travel_y": 900,
           "travel_z": -4000,
-          "unlocking_dimension": "cosmos:venuslands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "Thin",
             "color": "gray"
@@ -387,7 +402,7 @@
           "travel_x": -21600,
           "travel_y": 500,
           "travel_z": 3600,
-          "unlocking_dimension": "cosmos:earth_moon",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -428,7 +443,7 @@
           "travel_x": -41000,
           "travel_y": 860,
           "travel_z": 18000,
-          "unlocking_dimension": "cosmos:marslands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "Thin",
             "color": "gray"
@@ -469,7 +484,7 @@
           "travel_x": 17500,
           "travel_y": 1800,
           "travel_z": -53000,
-          "unlocking_dimension": "cosmos:jupiterlands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -516,7 +531,7 @@
           "travel_x": 10100,
           "travel_y": 580,
           "travel_z": -49100,
-          "unlocking_dimension": "cosmos:europa_lands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -557,7 +572,7 @@
           "travel_x": -65000,
           "travel_y": 1475,
           "travel_z": 30000,
-          "unlocking_dimension": "cosmos:saturn_lands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -604,7 +619,7 @@
           "travel_x": 300,
           "travel_y": 1425,
           "travel_z": 80300,
-          "unlocking_dimension": "cosmos:uranus_lands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -651,7 +666,7 @@
           "travel_x": 90100,
           "travel_y": 1120,
           "travel_z": 90100,
-          "unlocking_dimension": "cosmos:neptune_lands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -698,7 +713,7 @@
           "travel_x": 45100,
           "travel_y": 500,
           "travel_z": 121100,
-          "unlocking_dimension": "cosmos:plutowastelands",
+          "unlocking_dimension": "none",
           "atmosphere": {
             "text": "None",
             "color": "light_gray"
@@ -724,6 +739,47 @@
             "color": "green"
           },
           "life": 0,
+          "ringed": false
+        },
+        "terrarian": {
+          "texture_id": "terrarian",
+          "scale": 21,
+          "ponder_scale": 67,
+          "yaw": 14,
+          "pitch": -165,
+          "roll": 12,
+          "yaw_speed": 0.3,
+          "pitch_speed": 0,
+          "roll_speed": 0,
+          "travel_x": -18100,
+          "travel_y": 530,
+          "travel_z": 7900,
+          "unlocking_dimension": "none",
+          "atmosphere": {
+            "text": "Thick",
+            "color": "white"
+          },
+          "name": {
+            "text": "Terrarian",
+            "color": "lime"
+          },
+          "type": {
+            "text": "Rocky",
+            "color": "brown"
+          },
+          "conditions": {
+            "text": "Habitable",
+            "color": "green"
+          },
+          "size": {
+            "text": "Huge",
+            "color": "yellow"
+          },
+          "category": {
+            "text": "Terrestrial",
+            "color": "green"
+          },
+          "life": 100,
           "ringed": false
         }
       },

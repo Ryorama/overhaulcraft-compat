@@ -21,7 +21,7 @@
       "origin_x": -65000,
       "origin_y": 1475,
       "origin_z": 30000,
-      "overlay_texture_id": "cosmos:saturn_bar",
+      "overlay_texture_id": "saturn_bar",
       "shipbit_y": 24,
       "ship_min_y": 120
     }

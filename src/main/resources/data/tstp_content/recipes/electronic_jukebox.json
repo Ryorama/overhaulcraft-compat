@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "phonos:audio_cable"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "RCR",
+    "CJC",
+    "SCS"
+  ],
+  "result": {
+    "item": "phonos:electronic_jukebox"
+  },
+  "show_notification": true
+}

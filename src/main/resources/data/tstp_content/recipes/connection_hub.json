@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "C": {
+      "item": "phonos:audio_cable"
+    }
+  },
+  "pattern": [
+    "CPC"
+  ],
+  "result": {
+    "item": "phonos:connection_hub"
+  },
+  "show_notification": true
+}

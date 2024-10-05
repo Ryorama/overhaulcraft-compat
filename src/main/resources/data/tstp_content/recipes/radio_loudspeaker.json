@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "phonos:loudspeaker"
+    },
+    "C": {
+      "item": "phonos:audio_cable"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    },
+    "I": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "pattern": [
+    " I ",
+    "PLP",
+    "SCS"
+  ],
+  "result": {
+    "item": "phonos:radio_loudspeaker"
+  },
+  "show_notification": true
+}

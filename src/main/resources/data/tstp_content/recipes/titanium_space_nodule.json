@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "tag": "create:seats"
+    },
+    "I": {
+      "tag": "forge:ingots/titanium"
+    },
+    "E": {
+      "item": "ad_astra:ostrum_engine"
+    },
+    "T": {
+      "item": "ad_astra:ostrum_tank"
+    },
+    "G": {
+      "item": "minecraft:tinted_glass"
+    }
+  },
+  "pattern": [
+    "IGI",
+    "ISI",
+    "ETE"
+  ],
+  "result": {
+    "item": "cosmos:titanium_space_nodule"
+  },
+  "show_notification": true
+}

@@ -21,7 +21,7 @@
 	    "origin_x": -145200,
 	    "origin_y": 600,
 	    "origin_z": 32730,
-	    "overlay_texture_id": "cosmos:unknown_moon_bar",
+	    "overlay_texture_id": "unknown_moon_bar",
 	    "shipbit_y": 28,
 	    "ship_min_y": 120
     }

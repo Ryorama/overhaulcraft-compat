@@ -1,0 +1,17 @@
+{
+  "attached_dimention_id": "tstp_content:terraria_dim",
+  "dimensional_data": {
+    "dimension_type": "planet",
+    "sky_objects": false,
+    "atmospheric_data": {
+      "atmosphere_y": 560,
+      "travel_to": "cosmos:solar_sys_d",
+      "origin_x": -18200,
+      "origin_y": 1080,
+      "origin_z": 8000,
+      "overlay_texture_id": "terrarian_bar",
+      "shipbit_y": 24,
+      "ship_min_y": 120
+    }
+  }
+}

@@ -21,7 +21,7 @@
 	    "origin_x": 10100,
 	    "origin_y": 580,
 	    "origin_z": -49100,
-	    "overlay_texture_id": "cosmos:europa_bar",
+	    "overlay_texture_id": "europa_bar",
 	    "shipbit_y": 32,
 	    "ship_min_y": 120
     }
