@@ -5,6 +5,8 @@
   "subtitles.crystal_destroy": "Destroy Life Crystal",
   "block.tstp_content.copper_ore": "Copper Ore",
   "item.tstp_content.copper": "Copper",
+  "item.tstp_content.iron_bar": "Iron Bar",
+  "item.tstp_content.copper_bar": "Copper Bar",
   "item.tstp_content.wood": "Wood",
   "block.tstp_content.calorite_machine_casing": "Calorite Machine Casing",
   "item.tstp_content.mushroom": "Mushroom",
@@ -21,6 +23,7 @@
   "block.tstp_content.grass_block": "Grass Block",
   "block.tstp_content.ostrum_machine_casing": "Ostrum Machine Casing",
   "block.tstp_content.dirt_block": "Dirt",
+  "block.tstp_content.wood": "Wood",
   "biome.tstp_content.forest_terraria": "Terrarian Forest",
   "subtitles.health_crystal": "Use Life Crystal",
   "block.tstp_content.iron_ore": "Iron Ore",
@@ -37,13 +40,15 @@
   "block.tstp_content.sand_block": "Sand",
   "block.tstp_content.wood_log": "Wood Log",
   "block.tstp_content.forest_leaves": "Forest Leaves",
+  "block.tstp_content.randomium_ore_nether": "Nether Randomium Ore",
   "block.tstp_content.ice": "Ice",
   "block.tstp_content.light_rf_electricity_generator": "Light RF Electricity Generator",
   "block.tstp_content.dark_rf_electricity_generator": "Dark RF Electricity Generator",
   "item.tstp_content.calcinatedrandomium_powder": "Calcinated Randomium Powder",
   "item.tstp_content.randomium_powder": "Randomium Powder",
 
-  "item.tstp_content.music_disc_1": "Universal Collapse Epic - Astromorphic",
+  "item.tstp_content.music_disc_1": "Music Disc",
+  "item.tstp_content.music_disc_1.desc": "Universal Collapse Epic - Astromorphic | https://www.youtube.com/watch?v=PkFqGmBnNVE",
 
   "item.minecraft.potion.effect.randomium_sight": "RandomiumSight",
   "item.minecraft.splash_potion.effect.randomium_sight": "Splash Potion of RandomiumSight",
@@ -76,5 +81,8 @@
   "planet.twilightforest.twilight_forest": "Twilight Forest",
   "planet.tstp_content.twilight_forest_orbit": "Twilight Forest Orbit",
 
-  "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight"
+  "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight",
+
+  "text.autoconfig.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
+  "text.autoconfig.tstp_content.option.threadedNukeExplosion.@Tooltip": "Weather nuke explosions should be threaded, disable if more lag is caused on your device when enabled"
 }

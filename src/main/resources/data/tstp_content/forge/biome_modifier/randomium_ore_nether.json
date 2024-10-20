@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "tstp_content:ore_randomium_nether",
+  "step": "underground_ores"
+}

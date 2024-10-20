@@ -9,7 +9,9 @@
     "PotionExpiryMixin",
     "RenderEnqueueMixin",
     "OxygendeprivedOnEffectActiveTickProcedureMixin",
-    "ApplyGravityLogicProcedureMixin"
+    "ApplyGravityLogicProcedureMixin",
+    "NukeShellProjectileMixin",
+    "NuclearBombEntityMixin"
   ],
   "client": [
   ],

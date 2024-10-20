@@ -149,6 +149,12 @@ dependencies {
     implementation fg.deobf('curse.maven:bos-757062:4727499')
     implementation fg.deobf('curse.maven:architectury-419699:5137938')
     implementation fg.deobf('curse.maven:butchery-973620:5746912')
+    implementation fg.deobf('curse.maven:randomium-523013:5431202')
+    implementation fg.deobf("curse.maven:alexs-caves-924854:5825623")
+    implementation fg.deobf("curse.maven:cbc-nuclear-1060244:5678978")
+    implementation fg.deobf("curse.maven:citadel-331936:5633260")
+    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+    implementation fg.deobf("curse.maven:create-big-cannons-646668:5812633")
 
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
 

@@ -61,6 +61,7 @@ public class TstpContentModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 			tabData.accept(TstpContentModBlocks.MUSHROOM_PLANT.get().asItem());
+			tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_NETHER.get().asItem());
 		}
 		if (tabData.getTabKey() == ModRegistry.CREATIVE_TAB.getKey()) {
 			tabData.accept(TstpContentModItems.RANDOMIUM_POWDER);

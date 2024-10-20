@@ -14,11 +14,14 @@ import com.ryorama.tstpcontent.block.cuisine_delight.entity.DarkPotBlockEntity;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import dev.xkmc.l2modularblock.DelegateBlock;
+import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,6 +29,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.Block;
 
 import com.ryorama.tstpcontent.TstpContentMod;
+
+import java.util.function.Supplier;
 
 @RegistryContainer
 public class TstpContentModBlocks {
@@ -36,6 +41,11 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> SNOW = REGISTRY.register("snow", () -> new SnowBlock());
 	public static final RegistryObject<Block> GRASS = REGISTRY.register("grass", () -> new GrassBlock());
 	public static final RegistryObject<Block> WOOD_LOG = REGISTRY.register("wood_log", () -> new WoodLogBlock());
+	public static final RegistryObject<Block> WOOD = REGISTRY.register("wood", () -> new Block(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS)
+			.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:dig0")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wood.step")),
+					() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:dig0")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:dig0")),
+					() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("tstp_content:dig0"))))
+			.strength(1f, 10f)));
 	public static final RegistryObject<Block> CACTUS = REGISTRY.register("cactus", () -> new CactusBlock());
 	public static final RegistryObject<Block> FOREST_LEAVES = REGISTRY.register("forest_leaves", () -> new ForestLeavesBlock());
 	public static final RegistryObject<Block> ICE = REGISTRY.register("ice", () -> new IceBlock());
@@ -58,6 +68,8 @@ public class TstpContentModBlocks {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
+
+	public static final RegistryObject<Block> RANDOMIUM_ORE_NETHER = REGISTRY.register("randomium_ore_nether", () -> new RandomiumOreBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 
 	public static final BlockEntry<DelegateBlock> DARK_POT;
 	public static final BlockEntityEntry<DarkPotBlockEntity> BE_DARK_POT;
