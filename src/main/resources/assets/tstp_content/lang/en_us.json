@@ -84,5 +84,4 @@
   "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight",
 
   "text.autoconfig.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
-  "text.autoconfig.tstp_content.option.threadedNukeExplosion.@Tooltip": "Weather nuke explosions should be threaded, disable if more lag is caused on your device when enabled"
 }

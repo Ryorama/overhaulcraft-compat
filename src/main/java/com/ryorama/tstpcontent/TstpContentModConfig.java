@@ -1,11 +1,10 @@
 package com.ryorama.tstpcontent;
 
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import dev.toma.configuration.config.Config;
+import dev.toma.configuration.config.Configurable;
 
-@Config(name = TstpContentMod.MODID)
-public class TstpContentModConfig implements ConfigData {
-    @ConfigEntry.Gui.Tooltip
+@Config(id = TstpContentMod.MODID)
+public class TstpContentModConfig {
+    @Configurable
     public boolean threadedNukeExplosion = true;
 }

@@ -1,6 +1,7 @@
 package com.ryorama.tstpcontent.mixins;
 
 import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.TstpContentModConfig;
 import com.ryorama.tstpcontent.utils.Utils;
 import com.snackpirate.nukemod3.NukeShellProjectile;
 import net.minecraft.world.entity.EntityType;
@@ -23,10 +24,12 @@ public abstract class NukeShellProjectileMixin extends FuzedBigCannonProjectile 
     */
     @Overwrite(remap = false)
     private void nukeKaboom() {
-        if (TstpContentMod.CONFIG.threadedNukeExplosion) {
-            Utils.createNukeExplosionThreaded(level(), this);
-        } else {
-            Utils.createNukeExplosion(level(), this);
+        if (TstpContentMod.INSTANCE != null) {
+            if (TstpContentMod.INSTANCE.threadedNukeExplosion) {
+                Utils.createNukeExplosionThreaded(level(), this);
+            } else {
+                Utils.createNukeExplosion(level(), this);
+            }
         }
     }
 }

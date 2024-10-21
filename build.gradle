@@ -153,7 +153,7 @@ dependencies {
     implementation fg.deobf("curse.maven:alexs-caves-924854:5825623")
     implementation fg.deobf("curse.maven:cbc-nuclear-1060244:5678978")
     implementation fg.deobf("curse.maven:citadel-331936:5633260")
-    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+    implementation fg.deobf("curse.maven:configuration-444699:4710266")
     implementation fg.deobf("curse.maven:create-big-cannons-646668:5812633")
 
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")

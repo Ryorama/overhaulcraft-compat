@@ -2,9 +2,9 @@ package com.ryorama.tstpcontent;
 
 import com.ryorama.tstpcontent.init.*;
 import com.ryorama.tstpcontent.item.recipes.oresight.RandomiumPotionRecipe;
+import dev.toma.configuration.Configuration;
+import dev.toma.configuration.config.format.ConfigFormats;
 import dev.xkmc.l2library.base.L2Registrate;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -22,19 +22,19 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod("tstp_content")
+@Mod(TstpContentMod.MODID)
 public class TstpContentMod {
 	public static final Logger LOGGER = LogManager.getLogger(TstpContentMod.class);
 	public static final String MODID = "tstp_content";
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
-	public static TstpContentModConfig CONFIG = new TstpContentModConfig();
+	public static TstpContentModConfig INSTANCE;
 
 
 	public TstpContentMod() {
+		INSTANCE = Configuration.registerConfig(TstpContentModConfig.class, ConfigFormats.json()).getConfigInstance();
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		AutoConfig.register(TstpContentModConfig.class, GsonConfigSerializer::new);
-		CONFIG = AutoConfig.getConfigHolder(TstpContentModConfig.class).getConfig();
+
 		TstpContentModSounds.REGISTRY.register(bus);
 		TstpContentModEffects.REGISTRY.register(bus);
 		TstpContentModBlocks.REGISTRY.register(bus);
@@ -42,7 +42,6 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
-
 
 		bus.addListener(this::setup);
 	}

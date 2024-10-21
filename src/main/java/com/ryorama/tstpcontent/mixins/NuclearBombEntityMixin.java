@@ -2,6 +2,7 @@ package com.ryorama.tstpcontent.mixins;
 
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearBombEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.TstpContentModConfig;
 import com.ryorama.tstpcontent.utils.Utils;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -22,10 +23,12 @@ public abstract class NuclearBombEntityMixin extends Entity {
      */
     @Overwrite(remap = false)
     private void explode() {
-        if (TstpContentMod.CONFIG.threadedNukeExplosion) {
-            Utils.createNukeExplosionThreaded(level(), this);
-        } else {
-            Utils.createNukeExplosion(level(), this);
+        if (TstpContentMod.INSTANCE != null) {
+            if (TstpContentMod.INSTANCE.threadedNukeExplosion) {
+                Utils.createNukeExplosionThreaded(level(), this);
+            } else {
+                Utils.createNukeExplosion(level(), this);
+            }
         }
     }
 }

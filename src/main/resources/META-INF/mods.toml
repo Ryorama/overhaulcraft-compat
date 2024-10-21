@@ -26,5 +26,11 @@ description="Custom Content and Compat for The Minecraft: Overhaul/OverhaulCraft
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.tstp_content]]
+    modId = "configuration"
+    mandatory = true
+    versionRange = "[2.2.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
 
 
