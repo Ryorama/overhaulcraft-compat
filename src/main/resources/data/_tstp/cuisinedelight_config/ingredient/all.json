@@ -272,7 +272,7 @@
       ],
       "ingredient": [
         {
-          "item": "tstp_content:mushroom"
+          "item": "terrariamod:mushroom"
         }
       ],
       "max_time": 360,
@@ -653,7 +653,7 @@
       ],
       "ingredient": [
         {
-          "item": "tstp_content:life_crystal"
+          "item": "terrariamod:life_crystal"
         }
       ],
       "max_time": 360,

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "tstp_content:block/life_crystal_block",
-    "particle": "tstp_content:block/life_crystal_block"
-  },
-  "render_type": "cutout"
-}

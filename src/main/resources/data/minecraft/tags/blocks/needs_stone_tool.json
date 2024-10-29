@@ -2,8 +2,5 @@
   "replace": false,
   "values": [
     "tstp_content:hvac_block",
-    "tstp_content:life_crystal_block",
-    "tstp_content:iron_ore",
-    "tstp_content:copper_ore"
   ]
 }

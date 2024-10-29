@@ -2,7 +2,6 @@ package com.ryorama.tstpcontent.mixins;
 
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearBombEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.TstpContentModConfig;
 import com.ryorama.tstpcontent.utils.Utils;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

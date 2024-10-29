@@ -59,6 +59,8 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             arg "--mixin=tstp_content.mixins.json"
 
             mods {
@@ -73,6 +75,8 @@ minecraft {
 
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             arg "--mixin=tstp_content.mixins.json"
 
             mods {
@@ -114,21 +118,32 @@ repositories {
     maven {
         url "https://maven.tterrag.com/"
     }
+    maven { url "https://maven.shedaniel.me/" }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
     mavenLocal()
 }
 
 dependencies {
-    implementation fg.deobf(jarJar("dev.xkmc.l2serial:l2serial:1.2.2")) {
-        transitive = false
-        jarJar.ranged(it, "[1.2.2,)")
-    }
-    implementation fg.deobf(jarJar("dev.xkmc.l2modularblock:l2modularblock:1.1.0")) {
-        transitive = false
-        jarJar.ranged(it, "[1.1.0,)")
-    }
-
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
-    implementation fg.deobf(files('libs/Cosmic-Horizons_0.0.5.jar'))
+
+    implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
+    implementation fg.deobf("com.ryorama.terrariamod:terrariamod-forge:${rootProject.terrariamod_version}")
+
+    implementation fg.deobf(files('libs/Cosmic-Horizons_0.0.6.5.jar'))
+
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
     implementation fg.deobf('curse.maven:geckolib-388172:5386948')
@@ -150,22 +165,25 @@ dependencies {
     implementation fg.deobf('curse.maven:architectury-419699:5137938')
     implementation fg.deobf('curse.maven:butchery-973620:5746912')
     implementation fg.deobf('curse.maven:randomium-523013:5431202')
-    implementation fg.deobf("curse.maven:alexs-caves-924854:5825623")
+    implementation fg.deobf("curse.maven:alexs-caves-924854:5831476")
     implementation fg.deobf("curse.maven:cbc-nuclear-1060244:5678978")
     implementation fg.deobf("curse.maven:citadel-331936:5633260")
     implementation fg.deobf("curse.maven:configuration-444699:4710266")
     implementation fg.deobf("curse.maven:create-big-cannons-646668:5812633")
-
-    implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
+    implementation fg.deobf("curse.maven:the-forgotten-dimensions-461140:5813211")
+    implementation fg.deobf("curse.maven:shadowlands-398372:5386877")
+    implementation fg.deobf("curse.maven:the-abyss-chapter-ii-440647:5129404")
+    implementation fg.deobf("curse.maven:astral-dimension-645743:5745999")
+    implementation fg.deobf("curse.maven:aether-255308:5786709")
+    implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
+    implementation fg.deobf("curse.maven:deeperdarker-659011:5698212")
+    implementation fg.deobf("curse.maven:toybox-997296:5232726")
 
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}")
     implementation 'thedarkcolour:kotlinforforge:4.10.0'
-
-    implementation fg.deobf("com.tterrag.registrate:Registrate:MC1.20-1.3.2")
-    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
 }

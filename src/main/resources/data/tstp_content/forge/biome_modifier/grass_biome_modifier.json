@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "tstp_content:forest_terraria",
-  "features": "tstp_content:grass",
-  "step": "vegetal_decoration"
-}

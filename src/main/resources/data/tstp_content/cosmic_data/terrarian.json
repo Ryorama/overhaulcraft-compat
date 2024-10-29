@@ -1,5 +1,5 @@
 {
-  "attached_dimention_id": "tstp_content:terraria_dim",
+  "attached_dimention_id": "terrariamod:terraria",
   "skybox_data": {
     "texture_id": "skybox_solar",
     "alpha": 245,
@@ -14,11 +14,11 @@
     "sky_objects": false,
     "atmospheric_data": {
       "atmosphere_y": 560,
-      "travel_to": "cosmos:solar_sys_d",
+      "travel_to": "cosmos:solar_system",
       "origin_x": -54100,
       "origin_y": 530,
       "origin_z": 7100,
-      "overlay_texture_id": "tstp_content:terrarian_bar",
+      "overlay_texture_id": "cosmos:terrarian_bar",
       "shipbit_y": 24,
       "ship_min_y": 120
     }

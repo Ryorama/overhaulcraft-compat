@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tstp_content:block/toybox/tin_ore_dust"
+  }
+}

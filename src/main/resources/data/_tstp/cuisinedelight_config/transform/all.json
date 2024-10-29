@@ -366,9 +366,6 @@
       "next": "aetherdelight:cooked_aerfillet",
       "stage": "COOKED"
     },
-
-
-
     "blue_skies:carabeef": {
       "next": "blue_skies:cooked_carabeef",
       "stage": "COOKED"
@@ -407,6 +404,14 @@
     },
     "rats:raw_rat": {
       "next": "rats:cooked_rat",
+      "stage": "COOKED"
+    },
+    "naturalist:caterpillar": {
+      "next": "naturalistdelight:cooked_caterpillar",
+      "stage": "COOKED"
+    },
+    "naturalist:butterfly": {
+      "next": "naturalistdelight:cooked_butterfly",
       "stage": "COOKED"
     }
   }

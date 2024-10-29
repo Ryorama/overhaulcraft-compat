@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tstp_content:block/blueskies/emerald_ore_turquoise"
+  }
+}

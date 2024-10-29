@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "tstp_content:block/snow",
-    "particle": "tstp_content:block/snow"
-  },
-  "render_type": "solid"
-}

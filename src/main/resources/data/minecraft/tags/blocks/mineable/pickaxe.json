@@ -4,10 +4,7 @@
     "tstp_content:hvac_block",
     "tstp_content:ostrum_machine_casing",
     "tstp_content:calorite_machine_casing",
-    "tstp_content:life_crystal_block",
-    "tstp_content:iron_ore",
-    "tstp_content:copper_ore",
-    "tstp_content:stone",
+
     "tstp_content:randomium_ore_nether"
   ]
 }

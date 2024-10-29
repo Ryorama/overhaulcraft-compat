@@ -4,7 +4,6 @@ import com.ryorama.tstpcontent.init.*;
 import com.ryorama.tstpcontent.item.recipes.oresight.RandomiumPotionRecipe;
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.format.ConfigFormats;
-import dev.xkmc.l2library.base.L2Registrate;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -26,7 +25,6 @@ import net.minecraftforge.common.MinecraftForge;
 public class TstpContentMod {
 	public static final Logger LOGGER = LogManager.getLogger(TstpContentMod.class);
 	public static final String MODID = "tstp_content";
-	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 	public static TstpContentModConfig INSTANCE;
 
 
