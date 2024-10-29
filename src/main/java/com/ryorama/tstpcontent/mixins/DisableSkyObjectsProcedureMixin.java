@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class DisableSkyObjectsProcedureMixin {
     @Inject(at = @At("HEAD"), method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/entity/Entity;)Z", remap = false)
     private static void execute(Event event, LevelAccessor world, Entity entity, CallbackInfoReturnable<Boolean> cir) {
+        System.out.println("DisableSkyObjectsMixin Running");
         if (entity == null) {
             cir.setReturnValue(false);
         } else {

@@ -11,10 +11,11 @@
     "ApplyGravityLogicProcedureMixin",
     "NukeShellProjectileMixin",
     "NuclearBombEntityMixin",
-    "NuclearExplosionEntityMixin",
-    "DisableSkyObjectsProcedureMixin"
+    "NuclearExplosionEntityMixin"
   ],
   "client": [
+    "DisableSkyObjectsProcedureMixin",
+    "RenderMINTProcedureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
