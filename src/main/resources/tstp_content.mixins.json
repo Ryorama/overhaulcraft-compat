@@ -14,8 +14,6 @@
     "NuclearExplosionEntityMixin"
   ],
   "client": [
-    "DisableSkyObjectsProcedureMixin",
-    "RenderMINTProcedureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
