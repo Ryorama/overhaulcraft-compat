@@ -38,13 +38,13 @@ public abstract class HamsterMixin extends TamableAnimal {
         super(entityType, level);
     }
 
-    @Inject(at = @At("HEAD"), method = "registerGoals", remap = false)
+    @Inject(at = @At("HEAD"), method = "registerGoals")
     public void registerGoals(CallbackInfo ci) {
         this.hamsterGoToGeneratorWheelGoal = new HamsterGoToGeneratorWheelGoal(this, WAIT_TIME_BEFORE_RUN, WAIT_TIME_WHEN_RUNNING);
         this.goalSelector.addGoal(4, this.hamsterGoToGeneratorWheelGoal);
     }
 
-    @Inject(at = @At("HEAD"), method = "tick", remap = false)
+    @Inject(at = @At("HEAD"), method = "tick")
     public void tick(CallbackInfo ci) {
         if (!(this.getVehicle() instanceof SeatEntity)) {
             super.tick();

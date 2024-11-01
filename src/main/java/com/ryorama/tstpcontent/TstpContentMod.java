@@ -16,9 +16,7 @@ import org.apache.logging.log4j.LogManager;
 
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 import software.bernie.geckolib.GeckoLib;
 
@@ -26,11 +24,11 @@ import software.bernie.geckolib.GeckoLib;
 public class TstpContentMod {
 	public static final Logger LOGGER = LogManager.getLogger(TstpContentMod.class);
 	public static final String MODID = "tstp_content";
-	public static TstpContentModConfig INSTANCE;
+	public static TstpContentModConfig CONFIG;
 
 
 	public TstpContentMod() {
-		INSTANCE = Configuration.registerConfig(TstpContentModConfig.class, ConfigFormats.json()).getConfigInstance();
+		CONFIG = Configuration.registerConfig(TstpContentModConfig.class, ConfigFormats.json()).getConfigInstance();
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -41,9 +39,8 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
-		GeckoLib.initialize();
-		bus.register(this);
 		bus.addListener(this::setup);
+		GeckoLib.initialize();
 	}
 
 	public void setup(FMLCommonSetupEvent event) {
@@ -52,10 +49,5 @@ public class TstpContentMod {
 
 	private static void registerPotions() {
 		BrewingRecipeRegistry.addRecipe(new RandomiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.RANDOMIUM_SIGHT.get())));
-	}
-
-	@SubscribeEvent
-	public void tick(TickEvent.ServerTickEvent event) {
-
 	}
 }

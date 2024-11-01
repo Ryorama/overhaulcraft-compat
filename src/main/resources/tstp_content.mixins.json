@@ -13,7 +13,8 @@
     "NuclearBombEntityMixin",
     "NuclearExplosionEntityMixin",
     "HamsterMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "ConversionCrucibleBlockEntityMixin"
   ],
   "client": [
   ],

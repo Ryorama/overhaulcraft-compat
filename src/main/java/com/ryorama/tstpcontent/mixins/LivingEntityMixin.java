@@ -21,7 +21,7 @@ public abstract class LivingEntityMixin extends Entity {
         super(entityType, level);
     }
 
-    @Inject(at = @At("HEAD"), method = "aiStep", remap = false)
+    @Inject(at = @At("HEAD"), method = "aiStep")
     public void aiStep(CallbackInfo ci) {
         if ((Entity)this instanceof Hamster) {
             if (this.level().getBlockState(this.blockPosition()).is(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get())) {

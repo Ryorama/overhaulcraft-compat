@@ -22,8 +22,8 @@ public abstract class NuclearBombEntityMixin extends Entity {
      */
     @Overwrite(remap = false)
     private void explode() {
-        if (TstpContentMod.INSTANCE != null) {
-            if (TstpContentMod.INSTANCE.threadedNukeExplosion) {
+        if (TstpContentMod.CONFIG != null) {
+            if (TstpContentMod.CONFIG.threadedNukeExplosion) {
                 Utils.createNukeExplosionThreaded(level(), this);
             } else {
                 Utils.createNukeExplosion(level(), this);

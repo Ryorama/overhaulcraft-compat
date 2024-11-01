@@ -310,5 +310,6 @@
 
   "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight",
 
-  "config.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion"
+  "config.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
+  "config.tstp_content.option.conversionCrucibleRadius": "Conversion Crucible Radius"
 }

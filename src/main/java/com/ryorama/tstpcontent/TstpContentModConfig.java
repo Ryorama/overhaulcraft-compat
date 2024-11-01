@@ -7,4 +7,6 @@ import dev.toma.configuration.config.Configurable;
 public class TstpContentModConfig {
     @Configurable
     public boolean threadedNukeExplosion = true;
+    @Configurable
+    public float conversionCrucibleRadius = 10;
 }

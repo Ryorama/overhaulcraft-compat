@@ -1,5 +1,6 @@
 package com.ryorama.tstpcontent.init;
 
+import com.ryorama.tstpcontent.item.HamsterWheelGeneratorItem;
 import com.thevortex.potionsmaster.items.powders.base.BasePowder;
 import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
 import net.minecraft.world.item.Item;
@@ -22,6 +23,7 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> CALCINATED_RANDOMIUM_POWDER = REGISTRY.register("calcinatedrandomium_powder", () -> new CalcinatedPowder(new Item.Properties()));
 	public static final RegistryObject<Item> MUSIC_DISC_1 = REGISTRY.register("music_disc_1", () -> new RecordItem(14, TstpContentModSounds.UNIVERSAL_COLLAPSE_EPIC.get(), new Item.Properties().stacksTo(1), 239 * 20));
 	public static final RegistryObject<Item> RANDOMIUM_ORE_CHUNK = REGISTRY.register("randomium_ore_chunk", () -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> new HamsterWheelGeneratorItem(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get(), new Item.Properties()));
 
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);
 	public static final RegistryObject<Item> OSTRUM_MACHINE_CASING = block(TstpContentModBlocks.OSTRUM_MACHINE_CASING);

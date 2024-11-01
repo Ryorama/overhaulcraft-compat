@@ -23,8 +23,8 @@ public abstract class NukeShellProjectileMixin extends FuzedBigCannonProjectile 
     */
     @Overwrite(remap = false)
     private void nukeKaboom() {
-        if (TstpContentMod.INSTANCE != null) {
-            if (TstpContentMod.INSTANCE.threadedNukeExplosion) {
+        if (TstpContentMod.CONFIG != null) {
+            if (TstpContentMod.CONFIG.threadedNukeExplosion) {
                 Utils.createNukeExplosionThreaded(level(), this);
             } else {
                 Utils.createNukeExplosion(level(), this);
