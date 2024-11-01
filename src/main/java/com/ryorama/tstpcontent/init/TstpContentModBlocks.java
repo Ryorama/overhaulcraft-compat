@@ -7,6 +7,7 @@ import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.terrariamod.client.TAudio;
 import com.ryorama.tstpcontent.block.*;
+import com.starfish_studios.hamsters.block.HamsterWheelBlock;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -38,6 +39,12 @@ public class TstpContentModBlocks {
 		return new RFElectricityGeneratorBlock(MetalType.DARK, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
+	});
+
+	public static final RegistryObject<Block> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> {
+		return new HamsterWheelGeneratorBlock(BlockBehaviour.Properties.of().strength(0.6F).noOcclusion().isSuffocating((state, world, pos) -> {
+			return false;
+		}));
 	});
 
 	//Coal

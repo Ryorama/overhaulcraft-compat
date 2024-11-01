@@ -33,6 +33,11 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
 			}).build());
 
+	public static final RegistryObject<CreativeModeTab> TSTP_HAMSTER = REGISTRY.register("tstp_hamster",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_hamster")).icon(() -> new ItemStack(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get().asItem());
+			}).build());
+
 	public static final RegistryObject<CreativeModeTab> TSTP_ORE_COMP = REGISTRY.register("tstp_ore_comp",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_ore_comp")).icon(() -> new ItemStack(TstpContentModBlocks.RANDOMIUM_ORE_NETHER.get())).displayItems((parameters, tabData) -> {
 				//Coal

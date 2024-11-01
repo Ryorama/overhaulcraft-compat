@@ -146,7 +146,7 @@ dependencies {
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
     implementation fg.deobf('curse.maven:geckolib-388172:5386948')
-    implementation fg.deobf('curse.maven:hamsters-952435:5121303')
+    implementation fg.deobf("curse.maven:hamsters-952435:5121305")
     implementation fg.deobf('curse.maven:lodestone-616457:5365395')
     implementation fg.deobf('curse.maven:thorium_reactors-775514:5155197')
     implementation fg.deobf('curse.maven:ballistix-443915:5022909')

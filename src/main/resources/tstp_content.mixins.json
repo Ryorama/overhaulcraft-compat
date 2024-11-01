@@ -11,7 +11,9 @@
     "ApplyGravityLogicProcedureMixin",
     "NukeShellProjectileMixin",
     "NuclearBombEntityMixin",
-    "NuclearExplosionEntityMixin"
+    "NuclearExplosionEntityMixin",
+    "HamsterMixin",
+    "LivingEntityMixin"
   ],
   "client": [
   ],

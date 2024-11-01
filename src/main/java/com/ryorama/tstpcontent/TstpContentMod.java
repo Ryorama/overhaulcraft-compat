@@ -20,6 +20,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
+import software.bernie.geckolib.GeckoLib;
 
 @Mod(TstpContentMod.MODID)
 public class TstpContentMod {
@@ -40,7 +41,8 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
-
+		GeckoLib.initialize();
+		bus.register(this);
 		bus.addListener(this::setup);
 	}
 

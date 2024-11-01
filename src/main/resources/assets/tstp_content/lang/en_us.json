@@ -3,6 +3,7 @@
   "item_group.tstp_content.tstp_tas": "OverhaulCraft: Tough As Nails Component",
   "item_group.tstp_content.tstp_mrcf": "OverhaulCraft: Furniture Refurbished Component",
   "item_group.tstp_content.tstp_ore_comp": "OverhaulCraft: Ore Component",
+  "item_group.tstp_content.tstp_hamster": "OverhaulCraft: Hamsters Plus Component",
 
   "block.tstp_content.calorite_machine_casing": "Calorite Machine Casing",
   "block.tstp_content.ostrum_machine_casing": "Ostrum Machine Casing",
@@ -10,6 +11,7 @@
   "block.tstp_content.randomium_ore_nether": "Nether Randomium Ore",
   "block.tstp_content.light_rf_electricity_generator": "Light RF Electricity Generator",
   "block.tstp_content.dark_rf_electricity_generator": "Dark RF Electricity Generator",
+  "block.tstp_content.hamster_wheel_generator": "Hamster Wheel Generator",
 
   "block.tstp_content.coal_ore_abyss": "Abyss Coal Ore",
   "block.tstp_content.copper_ore_abyss": "Abyss Copper Ore",
