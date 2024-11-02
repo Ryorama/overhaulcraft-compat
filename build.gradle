@@ -142,6 +142,7 @@ dependencies {
     implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-common:${rootProject.vs2_version}")
     implementation fg.deobf("com.ryorama.terrariamod:terrariamod-forge:${rootProject.terrariamod_version}")
     implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
+    implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
 
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
@@ -177,6 +178,9 @@ dependencies {
     implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
     implementation fg.deobf("curse.maven:deeperdarker-659011:5698212")
     implementation fg.deobf("curse.maven:toybox-997296:5232726")
+    implementation fg.deobf("curse.maven:haunted-harvest-541753:5212692")
+    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:5619741")
+    implementation fg.deobf("curse.maven:selene-499980:5863085")
 
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
