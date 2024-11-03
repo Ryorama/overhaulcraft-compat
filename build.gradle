@@ -143,6 +143,7 @@ dependencies {
     implementation fg.deobf("com.ryorama.terrariamod:terrariamod-forge:${rootProject.terrariamod_version}")
     implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
     implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
+    implementation fg.deobf("linfox.earlyupdatetwo:earlyupdate_two:3.5")
 
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
