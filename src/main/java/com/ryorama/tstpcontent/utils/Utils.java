@@ -3,8 +3,11 @@ package com.ryorama.tstpcontent.utils;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
+import mekanism.api.Coord4D;
+import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -43,6 +46,10 @@ public class Utils {
         explosion.copyPosition(baseEntity);
         explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
         level.addFreshEntity(explosion);
+        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+        if (radiationManager.isRadiationEnabled()) {
+            radiationManager.radiate(new Coord4D(new Vec3i((int) baseEntity.position().x, (int) baseEntity.position().y, (int) baseEntity.position().z), level), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+        }
     }
 
     public static void createNukeExplosionWithVec3(Level level, Vec3 vec3) {
@@ -50,6 +57,10 @@ public class Utils {
         explosion.setPos(vec3);
         explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
         level.addFreshEntity(explosion);
+        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+        if (radiationManager.isRadiationEnabled()) {
+            radiationManager.radiate(new Coord4D(new Vec3i((int) vec3.x, (int) vec3.y, (int) vec3.z), level), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+        }
     }
 
     public static class NuclearExposionThread extends Thread {
@@ -58,6 +69,10 @@ public class Utils {
             explosion.copyPosition(baseEntity);
             explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
             level.addFreshEntity(explosion);
+            IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+            if (radiationManager.isRadiationEnabled()) {
+                radiationManager.radiate(new Coord4D(new Vec3i((int) baseEntity.position().x, (int) baseEntity.position().y, (int) baseEntity.position().z), level), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+            }
         }
 
         public void createNukeUsingVec3(Level level, Vec3 vec3) {
@@ -65,6 +80,10 @@ public class Utils {
             explosion.setPos(vec3);
             explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
             level.addFreshEntity(explosion);
+            IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+            if (radiationManager.isRadiationEnabled()) {
+                radiationManager.radiate(new Coord4D(new Vec3i((int) vec3.x, (int) vec3.y, (int) vec3.z), level), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+            }
         }
     }
 }
