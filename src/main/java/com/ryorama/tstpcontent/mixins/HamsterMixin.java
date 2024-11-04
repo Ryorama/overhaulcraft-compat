@@ -38,10 +38,11 @@ public abstract class HamsterMixin extends TamableAnimal {
         super(entityType, level);
     }
 
-    @Inject(at = @At("HEAD"), method = "registerGoals")
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/goal/GoalSelector;addGoal(ILnet/minecraft/world/entity/ai/goal/Goal;)V", shift = At.Shift.BY, by = 5), method = "registerGoals", cancellable = true)
     public void registerGoals(CallbackInfo ci) {
         this.hamsterGoToGeneratorWheelGoal = new HamsterGoToGeneratorWheelGoal(this, WAIT_TIME_BEFORE_RUN, WAIT_TIME_WHEN_RUNNING);
         this.goalSelector.addGoal(4, this.hamsterGoToGeneratorWheelGoal);
+        ci.cancel();
     }
 
     @Inject(at = @At("HEAD"), method = "tick")

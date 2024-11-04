@@ -40,7 +40,10 @@ public class SolarApocalypseItem extends Item {
                     serverPlayer.connection.send(new ClientboundUpdateMobEffectPacket(serverPlayer.getId(), _effectinstance));
                 }
                 serverPlayer.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
-                player.getItemInHand(hand).shrink(1);
+                serverPlayer.setRespawnPosition(solarDimensionKey, serverPlayer.blockPosition(), 0, false, false);
+                if (!player.isCreative()) {
+                    player.getItemInHand(hand).shrink(1);
+                }
                 return InteractionResultHolder.pass(player.getItemInHand(hand));
             }
         }
