@@ -16,7 +16,9 @@
     "LivingEntityMixin",
     "ConversionCrucibleBlockEntityMixin",
     "BlastNuclearMixin",
-    "NucleeperEntityMixin"
+    "NucleeperEntityMixin",
+    "VillagerEventsMixin",
+    "FurnitureModelProviderMixin"
   ],
   "client": [
   ],

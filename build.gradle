@@ -64,7 +64,7 @@ minecraft {
             arg "--mixin=tstp_content.mixins.json"
 
             mods {
-                examplemod {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -80,13 +80,32 @@ minecraft {
             arg "--mixin=tstp_content.mixins.json"
 
             mods {
-                examplemod {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+        data {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            arg "--mixin=tstp_content.mixins.json"
+
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
         }
     }
 }
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     flatDir {
@@ -133,6 +152,16 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        name "Modding Legacy Maven"
+        url "https://maven.moddinglegacy.com/maven"
+    }
+    maven {
+        url = "https://maven.realrobotix.me/master/"
+        content {
+            includeGroup("com.rbasamoyai")
+        }
+    }
     mavenLocal()
 }
 
@@ -143,24 +172,25 @@ dependencies {
     implementation fg.deobf("com.ryorama.terrariamod:terrariamod-forge:${rootProject.terrariamod_version}")
     implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
     implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.legacy:structure-gel:1.20.1-2.16.2")
+    implementation fg.deobf("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
+    implementation fg.deobf("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
+    implementation fg.deobf("java.net.luke100000:minecraft-comes-alive:7.5.21")
 
+    implementation fg.deobf("curse.maven:refurbished-furniture-897116:5893833")
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
     implementation fg.deobf('curse.maven:geckolib-388172:5386948')
     implementation fg.deobf("curse.maven:hamsters-952435:5121305")
-    implementation fg.deobf('curse.maven:lodestone-616457:5365395')
-    implementation fg.deobf('curse.maven:thorium_reactors-775514:5155197')
     implementation fg.deobf('curse.maven:ballistix-443915:5022909')
     implementation fg.deobf('curse.maven:electrodynamics-316867:5022907')
     implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
-    implementation fg.deobf('curse.maven:furniture-897116:5651939')
     implementation fg.deobf('curse.maven:framework-549225:5680064')
     implementation fg.deobf('curse.maven:potion_master-356801:4722415')
     implementation fg.deobf('curse.maven:cuisine_delight-893541:5300072')
-    implementation fg.deobf('curse.maven:l2lib-620203:5447286')
     implementation fg.deobf('curse.maven:farmers_delight-398521:5051242')
-    implementation fg.deobf('curse.maven:farmers_delight-398521:5051242')
-    implementation fg.deobf('curse.maven:enhanced_celestials-438447:5695587')
     implementation fg.deobf('curse.maven:bos-757062:4727499')
     implementation fg.deobf('curse.maven:architectury-419699:5137938')
     implementation fg.deobf('curse.maven:butchery-973620:5746912')
@@ -169,20 +199,14 @@ dependencies {
     implementation fg.deobf("curse.maven:cbc-nuclear-1060244:5678978")
     implementation fg.deobf("curse.maven:citadel-331936:5633260")
     implementation fg.deobf("curse.maven:configuration-444699:4710266")
-    implementation fg.deobf("curse.maven:create-big-cannons-646668:5812633")
-    implementation fg.deobf("curse.maven:the-forgotten-dimensions-461140:5813211")
-    implementation fg.deobf("curse.maven:shadowlands-398372:5386877")
-    implementation fg.deobf("curse.maven:the-abyss-chapter-ii-440647:5129404")
-    implementation fg.deobf("curse.maven:astral-dimension-645743:5745999")
-    implementation fg.deobf("curse.maven:aether-255308:5786709")
-    implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
     implementation fg.deobf("curse.maven:deeperdarker-659011:5698212")
-    implementation fg.deobf("curse.maven:toybox-997296:5232726")
     implementation fg.deobf("curse.maven:haunted-harvest-541753:5212692")
     implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:5619741")
     implementation fg.deobf("curse.maven:selene-499980:5863085")
     implementation fg.deobf("curse.maven:mekanism-268560:5662583")
-    implementation fg.deobf("curse.maven:trials-chambers-backport-1012027:5866297")
+    implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-unofficial-945471:5610926")
+    implementation fg.deobf("curse.maven:easy-villagers-400514:5724570")
+    implementation fg.deobf("curse.maven:ato-405593:5348605")
 
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")

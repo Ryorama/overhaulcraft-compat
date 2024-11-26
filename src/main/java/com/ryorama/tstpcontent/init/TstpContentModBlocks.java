@@ -7,7 +7,6 @@ import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.terrariamod.client.TAudio;
 import com.ryorama.tstpcontent.block.*;
-import com.starfish_studios.hamsters.block.HamsterWheelBlock;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -29,18 +28,16 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new CaloriteMachineCasingBlock());
 	public static final RegistryObject<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new OstrumMachineCasingBlock());
 	public static final RegistryObject<Block> HVAC_BLOCK = REGISTRY.register("hvac_block", () -> new HVACBlockBlock());
-	public static final RegistryEntry<RFElectricityGeneratorBlock> LIGHT_RF_ELECTRICITY_GENERATOR = RegistryEntry.blockWithItem(new ResourceLocation("tstp_content", "light_rf_electricity_generator"), () -> {
+	public static final RegistryObject<Block> LIGHT_RF_ELECTRICITY_GENERATOR = REGISTRY.register("light_rf_electricity_generator", () -> {
 		return new RFElectricityGeneratorBlock(MetalType.LIGHT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
-
-	public static final RegistryEntry<RFElectricityGeneratorBlock> DARK_RF_ELECTRICITY_GENERATOR = RegistryEntry.blockWithItem(new ResourceLocation("tstp_content", "dark_rf_electricity_generator"), () -> {
+	public static final RegistryObject<Block> DARK_RF_ELECTRICITY_GENERATOR = REGISTRY.register("dark_rf_electricity_generator", () -> {
 		return new RFElectricityGeneratorBlock(MetalType.DARK, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
-
 	public static final RegistryObject<Block> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> {
 		return new HamsterWheelGeneratorBlock(BlockBehaviour.Properties.of().strength(0.6F).noOcclusion().isSuffocating((state, world, pos) -> {
 			return false;
