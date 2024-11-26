@@ -2,10 +2,12 @@ package com.ryorama.tstpcontent.datagen.server;
 
 import com.ryorama.tstpcontent.TstpContentMod;
 import com.ryorama.tstpcontent.init.TstpContentModBlocks;
+import com.ryorama.tstpcontent.utils.TstpTags;
 import net.allthemods.alltheores.infos.ItemTagRegistry;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -39,7 +41,7 @@ public class BlockTags extends BlockTagsProvider {
     }
 
     private void addMineableTag(Block block) {
-        if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock)) {
+        if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
             String oretype = block.getName().toString();
             if(oretype.contains("aluminum")) {
                 tag(ItemTagRegistry.ALUMINUM_ORE).add(block);
@@ -109,6 +111,10 @@ public class BlockTags extends BlockTagsProvider {
                 tag(net.minecraft.tags.BlockTags.REDSTONE_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
+            if (oretype.contains("randomium")) {
+                tag(TstpTags.RANDOMIUM_ORE).add(block);
+                tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+            }
         }
     }
 
@@ -164,6 +170,9 @@ public class BlockTags extends BlockTagsProvider {
                 tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
             }
             if(oretype.contains("redstone")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
+            }
+            if (oretype.contains("randomium")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
             }
         }

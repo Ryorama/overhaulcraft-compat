@@ -1,9 +1,10 @@
-// 1.20.1	2024-11-26T00:45:22.3615596	Tags for minecraft:block mod id tstp_content
+// 1.20.1	2024-11-26T01:37:52.5230886	Tags for minecraft:block mod id tstp_content
 71531fb5599b60db554bc84f6fa61ecd1ca50150 data/forge/tags/blocks/ores/aluminum.json
 c068980da1e1ea8828bc7bebb602b5a982286945 data/forge/tags/blocks/ores/lead.json
 b3a382f2243ea91977fbc3b53d2ff7780cfc497d data/forge/tags/blocks/ores/nickel.json
 110b9b7503fe71b846ad239fc51bf0d7496b3e1b data/forge/tags/blocks/ores/osmium.json
 380f985d0f9609719f1b5439a165fb5ce94b0bd4 data/forge/tags/blocks/ores/platinum.json
+4c23adc7771f1c11daf06218066aeac264dc4cd6 data/forge/tags/blocks/ores/randomium.json
 41d12362b56247ea88bcdb45a05775dcdd4e242d data/forge/tags/blocks/ores/silver.json
 7726da387fa0b2dce010593158c82d18578f778b data/forge/tags/blocks/ores/tin.json
 06961c1801f1d895574c87d3c4c98bd74ec04c66 data/forge/tags/blocks/ores/uranium.json
@@ -15,8 +16,8 @@ fb2715eb4c121d547ba8dc7eb3a1bcb2f1e976e0 data/minecraft/tags/blocks/copper_ores.
 6eed16398886d695c4ced1f5e028ad8e92061e05 data/minecraft/tags/blocks/gold_ores.json
 87a4915c317776e20b1e1bd1364f4cc9443d9342 data/minecraft/tags/blocks/iron_ores.json
 e803b1f115977c5656f41091179598cd5d01b127 data/minecraft/tags/blocks/lapis_ores.json
-8a0a0987f29cd7e7756a19d0009e104794956ed1 data/minecraft/tags/blocks/mineable/pickaxe.json
+61131f70e4bef382d99cbd40487dae59489e0885 data/minecraft/tags/blocks/mineable/pickaxe.json
 4a9380547bda46c7aa05542ad682d529f9def967 data/minecraft/tags/blocks/needs_diamond_tool.json
-900a676edfc09be2ed64eadad1a02f9dbcc0f16c data/minecraft/tags/blocks/needs_iron_tool.json
+56fc0b7370d1cdd19cdc761bf0c3dec0eda81ae3 data/minecraft/tags/blocks/needs_iron_tool.json
 b4e81b514defc49a86789d6a44b836674ce12b95 data/minecraft/tags/blocks/needs_stone_tool.json
 8da603f0d62689391a6454d835bfef8aaaac0068 data/minecraft/tags/blocks/redstone_ores.json

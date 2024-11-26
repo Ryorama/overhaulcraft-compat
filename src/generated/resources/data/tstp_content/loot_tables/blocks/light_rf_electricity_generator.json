@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "tstp_content:light_rf_electricity_generator"
         }
       ],
       "rolls": 1.0
