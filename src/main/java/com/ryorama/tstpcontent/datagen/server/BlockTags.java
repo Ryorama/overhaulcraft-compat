@@ -7,7 +7,6 @@ import net.allthemods.alltheores.infos.ItemTagRegistry;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -36,46 +35,54 @@ public class BlockTags extends BlockTagsProvider {
         tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
         tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
 
-        getKnownBlocks().forEach(this::addMineableTag);
-        getKnownBlocks().forEach(this::addPickaxeTag);
+        getKnownBlocks().forEach(this::addOreTags);
     }
 
-    private void addMineableTag(Block block) {
+    private void addOreTags(Block block) {
         if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
             String oretype = block.getName().toString();
             if(oretype.contains("aluminum")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(ItemTagRegistry.ALUMINUM_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("lead")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(ItemTagRegistry.LEAD_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("nickel")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(ItemTagRegistry.NICKEL_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("osmium")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(ItemTagRegistry.OSMIUM_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("platinum")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
                 tag(ItemTagRegistry.PLATINUM_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("silver")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(ItemTagRegistry.SILVER_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
-            if(oretype.contains("tin")) {
+            if(oretype.contains("tin_")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(ItemTagRegistry.TIN_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("uranium")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
                 tag(ItemTagRegistry.URANIUM_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("zinc")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(ItemTagRegistry.ZINC_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
@@ -84,96 +91,44 @@ public class BlockTags extends BlockTagsProvider {
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("copper")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.COPPER_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("diamond")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.DIAMOND_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("emerald")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.EMERALD_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("gold")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.GOLD_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("iron")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.IRON_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("lapis")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.LAPIS_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("redstone")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(net.minecraft.tags.BlockTags.REDSTONE_ORES).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if (oretype.contains("randomium")) {
+                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
                 tag(TstpTags.RANDOMIUM_ORE).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
-            }
-        }
-    }
-
-    private void addPickaxeTag(Block block) {
-        if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
-            String oretype = block.getName().toString();
-            if(oretype.contains("aluminum")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("lead")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("nickel")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("osmium")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("platinum")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-            }
-            if(oretype.contains("silver")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("tin")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("uranium")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-            }
-            if(oretype.contains("zinc")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("randomium")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("copper")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("diamond")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("emerald")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("gold")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if(oretype.contains("iron")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("lapis")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-            }
-            if(oretype.contains("redstone")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-            }
-            if (oretype.contains("randomium")) {
-                tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
             }
         }
     }

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures": {
-    "side": "tstp_content:block/alexscaves/tin_ore_cake",
-    "bottom": "tstp_content:block/alexscaves/tin_ore_cake_top",
-    "top": "tstp_content:block/alexscaves/tin_ore_cake_top"
-  }
-}

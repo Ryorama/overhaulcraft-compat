@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "tstp_content:block/blueskies/uranium_ore_turquoise"
-  }
-}

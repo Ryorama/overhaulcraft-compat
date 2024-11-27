@@ -48,7 +48,7 @@ public class BlockLootTables extends VanillaBlockLoot {
             if(oretype.contains("silver")) { this.add(block, (block1) -> {
                 return createOreDrop(block1, BlockList.SILVER_RAW.get());
             }); }
-            if(oretype.contains("tin")) { this.add(block, (block1) -> {
+            if(oretype.contains("tin_")) { this.add(block, (block1) -> {
                 return createOreDrop(block1, BlockList.TIN_RAW.get());
             }); }
             if(oretype.contains("uranium")) { this.add(block, (block1) -> {
