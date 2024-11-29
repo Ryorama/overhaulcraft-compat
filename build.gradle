@@ -162,14 +162,17 @@ repositories {
             includeGroup("com.rbasamoyai")
         }
     }
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
     mavenLocal()
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
-    implementation fg.deobf("curse.maven:valkyrien-skies-258371:5212232")
-    implementation fg.deobf("com.ryorama.terrariamod:terrariamod-forge:${rootProject.terrariamod_version}")
+    implementation fg.deobf("com.ryorama.terrariamod:terrariamod:1.0.0")
     implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
     implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
@@ -183,6 +186,7 @@ dependencies {
         jarJar.ranged(it, "[0.4.1,)")
     }
 
+    implementation fg.deobf("curse.maven:valkyrien-skies-258371:5212232")
     implementation fg.deobf("curse.maven:refurbished-furniture-897116:5893833")
     implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
     implementation fg.deobf('curse.maven:firstaid-276837:5127567')
@@ -212,7 +216,16 @@ dependencies {
     implementation fg.deobf("curse.maven:easy-villagers-400514:5724570")
     implementation fg.deobf("curse.maven:ato-405593:5348605")
     implementation fg.deobf("curse.maven:create-clockwork-807792:5580456")
+    implementation fg.deobf("curse.maven:aether-255308:5889509")
+    implementation fg.deobf("curse.maven:the-twilight-forest-227639:4865711")
+    implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
+    implementation fg.deobf("curse.maven:the-forgotten-dimensions-461140:5813211")
+    implementation fg.deobf("curse.maven:shadowlands-398372:5386877")
+    implementation fg.deobf("curse.maven:astral-dimension-645743:5903628")
+    implementation fg.deobf("curse.maven:the-abyss-chapter-ii-440647:5129404")
 
+    runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
+    compileOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
@@ -230,7 +243,7 @@ jar {
         attributes([
                 "Specification-Title": "tstp_content",
                 "Specification-Vendor": "Ryorama",
-                "Specification-Version": "1", // We are version 1 of ourselves
+                "Specification-Version": "1",
                 "Implementation-Title": project.name,
                 "Implementation-Version": project.version,
                 "Implementation-Vendor" :"Ryorama",

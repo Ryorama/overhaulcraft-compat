@@ -312,5 +312,7 @@
   "effect.tstp_content.randomium_ore_sight_effect": "RandomiumSight",
 
   "config.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
-  "config.tstp_content.option.conversionCrucibleRadius": "Conversion Crucible Radius"
+  "config.tstp_content.option.conversionCrucibleRadius": "Conversion Crucible Radius",
+  "config.tstp_content.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
+  "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets"
 }
