@@ -38,11 +38,6 @@ public class TstpContentModBlocks {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
-	public static final RegistryObject<Block> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamster_wheel_generator", () -> {
-		return new HamsterWheelGeneratorBlock(BlockBehaviour.Properties.of().strength(0.6F).noOcclusion().isSuffocating((state, world, pos) -> {
-			return false;
-		}));
-	});
 
 	//Coal
 	public static final RegistryObject<Block> COAL_ORE_ABYSS = REGISTRY.register("coal_ore_abyss", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));

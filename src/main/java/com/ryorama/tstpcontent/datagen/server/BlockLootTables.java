@@ -23,7 +23,6 @@ public class BlockLootTables extends VanillaBlockLoot {
         dropSelf(TstpContentModBlocks.HVAC_BLOCK.get());
         dropSelf(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get());
         dropSelf(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get());
-        dropSelf(TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get());
         getKnownBlocks().forEach(this::dropRaw);
     }
 

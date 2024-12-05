@@ -13,7 +13,3 @@ pluginManagement {
         maven { url "https://maven.architectury.dev/" }
     }
 }
-
-plugins {
-
-}

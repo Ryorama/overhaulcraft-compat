@@ -5,8 +5,6 @@
   "refmap": "tstp_content.mixins.refmap.json",
   "mixins": [
     "EnderEyeItemMixin",
-    "LivingEntityMixin",
-    "PortalForcerMixin",
     "aether.DimensionHooksMixin",
     "alexscaves.ConversionCrucibleBlockEntityMixin",
     "alexscaves.NuclearBombEntityMixin",
@@ -19,14 +17,10 @@
     "deeperdarker.OthersidePortalBlockMixin$OthersidePortalBlockAccessor",
     "easyvillagers.VillagerEventsMixin",
     "furniture_refurbished.FurnitureModelProviderMixin",
-    "hamster.HamsterLookControlMixin",
-    "hamster.HamsterGoToWheelGoalMixin",
     "nukeshell.NukeShellProjectileMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
-    "structuregel.GelPortalLogicMixin",
-    "structuregel.GelPortalLogicMixin$GelPortalLogicAccessor",
     "twilightforest.TFTickHandlerMixin",
     "twilightforest.TFTickHandlerMixin$TFTickHandlerAccessor"
   ],

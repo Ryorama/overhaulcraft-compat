@@ -1,12 +1,8 @@
 package com.ryorama.tstpcontent.init;
 
-import com.mojang.datafixers.types.Type;
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
-import com.ryorama.tstpcontent.block.entity.HamsterWheelGeneratorBlockEntity;
 import com.ryorama.tstpcontent.block.entity.RFElectricityGeneratorBlockEntity;
-import com.starfish_studios.hamsters.block.entity.HamsterWheelBlockEntity;
-import com.starfish_studios.hamsters.registry.HamstersBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,10 +20,6 @@ public class TstpContentModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> HVAC_BLOCK = register("hvac_block", TstpContentModBlocks.HVAC_BLOCK, HVACBlockBlockEntity::new);
 	public static final RegistryEntry<BlockEntityType<RFElectricityGeneratorBlockEntity>> RF_ELECTRICITY_GENERATOR = RegistryEntry.blockEntity(new ResourceLocation("tstp_content", "rf_electricity_generator"), RFElectricityGeneratorBlockEntity::new, () -> {
 		return new Block[]{TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get(), TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get()};
-	});
-
-	public static final RegistryObject<BlockEntityType<HamsterWheelGeneratorBlockEntity>> HAMSTER_WHEEL_GENERATOR = REGISTRY.register("hamsters", () -> {
-		return BlockEntityType.Builder.of(HamsterWheelGeneratorBlockEntity::new, new Block[]{TstpContentModBlocks.HAMSTER_WHEEL_GENERATOR.get()}).build(null);
 	});
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
