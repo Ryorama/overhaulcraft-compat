@@ -1,6 +1,7 @@
 package com.ryorama.tstpcontent.mixins.furniture_refurbished;
 
 import com.mrcrayfish.framework.Registration;
+import com.mrcrayfish.furniture.refurbished.data.FurnitureModelProvider;
 import com.mrcrayfish.furniture.refurbished.data.model.ModelTemplate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -12,7 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(targets = "com.mrcrayfish.furniture.refurbished.data.FurnitureModelProvider")
+@Mixin(FurnitureModelProvider.class)
 public abstract class FurnitureModelProviderMixin extends BlockStateProvider {
 
     @Final

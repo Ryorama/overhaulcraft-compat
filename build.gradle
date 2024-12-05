@@ -32,20 +32,6 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 jarJar.enable()
 
-reobf {
-    jarJar {}
-}
-
-tasks.jarJar.finalizedBy('reobfJarJar')
-
-tasks.jarJar.configure {
-    archiveClassifier.set('')
-}
-
-jar {
-    archiveClassifier.set('slim')
-}
-
 minecraft {
     mappings channel: 'official', version: '1.20.1'
 

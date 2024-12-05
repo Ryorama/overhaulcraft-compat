@@ -74,7 +74,7 @@ public abstract class TFTickHandlerMixin {
 
     @Mixin(TFTickHandler.class)
     public interface TFTickHandlerAccessor {
-        @Invoker("checkForLockedStructuresSendPacket")
+        @Invoker(value = "checkForLockedStructuresSendPacket", remap = false)
         private static boolean checkForLockedStructuresSendPacket(Player player, ServerLevel world) {
             throw new AssertionError();
         }

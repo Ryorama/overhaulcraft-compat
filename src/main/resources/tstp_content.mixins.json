@@ -4,6 +4,9 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "tstp_content.mixins.refmap.json",
   "mixins": [
+    "EnderEyeItemMixin",
+    "LivingEntityMixin",
+    "PortalForcerMixin",
     "aether.DimensionHooksMixin",
     "alexscaves.ConversionCrucibleBlockEntityMixin",
     "alexscaves.NuclearBombEntityMixin",
@@ -16,9 +19,8 @@
     "deeperdarker.OthersidePortalBlockMixin$OthersidePortalBlockAccessor",
     "easyvillagers.VillagerEventsMixin",
     "furniture_refurbished.FurnitureModelProviderMixin",
-    "hamster.HamsterMixin",
-    "hamster.HamsterMixin$HamsterGoToWheelGoal",
-    "hamster.HamsterMixin$HamsterLookControl",
+    "hamster.HamsterLookControlMixin",
+    "hamster.HamsterGoToWheelGoalMixin",
     "nukeshell.NukeShellProjectileMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
@@ -26,10 +28,7 @@
     "structuregel.GelPortalLogicMixin",
     "structuregel.GelPortalLogicMixin$GelPortalLogicAccessor",
     "twilightforest.TFTickHandlerMixin",
-    "twilightforest.TFTickHandlerMixin$TFTickHandlerAccessor",
-    "LivingEntityMixin",
-    "EnderEyeItemMixin",
-    "PortalForcerMixin"
+    "twilightforest.TFTickHandlerMixin$TFTickHandlerAccessor"
   ],
   "client": [
   ],

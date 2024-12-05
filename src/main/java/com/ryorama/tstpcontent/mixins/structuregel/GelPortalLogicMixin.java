@@ -5,28 +5,20 @@ import com.legacy.structure_gel.api.block.GelPortalBlock;
 import com.legacy.structure_gel.api.dimension.portal.GelPortalLogic;
 import com.ryorama.tstpcontent.TstpContentMod;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 @Mixin(GelPortalLogic.class)
 public class GelPortalLogicMixin {
-
-    @Shadow @Final public GelPortalBlock portal;
-
     /**
      * @author Ryorama
      * @reason Add custom config support
      */
-    @Nullable
     @Overwrite(remap = false)
     public static boolean trySpawnPortal(Level level, BlockPos pos, GelPortalBlock portalBlock, List<Block> allowedInsideBlocks) {
         GelPortalLogic portal = GelPortalLogicAccessor.getPortalFrame(level, pos, portalBlock, allowedInsideBlocks);
@@ -45,12 +37,12 @@ public class GelPortalLogicMixin {
 
     @Mixin(GelPortalLogic.class)
     public interface GelPortalLogicAccessor {
-        @Invoker("getPortalFrame")
+        @Invoker(value = "getPortalFrame", remap = false)
         static GelPortalLogic getPortalFrame(Level level, BlockPos pos, GelPortalBlock portalBlock, List<Block> allowedInsideBlocks) {
             throw new AssertionError();
         }
 
-        @Invoker("placePortalBlocks")
+        @Invoker(value = "placePortalBlocks", remap = false)
         void placePortalBlocks();
     }
 }

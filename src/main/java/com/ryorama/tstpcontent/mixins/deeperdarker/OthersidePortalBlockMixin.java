@@ -35,7 +35,7 @@ public abstract class OthersidePortalBlockMixin {
 
     @Mixin(OthersidePortalBlock.class)
     public interface OthersidePortalBlockAccessor {
-        @Invoker("trySpawningPortal")
+        @Invoker(value = "trySpawningPortal", remap = false)
         static boolean trySpawningPortal(LevelAccessor world, BlockPos pos, OthersidePortalBlock.OthersidePortalShape portal) {
             throw new AssertionError();
         }
