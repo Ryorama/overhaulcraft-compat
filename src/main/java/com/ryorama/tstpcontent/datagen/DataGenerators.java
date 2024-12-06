@@ -24,7 +24,6 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        TstpContentMod.LOGGER.info("Running Datagen Tstp");
         if (event.includeServer()) {
             BlockTags blockTags = new BlockTags(packOutput, event.getLookupProvider(), fileHelper);
 

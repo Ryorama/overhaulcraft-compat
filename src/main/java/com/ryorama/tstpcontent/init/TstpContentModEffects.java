@@ -1,7 +1,7 @@
 package com.ryorama.tstpcontent.init;
 
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.reference.OresRef;
+import com.ryorama.tstpcontent.utils.OresRef;
 import com.thevortex.potionsmaster.items.potions.effect.oresight.OreSightEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

@@ -80,7 +80,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             arg "--mixin=tstp_content.mixins.json"
 
-            args '--mod', mod_id, '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 "${mod_id}" {

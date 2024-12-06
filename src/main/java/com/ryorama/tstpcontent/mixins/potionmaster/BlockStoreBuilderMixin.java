@@ -1,6 +1,6 @@
 package com.ryorama.tstpcontent.mixins.potionmaster;
 
-import com.ryorama.tstpcontent.reference.OresRef;
+import com.ryorama.tstpcontent.utils.OresRef;
 import com.thevortex.potionsmaster.render.util.BlockData;
 import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
 import com.thevortex.potionsmaster.render.util.OutlineColor;
