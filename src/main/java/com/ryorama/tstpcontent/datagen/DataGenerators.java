@@ -24,13 +24,15 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-
+        TstpContentMod.LOGGER.info("Running Datagen Tstp");
         if (event.includeServer()) {
             BlockTags blockTags = new BlockTags(packOutput, event.getLookupProvider(), fileHelper);
 
             generator.addProvider(true, blockTags);
             generator.addProvider(true, new ItemTags(packOutput, event.getLookupProvider(), blockTags.contentsGetter(), fileHelper));
             generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK))));
+        }
+        if (event.includeClient()) {
             generator.addProvider(true, new BlockStates(generator, fileHelper));
         }
     }
