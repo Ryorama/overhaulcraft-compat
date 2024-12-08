@@ -1,5 +1,4 @@
 plugins {
-    id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.9-SNAPSHOT" apply false
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
@@ -7,12 +6,83 @@ plugins {
 version = '1.0'
 group = 'com.ryorama.tstp_content'
 
-apply plugin: "java"
-apply plugin: "architectury-plugin"
-apply plugin: "maven-publish"
-apply plugin: "dev.architectury.loom"
+allprojects {
+    apply plugin: "java"
+    apply plugin: "maven-publish"
+    apply plugin: "dev.architectury.loom"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+    java {
+        toolchain.languageVersion = JavaLanguageVersion.of(17)
+        withSourcesJar()
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven {
+            name = 'GeckoLib'
+            url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+            content {
+                includeGroupByRegex("software\\.bernie.*")
+                includeGroup("com.eliotlash.mclib")
+            }
+        }
+        maven {
+            url 'https://maven.teamresourceful.com/repository/maven-public/'
+        }
+        maven {
+            url "https://cursemaven.com"
+        }
+        maven {
+            name = "Valkyrien Skies Internal"
+            url = 'https://maven.valkyrienskies.org'
+        }
+        maven {
+            name = 'Kotlin for Forge'
+            url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        }
+        maven {
+            url "https://maven.tterrag.com/"
+        }
+        maven { url "https://maven.shedaniel.me/" }
+        maven {
+            url = "https://maven.theillusivec4.top/"
+        }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
+        }
+        maven {
+            name "Modding Legacy Maven"
+            url "https://maven.moddinglegacy.com/maven"
+        }
+        maven {
+            url = "https://maven.realrobotix.me/master/"
+            content {
+                includeGroup("com.rbasamoyai")
+            }
+        }
+        maven {
+            name = "Illusive Soulworks maven"
+            url = "https://maven.theillusivec4.top/"
+        }
+        mavenLocal()
+    }
+
+    dependencies {
+        minecraft "com.mojang:minecraft:1.20.1"
+    }
+}
+
 
 def generatedResources = file("src/generated")
 
@@ -20,11 +90,6 @@ sourceSets {
     main {
         resources.srcDir generatedResources
     }
-}
-
-architectury {
-    platformSetupLoomIde()
-    forge()
 }
 
 loom {
@@ -48,10 +113,6 @@ tasks.withType(JavaCompile) {
     options.release = 17
 }
 
-java {
-    withSourcesJar()
-}
-
 configurations {
     common
     shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
@@ -60,70 +121,7 @@ configurations {
     developmentForge.extendsFrom common
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    maven { url = 'https://maven.minecraftforge.net/' }
-    maven {
-        name = 'GeckoLib'
-        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-        content {
-            includeGroupByRegex("software\\.bernie.*")
-            includeGroup("com.eliotlash.mclib")
-        }
-    }
-    maven {
-        url 'https://maven.teamresourceful.com/repository/maven-public/'
-    }
-    maven {
-        url "https://cursemaven.com"
-    }
-    maven {
-        name = "Valkyrien Skies Internal"
-        url = 'https://maven.valkyrienskies.org'
-    }
-    maven {
-        name = 'Kotlin for Forge'
-        url = 'https://thedarkcolour.github.io/KotlinForForge/'
-    }
-    maven {
-        url "https://maven.tterrag.com/"
-    }
-    maven { url "https://maven.shedaniel.me/" }
-    maven {
-        url = "https://maven.theillusivec4.top/"
-    }
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        filter {
-            includeGroup "maven.modrinth"
-        }
-    }
-    maven {
-        name "Modding Legacy Maven"
-        url "https://maven.moddinglegacy.com/maven"
-    }
-    maven {
-        url = "https://maven.realrobotix.me/master/"
-        content {
-            includeGroup("com.rbasamoyai")
-        }
-    }
-    maven {
-        name = "Illusive Soulworks maven"
-        url = "https://maven.theillusivec4.top/"
-    }
-    mavenLocal()
-}
-
 dependencies {
-    minecraft "com.mojang:minecraft:1.20.1"
     forge "net.minecraftforge:forge:1.20.1-47.3.10"
     mappings loom.officialMojangMappings()
 
@@ -176,15 +174,13 @@ dependencies {
     modImplementation("curse.maven:pams-harvestcraft-2-trees-365460:4625518")
 
     //Fabric mods
-    modImplementation("hamster:hamsters-fabric:1.1.0-1.20.1")
-    modImplementation("curse.maven:reborncore-237903:4708961")
-    modImplementation("curse.maven:astrocraft-mod-1010757:5842026")
-    modImplementation("curse.maven:solar-apocalypse-refabricated-480660:5917865")
+    modImplementation(include(project("mod-bridge")))
 
     //Other dependencies
     implementation 'thedarkcolour:kotlinforforge:4.10.0'
 
     include("io.github.llamalad7:mixinextras-forge:0.4.1")
+    runtimeOnly(project("mod-bridge"))
     runtimeOnly(implementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
     compileOnly(implementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")

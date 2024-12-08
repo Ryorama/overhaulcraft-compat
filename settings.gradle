@@ -13,3 +13,5 @@ pluginManagement {
         maven { url "https://maven.architectury.dev/" }
     }
 }
+
+include("mod-bridge")
