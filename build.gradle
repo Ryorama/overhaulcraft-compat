@@ -1,97 +1,64 @@
-buildscript {
-    repositories {
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-    }
-    dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
-}
-
 plugins {
-    id 'idea'
-    id 'eclipse'
-    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
-    id 'org.jetbrains.kotlin.jvm' version '1.9.22'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.22'
-    id "at.stnwtr.gradle-secrets-plugin" version "1.0.1"
+    id "architectury-plugin" version "3.4-SNAPSHOT"
+    id "dev.architectury.loom" version "1.9-SNAPSHOT" apply false
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 version = '1.0'
 group = 'com.ryorama.tstp_content'
-archivesBaseName = 'tstp_content'
 
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-
-mixin {
-    add sourceSets.main, "tstp_content.mixins.refmap.json"
-}
+apply plugin: "java"
+apply plugin: "architectury-plugin"
+apply plugin: "maven-publish"
+apply plugin: "dev.architectury.loom"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-jarJar.enable()
+def generatedResources = file("src/generated")
 
-minecraft {
-    mappings channel: 'official', version: '1.20.1'
-
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    copyIdeResources = true
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            arg "--mixin=tstp_content.mixins.json"
-
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            arg "--mixin=tstp_content.mixins.json"
-
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
-        data {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            arg "--mixin=tstp_content.mixins.json"
-
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+sourceSets {
+    main {
+        resources.srcDir generatedResources
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+architectury {
+    platformSetupLoomIde()
+    forge()
+}
+
+loom {
+    silentMojangMappingsLicense()
+
+    forge {
+        mixinConfig "tstp_content.mixins.json"
+    }
+
+    runs {
+        data {
+            data()
+            programArgs "--all", "--mod", mod_id
+            programArgs "--output", generatedResources.absolutePath
+        }
+    }
+}
+    
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.release = 17
+}
+
+java {
+    withSourcesJar()
+}
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentForge.extendsFrom common
+}
 
 repositories {
     flatDir {
@@ -156,63 +123,70 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    minecraft "com.mojang:minecraft:1.20.1"
+    forge "net.minecraftforge:forge:1.20.1-47.3.10"
+    mappings loom.officialMojangMappings()
 
-    implementation fg.deobf("com.ryorama.terrariamod:terrariamod:1.0.0")
-    implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
-    implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
-    implementation fg.deobf("com.simibubi.create:create-1.20.1:${create_version}:slim") { transitive = false }
-    implementation fg.deobf("com.legacy:structure-gel:1.20.1-2.16.2")
-    implementation fg.deobf("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
-    implementation fg.deobf("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
-    implementation fg.deobf("java.net.luke100000:minecraft-comes-alive:7.5.21")
+    //Forge mods
+    modImplementation("com.ryorama.terrariamod:terrariamod:1.0.0")
+    modImplementation("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
+    modImplementation("net.pixelbank.burnt:burnt:1.8.3")
+    modImplementation("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
+    modImplementation("com.simibubi.create:create-1.20.1:${create_version}:slim") { transitive = false }
+    modImplementation("com.legacy:structure-gel:1.20.1-2.16.2")
+    modImplementation("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
+    modImplementation("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
+    modImplementation("java.net.luke100000:minecraft-comes-alive:7.5.21")
+    modImplementation("curse.maven:valkyrien-skies-258371:5212232")
+    modImplementation("curse.maven:refurbished-furniture-897116:5893833")
+    modImplementation('curse.maven:toughasnails-246391:4750298')
+    modImplementation('curse.maven:firstaid-276837:5127567')
+    modImplementation('curse.maven:geckolib-388172:5386948')
+    modImplementation('curse.maven:ballistix-443915:5022909')
+    modImplementation('curse.maven:electrodynamics-316867:5022907')
+    modImplementation('curse.maven:nuclearscience-318646:5022908')
+    modImplementation('curse.maven:framework-549225:5680064')
+    modImplementation('curse.maven:potion_master-356801:4722415')
+    modImplementation('curse.maven:cuisine_delight-893541:5300072')
+    modImplementation('curse.maven:farmers_delight-398521:5051242')
+    modImplementation('curse.maven:bos-757062:4727499')
+    modImplementation('curse.maven:architectury-419699:5137938')
+    modImplementation('curse.maven:butchery-973620:5746912')
+    modImplementation('curse.maven:randomium-523013:5431202')
+    modImplementation("curse.maven:alexs-caves-924854:5831476")
+    modImplementation("curse.maven:cbc-nuclear-1060244:5678978")
+    modImplementation("curse.maven:citadel-331936:5633260")
+    modImplementation("curse.maven:configuration-444699:4710266")
+    modImplementation("curse.maven:deeperdarker-659011:5698212")
+    modImplementation("curse.maven:haunted-harvest-541753:5212692")
+    modImplementation("curse.maven:crackers-wither-storm-mod-621405:5619741")
+    modImplementation("curse.maven:selene-499980:5863085")
+    modImplementation("curse.maven:mekanism-268560:5662583")
+    modImplementation("curse.maven:mrcrayfishs-gun-mod-unofficial-945471:5610926")
+    modImplementation("curse.maven:easy-villagers-400514:5724570")
+    modImplementation("curse.maven:ato-405593:5348605")
+    modImplementation("curse.maven:create-clockwork-807792:5580456")
+    modImplementation("curse.maven:aether-255308:5889509")
+    modImplementation("curse.maven:the-twilight-forest-227639:4865711")
+    modImplementation("curse.maven:blue-skies-312918:5010316")
+    modImplementation("curse.maven:the-forgotten-dimensions-461140:5813211")
+    modImplementation("curse.maven:shadowlands-398372:5386877")
+    modImplementation("curse.maven:astral-dimension-645743:5903628")
+    modImplementation("curse.maven:the-abyss-chapter-ii-440647:5129404")
+    modImplementation("curse.maven:pams-harvestcraft-2-trees-365460:4625518")
 
-    implementation fg.deobf("curse.maven:valkyrien-skies-258371:5212232")
-    implementation fg.deobf("curse.maven:refurbished-furniture-897116:5893833")
-    implementation fg.deobf('curse.maven:toughasnails-246391:4750298')
-    implementation fg.deobf('curse.maven:firstaid-276837:5127567')
-    implementation fg.deobf('curse.maven:geckolib-388172:5386948')
-    implementation fg.deobf("curse.maven:hamsters-952435:5121305")
-    implementation fg.deobf('curse.maven:ballistix-443915:5022909')
-    implementation fg.deobf('curse.maven:electrodynamics-316867:5022907')
-    implementation fg.deobf('curse.maven:nuclearscience-318646:5022908')
-    implementation fg.deobf('curse.maven:framework-549225:5680064')
-    implementation fg.deobf('curse.maven:potion_master-356801:4722415')
-    implementation fg.deobf('curse.maven:cuisine_delight-893541:5300072')
-    implementation fg.deobf('curse.maven:farmers_delight-398521:5051242')
-    implementation fg.deobf('curse.maven:bos-757062:4727499')
-    implementation fg.deobf('curse.maven:architectury-419699:5137938')
-    implementation fg.deobf('curse.maven:butchery-973620:5746912')
-    implementation fg.deobf('curse.maven:randomium-523013:5431202')
-    implementation fg.deobf("curse.maven:alexs-caves-924854:5831476")
-    implementation fg.deobf("curse.maven:cbc-nuclear-1060244:5678978")
-    implementation fg.deobf("curse.maven:citadel-331936:5633260")
-    implementation fg.deobf("curse.maven:configuration-444699:4710266")
-    implementation fg.deobf("curse.maven:deeperdarker-659011:5698212")
-    implementation fg.deobf("curse.maven:haunted-harvest-541753:5212692")
-    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:5619741")
-    implementation fg.deobf("curse.maven:selene-499980:5863085")
-    implementation fg.deobf("curse.maven:mekanism-268560:5662583")
-    implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-unofficial-945471:5610926")
-    implementation fg.deobf("curse.maven:easy-villagers-400514:5724570")
-    implementation fg.deobf("curse.maven:ato-405593:5348605")
-    implementation fg.deobf("curse.maven:create-clockwork-807792:5580456")
-    implementation fg.deobf("curse.maven:aether-255308:5889509")
-    implementation fg.deobf("curse.maven:the-twilight-forest-227639:4865711")
-    implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
-    implementation fg.deobf("curse.maven:the-forgotten-dimensions-461140:5813211")
-    implementation fg.deobf("curse.maven:shadowlands-398372:5386877")
-    implementation fg.deobf("curse.maven:astral-dimension-645743:5903628")
-    implementation fg.deobf("curse.maven:the-abyss-chapter-ii-440647:5129404")
+    //Fabric mods
+    modImplementation("hamster:hamsters-fabric:1.1.0-1.20.1")
+    modImplementation("curse.maven:reborncore-237903:4708961")
+    modImplementation("curse.maven:astrocraft-mod-1010757:5842026")
+    modImplementation("curse.maven:solar-apocalypse-refabricated-480660:5917865")
 
+    //Other dependencies
     implementation 'thedarkcolour:kotlinforforge:4.10.0'
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
-        jarJar.ranged(it, "[0.4.1,)")
-    }
 
-    runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
-    compileOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))
+    include("io.github.llamalad7:mixinextras-forge:0.4.1")
+    runtimeOnly(implementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
+    compileOnly(implementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))
     compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:api-game:${rootProject.vs_core_version}")
     compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
@@ -221,25 +195,26 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.+:processor'
 }
 
-jar {
-    from('/') {
-        include 'LICENSE.txt'
-    }
+processResources {
+    inputs.property "version", project.version
 
-    manifest {
-        attributes([
-                "Specification-Title": "tstp_content",
-                "Specification-Vendor": "Ryorama",
-                "Specification-Version": "1",
-                "Implementation-Title": project.name,
-                "Implementation-Version": project.version,
-                "Implementation-Vendor" :"Ryorama",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "tstp_content.mixins.json"
-        ])
+    filesMatching("META-INF/mods.toml") {
+        expand "version": project.version
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+shadowJar {
+    configurations = [project.configurations.shadowCommon]
+    archiveClassifier = "dev-shadow"
+}
+
+remapJar {
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
+}
+
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
 }

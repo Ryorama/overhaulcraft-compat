@@ -18,6 +18,7 @@
     "easyvillagers.VillagerEventsMixin",
     "furniture_refurbished.FurnitureModelProviderMixin",
     "nukeshell.NukeShellProjectileMixin",
+    "phc2tree.ConfiguredFeaturesMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
