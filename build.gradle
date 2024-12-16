@@ -174,7 +174,7 @@ dependencies {
     modImplementation("curse.maven:pams-harvestcraft-2-trees-365460:4625518")
 
     //Fabric mods
-    modImplementation(include(project("mod-bridge")))
+    implementation(project("mod-bridge"))
 
     //Other dependencies
     implementation 'thedarkcolour:kotlinforforge:4.10.0'
