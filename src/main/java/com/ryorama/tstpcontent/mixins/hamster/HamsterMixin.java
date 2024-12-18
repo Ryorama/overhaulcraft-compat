@@ -38,7 +38,7 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
 
     /**
      * @author Ryorama
-     * @reason Remove unnecessary sfx when hamster explodes
+     * @reason Remove unnecessary sfx and nuclear hamster
      */
     @Overwrite
     public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand interactionHand) {
@@ -79,8 +79,7 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                             System.out.println("Hamster mouth" + interactionHand);
                             if (this.getItemInHand(interactionHand) == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
                                 System.out.println("Hamster Nuke");
-                                //Utils.createNukeExplosionWithSize(this.level(), this, 0.5f);
-                                Utils.createNukeExplosion(this.level(), this);
+                                Utils.createNukeExplosionWithSize(this.level(), this, 0.5f);
                             } else {
                                 this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
                             }

@@ -94,16 +94,25 @@ sourceSets {
 
 loom {
     silentMojangMappingsLicense()
-
     forge {
         mixinConfig "tstp_content.mixins.json"
     }
-
+    mixin {
+        defaultRefmapName.set("tstp_content.mixins.refmap.json")
+    }
     runs {
         data {
             data()
             programArgs "--all", "--mod", mod_id
             programArgs "--output", generatedResources.absolutePath
+        }
+        configureEach {
+            property "mixin.debug", "true"
+            property "mixin.debug.export.decompile", "false"
+            property "mixin.debug.verbose", "true"
+            property "mixin.dumpTargetOnFailure", "true"
+            property "mixin.checks", "true"
+            property "mixin.hotSwap", "true"
         }
     }
 }
