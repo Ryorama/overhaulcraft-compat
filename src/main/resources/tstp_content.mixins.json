@@ -17,6 +17,7 @@
     "deeperdarker.OthersidePortalBlockMixin$OthersidePortalBlockAccessor",
     "easyvillagers.VillagerEventsMixin",
     "furniture_refurbished.FurnitureModelProviderMixin",
+    "hamster.HamsterMixin",
     "nukeshell.NukeShellProjectileMixin",
     "phc2tree.ConfiguredFeaturesMixin",
     "potionmaster.BlockStoreBuilderMixin",

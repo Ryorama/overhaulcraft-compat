@@ -1,5 +1,9 @@
 package com.ryorama.tstpcontent.mixins.hamster;
 
+import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry;
+import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
+import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.utils.Utils;
 import com.starfish_studios.hamsters.HamstersConfig;
 import com.starfish_studios.hamsters.entities.Hamster;
 import com.starfish_studios.hamsters.entities.util.SleepingAnimal;
@@ -16,6 +20,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +31,7 @@ import software.bernie.geckolib.animatable.GeoEntity;
 
 @Mixin(Hamster.class)
 public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, SleepingAnimal {
+
     protected HamsterMixin(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
     }
@@ -70,7 +76,14 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                                 serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 5, 0.0, 0.0, 0.0, 0.0);
                             }
 
-                            this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
+                            System.out.println("Hamster mouth" + interactionHand);
+                            if (this.getItemInHand(interactionHand) == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                                System.out.println("Hamster Nuke");
+                                //Utils.createNukeExplosionWithSize(this.level(), this, 0.5f);
+                                Utils.createNukeExplosion(this.level(), this);
+                            } else {
+                                this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
+                            }
                         }
 
                         this.level().addFreshEntity(new ExperienceOrb(this.level(), this.getX(), this.getY(), this.getZ(), 3));

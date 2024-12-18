@@ -174,7 +174,9 @@ dependencies {
     modImplementation("curse.maven:pams-harvestcraft-2-trees-365460:4625518")
 
     //Fabric mods
-    implementation(project("mod-bridge"))
+    runtimeOnly(project("mod-bridge"))
+    api(include(project("mod-bridge"))) { transitive = false }
+    implementation(project("mod-bridge")) { targetConfiguration = "modRuntimeClasspathMainMapped" }
 
     //Other dependencies
     implementation 'thedarkcolour:kotlinforforge:4.10.0'

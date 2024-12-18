@@ -52,6 +52,17 @@ public class Utils {
         }
     }
 
+    public static void createNukeExplosionWithSize(Level level, Entity baseEntity, float size) {
+        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
+        explosion.copyPosition(baseEntity);
+        explosion.setSize(size);
+        level.addFreshEntity(explosion);
+        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+        if (radiationManager.isRadiationEnabled()) {
+            radiationManager.radiate(new Coord4D(new Vec3i((int) baseEntity.position().x, (int) baseEntity.position().y, (int) baseEntity.position().z), level), 10 * size);
+        }
+    }
+
     public static void createNukeExplosionWithVec3(Level level, Vec3 vec3) {
         NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
         explosion.setPos(vec3);
