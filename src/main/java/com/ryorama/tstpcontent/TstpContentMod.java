@@ -27,7 +27,6 @@ import software.bernie.geckolib.GeckoLib;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Mod(TstpContentMod.MODID)
 public class TstpContentMod {
 	public static final Logger LOGGER = LogManager.getLogger(TstpContentMod.class);
