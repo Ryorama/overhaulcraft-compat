@@ -5,22 +5,13 @@ import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
 import mekanism.api.Coord4D;
 import mekanism.api.radiation.IRadiationManager;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.core.Vec3i;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.registries.ForgeRegistries;
 
-public class Utils {
+public class ExtraFunc {
     //Tweaked method for creating a nuke explosion on a new thread to improve performance - Using Entity Pos
     public static void createNukeExplosionThreaded(Level level, Entity baseEntity) {
        NuclearExposionThread nuclearExposionThread = new NuclearExposionThread();

@@ -1,6 +1,6 @@
 package com.ryorama.tstpcontent.mixins.potionmaster;
 
-import com.ryorama.tstpcontent.utils.OresRef;
+import com.ryorama.tstpcontent.utils.TstpTags;
 import com.thevortex.potionsmaster.render.util.BlockData;
 import com.thevortex.potionsmaster.render.util.BlockStoreBuilder;
 import com.thevortex.potionsmaster.render.util.OutlineColor;
@@ -20,6 +20,6 @@ public class BlockStoreBuilderMixin {
 
     @Inject(at = @At("HEAD"), method = "init", remap = false)
     private static void init(CallbackInfo ci) {
-        list.add(new BlockData("RandomiumOre", OresRef.RANDOMIUM.toString(), new OutlineColor(149, 6, 189), false, 0));
+        list.add(new BlockData("RandomiumOre", TstpTags.RANDOMIUM_ORE.toString(), new OutlineColor(149, 6, 189), false, 0));
     }
 }

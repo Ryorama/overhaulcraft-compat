@@ -1,4 +1,4 @@
-package com.ryorama.tstpcontent.item.recipes.oresight;
+package com.ryorama.tstpcontent.recipes.oresight;
 
 import com.ryorama.tstpcontent.init.TstpContentModItems;
 import com.ryorama.tstpcontent.init.TstpContentModPotions;

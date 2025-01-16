@@ -3,12 +3,10 @@ package com.ryorama.tstpcontent.init;
 import com.github.alexmodguy.alexscaves.server.block.ACSoundTypes;
 import com.kyanite.deeperdarker.content.DDSounds;
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
-import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.terrariamod.client.TAudio;
 import com.ryorama.tstpcontent.block.*;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,8 +23,8 @@ import com.ryorama.tstpcontent.TstpContentMod;
 public class TstpContentModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, TstpContentMod.MODID);
 
-	public static final RegistryObject<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new CaloriteMachineCasingBlock());
-	public static final RegistryObject<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new OstrumMachineCasingBlock());
+	public static final RegistryObject<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> HVAC_BLOCK = REGISTRY.register("hvac_block", () -> new HVACBlockBlock());
 	public static final RegistryObject<Block> LIGHT_RF_ELECTRICITY_GENERATOR = REGISTRY.register("light_rf_electricity_generator", () -> {
 		return new RFElectricityGeneratorBlock(MetalType.LIGHT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {

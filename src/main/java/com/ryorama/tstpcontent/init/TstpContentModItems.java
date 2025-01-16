@@ -21,7 +21,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RANDOMIUM_POWDER = REGISTRY.register("randomium_powder", () -> new BasePowder(new Item.Properties()));
 	public static final RegistryObject<Item> CALCINATED_RANDOMIUM_POWDER = REGISTRY.register("calcinatedrandomium_powder", () -> new CalcinatedPowder(new Item.Properties()));
-	public static final RegistryObject<Item> MUSIC_DISC_1 = REGISTRY.register("music_disc_1", () -> new RecordItem(14, TstpContentModSounds.UNIVERSAL_COLLAPSE_EPIC.get(), new Item.Properties().stacksTo(1), 239 * 20));
 	public static final RegistryObject<Item> RANDOMIUM_ORE_CHUNK = REGISTRY.register("randomium_ore_chunk", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> SOLAR_APOCALYPSE_ITEM = REGISTRY.register("solar_apocalypse_item", () -> new SolarApocalypseItem(new Item.Properties()));
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);

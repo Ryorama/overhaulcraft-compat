@@ -3,7 +3,7 @@ package com.ryorama.tstpcontent;
 import com.ryorama.terrariamod.blocks.BlocksT;
 import com.ryorama.terrariamod.world.TerrariaChunkGenerator;
 import com.ryorama.tstpcontent.init.*;
-import com.ryorama.tstpcontent.item.recipes.oresight.RandomiumPotionRecipe;
+import com.ryorama.tstpcontent.recipes.oresight.RandomiumPotionRecipe;
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.format.ConfigFormats;
 import net.minecraft.world.item.ItemStack;

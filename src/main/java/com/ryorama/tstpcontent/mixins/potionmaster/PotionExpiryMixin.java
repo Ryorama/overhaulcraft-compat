@@ -1,6 +1,7 @@
 package com.ryorama.tstpcontent.mixins.potionmaster;
 
 import com.ryorama.tstpcontent.utils.OresRef;
+import com.ryorama.tstpcontent.utils.TstpTags;
 import com.thevortex.potionsmaster.events.PotionExpiry;
 import com.thevortex.potionsmaster.network.PacketHandler;
 import com.thevortex.potionsmaster.network.PotionPacket;
@@ -18,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PotionExpiryMixin {
     @Inject(at = @At("HEAD"), method = "sendAll", remap = false)
     private static void sendAll(Player player, CallbackInfo ci) {
-        PotionPacket pkt2 = new PotionPacket(OresRef.RANDOMIUM.toString());
+        PotionPacket pkt2 = new PotionPacket(TstpTags.RANDOMIUM_ORE.toString());
         PacketHandler.sendTo(pkt2, (ServerPlayer)player);
     }
 
