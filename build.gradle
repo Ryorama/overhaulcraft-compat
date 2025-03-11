@@ -97,6 +97,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    maven { url 'https://jitpack.io' }
     maven { url = 'https://maven.minecraftforge.net/' }
     maven {
         name = 'GeckoLib'
@@ -167,6 +168,7 @@ dependencies {
     implementation fg.deobf("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
     implementation fg.deobf("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
     implementation fg.deobf("java.net.luke100000:minecraft-comes-alive:7.5.21")
+    implementation fg.deobf('dev.xkmc.cuisinedelight:cuisinedelight:1.1.16')
 
     implementation fg.deobf("curse.maven:valkyrien-skies-258371:5212232")
     implementation fg.deobf("curse.maven:refurbished-furniture-897116:5893833")
@@ -206,10 +208,18 @@ dependencies {
     implementation fg.deobf("curse.maven:astral-dimension-645743:5903628")
     implementation fg.deobf("curse.maven:the-abyss-chapter-ii-440647:5129404")
 
-    implementation 'thedarkcolour:kotlinforforge:4.10.0'
+    implementation fg.deobf(jarJar("dev.xkmc.l2library:l2library:2.4.14-slim")) {
+        transitive = false
+        jarJar.ranged(it, "[2.4.14,)")
+    }
+    implementation fg.deobf(jarJar("dev.xkmc.l2serial:l2serial:1.2.0")) {
+        transitive = false
+        jarJar.ranged(it, "[1.2.0,)")
+    }
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
         jarJar.ranged(it, "[0.4.1,)")
     }
+    implementation 'thedarkcolour:kotlinforforge:4.10.0'
 
     runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
     compileOnly(fg.deobf("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))

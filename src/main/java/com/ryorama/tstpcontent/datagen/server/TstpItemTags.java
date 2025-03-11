@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-public class ItemTags extends ItemTagsProvider {
-    public ItemTags(PackOutput packOutPut, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> tagLookup, ExistingFileHelper existingFileHelper) {
+public class TstpItemTags extends ItemTagsProvider {
+    public TstpItemTags(PackOutput packOutPut, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> tagLookup, ExistingFileHelper existingFileHelper) {
         super(packOutPut, lookupProvider, tagLookup, TstpContentMod.MODID, existingFileHelper);
     }
 

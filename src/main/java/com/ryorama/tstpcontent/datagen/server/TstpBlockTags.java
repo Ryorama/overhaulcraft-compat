@@ -19,9 +19,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-public class BlockTags extends BlockTagsProvider {
+public class TstpBlockTags extends BlockTagsProvider {
 
-    public BlockTags(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public TstpBlockTags(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, lookupProvider, TstpContentMod.MODID, existingFileHelper);
     }
 
