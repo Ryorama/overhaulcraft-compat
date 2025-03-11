@@ -1,0 +1,26 @@
+{
+  "attached_dimention_id": "tstp_content:candy_cavity_dim",
+  "skybox_data": {
+    "texture_id": "skybox_solar",
+    "alpha": 245,
+    "yaw": -60,
+    "pitch": 60,
+    "roll": 60,
+    "rotation_plane": "pitch",
+    "fade": "night"
+  },
+  "dimensional_data": {
+    "dimension_type": "planet",
+    "sky_objects": false,
+    "atmospheric_data": {
+      "atmosphere_y": 560,
+      "travel_to": "cosmos:solar_system",
+      "origin_x": -54100,
+      "origin_y": 530,
+      "origin_z": 7100,
+      "overlay_texture_id": "cosmos:candy_cavity_bar",
+      "shipbit_y": 24,
+      "ship_min_y": 120
+    }
+  }
+}

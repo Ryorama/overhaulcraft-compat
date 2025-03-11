@@ -159,7 +159,7 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
     implementation fg.deobf("com.ryorama.terrariamod:terrariamod:1.0.0")
-    implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.6.5")
+    implementation fg.deobf("net.lointain.cosmos:Cosmic-Horizons:0.0.7.3")
     implementation fg.deobf("net.pixelbank.burnt:burnt:1.8.3")
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
     implementation fg.deobf("com.simibubi.create:create-1.20.1:${create_version}:slim") { transitive = false }

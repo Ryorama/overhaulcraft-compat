@@ -1,6 +1,5 @@
 package com.ryorama.tstpcontent.mixins.potionmaster;
 
-import com.ryorama.tstpcontent.utils.OresRef;
 import com.ryorama.tstpcontent.utils.TstpTags;
 import com.thevortex.potionsmaster.events.PotionExpiry;
 import com.thevortex.potionsmaster.network.PacketHandler;
