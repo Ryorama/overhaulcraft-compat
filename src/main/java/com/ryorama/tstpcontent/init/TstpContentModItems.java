@@ -18,9 +18,20 @@ import com.ryorama.tstpcontent.TstpContentMod;
 public class TstpContentModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TstpContentMod.MODID);
 
-	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
+	//Ore Sight Stuff
 	public static final RegistryObject<Item> RANDOMIUM_POWDER = REGISTRY.register("randomium_powder", () -> new BasePowder(new Item.Properties()));
 	public static final RegistryObject<Item> CALCINATED_RANDOMIUM_POWDER = REGISTRY.register("calcinatedrandomium_powder", () -> new CalcinatedPowder(new Item.Properties()));
+	public static final RegistryObject<Item> DRACONIUM_POWDER = REGISTRY.register("draconium_powder", () -> new BasePowder(new Item.Properties()));
+	public static final RegistryObject<Item> CALCINATED_DRACONIUM_POWDER = REGISTRY.register("calcinateddraconium_powder", () -> new CalcinatedPowder(new Item.Properties()));
+	public static final RegistryObject<Item> SULFUR_POWDER = REGISTRY.register("sulfur_powder", () -> new BasePowder(new Item.Properties()));
+	public static final RegistryObject<Item> CALCINATED_SULFUR_POWDER = REGISTRY.register("calcinatedsulfur_powder", () -> new CalcinatedPowder(new Item.Properties()));
+	public static final RegistryObject<Item> NITER_POWDER = REGISTRY.register("niter_powder", () -> new BasePowder(new Item.Properties()));
+	public static final RegistryObject<Item> CALCINATED_NITER_POWDER = REGISTRY.register("calcinatedniter_powder", () -> new CalcinatedPowder(new Item.Properties()));
+
+
+
+
+	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RANDOMIUM_ORE_CHUNK = REGISTRY.register("randomium_ore_chunk", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> SOLAR_APOCALYPSE_ITEM = REGISTRY.register("solar_apocalypse_item", () -> new SolarApocalypseItem(new Item.Properties()));
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);

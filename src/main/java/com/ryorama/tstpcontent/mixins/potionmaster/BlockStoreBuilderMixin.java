@@ -21,5 +21,8 @@ public class BlockStoreBuilderMixin {
     @Inject(at = @At("HEAD"), method = "init", remap = false)
     private static void init(CallbackInfo ci) {
         list.add(new BlockData("RandomiumOre", TstpTags.RANDOMIUM_ORE.toString(), new OutlineColor(149, 6, 189), false, 0));
+        list.add(new BlockData("DraconiumOre", TstpTags.DRACONIUM_ORE.toString(), new OutlineColor(117, 13, 140), false, 0));
+        list.add(new BlockData("SulfurOre", TstpTags.SULFUR_ORE.toString(), new OutlineColor(215, 224, 29), false, 0));
+        list.add(new BlockData("NiterOre", TstpTags.NITER_ORE.toString(), new OutlineColor(214, 214, 203), false, 0));
     }
 }

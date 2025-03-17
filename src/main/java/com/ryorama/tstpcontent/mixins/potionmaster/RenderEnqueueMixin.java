@@ -176,6 +176,18 @@ public class RenderEnqueueMixin {
                                                 block = TstpTags.RANDOMIUM_ORE;
                                             }
 
+                                            if (currentState.is(TstpTags.DRACONIUM_ORE)) {
+                                                block = TstpTags.DRACONIUM_ORE;
+                                            }
+
+                                            if (currentState.is(TstpTags.SULFUR_ORE)) {
+                                                block = TstpTags.SULFUR_ORE;
+                                            }
+
+                                            if (currentState.is(TstpTags.NITER_ORE)) {
+                                                block = TstpTags.NITER_ORE;
+                                            }
+
                                             BlockStore.BlockDataWithUUID dataWithUUID = Controller.getBlockStore().getStoreByReference(block.toString());
                                             if (dataWithUUID != null && dataWithUUID.getBlockData() != null && dataWithUUID.getBlockData().isDrawing()) {
                                                 Math.max(0.0, (double)Controller.getRadius() - PotionsMaster.proxy.getClientPlayer().distanceToSqr(x + i, y + j, z + k) / (double)(Controller.getRadius() / 2));

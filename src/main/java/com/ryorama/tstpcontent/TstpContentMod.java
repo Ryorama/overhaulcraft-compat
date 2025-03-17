@@ -3,7 +3,10 @@ package com.ryorama.tstpcontent;
 import com.ryorama.terrariamod.blocks.BlocksT;
 import com.ryorama.terrariamod.world.TerrariaChunkGenerator;
 import com.ryorama.tstpcontent.init.*;
+import com.ryorama.tstpcontent.recipes.oresight.DraconiumPotionRecipe;
+import com.ryorama.tstpcontent.recipes.oresight.NiterPotionRecipe;
 import com.ryorama.tstpcontent.recipes.oresight.RandomiumPotionRecipe;
+import com.ryorama.tstpcontent.recipes.oresight.SulfurPotionRecipe;
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.format.ConfigFormats;
 import net.minecraft.world.item.ItemStack;
@@ -64,6 +67,9 @@ public class TstpContentMod {
 	private static void registerPotions() {
 		LOGGER.info("Registering Custom Sight Potion Recipes");
 		BrewingRecipeRegistry.addRecipe(new RandomiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.RANDOMIUM_SIGHT.get())));
+		BrewingRecipeRegistry.addRecipe(new DraconiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_DRACONIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.DRACONIUM_SIGHT.get())));
+		BrewingRecipeRegistry.addRecipe(new SulfurPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_SULFUR_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.SULFUR_SIGHT.get())));
+		BrewingRecipeRegistry.addRecipe(new NiterPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_NITER_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.NITER_SIGHT.get())));
 	}
 
 	public void setupTerrariaOreGen() {
