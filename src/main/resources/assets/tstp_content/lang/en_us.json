@@ -311,5 +311,7 @@
   "config.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
   "config.tstp_content.option.conversionCrucibleRadius": "Conversion Crucible Radius",
   "config.tstp_content.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
-  "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets"
+  "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
+  "config.tstp_content.option.peacefulHunger": "Enable Hunger in Peaceful Mode",
+  "config.tstp_content.option.peacefulThirst": "Enable Thirst in Peaceful Mode"
 }
