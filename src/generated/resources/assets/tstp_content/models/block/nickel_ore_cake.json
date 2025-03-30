@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "tstp_content:block/nickel_ore_cake_top",
-    "side": "tstp_content:block/nickel_ore_cake",
-    "top": "tstp_content:block/nickel_ore_cake_top"
-  }
-}

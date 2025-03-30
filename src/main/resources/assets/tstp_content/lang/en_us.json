@@ -12,6 +12,8 @@
   "block.tstp_content.light_rf_electricity_generator": "Light RF Electricity Generator",
   "block.tstp_content.dark_rf_electricity_generator": "Dark RF Electricity Generator",
   "block.tstp_content.hamster_wheel_generator": "Hamster Wheel Generator",
+  "block.tstp_content.furniture.cup": "Cup",
+  "block.tstp_content.furniture.cookie_jar": "Cookie Jar",
 
   "block.tstp_content.coal_ore_abyss": "Abyss Coal Ore",
   "block.tstp_content.copper_ore_abyss": "Abyss Copper Ore",
@@ -288,11 +290,11 @@
   "item.tstp_content.calcinatedrandomium_powder": "Calcinated Randomium Powder",
   "item.tstp_content.randomium_powder": "Randomium Powder",
   "item.tstp_content.fried_dragon_egg": "Fried Dragon Egg",
-  "item.tstp_content.music_disc_1": "Music Disc",
   "item.tstp_content.randomium_ore_chunk": "Randomium Ore Chunk",
   "item.tstp_content.solar_apocalypse_item": "Solar Apocalypse Mode Activator",
-
-  "item.tstp_content.music_disc_1.desc": "Universal Collapse Epic - Astromorphic | https://www.youtube.com/watch?v=PkFqGmBnNVE",
+  "item.tstp_content.furniture.cup": "Cup",
+  "item.tstp_content.furniture.soap_water": "Soap Water",
+  "item.tstp_content.furniture.super_soap_water": "Super Soap Water",
 
   "item.minecraft.potion.effect.randomium_sight": "RandomiumSight",
   "item.minecraft.splash_potion.effect.randomium_sight": "Splash Potion of RandomiumSight",
@@ -314,5 +316,7 @@
   "config.tstp_content.option.threadedNukeExplosion": "Threaded Nuke Explosion",
   "config.tstp_content.option.conversionCrucibleRadius": "Conversion Crucible Radius",
   "config.tstp_content.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
-  "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets"
+  "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
+  "config.tstp_content.option.peacefulHunger": "Enable Hunger in Peaceful Mode",
+  "config.tstp_content.option.peacefulThirst": "Enable Thirst in Peaceful Mode"
 }

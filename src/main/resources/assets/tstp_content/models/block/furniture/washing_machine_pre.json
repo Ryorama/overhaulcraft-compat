@@ -1,0 +1,11 @@
+{
+    "parent": "tstp_content:block/furniture/washing_machine",
+    "textures": {
+        "1": "blocks/white_concrete",
+        "2": "blocks/light_gray_concrete",
+        "3": "blocks/gray_concrete",
+        "4": "blocks/red_concrete",
+        "5": "blocks/gray_concrete",
+        "6": "blocks/glass"
+    }
+}

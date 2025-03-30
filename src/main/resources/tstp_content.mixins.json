@@ -5,6 +5,8 @@
   "refmap": "tstp_content.mixins.refmap.json",
   "mixins": [
     "EnderEyeItemMixin",
+    "FoodDataMixin",
+    "PlayerMixin",
     "aether.DimensionHooksMixin",
     "alexscaves.ConversionCrucibleBlockEntityMixin",
     "alexscaves.NuclearBombEntityMixin",
@@ -19,10 +21,10 @@
     "furniture_refurbished.FurnitureModelProviderMixin",
     "hamster.HamsterMixin",
     "nukeshell.NukeShellProjectileMixin",
-    "phc2tree.ConfiguredFeaturesMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
+    "thirstwastaken.PlayerThirstMixin",
     "twilightforest.TFTickHandlerMixin",
     "twilightforest.TFTickHandlerMixin$TFTickHandlerAccessor"
   ],

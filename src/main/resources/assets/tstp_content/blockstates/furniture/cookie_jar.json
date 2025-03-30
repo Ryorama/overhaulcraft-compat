@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "cookie_count=0": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+        "cookie_count=1": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+        "cookie_count=2": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+        "cookie_count=3": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+        "cookie_count=4": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+        "cookie_count=5": {"model": "tstp_content:block/furniture/cookie_jar_pre"},
+	    "cookie_count=6": {"model": "tstp_content:block/furniture/cookie_jar_pre"}
+    }
+}

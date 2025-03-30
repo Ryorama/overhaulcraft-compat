@@ -1,10 +1,9 @@
 {
-  "universal_collapse_epic": {
-    "subtitle": "universal_collapse_epic.sub",
-    "sounds": [
-      {
-        "name": "tstp_content:music/universal_collapse_epic"
-      }
-    ]
-  }
+  "door_bell":          { "category": "block",  "sounds": [{ "name": "tstp_content:door_bell" }]},
+  "fire_alarm":         { "category": "block",  "sounds": [{ "name": "tstp_content:fire_alarm" }]},
+  "shower":             { "category": "block",  "sounds": [{ "name": "tstp_content:shower" }]},
+  "tap":                { "category": "block",  "sounds": [{ "name": "tstp_content:tap" }]},
+  "blender":            { "category": "block",  "sounds": [{ "name": "tstp_content:blender" }]},
+  "dishwasher":         { "category": "block",  "sounds": [{ "name": "tstp_content:dishwasher" }]},
+  "washing_machine":    { "category": "block",  "sounds": [{ "name": "tstp_content:washing_machine" }]}
 }

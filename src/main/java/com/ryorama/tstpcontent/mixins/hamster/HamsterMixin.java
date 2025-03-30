@@ -1,9 +1,8 @@
 package com.ryorama.tstpcontent.mixins.hamster;
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry;
-import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.utils.Utils;
+import com.ryorama.tstpcontent.utils.ExtraFunc;
 import com.starfish_studios.hamsters.HamstersConfig;
 import com.starfish_studios.hamsters.entities.Hamster;
 import com.starfish_studios.hamsters.entities.util.SleepingAnimal;
@@ -20,7 +19,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +30,8 @@ import software.bernie.geckolib.animatable.GeoEntity;
 @Mixin(Hamster.class)
 public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, SleepingAnimal {
 
+    @Shadow protected abstract boolean getFromHand();
+
     protected HamsterMixin(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
     }
@@ -42,6 +42,7 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
      */
     @Overwrite
     public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand interactionHand) {
+        TstpContentMod.LOGGER.info("Hamster Mixin Pass 1");
         ItemStack itemStack = player.getItemInHand(interactionHand);
         Item item = itemStack.getItem();
         if (this.level().isClientSide()) {
@@ -51,17 +52,22 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
             return InteractionResult.FAIL;
         } else {
             if (this.isTame()) {
-                if (itemStack.is(HamstersTags.HAMSTER_BREEDING_FOOD) && this.getAge() == 0 && this.canFallInLove()) {
+                if (itemStack.is(HamstersTags.HAMSTER_FOOD) && this.getAge() == 0 && this.canFallInLove()) {
                     this.feedHamster(itemStack, player, true);
                     this.setInLove(player);
                     return InteractionResult.SUCCESS;
                 }
+                TstpContentMod.LOGGER.info("Hamster Mixin Pass 2");
 
                 if (this.isFood(itemStack)) {
+                    TstpContentMod.LOGGER.info("Hamster Mixin Pass 3");
+
                     this.feedHamster(itemStack, player, !HamstersConfig.hamstersBurst || this.getCheekLevel() < 3);
                     if (this.getAge() < 0) {
                         this.addAgeToHamster();
                     } else if (this.getCheekLevel() >= 3 && HamstersConfig.hamstersBurst) {
+                        TstpContentMod.LOGGER.info("Hamster Mixin Pass 4");
+
                         this.setHealth(0.0F);
                         if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.CONFETTI) {
                             FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(this.level(), this, this.getX(), this.getEyeY(), this.getZ(), Hamster.getFirework());
@@ -75,11 +81,21 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                                 ServerLevel serverLevel = (ServerLevel) var10;
                                 serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 5, 0.0, 0.0, 0.0, 0.0);
                             }
-
-                            System.out.println("Hamster mouth" + interactionHand);
-                            if (this.getItemInHand(interactionHand) == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
-                                System.out.println("Hamster Nuke");
-                                Utils.createNukeExplosionWithSize(this.level(), this, 0.5f);
+                            int uraniumRods = 0;
+                            if (this.getMainHandItem() != null) {
+                                if (this.getMainHandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                                    uraniumRods++;
+                                }
+                            }
+                            if (this.getOffhandItem() != null) {
+                                if (this.getOffhandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                                    uraniumRods++;
+                                }
+                            }
+                            TstpContentMod.LOGGER.info("Hamster has " + uraniumRods + " uranium rods in mouth");
+                            if (uraniumRods > 0) {
+                                TstpContentMod.LOGGER.info("Hamster Nuke");
+                                ExtraFunc.createNukeExplosionWithSize(this.level(), this, 0.5f * uraniumRods);
                             } else {
                                 this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
                             }

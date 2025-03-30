@@ -2,7 +2,7 @@ package com.ryorama.tstpcontent.mixins.alexscaves;
 
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearBombEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.utils.Utils;
+import com.ryorama.tstpcontent.utils.ExtraFunc;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -24,9 +24,9 @@ public abstract class NuclearBombEntityMixin extends Entity {
     private void explode() {
         if (TstpContentMod.CONFIG != null) {
             if (TstpContentMod.CONFIG.threadedNukeExplosion) {
-                Utils.createNukeExplosionThreaded(level(), this);
+                ExtraFunc.createNukeExplosionThreaded(level(), this);
             } else {
-                Utils.createNukeExplosion(level(), this);
+                ExtraFunc.createNukeExplosion(level(), this);
             }
         }
     }

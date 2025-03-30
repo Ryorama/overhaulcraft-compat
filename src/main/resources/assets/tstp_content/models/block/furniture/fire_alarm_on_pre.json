@@ -1,0 +1,7 @@
+{
+    "parent": "tstp_content:block/furniture/fire_alarm",
+    "textures": {
+        "1": "blocks/red_concrete",
+        "2": "blocks/white_concrete"
+    }
+}

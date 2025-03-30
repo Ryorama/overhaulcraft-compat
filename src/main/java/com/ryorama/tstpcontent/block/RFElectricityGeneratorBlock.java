@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mrcrayfish.furniture.refurbished.block.FurnitureHorizontalEntityBlock;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.mrcrayfish.furniture.refurbished.data.tag.BlockTagSupplier;
-import com.ryorama.tstpcontent.block.entity.RFElectricityGeneratorBlockEntity;
+import com.ryorama.tstpcontent.blockentity.RFElectricityGeneratorBlockEntity;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -18,42 +18,6 @@
     }
   },
   "itemTransform": {
-    "croptopia:anchovy": {
-      "next": "croptopia:cooked_anchovy",
-      "stage": "COOKED"
-    },
-    "croptopia:calamari": {
-      "next": "croptopia:cooked_calamari",
-      "stage": "COOKED"
-    }, 
-	"croptopia:glowing_calamari": {
-      "next": "croptopia:cooked_calamari",
-      "stage": "COOKED"
-    },
-    "croptopia:tuna": {
-      "next": "croptopia:cooked_tuna",
-      "stage": "COOKED"
-    },
-    "croptopia:shrimp": {
-      "next": "croptopia:cooked_shrimp",
-      "stage": "COOKED"
-    },
-	"croptopia:crab": {
-      "next": "croptopia:steamed_crab",
-      "stage": "COOKED"
-    },
-	"croptopia:clam": {
-      "next": "croptopia:steamed_clams",
-      "stage": "COOKED"
-    },
-	"croptopia:bacon": {
-      "next": "croptopia:cooked_bacon",
-      "stage": "COOKED"
-    },
-	"croptopia:frog_legs": {
-      "next": "croptopia:fried_frog_legs",
-      "stage": "COOKED"
-    },	
 	"alexsmobs:moose_ribs": {
       "next": "alexsmobs:cooked_moose_ribs",
       "stage": "COOKED"
@@ -404,14 +368,6 @@
     },
     "rats:raw_rat": {
       "next": "rats:cooked_rat",
-      "stage": "COOKED"
-    },
-    "naturalist:caterpillar": {
-      "next": "naturalistdelight:cooked_caterpillar",
-      "stage": "COOKED"
-    },
-    "naturalist:butterfly": {
-      "next": "naturalistdelight:cooked_butterfly",
       "stage": "COOKED"
     }
   }

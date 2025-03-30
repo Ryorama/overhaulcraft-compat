@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "tstp_content:block/furniture/dishwasher"
+	},
+	"variants": {
+		"inventory": {
+			"model": "tstp_content:block/furniture/dishwasher"
+		},
+		"facing": {
+			"north": {
+				"y": 270
+			},
+			"east": {},
+			"south": {
+				"y": 90
+			},
+			"west": {
+				"y": 180
+			}
+		}
+	}
+}

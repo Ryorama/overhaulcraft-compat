@@ -6,7 +6,7 @@ import ballistix.common.blast.IHasCustomRenderer;
 import ballistix.common.entity.EntityMissile;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.utils.Utils;
+import com.ryorama.tstpcontent.utils.ExtraFunc;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -40,9 +40,9 @@ public abstract class BlastNuclearMixin extends Blast implements IHasCustomRende
         if (TstpContentMod.CONFIG != null) {
             if (this.world != null) {
                 if (TstpContentMod.CONFIG.threadedNukeExplosion) {
-                    Utils.createNukeExplosionWithVec3(this.world, new Vec3(this.position.getX(), this.position.getY(), this.position.getZ()));
+                    ExtraFunc.createNukeExplosionWithVec3(this.world, new Vec3(this.position.getX(), this.position.getY(), this.position.getZ()));
                 } else {
-                    Utils.createNukeExplosionWithVec3(this.world, new Vec3(this.position.getX(), this.position.getY(), this.position.getZ()));
+                    ExtraFunc.createNukeExplosionWithVec3(this.world, new Vec3(this.position.getX(), this.position.getY(), this.position.getZ()));
                 }
                 List<EntityMissile> missileList = this.world.getEntitiesOfClass(EntityMissile.class, new AABB(position, new BlockPos((int) (position.getX() + (16 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get())), (int) (position.getY() + (16 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get())), (int) (position.getZ() + (16 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get())))));
                 for (EntityMissile entityMissile : missileList) {

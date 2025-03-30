@@ -1,0 +1,8 @@
+{
+"variants": {
+"facing=north": {"model": "tstp_content:block/furniture/fire_alarm_on_pre", "y": 270},
+"facing=south": { "model": "tstp_content:block/furniture/fire_alarm_on_pre", "y": 90},
+"facing=east": { "model": "tstp_content:block/furniture/fire_alarm_on_pre"},
+"facing=west": { "model": "tstp_content:block/furniture/fire_alarm_on_pre", "y": 180}
+}
+}

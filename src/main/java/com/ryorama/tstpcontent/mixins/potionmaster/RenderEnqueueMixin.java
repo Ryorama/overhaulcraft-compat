@@ -1,6 +1,6 @@
 package com.ryorama.tstpcontent.mixins.potionmaster;
 
-import com.ryorama.tstpcontent.utils.TagsRef;
+import com.ryorama.tstpcontent.utils.TstpTags;
 import com.thevortex.potionsmaster.PotionsMaster;
 import com.thevortex.potionsmaster.reference.Ores;
 import com.thevortex.potionsmaster.render.util.BlockData;
@@ -172,8 +172,8 @@ public class RenderEnqueueMixin {
                                                 block = Ores.UNOBTAINIUM;
                                             }
 
-                                            if (currentState.is(TagsRef.RANDOMIUM)) {
-                                                block = TagsRef.RANDOMIUM;
+                                            if (currentState.is(TstpTags.RANDOMIUM_ORE)) {
+                                                block = TstpTags.RANDOMIUM_ORE;
                                             }
 
                                             BlockStore.BlockDataWithUUID dataWithUUID = Controller.getBlockStore().getStoreByReference(block.toString());

@@ -1,0 +1,7 @@
+{
+    "parent": "tstp_content:block/furniture/door_bell_pressed",
+    "textures": {
+        "1": "blocks/oak_log",
+        "2": "blocks/white_concrete"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent":"tstp_content:block/furniture/cup",
+  "textures":{
+    "1":"blocks/glass"
+  }
+}

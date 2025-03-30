@@ -1,0 +1,7 @@
+{
+    "parent": "tstp_content:block/furniture/cookie_jar",
+    "textures": {
+        "1": "blocks/gray_concrete",
+        "2": "blocks/glass"
+    }
+}
