@@ -2,7 +2,9 @@ package com.ryorama.tstpcontent.init;
 
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
-import com.ryorama.tstpcontent.block.entity.RFElectricityGeneratorBlockEntity;
+import com.ryorama.tstpcontent.blockentity.RFElectricityGeneratorBlockEntity;
+import com.ryorama.tstpcontent.blockentity.furniture.BlockEntityCookieJar;
+import com.ryorama.tstpcontent.blockentity.furniture.BlockEntityCup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,7 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
-import com.ryorama.tstpcontent.block.entity.HVACBlockBlockEntity;
+import com.ryorama.tstpcontent.blockentity.HVACBlockBlockEntity;
 import com.ryorama.tstpcontent.TstpContentMod;
 
 @RegistryContainer
@@ -25,4 +27,7 @@ public class TstpContentModBlockEntities {
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
 	}
+
+	public static final RegistryObject<BlockEntityType<?>> CUP = register("furniture/cup", TstpContentModBlocks.CUP, BlockEntityCup::new);
+	public static final RegistryObject<BlockEntityType<?>> COOKIE_JAR = register("furniture/cookie_jar", TstpContentModBlocks.COOKIE_JAR, BlockEntityCookieJar::new);
 }

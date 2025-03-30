@@ -1,4 +1,4 @@
-package com.ryorama.tstpcontent.block.entity;
+package com.ryorama.tstpcontent.blockentity;
 
 import com.mrcrayfish.furniture.refurbished.Config;
 import com.mrcrayfish.furniture.refurbished.blockentity.*;

@@ -11,6 +11,4 @@ import com.ryorama.tstpcontent.TstpContentMod;
 
 public class TstpContentModSounds {
 	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, TstpContentMod.MODID);
-
-	public static final RegistryObject<SoundEvent> UNIVERSAL_COLLAPSE_EPIC = REGISTRY.register("universal_collapse_epic", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("tstp_content", "universal_collapse_epic")));
 }

@@ -1,0 +1,27 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "1": "blocks/birch_birch"
+        }
+    },
+    "variants": {
+        "inventory": {
+            "model": "tstp_content:block/furniture/door_bell_pre"
+        },
+        "facing": {
+            "north": { "y": 270 },
+            "east":  { "y": 0   },
+            "south": { "y": 90  },
+            "west":  { "y": 180 }
+        },
+        "powered": {
+            "true": {
+                "model": "tstp_content:block/furniture/door_bell_pressed_pre"
+            },
+            "false": {
+                "model": "tstp_content:block/furniture/door_bell_pre"
+            }
+        }
+    }
+}

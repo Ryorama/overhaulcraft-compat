@@ -1,6 +1,7 @@
 package com.ryorama.tstpcontent.init;
 
 import com.ryorama.tstpcontent.item.SolarApocalypseItem;
+import com.ryorama.tstpcontent.item.furniture.CupItem;
 import com.thevortex.potionsmaster.items.powders.base.BasePowder;
 import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
 import net.minecraft.world.item.Item;
@@ -28,9 +29,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> NITER_POWDER = REGISTRY.register("niter_powder", () -> new BasePowder(new Item.Properties()));
 	public static final RegistryObject<Item> CALCINATED_NITER_POWDER = REGISTRY.register("calcinatedniter_powder", () -> new CalcinatedPowder(new Item.Properties()));
 
-
-
-
 	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RANDOMIUM_ORE_CHUNK = REGISTRY.register("randomium_ore_chunk", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> SOLAR_APOCALYPSE_ITEM = REGISTRY.register("solar_apocalypse_item", () -> new SolarApocalypseItem(new Item.Properties()));
@@ -39,6 +37,14 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK);
 	public static final RegistryObject<Item> LIGHT_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR);
 	public static final RegistryObject<Item> DARK_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR);
+
+	//Furniture Stuff
+	public static final RegistryObject<Item> SOAP_WATER = REGISTRY.register("furniture/soap_water", () -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> SUPER_SOAP_WATER = REGISTRY.register("furniture/super_soap_water", () -> new Item(new Item.Properties()));
+
+	public static final RegistryObject<Item> CUP = REGISTRY.register("furniture/cup", () -> new CupItem(false));
+	public static final RegistryObject<Item> COOKIE_JAR = block(TstpContentModBlocks.COOKIE_JAR);
+
 
 	//Coal
 	public static final RegistryObject<Item> COAL_ORE_ABYSS = block(TstpContentModBlocks.COAL_ORE_ABYSS);

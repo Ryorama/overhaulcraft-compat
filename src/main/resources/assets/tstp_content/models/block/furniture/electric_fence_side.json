@@ -1,0 +1,6 @@
+{
+    "parent": "tstp_content:block/furniture/thin_fence_side",
+    "textures": {
+        "texture": "blocks/anvil"
+    }
+}
