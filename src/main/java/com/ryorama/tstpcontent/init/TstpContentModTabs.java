@@ -32,7 +32,6 @@ public class TstpContentModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_mrcf")).icon(() -> new ItemStack(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get().asItem());
 				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
-				tabData.accept(TstpContentModBlocks.COOKIE_JAR.get().asItem());
 				tabData.accept(TstpContentModItems.CUP.get());
 				tabData.accept(TstpContentModItems.SOAP_WATER.get());
 				tabData.accept(TstpContentModItems.SUPER_SOAP_WATER.get());

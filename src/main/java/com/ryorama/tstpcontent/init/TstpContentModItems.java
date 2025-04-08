@@ -43,7 +43,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> SUPER_SOAP_WATER = REGISTRY.register("furniture/super_soap_water", () -> new Item(new Item.Properties()));
 
 	public static final RegistryObject<Item> CUP = REGISTRY.register("furniture/cup", () -> new CupItem(false));
-	public static final RegistryObject<Item> COOKIE_JAR = block(TstpContentModBlocks.COOKIE_JAR);
 
 
 	//Coal

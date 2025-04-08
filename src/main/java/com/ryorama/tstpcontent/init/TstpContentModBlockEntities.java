@@ -3,7 +3,6 @@ package com.ryorama.tstpcontent.init;
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.ryorama.tstpcontent.blockentity.RFElectricityGeneratorBlockEntity;
-import com.ryorama.tstpcontent.blockentity.furniture.BlockEntityCookieJar;
 import com.ryorama.tstpcontent.blockentity.furniture.BlockEntityCup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,5 +28,4 @@ public class TstpContentModBlockEntities {
 	}
 
 	public static final RegistryObject<BlockEntityType<?>> CUP = register("furniture/cup", TstpContentModBlocks.CUP, BlockEntityCup::new);
-	public static final RegistryObject<BlockEntityType<?>> COOKIE_JAR = register("furniture/cookie_jar", TstpContentModBlocks.COOKIE_JAR, BlockEntityCookieJar::new);
 }

@@ -30,8 +30,6 @@ import software.bernie.geckolib.animatable.GeoEntity;
 @Mixin(Hamster.class)
 public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, SleepingAnimal {
 
-    @Shadow protected abstract boolean getFromHand();
-
     protected HamsterMixin(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
     }
@@ -82,15 +80,13 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                                 serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 5, 0.0, 0.0, 0.0, 0.0);
                             }
                             int uraniumRods = 0;
-                            if (this.getMainHandItem() != null) {
-                                if (this.getMainHandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
-                                    uraniumRods++;
-                                }
+                            TstpContentMod.LOGGER.info("Item in hamster main hand: " + this.getMainHandItem());
+                            TstpContentMod.LOGGER.info("Item in hamster off hand: " + this.getOffhandItem());
+                            if (this.getMainHandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                                uraniumRods++;
                             }
-                            if (this.getOffhandItem() != null) {
-                                if (this.getOffhandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
-                                    uraniumRods++;
-                                }
+                            if (this.getOffhandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                                uraniumRods++;
                             }
                             TstpContentMod.LOGGER.info("Hamster has " + uraniumRods + " uranium rods in mouth");
                             if (uraniumRods > 0) {

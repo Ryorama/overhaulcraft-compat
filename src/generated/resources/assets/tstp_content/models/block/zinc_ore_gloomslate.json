@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tstp_content:block/zinc_ore_gloomslate"
+  }
+}

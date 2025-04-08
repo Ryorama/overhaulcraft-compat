@@ -1,7 +1,6 @@
 package com.ryorama.tstpcontent.events;
 
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.client.render.block.BlockEntityCookieJarRenderer;
 import com.ryorama.tstpcontent.client.render.block.BlockEntityCupRenderer;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import net.minecraftforge.api.distmarker.Dist;
