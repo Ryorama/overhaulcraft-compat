@@ -84,7 +84,7 @@ allprojects {
 }
 
 
-def generatedResources = file("src/generated")
+def generatedResources = file("src/generated/resources")
 
 sourceSets {
     main {
@@ -200,12 +200,8 @@ dependencies {
     implementation(project("mod-bridge")) { targetConfiguration = "modRuntimeClasspathMainMapped" }
 
     //Extra Stuff
-    implementation(include("dev.xkmc.l2library:l2library:2.4.14-slim")) {
-        transitive = false
-    }
-    implementation(include("dev.xkmc.l2serial:l2serial:1.2.0")) {
-        transitive = false
-    }
+    implementation(include("dev.xkmc.l2library:l2library:2.4.14-slim"))
+    implementation(include("dev.xkmc.l2serial:l2serial:1.2.0"))
     implementation(include("io.github.llamalad7:mixinextras-forge:0.4.1"))
     implementation("org.valkyrienskies.core:api:${vs_core_version}")
     implementation("org.valkyrienskies.core:impl:${vs_core_version}")

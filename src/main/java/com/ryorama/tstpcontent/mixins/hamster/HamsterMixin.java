@@ -30,6 +30,8 @@ import software.bernie.geckolib.animatable.GeoEntity;
 @Mixin(Hamster.class)
 public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, SleepingAnimal {
 
+    @Shadow public abstract boolean isFood(ItemStack itemStack);
+
     protected HamsterMixin(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
     }
@@ -55,64 +57,56 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                     this.setInLove(player);
                     return InteractionResult.SUCCESS;
                 }
+
                 TstpContentMod.LOGGER.info("Hamster Mixin Pass 2");
 
-                if (this.isFood(itemStack)) {
-                    TstpContentMod.LOGGER.info("Hamster Mixin Pass 3");
-
+                if (isFood(itemStack)) {
                     this.feedHamster(itemStack, player, !HamstersConfig.hamstersBurst || this.getCheekLevel() < 3);
-                    if (this.getAge() < 0) {
-                        this.addAgeToHamster();
-                    } else if (this.getCheekLevel() >= 3 && HamstersConfig.hamstersBurst) {
-                        TstpContentMod.LOGGER.info("Hamster Mixin Pass 4");
+                } else {
+                    this.feedHamsterNonFood(itemStack, player, !HamstersConfig.hamstersBurst || this.getCheekLevel() < 3);
+                }
+                if (this.getAge() < 0) {
+                    this.addAgeToHamster();
+                } else if (this.getCheekLevel() >= 3 && HamstersConfig.hamstersBurst) {
+                    TstpContentMod.LOGGER.info("Hamster Mixin Pass 4");
 
-                        this.setHealth(0.0F);
-                        if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.CONFETTI) {
-                            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(this.level(), this, this.getX(), this.getEyeY(), this.getZ(), Hamster.getFirework());
-                            fireworkRocketEntity.setSilent(true);
-                            fireworkRocketEntity.setInvisible(true);
-                            this.level().addFreshEntity(fireworkRocketEntity);
-                            fireworkRocketEntity.setDeltaMovement(0.0, 0.0, 0.0);
-                        } else if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.EXPLOSION) {
-                            Level var10 = this.level();
-                            if (var10 instanceof ServerLevel) {
-                                ServerLevel serverLevel = (ServerLevel) var10;
-                                serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 5, 0.0, 0.0, 0.0, 0.0);
-                            }
-                            int uraniumRods = 0;
-                            TstpContentMod.LOGGER.info("Item in hamster main hand: " + this.getMainHandItem());
-                            TstpContentMod.LOGGER.info("Item in hamster off hand: " + this.getOffhandItem());
-                            if (this.getMainHandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
-                                uraniumRods++;
-                            }
-                            if (this.getOffhandItem() == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
-                                uraniumRods++;
-                            }
-                            TstpContentMod.LOGGER.info("Hamster has " + uraniumRods + " uranium rods in mouth");
-                            if (uraniumRods > 0) {
-                                TstpContentMod.LOGGER.info("Hamster Nuke");
-                                ExtraFunc.createNukeExplosionWithSize(this.level(), this, 0.5f * uraniumRods);
-                            } else {
-                                this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
-                            }
+                    this.setHealth(0.0F);
+                    if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.CONFETTI) {
+                        FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(this.level(), this, this.getX(), this.getEyeY(), this.getZ(), Hamster.getFirework());
+                        fireworkRocketEntity.setSilent(true);
+                        fireworkRocketEntity.setInvisible(true);
+                        this.level().addFreshEntity(fireworkRocketEntity);
+                        fireworkRocketEntity.setDeltaMovement(0.0, 0.0, 0.0);
+                    } else if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.EXPLOSION) {
+                        Level var10 = this.level();
+                        if (var10 instanceof ServerLevel) {
+                            ServerLevel serverLevel = (ServerLevel) var10;
+                            serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY(), this.getZ(), 5, 0.0, 0.0, 0.0, 0.0);
                         }
+                        TstpContentMod.LOGGER.info("Item in hamster main hand: " + this.getMainHandItem());
 
-                        this.level().addFreshEntity(new ExperienceOrb(this.level(), this.getX(), this.getY(), this.getZ(), 3));
-
-                        for (int seedItems = 0; seedItems < 4; ++seedItems) {
-                            ItemEntity seedsItem = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), new ItemStack(Items.WHEAT_SEEDS));
-                            seedsItem.setDeltaMovement(this.getRandom().nextGaussian() * 0.1, this.getRandom().nextGaussian() * 0.2 + 0.2, this.getRandom().nextGaussian() * 0.1);
-                            this.level().addFreshEntity(seedsItem);
+                        if (getItemInHand(InteractionHand.MAIN_HAND) == ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance()) {
+                            ExtraFunc.createNukeExplosionWithSize(this.level(), this, 0.5f);
+                        } else {
+                            this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
                         }
-                    } else {
-                        if (this.getCheekLevel() >= 3) {
-                            return InteractionResult.FAIL;
-                        }
-
-                        this.setCheekLevel(this.getCheekLevel() + 1);
-                        player.getCooldowns().addCooldown(itemStack.getItem(), 20);
                     }
 
+                    this.level().addFreshEntity(new ExperienceOrb(this.level(), this.getX(), this.getY(), this.getZ(), 3));
+
+                    for (int seedItems = 0; seedItems < 4; ++seedItems) {
+                        ItemEntity seedsItem = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), new ItemStack(Items.WHEAT_SEEDS));
+                        seedsItem.setDeltaMovement(this.getRandom().nextGaussian() * 0.1, this.getRandom().nextGaussian() * 0.2 + 0.2, this.getRandom().nextGaussian() * 0.1);
+                        this.level().addFreshEntity(seedsItem);
+                    }
+                    return InteractionResult.SUCCESS;
+                } else {
+                    if (this.getCheekLevel() >= 3) {
+                        return InteractionResult.FAIL;
+                    }
+
+                    this.setCheekLevel(this.getCheekLevel() + 1);
+                    player.getCooldowns().addCooldown(itemStack.getItem(), 20);
                     return InteractionResult.SUCCESS;
                 }
 
@@ -156,6 +150,21 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
             }
 
             return super.mobInteract(player, interactionHand);
+        }
+    }
+
+    private void feedHamsterNonFood(ItemStack itemStack, Player player, boolean shouldHeal) {
+        if (!player.getCooldowns().isOnCooldown(itemStack.getItem())) {
+            this.playSound(this.getEatingSound(itemStack));
+            this.gameEvent(GameEvent.EAT);
+            if (this.getHealth() < this.getMaxHealth() && shouldHeal) {
+                this.heal(this.getMaxHealth() / 4.0F);
+            }
+
+            if (!player.getAbilities().instabuild) {
+                itemStack.shrink(1);
+            }
+            this.setItemInHand(InteractionHand.MAIN_HAND, itemStack);
         }
     }
 

@@ -6,8 +6,8 @@
   "mixins": [
     "EnderEyeItemMixin",
     "FoodDataMixin",
+    "LevelMixin",
     "PlayerMixin",
-    "aether.DimensionHooksMixin",
     "alexscaves.ConversionCrucibleBlockEntityMixin",
     "alexscaves.NuclearBombEntityMixin",
     "alexscaves.NuclearExplosionEntityMixin",
@@ -15,17 +15,13 @@
     "ballistix.BlastNuclearMixin",
     "cosmos.ApplyGravityLogicProcedureMixin",
     "cosmos.OxygendeprivedOnEffectActiveTickProcedureMixin",
-    "deeperdarker.OthersidePortalBlockMixin",
-    "deeperdarker.OthersidePortalBlockMixin$OthersidePortalBlockAccessor",
     "easyvillagers.VillagerEventsMixin",
     "hamster.HamsterMixin",
     "nukeshell.NukeShellProjectileMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
-    "thirstwastaken.PlayerThirstMixin",
-    "twilightforest.TFTickHandlerMixin",
-    "twilightforest.TFTickHandlerMixin$TFTickHandlerAccessor"
+    "thirstwastaken.PlayerThirstMixin"
   ],
   "client": [
   ],
