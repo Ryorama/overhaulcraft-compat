@@ -4,5 +4,6 @@
 /.idea/
 /build/
 /run/
+/mod-bridge/.gradle
 /mod-bridge/build/
 /mod-bridge/build/libs
