@@ -75,6 +75,8 @@ allprojects {
             name = "Illusive Soulworks maven"
             url = "https://maven.theillusivec4.top/"
         }
+        maven { url = "https://maven.bawnorton.com/releases" }
+        maven { url = "https://maven.su5ed.dev/releases" }
         mavenLocal()
     }
 
@@ -155,12 +157,13 @@ dependencies {
     modImplementation("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
     modImplementation("java.net.luke100000:minecraft-comes-alive:7.5.21")
     modImplementation("org.valkyrienskies:valkyrienskies-120-forge:${vs2_version}")
+    modImplementation("dev.su5ed.sinytra:Connector:1.0.0-beta.43+1.20.1")
+    modImplementation("dev.su5ed.sinytra.fabric-api:fabric-api:0.92.2+1.11.9+1.20.1")
 
     modImplementation("curse.maven:refurbished-furniture-897116:6272885")
     modImplementation('curse.maven:toughasnails-246391:4750298')
     modImplementation('curse.maven:firstaid-276837:5127567')
     modImplementation('curse.maven:geckolib-388172:5386948')
-    modImplementation("curse.maven:hamsters-952435:5121305")
     modImplementation('curse.maven:ballistix-443915:5022909')
     modImplementation('curse.maven:electrodynamics-316867:5022907')
     modImplementation('curse.maven:nuclearscience-318646:5022908')
@@ -190,9 +193,14 @@ dependencies {
     modImplementation("curse.maven:blue-skies-312918:5010316")
     modImplementation("curse.maven:the-forgotten-dimensions-461140:5813211")
     modImplementation("curse.maven:shadowlands-398372:5386877")
+    modImplementation("curse.maven:toybox-997296:5971954")
     modImplementation("curse.maven:astral-dimension-645743:5903628")
     modImplementation("curse.maven:the-abyss-chapter-ii-440647:5129404")
+    modImplementation("curse.maven:the-undergarden-379849:5182632")
     modImplementation("curse.maven:thirst-was-taken-679270:6328470")
+    modImplementation("curse.maven:some-assembly-required-422951:6343314")
+    modImplementation("curse.maven:ex-deorum-901420:5918825")
+    modImplementation("curse.maven:cloth-config-348521:5729105")
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))
@@ -209,10 +217,12 @@ dependencies {
     implementation("org.valkyrienskies.core:util:${vs_core_version}")
     implementation('thedarkcolour:kotlinforforge:4.10.0')
 
-    runtimeOnly(modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1"))
-    compileOnly(modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api"))
+    modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1")
+    modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api")
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     annotationProcessor('org.spongepowered:mixin:0.8.+:processor')
+    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.2.0"))
+    implementation(include("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.2.0"))
 }
 
 processResources {

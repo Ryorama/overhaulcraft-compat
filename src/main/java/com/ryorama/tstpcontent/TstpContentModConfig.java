@@ -18,4 +18,7 @@ public class TstpContentModConfig {
     public boolean peacefulHunger = false;
     @Configurable
     public boolean peacefulThirst = false;
+    @Configurable
+    @Configurable.Comment("Max amount of items a hamster can consume")
+    public int maxHamsterCheekSize = 3;
 }

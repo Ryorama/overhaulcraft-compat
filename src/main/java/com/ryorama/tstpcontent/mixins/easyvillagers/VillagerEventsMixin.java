@@ -17,56 +17,32 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(VillagerEvents.class)
 public class VillagerEventsMixin {
-    /**
-     * @author Ryorama
-     * @reason Prevent MCA Villagers from being picked up
-     */
-    @Overwrite(remap = false)
-    public void onClick(PlayerInteractEvent.EntityInteract event) {
-        if (event.getLevel().isClientSide) {
-            if (event.getTarget() instanceof Villager) {
-                TstpContentMod.LOGGER.info("Villager Pass 1-1");
-                if (!(event.getTarget() instanceof VillagerEntityMCA)) {
-                    TstpContentMod.LOGGER.info("Villager Pass 1-2");
-                    if (Main.CLIENT_CONFIG.enableRightClickPickup.get()) {
-                        Villager villager = (Villager) event.getTarget();
-                        Player player = event.getEntity();
-                        if (player.isShiftKeyDown()) {
-                            if (VillagerEvents.arePickupConditionsMet(villager)) {
-                                Main.SIMPLE_CHANNEL.sendToServer(new MessagePickUpVillager(villager.getUUID()));
-                                event.setCancellationResult(InteractionResult.SUCCESS);
-                                event.setCanceled(true);
-                            }
-                        }
-                    }
-                }
-            }
+
+    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.AFTER), method = "onClick", remap = false)
+    public void onClick(PlayerInteractEvent.EntityInteract event, CallbackInfo ci) {
+        TstpContentMod.LOGGER.info("Villager Pickup click pass 1");
+        TstpContentMod.LOGGER.info("Is entity MCA Villager: " + (event.getTarget() instanceof VillagerEntityMCA));
+        if (event.getTarget() instanceof VillagerEntityMCA) {
+            TstpContentMod.LOGGER.info("Villager Pickup click pass 1");
+            event.setCancellationResult(InteractionResult.FAIL);
+            event.setCanceled(true);
         }
     }
 
-    /**
-     * @author Ryorama
-     * @reason Prevent MCA Villagers from being picked up
-     */
-    @SubscribeEvent
-    @OnlyIn(Dist.CLIENT)
-    @Overwrite(remap = false)
-    public void onKeyInput(InputEvent.Key event) {
-        if (Main.PICKUP_KEY.consumeClick()) {
-            Entity pointedEntity = Minecraft.getInstance().crosshairPickEntity;
-            if (pointedEntity instanceof Villager) {
-                TstpContentMod.LOGGER.info("Villager Pass 2-1");
-                if (!(pointedEntity instanceof VillagerEntityMCA)) {
-                    TstpContentMod.LOGGER.info("Villager Pass 2-2");
-                    Villager villager = (Villager) pointedEntity;
-                    if (VillagerEvents.arePickupConditionsMet(villager)) {
-                        Main.SIMPLE_CHANNEL.sendToServer(new MessagePickUpVillager(villager.getUUID()));
-                    }
-                }
-            }
+    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.AFTER), method = "onKeyInput", remap = false)
+    public void onKeyInput(InputEvent.Key event, CallbackInfo ci) {
+        Entity entityPointed2 = Minecraft.getInstance().crosshairPickEntity;
+        TstpContentMod.LOGGER.info("Villager Pickup key pass 1");
+        TstpContentMod.LOGGER.info("Is entity MCA Villager: " + (entityPointed2 instanceof VillagerEntityMCA));
+        if (entityPointed2 instanceof VillagerEntityMCA) {
+            TstpContentMod.LOGGER.info("Villager Pickup key pass 2");
+            return;
         }
     }
 }

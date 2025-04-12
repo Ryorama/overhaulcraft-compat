@@ -318,5 +318,6 @@
   "config.tstp_content.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
   "config.tstp_content.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
   "config.tstp_content.option.peacefulHunger": "Enable Hunger in Peaceful Mode",
-  "config.tstp_content.option.peacefulThirst": "Enable Thirst in Peaceful Mode"
+  "config.tstp_content.option.peacefulThirst": "Enable Thirst in Peaceful Mode",
+  "config.tstp_content.option.maxHamsterCheekSize": "Hamster Max Cheek Size"
 }
