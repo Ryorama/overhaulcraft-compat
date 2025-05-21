@@ -1,6 +1,7 @@
 package com.ryorama.tstpcontent.mixins.exdeorum;
 
 import com.google.common.collect.Lists;
+import com.ryorama.tstpcontent.TstpContentMod;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
@@ -33,6 +34,7 @@ public class RandomArmorTrimMixin {
      */
     @Overwrite(remap = false)
     protected List<Item> getPossibilities() {
+        TstpContentMod.LOGGER.info("Template Possibilities: " + getPossibilities() + ". New Possible Trims List: " + NEW_POSSIBLE_TRIMS);
         return NEW_POSSIBLE_TRIMS;
     }
 }

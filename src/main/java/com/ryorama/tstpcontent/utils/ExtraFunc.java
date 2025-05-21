@@ -3,6 +3,7 @@ package com.ryorama.tstpcontent.utils;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
+import com.ryorama.tstpcontent.TstpContentMod;
 import mekanism.api.Coord4D;
 import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.core.Vec3i;
@@ -10,6 +11,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.loading.LoadingModList;
+
+import java.nio.file.Path;
 
 public class ExtraFunc {
     //Tweaked method for creating a nuke explosion on a new thread to improve performance - Using Entity Pos
@@ -87,5 +92,9 @@ public class ExtraFunc {
                 radiationManager.radiate(new Coord4D(new Vec3i((int) vec3.x, (int) vec3.y, (int) vec3.z), level), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
             }
         }
+    }
+
+    public static boolean isModInstalled(String modid) {
+        return ModList.get().isLoaded(modid);
     }
 }

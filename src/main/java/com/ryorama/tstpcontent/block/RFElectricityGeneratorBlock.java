@@ -6,7 +6,6 @@ import com.mrcrayfish.furniture.refurbished.block.FurnitureHorizontalEntityBlock
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.mrcrayfish.furniture.refurbished.data.tag.BlockTagSupplier;
 import com.ryorama.tstpcontent.blockentity.RFElectricityGeneratorBlockEntity;
-import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -16,8 +15,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -60,11 +57,6 @@ public class RFElectricityGeneratorBlock extends FurnitureHorizontalEntityBlock 
     @Nullable
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new RFElectricityGeneratorBlockEntity(pos, state);
-    }
-
-    @Nullable
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return createTicker(type, TstpContentModBlockEntities.RF_ELECTRICITY_GENERATOR.get(), RFElectricityGeneratorBlockEntity::tick);
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource source) {

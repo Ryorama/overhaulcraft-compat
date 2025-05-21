@@ -47,6 +47,7 @@ public class TstpContentMod {
 		TstpContentModEffects.REGISTRY.register(bus);
 		TstpContentModBlocks.REGISTRY.register(bus);
 		TstpContentModBlockEntities.REGISTRY.register(bus);
+		TstpContentModItems.REGISTRY_MC.register(bus);
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);

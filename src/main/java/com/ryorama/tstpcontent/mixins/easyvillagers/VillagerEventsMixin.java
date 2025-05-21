@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(VillagerEvents.class)
 public class VillagerEventsMixin {
 
-    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.AFTER), method = "onClick", remap = false)
+    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.BEFORE), method = "onClick", remap = false)
     public void onClick(PlayerInteractEvent.EntityInteract event, CallbackInfo ci) {
         TstpContentMod.LOGGER.info("Villager Pickup click pass 1");
         TstpContentMod.LOGGER.info("Is entity MCA Villager: " + (event.getTarget() instanceof VillagerEntityMCA));
@@ -35,7 +35,7 @@ public class VillagerEventsMixin {
         }
     }
 
-    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.AFTER), method = "onKeyInput", remap = false)
+    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.BEFORE), method = "onKeyInput", remap = false)
     public void onKeyInput(InputEvent.Key event, CallbackInfo ci) {
         Entity entityPointed2 = Minecraft.getInstance().crosshairPickEntity;
         TstpContentMod.LOGGER.info("Villager Pickup key pass 1");

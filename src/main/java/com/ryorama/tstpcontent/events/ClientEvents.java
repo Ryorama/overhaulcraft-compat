@@ -1,8 +1,9 @@
 package com.ryorama.tstpcontent.events;
 
+import com.mrcrayfish.furniture.refurbished.client.registration.ScreenRegister;
 import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.client.render.block.BlockEntityCupRenderer;
-import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
+import com.ryorama.tstpcontent.init.TstpConentModMenuTypes;
+import com.ryorama.tstpcontent.inventory.RFElectricityGeneratorScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,5 +16,9 @@ public class ClientEvents {
         TstpContentMod.LOGGER.info("Registering Tstp Stuff");
         //event.registerBlockEntityRenderer(TstpContentModBlockEntities.CUP.get(), BlockEntityCupRenderer::new);
         //event.registerBlockEntityRenderer(TstpContentModBlockEntities.COOKIE_JAR.get(), BlockEntityCookieJarRenderer::new);
+    }
+
+    public static void registerScreens(ScreenRegister register) {
+        register.apply(TstpConentModMenuTypes.RF_ELECTRICITY_GENERATOR.get(), RFElectricityGeneratorScreen::new);
     }
 }

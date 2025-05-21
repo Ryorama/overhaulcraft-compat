@@ -2,6 +2,7 @@ package com.ryorama.tstpcontent.init;
 
 import com.thevortex.potionsmaster.init.ModRegistry;
 
+import net.mcreator.croptopiaadditions.init.CroptopiaAdditionsModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -336,6 +337,19 @@ public class TstpContentModTabs {
 		}
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			tabData.accept(TstpContentModItems.SOLAR_APOCALYPSE_ITEM);
+		}
+		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.getEntries().remove(CroptopiaAdditionsModItems.CURRY_POWDER.get().getDefaultInstance());
+			tabData.getEntries().remove(CroptopiaAdditionsModItems.RICE_FLOUR.get().getDefaultInstance());
+			tabData.getEntries().remove(CroptopiaAdditionsModItems.RICE_NOODLE.get().getDefaultInstance());
+		}
+		if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+			tabData.accept(CroptopiaAdditionsModItems.CURRY_POWDER);
+			tabData.accept(CroptopiaAdditionsModItems.RICE_FLOUR);
+			tabData.accept(CroptopiaAdditionsModItems.RICE_NOODLE);
+		}
+		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+			tabData.accept(TstpContentModItems.ARMADILLO_SCUTE);
 		}
 	}
 }

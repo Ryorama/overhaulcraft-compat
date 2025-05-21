@@ -1,26 +1,27 @@
 {
   "attached_dimention_id": "terrariamod:terraria",
-  "skybox_data": {
-    "texture_id": "skybox_solar",
-    "alpha": 245,
-    "yaw": -60,
-    "pitch": 60,
-    "roll": 60,
-    "rotation_plane": "pitch",
-    "fade": "night"
-  },
   "dimensional_data": {
     "dimension_type": "planet",
-    "sky_objects": false,
+    "sky_objects": true,
     "atmospheric_data": {
       "atmosphere_y": 560,
       "travel_to": "cosmos:solar_system",
-      "origin_x": -54100,
+      "origin_x": -18100,
       "origin_y": 530,
-      "origin_z": 7100,
+      "origin_z": 7900,
       "overlay_texture_id": "cosmos:terrarian_bar",
       "shipbit_y": 24,
       "ship_min_y": 120
     }
-  }
+  },
+  "skybox_data": {
+    "texture_id": "skybox_solar",
+    "yaw": -60,
+    "pitch": 60,
+    "roll": 60,
+    "alpha": 245,
+    "rotation_plane": "pitch",
+    "fade": "night"
+  },
+  "sky_data": {}
 }

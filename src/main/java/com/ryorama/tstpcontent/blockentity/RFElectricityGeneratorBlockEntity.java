@@ -6,9 +6,11 @@ import com.mrcrayfish.furniture.refurbished.client.audio.AudioManager;
 import com.mrcrayfish.furniture.refurbished.core.ModSounds;
 import com.mrcrayfish.furniture.refurbished.electricity.NodeSearchResult;
 import com.mrcrayfish.furniture.refurbished.inventory.BuildableContainerData;
+import com.mrcrayfish.furniture.refurbished.inventory.ElectricityGeneratorMenu;
 import com.mrcrayfish.furniture.refurbished.util.Utils;
 import com.ryorama.tstpcontent.block.RFElectricityGeneratorBlock;
 import com.ryorama.tstpcontent.init.TstpContentModBlockEntities;
+import com.ryorama.tstpcontent.inventory.RFElectricityGeneratorMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -35,22 +37,17 @@ import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBlockEntity implements IProcessingBlock, ILevelAudio {
+public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBlockEntity implements IProcessingBlock, IPowerSwitch, ILevelAudio {
     protected final Vec3 audioPosition;
     protected int totalEnergy;
     protected int energy;
     protected int nodeCount;
+    protected boolean enabled;
+    protected final ContainerData data;
     public static final int DATA_ENERGY = 0;
     public static final int DATA_TOTAL_ENERGY = 1;
     public static final int DATA_OVERLOADED = 2;
     public static final int DATA_NODE_COUNT = 3;
-
-    protected final ContainerData data = new BuildableContainerData(builder -> {
-        builder.add(DATA_ENERGY, () -> energy, value -> {});
-        builder.add(DATA_TOTAL_ENERGY, () -> totalEnergy, value -> {});
-        builder.add(DATA_OVERLOADED, () -> overloaded ? 1 : 0, value -> {});
-        builder.add(DATA_NODE_COUNT, () -> nodeCount, value -> {});
-    });
     private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
     public RFElectricityGeneratorBlockEntity(BlockPos pos, BlockState state) {
@@ -59,6 +56,32 @@ public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBloc
 
     public RFElectricityGeneratorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state, 0);
+        this.data = new BuildableContainerData((builder) -> {
+            builder.add(0, () -> {
+                return this.energy;
+            }, (value) -> {
+            });
+            builder.add(1, () -> {
+                return this.totalEnergy;
+            }, (value) -> {
+            });
+            builder.add(2, () -> {
+                return this.enabled ? 1 : 0;
+            }, (value) -> {
+            });
+            builder.add(3, () -> {
+                return this.overloaded ? 1 : 0;
+            }, (value) -> {
+            });
+            builder.add(4, () -> {
+                return this.isNodePowered() ? 1 : 0;
+            }, (value) -> {
+            });
+            builder.add(5, () -> {
+                return this.nodeCount;
+            }, (value) -> {
+            });
+        });
         this.audioPosition = pos.getCenter().add(0.0, -0.375, 0.0);
     }
 
@@ -77,7 +100,6 @@ public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBloc
         int y = getBlockPos().getY();
         int z = getBlockPos().getZ();
 
-        System.out.println("Working");
         if (new Object() {
             public int extractEnergySimulate(LevelAccessor level, BlockPos pos, int _amount) {
                 AtomicInteger _retval = new AtomicInteger(0);
@@ -135,19 +157,29 @@ public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBloc
         return processing;
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, RFElectricityGeneratorBlockEntity generator) {
-        if (level.isClientSide()) {
-            AudioManager.get().playLevelAudio(generator);
-        }
-    }
-
     public int getNodeMaximumConnections() {
         return Config.SERVER.electricity.maximumLinksPerElectricityGenerator.get();
     }
 
-    @Override
-    public boolean isMatchingContainerMenu(AbstractContainerMenu abstractContainerMenu) {
-        return false;
+    protected AbstractContainerMenu createMenu(int windowId, Inventory playerInventory) {
+        if (!this.enabled) {
+            this.searchNodeNetwork(false);
+        }
+
+        return new RFElectricityGeneratorMenu(windowId, playerInventory, this, this.data);
+    }
+
+    public boolean isMatchingContainerMenu(AbstractContainerMenu menu) {
+        boolean var10000;
+        if (menu instanceof RFElectricityGeneratorMenu generator) {
+            if (generator.getContainer() == this) {
+                var10000 = true;
+                return var10000;
+            }
+        }
+
+        var10000 = false;
+        return var10000;
     }
 
     public IProcessingBlock.EnergyMode getEnergyMode() {
@@ -270,13 +302,6 @@ public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBloc
         compound.put("energyStorage", this.energyStorage.serializeNBT());
     }
 
-    @Override
-    protected AbstractContainerMenu createMenu(int i, Inventory inventory) {
-        this.searchNodeNetwork(false);
-
-        return null;
-    }
-
     private final EnergyStorage energyStorage = new EnergyStorage(400000, 1000, 1000, 0) {
         @Override
         public int receiveEnergy(int maxReceive, boolean simulate) {
@@ -321,5 +346,21 @@ public class RFElectricityGeneratorBlockEntity extends ElectricitySourceLootBloc
             this.processTick();
         }
         super.earlyNodeTick(level);
+    }
+
+    public void togglePower() {
+        this.enabled = !this.enabled;
+        if (this.enabled) {
+            NodeSearchResult result = this.searchNodeNetwork(false);
+            if (!result.overloaded()) {
+                if (this.overloaded) {
+                    this.overloaded = false;
+                }
+            } else {
+                this.enabled = false;
+            }
+        }
+
+        this.setChanged();
     }
 }

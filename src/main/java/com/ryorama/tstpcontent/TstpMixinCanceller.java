@@ -10,6 +10,9 @@ public class TstpMixinCanceller implements MixinCanceller {
         if (mixinClassName.equals("com.smushytaco.solar_apocalypse.mixins.WaterIsFinite")) {
             return true;
         }
+        if (mixinClassName.equals("galena.nirvana.forge.mixins.GenericItemFillingMixin")) {
+            return true;
+        }
         return false;
     }
 }

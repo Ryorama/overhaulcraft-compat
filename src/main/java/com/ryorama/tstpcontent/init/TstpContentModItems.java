@@ -18,6 +18,10 @@ import com.ryorama.tstpcontent.TstpContentMod;
 
 public class TstpContentModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TstpContentMod.MODID);
+	public static final DeferredRegister<Item> REGISTRY_MC = DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
+
+	//1.21 Stuff
+	public static final RegistryObject<Item> ARMADILLO_SCUTE = REGISTRY_MC.register("armadillo_scute", () -> new Item(new Item.Properties()));
 
 	//Ore Sight Stuff
 	public static final RegistryObject<Item> RANDOMIUM_POWDER = REGISTRY.register("randomium_powder", () -> new BasePowder(new Item.Properties()));
@@ -43,7 +47,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> SUPER_SOAP_WATER = REGISTRY.register("furniture/super_soap_water", () -> new Item(new Item.Properties()));
 
 	public static final RegistryObject<Item> CUP = REGISTRY.register("furniture/cup", () -> new CupItem(false));
-
 
 	//Coal
 	public static final RegistryObject<Item> COAL_ORE_ABYSS = block(TstpContentModBlocks.COAL_ORE_ABYSS);
