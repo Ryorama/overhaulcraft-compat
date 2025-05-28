@@ -6,7 +6,6 @@ import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.terrariamod.client.TAudio;
 import com.ryorama.tstpcontent.block.*;
-import com.ryorama.tstpcontent.block.furniture.BlockCup;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.*;
@@ -37,9 +36,6 @@ public class TstpContentModBlocks {
 			return (Boolean)state.getValue(RFElectricityGeneratorBlock.POWERED) ? 2 : 0;
 		}).requiresCorrectToolForDrops().forceSolidOn());
 	});
-
-	//Furniture Mod Stuff
-	public static final RegistryObject<Block> CUP = REGISTRY.register("furniture/cup", () -> new BlockCup());
 
 	//Coal
 	public static final RegistryObject<Block> COAL_ORE_ABYSS = REGISTRY.register("coal_ore_abyss", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));

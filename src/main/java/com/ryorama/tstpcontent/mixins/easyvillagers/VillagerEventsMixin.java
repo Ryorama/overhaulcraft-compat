@@ -24,14 +24,49 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(VillagerEvents.class)
 public class VillagerEventsMixin {
 
-    @Inject(at = @At(value = "INVOKE", target = "Lde/maxhenkel/easyvillagers/events/VillagerEvents;arePickupConditionsMet(Lnet/minecraft/world/entity/npc/Villager;)Z", shift = At.Shift.BEFORE), method = "onClick", remap = false)
-    public void onClick(PlayerInteractEvent.EntityInteract event, CallbackInfo ci) {
+    /**
+     * @author Ryorama
+     * @reason Prevent MCA villagers from being picked up
+     */
+    @Overwrite(remap = false)
+    public static boolean arePickupConditionsMet(Villager villager) {
+        if (!(villager instanceof VillagerEntityMCA)) {
+            if (!villager.isAlive()) {
+                return false;
+            } else {
+                return !villager.isSleeping();
+            }
+        } else {
+            TstpContentMod.LOGGER.info("Target is MCA Villager");
+        }
+        return false;
+    }
+
+    /*
+
+    @Overwrite(remap = false)
+    public void onClick(PlayerInteractEvent.EntityInteract event) {
+        if (event.getLevel().isClientSide) {
+            if (event.getTarget() instanceof Villager) {
+                if (Main.CLIENT_CONFIG.enableRightClickPickup.get()) {
+                    Villager villager = (Villager)event.getTarget();
+                    Player player = event.getEntity();
+                    if (player.isShiftKeyDown()) {
+                        if (arePickupConditionsMet(villager)) {
+                            Main.SIMPLE_CHANNEL.sendToServer(new MessagePickUpVillager(villager.getUUID()));
+                            event.setCancellationResult(InteractionResult.SUCCESS);
+                            event.setCanceled(true);
+                        }
+                    }
+                }
+            }
+        }
+
         TstpContentMod.LOGGER.info("Villager Pickup click pass 1");
         TstpContentMod.LOGGER.info("Is entity MCA Villager: " + (event.getTarget() instanceof VillagerEntityMCA));
         if (event.getTarget() instanceof VillagerEntityMCA) {
             TstpContentMod.LOGGER.info("Villager Pickup click pass 1");
             event.setCancellationResult(InteractionResult.FAIL);
-            event.setCanceled(true);
         }
     }
 
@@ -45,4 +80,5 @@ public class VillagerEventsMixin {
             return;
         }
     }
+    */
 }

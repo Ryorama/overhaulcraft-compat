@@ -1,11 +1,9 @@
 package com.ryorama.tstpcontent.init;
 
 import com.ryorama.tstpcontent.item.SolarApocalypseItem;
-import com.ryorama.tstpcontent.item.furniture.CupItem;
 import com.thevortex.potionsmaster.items.powders.base.BasePowder;
 import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -41,12 +39,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK);
 	public static final RegistryObject<Item> LIGHT_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR);
 	public static final RegistryObject<Item> DARK_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR);
-
-	//Furniture Stuff
-	public static final RegistryObject<Item> SOAP_WATER = REGISTRY.register("furniture/soap_water", () -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item> SUPER_SOAP_WATER = REGISTRY.register("furniture/super_soap_water", () -> new Item(new Item.Properties()));
-
-	public static final RegistryObject<Item> CUP = REGISTRY.register("furniture/cup", () -> new CupItem(false));
 
 	//Coal
 	public static final RegistryObject<Item> COAL_ORE_ABYSS = block(TstpContentModBlocks.COAL_ORE_ABYSS);

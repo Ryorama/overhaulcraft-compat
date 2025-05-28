@@ -1,9 +1,14 @@
 package com.ryorama.tstpcontent.init;
 
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 import com.thevortex.potionsmaster.init.ModRegistry;
 
+import galena.copperative.index.CItems;
 import net.mcreator.croptopiaadditions.init.CroptopiaAdditionsModItems;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +21,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import com.ryorama.tstpcontent.TstpContentMod;
+import net.orcinus.galosphere.init.GItems;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TstpContentModTabs {
@@ -33,9 +39,6 @@ public class TstpContentModTabs {
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_mrcf")).icon(() -> new ItemStack(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get().asItem());
 				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
-				tabData.accept(TstpContentModItems.CUP.get());
-				tabData.accept(TstpContentModItems.SOAP_WATER.get());
-				tabData.accept(TstpContentModItems.SUPER_SOAP_WATER.get());
 			}).build());
 
 	public static final RegistryObject<CreativeModeTab> TSTP_ORE_COMP = REGISTRY.register("tstp_ore_comp",
@@ -331,6 +334,7 @@ public class TstpContentModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
+		handleItemPlacements();
 		if (tabData.getTabKey() == ModRegistry.CREATIVE_TAB.getKey()) {
 			tabData.accept(TstpContentModItems.RANDOMIUM_POWDER);
 			tabData.accept(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
@@ -349,7 +353,18 @@ public class TstpContentModTabs {
 			tabData.accept(CroptopiaAdditionsModItems.RICE_NOODLE);
 		}
 		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-			tabData.accept(TstpContentModItems.ARMADILLO_SCUTE);
+			tabData.getEntries().remove(CCItems.RAW_SILVER.get().getDefaultInstance());
+			tabData.getEntries().remove(GItems.RAW_SILVER.get().getDefaultInstance());
+			tabData.getEntries().remove(CCItems.COPPER_NUGGET.get().getDefaultInstance());
+			tabData.getEntries().remove(CItems.COPPER_NUGGET.get().getDefaultInstance());
+			tabData.getEntries().remove(CCItems.SILVER_NUGGET.get().getDefaultInstance());
+			tabData.getEntries().remove(GItems.SILVER_NUGGET.get().getDefaultInstance());
+			tabData.getEntries().remove(CCItems.SILVER_INGOT.get().getDefaultInstance());
+			tabData.getEntries().remove(GItems.SILVER_INGOT.get().getDefaultInstance());
 		}
+	}
+
+	public static void handleItemPlacements() {
+		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE);
 	}
 }

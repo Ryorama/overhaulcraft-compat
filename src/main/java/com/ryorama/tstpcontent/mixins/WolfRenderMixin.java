@@ -1,6 +1,5 @@
 package com.ryorama.tstpcontent.mixins;
 
-import com.ryorama.tstpcontent.TstpContentMod;
 import com.ryorama.tstpcontent.utils.WolfVarient;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.WolfRenderer;

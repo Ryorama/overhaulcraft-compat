@@ -209,6 +209,10 @@ dependencies {
     modImplementation("curse.maven:croptopia-additions-702063:5558791")
     modImplementation("curse.maven:minecraft-comes-alive-reborn-535291:6254999")
     modImplementation("curse.maven:oreganized-769203:6373702")
+    modImplementation("curse.maven:caverns-and-chasms-438005:6040957")
+    modImplementation("curse.maven:copperative-867868:4685249")
+    modImplementation("curse.maven:galosphere-631098:4983871")
+    modImplementation("curse.maven:blueprint-382216:6408581")
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))

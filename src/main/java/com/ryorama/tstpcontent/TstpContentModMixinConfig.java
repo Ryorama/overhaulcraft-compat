@@ -21,14 +21,23 @@ public class TstpContentModMixinConfig implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.equals("com.ryorama.tstpcontent.mixins.weather2.ClientWeatherHelperMixin")) {
-            if (!doesModExist("weather2")) {
+        if (mixinClassName.equals("com.ryorama.tstpcontent.mixins.nirvana.GenericItemFillingMixin")) {
+            if (!doesModExist("nirvana")) {
+                TstpContentMod.LOGGER.info("Mixin " + mixinClassName + " will NOT be loaded");
                 return false;
             } else {
-                TstpContentMod.LOGGER.info("Mixin " + mixinClassName + " will not be loaded. Weather2 is not installed");
+                TstpContentMod.LOGGER.info("Mixin " + mixinClassName + " will be loaded");
             }
         }
-        return true; //ExtraFunc.doesModExist("weather2")
+        if (mixinClassName.equals("com.ryorama.tstpcontent.mixins.WaterFluidMixin")) {
+            if (!doesModExist("solar_apocalypse")) {
+                TstpContentMod.LOGGER.info("Mixin " + mixinClassName + " will NOT be loaded");
+                return false;
+            } else {
+                TstpContentMod.LOGGER.info("Mixin " + mixinClassName + " will be loaded");
+            }
+        }
+        return true;
     }
 
     @Override

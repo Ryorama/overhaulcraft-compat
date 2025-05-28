@@ -17,16 +17,16 @@
     "alexscaves.NuclearExplosionEntityMixin",
     "alexscaves.NucleeperEntityMixin",
     "ballistix.BlastNuclearMixin",
-    "create.GenericItemFillingMixin",
     "easyvillagers.VillagerEventsMixin",
-    "exdeorum.RandomArmorTrimMixin",
     "hamster.HamsterMixin",
+    "nirvana.GenericItemFillingMixin",
     "nukeshell.NukeShellProjectileMixin",
     "oreganized.CreateCompatMixin",
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
-    "thirstwastaken.PlayerThirstMixin"
+    "thirstwastaken.PlayerThirstMixin",
+    "thirstwastaken.ThirstHelperMixin"
   ],
   "client": [
   ],

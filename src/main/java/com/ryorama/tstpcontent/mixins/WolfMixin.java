@@ -49,7 +49,6 @@ public abstract class WolfMixin extends TamableAnimal implements NeutralMob, Wol
         varientSpawnData.put(biomeRegistryAcess.get(Biomes.SAVANNA_PLATEAU), 7);
         varientSpawnData.put(biomeRegistryAcess.get(Biomes.WOODED_BADLANDS), 8);
         varientSpawnData.put(biomeRegistryAcess.get(Biomes.FOREST), 9);
-        TstpContentMod.LOGGER.info("Worlf Var Map: " + varientSpawnData + " with size: " + varientSpawnData.size());
     }
     @Inject(at = @At("TAIL"), method = "addAdditionalSaveData")
     public void addAdditionalSaveData(CompoundTag arg, CallbackInfo ci) {

@@ -3,7 +3,6 @@ package com.ryorama.tstpcontent.init;
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.framework.api.registry.RegistryEntry;
 import com.ryorama.tstpcontent.blockentity.RFElectricityGeneratorBlockEntity;
-import com.ryorama.tstpcontent.blockentity.furniture.BlockEntityCup;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,6 +25,4 @@ public class TstpContentModBlockEntities {
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
 	}
-
-	public static final RegistryObject<BlockEntityType<?>> CUP = register("furniture/cup", TstpContentModBlocks.CUP, BlockEntityCup::new);
 }

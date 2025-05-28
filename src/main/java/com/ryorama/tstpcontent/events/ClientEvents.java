@@ -14,8 +14,6 @@ public class ClientEvents {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         TstpContentMod.LOGGER.info("Registering Tstp Stuff");
-        //event.registerBlockEntityRenderer(TstpContentModBlockEntities.CUP.get(), BlockEntityCupRenderer::new);
-        //event.registerBlockEntityRenderer(TstpContentModBlockEntities.COOKIE_JAR.get(), BlockEntityCookieJarRenderer::new);
     }
 
     public static void registerScreens(ScreenRegister register) {
