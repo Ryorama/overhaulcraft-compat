@@ -15,7 +15,9 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import org.apache.logging.log4j.Logger;
@@ -54,6 +56,8 @@ public class TstpContentMod {
 		bus.addListener(this::setup);
 		bus.addListener(this::postLoad);
 		GeckoLib.initialize();
+
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TstpContentModTabs::handleItemPlacements);
 	}
 
 	public void setup(FMLCommonSetupEvent event) {

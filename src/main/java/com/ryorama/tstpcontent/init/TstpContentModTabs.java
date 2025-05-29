@@ -334,11 +334,6 @@ public class TstpContentModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		handleItemPlacements();
-		if (tabData.getTabKey() == ModRegistry.CREATIVE_TAB.getKey()) {
-			tabData.accept(TstpContentModItems.RANDOMIUM_POWDER);
-			tabData.accept(TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
-		}
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			tabData.accept(TstpContentModItems.SOLAR_APOCALYPSE_ITEM);
 		}
@@ -365,6 +360,6 @@ public class TstpContentModTabs {
 	}
 
 	public static void handleItemPlacements() {
-		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE);
+		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.INGREDIENTS).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE).tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
 	}
 }
