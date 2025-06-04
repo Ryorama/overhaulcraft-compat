@@ -9,6 +9,8 @@ import net.mcreator.croptopiaadditions.init.CroptopiaAdditionsModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.common.Mod;
@@ -360,6 +362,6 @@ public class TstpContentModTabs {
 	}
 
 	public static void handleItemPlacements() {
-		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.INGREDIENTS).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE).tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
+		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.INGREDIENTS).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE); //.tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
 	}
 }
