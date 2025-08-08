@@ -2,15 +2,12 @@ package com.ryorama.tstpcontent.init;
 
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
-import com.thevortex.potionsmaster.init.ModRegistry;
 
 import galena.copperative.index.CItems;
 import net.mcreator.croptopiaadditions.init.CroptopiaAdditionsModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fml.common.Mod;
@@ -56,8 +53,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.COAL_ORE_DEMONSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.COAL_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.COAL_ORE_YELLOWSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.COAL_ORE_TERRARIA.get().asItem());
-				tabData.accept(TstpContentModBlocks.COAL_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.COAL_ORE_DUST.get().asItem());
 
 				//Iron
@@ -112,7 +107,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.LAPIS_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.LAPIS_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.LAPIS_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.LAPIS_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.LAPIS_ORE_DUST.get().asItem());
 
 				//Redstone
@@ -126,7 +120,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.REDSTONE_ORE_DEMONSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.REDSTONE_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.REDSTONE_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.REDSTONE_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.REDSTONE_ORE_DUST.get().asItem());
 
 				//Diamond
@@ -167,7 +160,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.ALUMINUM_ORE_GLOOMSLATE.get().asItem());
@@ -202,7 +194,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.NICKEL_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.NICKEL_ORE_GLOOMSLATE.get().asItem());
@@ -220,7 +211,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.OSMIUM_ORE_GLOOMSLATE.get().asItem());
@@ -289,7 +279,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.URANIUM_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.URANIUM_ORE_GLOOMSLATE.get().asItem());
@@ -307,7 +296,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.ZINC_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.ZINC_ORE_GLOOMSLATE.get().asItem());
@@ -326,7 +314,6 @@ public class TstpContentModTabs {
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_SHADOW.get().asItem());
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_YELLOWSTONE.get().asItem());
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_DEEP_GREENSTONE.get().asItem());
-				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_TERRARIA.get().asItem());
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_DUST.get().asItem());
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_SKYRIUM.get().asItem());
 				tabData.accept(TstpContentModBlocks.RANDOMIUM_ORE_GLOOMSLATE.get().asItem());
@@ -336,9 +323,6 @@ public class TstpContentModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-			tabData.accept(TstpContentModItems.SOLAR_APOCALYPSE_ITEM);
-		}
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.getEntries().remove(CroptopiaAdditionsModItems.CURRY_POWDER.get().getDefaultInstance());
 			tabData.getEntries().remove(CroptopiaAdditionsModItems.RICE_FLOUR.get().getDefaultInstance());

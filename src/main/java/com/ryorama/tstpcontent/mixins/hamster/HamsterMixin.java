@@ -1,13 +1,18 @@
 package com.ryorama.tstpcontent.mixins.hamster;
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry;
+import com.llamalad7.mixinextras.sugar.Local;
 import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.entities.RadsterEntity;
+import com.ryorama.tstpcontent.init.TstpContentEntityTypes;
 import com.ryorama.tstpcontent.utils.ExtraFunc;
+import com.ryorama.tstpcontent.utils.TstpTags;
 import com.starfish_studios.hamsters.HamstersConfig;
 import com.starfish_studios.hamsters.entities.Hamster;
 import com.starfish_studios.hamsters.entities.util.SleepingAnimal;
 import com.starfish_studios.hamsters.registry.HamstersSoundEvents;
 import com.starfish_studios.hamsters.registry.HamstersTags;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +20,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -22,6 +28,7 @@ import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.EntityGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +42,6 @@ import software.bernie.geckolib.animatable.GeoEntity;
 
 import java.util.Iterator;
 
-import static com.starfish_studios.hamsters.entities.Hamster.getFirework;
 import static com.starfish_studios.hamsters.entities.Hamster.getNearbyAvoidedEntities;
 
 @Mixin(Hamster.class)
@@ -49,9 +55,9 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
     }
 
     /**
-     * @author Ryorama
-     * @reason Adjustments
-     */
+         * @author Ryorama
+         * @reason Adjustments
+     * */
     public void aiStep() {
         super.aiStep();
         if (HamstersConfig.hamstersSquish) {
@@ -78,8 +84,8 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
         }
 
         if (getNearbyAvoidedEntities(this).isEmpty()) {
-            if (this.getSleepingCooldownTicks() > 0) {
-                this.setSleepingCooldownTicks(this.getSleepingCooldownTicks() - 1);
+            if (this.getSleepCooldownTicks() > 0) {
+                this.setSleepingCooldownTicks(this.getSleepCooldownTicks() - 1);
             }
         } else if (this.isSleeping()) {
             this.setSleeping(false);
@@ -138,7 +144,7 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
         } else {
             if (this.isTame()) {
                 if (!(itemStack.equals(ItemStack.EMPTY))) {
-                    if (itemStack.is(HamstersTags.HAMSTER_BREEDING_FOOD) && this.getAge() == 0 && this.canFallInLove()) {
+                    if (itemStack.is(HamstersTags.HAMSTER_FOOD) && this.getAge() == 0 && this.canFallInLove()) {
                         this.feedHamster(itemStack, player, true);
                         this.setInLove(player);
                         return InteractionResult.SUCCESS;
@@ -154,7 +160,7 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                     } else if (this.getCheekLevel() >= TstpContentMod.CONFIG.maxHamsterCheekSize && HamstersConfig.hamstersBurst) {
                         this.setHealth(0.0F);
                         if (HamstersConfig.hamsterBurstStyle == HamstersConfig.BurstStyleEnum.CONFETTI) {
-                            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(this.level(), this, this.getX(), this.getEyeY(), this.getZ(), getFirework());
+                            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(this.level(), this, this.getX(), this.getEyeY(), this.getZ(), new ItemStack(Items.FIREWORK_ROCKET));
                             fireworkRocketEntity.setSilent(true);
                             fireworkRocketEntity.setInvisible(true);
                             this.level().addFreshEntity(fireworkRocketEntity);
@@ -168,11 +174,16 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
                             TstpContentMod.LOGGER.info("Item in hamster main hand: " + this.getMainHandItem());
                             TstpContentMod.LOGGER.info("Item rod is: " + ACBlockRegistry.URANIUM_ROD.get().asItem().getDefaultInstance());
 
-                            if (this.getItemInHand(InteractionHand.MAIN_HAND).getItem() == ACBlockRegistry.URANIUM_ROD.get().asItem()) {
+                            if (this.getItemInHand(InteractionHand.MAIN_HAND).is(TstpTags.FUEL_RODS)) {
                                 TstpContentMod.LOGGER.info("Hamster Nuke");
                                 int uraniumRodCount = this.getItemInHand(InteractionHand.MAIN_HAND).getCount();
+                                BlockPos oldHamsterPos = this.getOnPos();
                                 ExtraFunc.createNukeExplosionWithSize(this.level(), this, 0.5f * uraniumRodCount);
-                            } else {
+                                if (random.nextInt(0, 50) == 0) {
+                                    RadsterEntity radsterEntity = new RadsterEntity(TstpContentEntityTypes.RADSTER.get(), this.level());
+                                    this.level().addFreshEntity(radsterEntity);
+                                    radsterEntity.setPos(oldHamsterPos.getX(), oldHamsterPos.getY(), oldHamsterPos.getZ());
+                                }
                                 this.level().explode(this, this.getX(), this.getY(), this.getZ(), 2.0F, false, Level.ExplosionInteraction.MOB);
                             }
                         }
@@ -243,97 +254,101 @@ public abstract class HamsterMixin extends TamableAnimal implements GeoEntity, S
 
     @Inject(at = @At(value = "INVOKE", target = "Lcom/starfish_studios/hamsters/entities/Hamster;playEatingSound(Lnet/minecraft/world/item/ItemStack;)V", shift = At.Shift.AFTER), method = "feedHamster", remap = false)
     private void feedHamster(ItemStack itemStack, Player player, boolean shouldHeal, CallbackInfo ci) {
-        this.setCheekLevel(this.getCheekLevel() + 1);
+        if (this.isOwnedBy(player)) {
+            this.setCheekLevel(this.getCheekLevel() + 1);
+        }
     }
 
     private void feedHamsterNonFood(ItemStack itemStack, Player player, boolean shouldHeal) {
-        if (!player.getCooldowns().isOnCooldown(itemStack.getItem())) {
-            this.playEatingSound(itemStack);
-            if (this.getHealth() < this.getMaxHealth() && shouldHeal) {
-                this.heal(this.getMaxHealth() / 4.0F);
-            }
+        if (this.isOwnedBy(player)) {
+            if (!player.getCooldowns().isOnCooldown(itemStack.getItem())) {
+                this.playEatingSound(itemStack);
+                if (this.getHealth() < this.getMaxHealth() && shouldHeal) {
+                    this.heal(this.getMaxHealth() / 4.0F);
+                }
 
-            if (!player.getAbilities().instabuild) {
-                itemStack.shrink(1);
-            }
+                if (!player.getAbilities().instabuild) {
+                    itemStack.shrink(1);
+                }
 
-            if (this.getItemInHand(InteractionHand.MAIN_HAND).getItem() == itemStack.getItem()) {
-                this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(itemStack.getItem(), this.getItemInHand(InteractionHand.MAIN_HAND).getCount() + 1));
-            } else {
-                ItemEntity itemEntity = new ItemEntity(this.level(), this.getOnPos().getX(), this.getOnPos().getY(), this.getOnPos().getZ(), this.getItemInHand(InteractionHand.MAIN_HAND));
-                this.level().addFreshEntity(itemEntity);
-                this.setCheekLevel(this.getCheekLevel() - 1);
-                this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(itemStack.getItem(), 1));
+                if (this.getItemInHand(InteractionHand.MAIN_HAND).getItem() == itemStack.getItem()) {
+                    this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(itemStack.getItem(), this.getItemInHand(InteractionHand.MAIN_HAND).getCount() + 1));
+                } else {
+                    ItemEntity itemEntity = new ItemEntity(this.level(), this.getOnPos().getX(), this.getOnPos().getY(), this.getOnPos().getZ(), this.getItemInHand(InteractionHand.MAIN_HAND));
+                    this.level().addFreshEntity(itemEntity);
+                    this.setCheekLevel(this.getCheekLevel() - 1);
+                    this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(itemStack.getItem(), 1));
+                }
             }
         }
     }
 
     @Shadow(remap = false)
-    protected abstract void feedHamster(ItemStack itemStack, Player player, boolean shouldHeal);
+    public abstract void feedHamster(ItemStack itemStack, Player player, boolean shouldHeal);
 
     @Shadow(remap = false)
-    protected abstract void addAgeToHamster();
+    public abstract void addAgeToHamster();
 
     @Shadow(remap = false)
-    protected abstract int getSquishedTicks();
+    public abstract int getSquishedTicks();
 
     @Shadow(remap = false)
     public abstract int getCheekLevel();
 
     @Shadow(remap = false)
-    protected abstract void setCheekLevel(int cheekLevel);
+    public abstract void setCheekLevel(int cheekLevel);
 
     @Shadow(remap = false)
     public abstract DyeColor getCollarColor();
 
     @Shadow(remap = false)
-    protected abstract void setCollarColor(DyeColor dyeColor);
+    public abstract void setCollarColor(DyeColor dyeColor);
 
     @Shadow(remap = false)
-    protected abstract void catchHamster(Player player);
+    public abstract void catchHamster(Player player);
 
     @Shadow(remap = false)
     public abstract void squishHamster();
 
     @Shadow(remap = false)
-    protected abstract void setSquishedTicks(int squishedTicks);
+    public abstract void setSquishedTicks(int squishedTicks);
 
     @Shadow(remap = false)
     public abstract boolean isInWheel();
 
     @Shadow(remap = false)
-    protected abstract int getSleepingCooldownTicks();
+    public abstract int getSleepCooldownTicks();
 
     @Shadow(remap = false)
-    protected abstract void setSleepingCooldownTicks(int sleepingCooldownTicks);
+    public abstract void setSleepingCooldownTicks(int sleepingCooldownTicks);
 
     @Shadow(remap = false)
-    protected abstract int getBirthCountdown();
+    public abstract int getBirthCountdown();
 
     @Shadow(remap = false)
-    protected abstract void setBirthCountdown(int birthCountdown);
+    public abstract void setBirthCountdown(int birthCountdown);
 
     @Shadow(remap = false)
-    protected abstract void setDefaultSleepingCooldown();
+    public abstract void setDefaultSleepingCooldown();
 
     @Shadow(remap = false)
     public abstract int getDrinkingCooldownTicks();
 
     @Shadow(remap = false)
-    protected abstract void setDrinkingCooldownTicks(int drinkingCooldownTicks);
+    public abstract void setDrinkingCooldownTicks(int drinkingCooldownTicks);
 
     @Shadow(remap = false)
-    protected abstract int getMountingCooldownTicks();
+    public abstract int getMountingCooldownTicks();
 
     @Shadow(remap = false)
-    protected abstract void setMountingCooldownTicks(int mountingCooldownTicks);
+    public abstract void setMountingCooldownTicks(int mountingCooldownTicks);
 
     @Shadow(remap = false)
-    protected abstract int getDismountingCooldownTicks();
+    public abstract int getDismountingCooldownTicks();
 
     @Shadow(remap = false)
-    protected abstract void setDismountingCooldownTicks(int dismountingCooldownTicks);
+    public abstract void setDismountingCooldownTicks(int dismountingCooldownTicks);
 
     @Shadow(remap = false)
-    protected abstract void playEatingSound(ItemStack itemStack);
+    public abstract void playEatingSound(ItemStack itemStack);
 }

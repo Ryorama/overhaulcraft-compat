@@ -2,6 +2,13 @@ plugins {
     id("dev.architectury.loom")
 }
 
+repositories {
+    flatDir {
+        String root = parent.projectDir;
+        dirs root.concat("/libs")
+    }
+}
+
 dependencies {
     mappings(loom.officialMojangMappings())
 

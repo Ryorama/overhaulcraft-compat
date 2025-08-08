@@ -17,9 +17,6 @@ allprojects {
     }
 
     repositories {
-        flatDir {
-            dirs 'libs'
-        }
         maven { url = 'https://maven.minecraftforge.net/' }
         maven {
             name = 'GeckoLib'
@@ -32,6 +29,7 @@ allprojects {
         maven {
             url 'https://maven.teamresourceful.com/repository/maven-public/'
         }
+        maven { url = "https://maven.createmod.net" }
         maven {
             url "https://cursemaven.com"
         }
@@ -67,9 +65,6 @@ allprojects {
         }
         maven {
             url = "https://maven.realrobotix.me/master/"
-            content {
-                includeGroup("com.rbasamoyai")
-            }
         }
         maven {
             name = "Illusive Soulworks maven"
@@ -142,30 +137,35 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}
 dependencies {
     forge "net.minecraftforge:forge:1.20.1-47.3.10"
     mappings loom.officialMojangMappings()
 
     //Forge mods
-    modImplementation("com.ryorama.terrariamod:terrariamod:1.0.0")
     modImplementation("net.lointain.cosmos:Cosmic-Horizons:0.0.7.3")
     modImplementation("net.pixelbank.burnt:burnt:1.8.3")
     modImplementation("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
     modImplementation("com.simibubi.create:create-1.20.1:${create_version}:slim") { transitive = false }
     modImplementation("com.legacy:structure-gel:1.20.1-2.16.2")
-    modImplementation("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
-    modImplementation("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
-    modImplementation("org.valkyrienskies:valkyrienskies-120-forge:${vs2_version}")
-    modImplementation("dev.su5ed.sinytra:Connector:1.0.0-beta.43+1.20.1")
-    modImplementation("dev.su5ed.sinytra.fabric-api:fabric-api:0.92.2+1.11.9+1.20.1")
+    modImplementation("com.rbasamoyai:ritchiesprojectilelib:2.1.0-dev+mc.1.21.1-forge-build.188") { transitive = false }
+    modImplementation("com.rbasamoyai:createbigcannons:5.9.1-dev+mc.1.20.1-forge-build.211")
+    modImplementation("org.sinytra:Connector:1.0.0-beta.46+1.20.1")
+    modImplementation("dev.su5ed.sinytra.fabric-api:fabric-api:0.92.2+1.11.12+1.20.1")
     modImplementation("net.valent:sweet_calamity:${sweet_calamity_version}")
     modImplementation("galena:nirvana-forge:0.0.0-dev")
+    modImplementation("snackerpirater:cbc_nukes:3.0.0")
 
     modImplementation("curse.maven:refurbished-furniture-897116:6272885")
     modImplementation('curse.maven:toughasnails-246391:4750298')
     modImplementation('curse.maven:firstaid-276837:5127567')
     modImplementation('curse.maven:geckolib-388172:5386948')
-    modImplementation('curse.maven:ballistix-443915:5022909')
+    modImplementation("curse.maven:ballistix-443915:6619565")
     modImplementation('curse.maven:electrodynamics-316867:5022907')
     modImplementation('curse.maven:nuclearscience-318646:5022908')
     modImplementation('curse.maven:framework-549225:5680064')
@@ -177,7 +177,6 @@ dependencies {
     modImplementation('curse.maven:butchery-973620:5746912')
     modImplementation('curse.maven:randomium-523013:5431202')
     modImplementation("curse.maven:alexs-caves-924854:5831476")
-    modImplementation("curse.maven:cbc-nuclear-1060244:5678978")
     modImplementation("curse.maven:citadel-331936:5633260")
     modImplementation("curse.maven:configuration-444699:4710266")
     modImplementation("curse.maven:deeperdarker-659011:5698212")
@@ -213,6 +212,8 @@ dependencies {
     modImplementation("curse.maven:copperative-867868:4685249")
     modImplementation("curse.maven:galosphere-631098:4983871")
     modImplementation("curse.maven:blueprint-382216:6408581")
+    modImplementation("curse.maven:brewin-and-chewin-637808:6237884")
+    modImplementation("curse.maven:midnightlib-488090:4980331")
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))
@@ -223,10 +224,7 @@ dependencies {
     implementation(include("dev.xkmc.l2library:l2library:2.4.14-slim"))
     implementation(include("dev.xkmc.l2serial:l2serial:1.2.0"))
     implementation(include("io.github.llamalad7:mixinextras-forge:0.4.1"))
-    implementation("org.valkyrienskies.core:api:${vs_core_version}")
-    implementation("org.valkyrienskies.core:impl:${vs_core_version}")
-    implementation("org.valkyrienskies.core:api-game:${vs_core_version}")
-    implementation("org.valkyrienskies.core:util:${vs_core_version}")
+    implementation(include("com.moulberry:mixinconstraints:1.0.8"))
     implementation('thedarkcolour:kotlinforforge:4.10.0')
 
     modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1")

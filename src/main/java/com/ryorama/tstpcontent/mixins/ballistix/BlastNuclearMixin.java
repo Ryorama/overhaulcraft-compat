@@ -1,8 +1,8 @@
 package com.ryorama.tstpcontent.mixins.ballistix;
 
+import ballistix.api.blast.IHasCustomRender;
 import ballistix.common.blast.Blast;
 import ballistix.common.blast.BlastNuclear;
-import ballistix.common.blast.IHasCustomRenderer;
 import ballistix.common.entity.EntityMissile;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.ryorama.tstpcontent.TstpContentMod;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import java.util.List;
 
 @Mixin(BlastNuclear.class)
-public abstract class BlastNuclearMixin extends Blast implements IHasCustomRenderer {
+public abstract class BlastNuclearMixin extends Blast implements IHasCustomRender {
 
     protected BlastNuclearMixin(Level world, BlockPos position) {
         super(world, position);

@@ -2,7 +2,8 @@ package com.ryorama.tstpcontent.mixins.nukeshell;
 
 import com.ryorama.tstpcontent.TstpContentMod;
 import com.ryorama.tstpcontent.utils.ExtraFunc;
-import com.snackpirate.nukemod3.NukeShellProjectile;
+import com.snackpirate.CBCNukes.NukeShellProjectile;
+import net.minecraft.core.Position;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +23,7 @@ public abstract class NukeShellProjectileMixin extends FuzedBigCannonProjectile 
      * @reason Add option for threaded explosion
     */
     @Overwrite(remap = false)
-    private void nukeKaboom() {
+    protected void detonate(Position position) {
         if (TstpContentMod.CONFIG != null) {
             if (TstpContentMod.CONFIG.threadedNukeExplosion) {
                 ExtraFunc.createNukeExplosionThreaded(level(), this);

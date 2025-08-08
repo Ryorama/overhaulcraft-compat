@@ -6,18 +6,13 @@ license="Not specified"
 modId="tstp_content"
 version="1.0.0"
 displayName="Overhaul Compat"
-displayURL=""
+displayURL="https://legacy.curseforge.com/minecraft/mc-mods/overhaulcraft-compat"
 credits='''
-The people behind the Forge modloader
 The developers of all mods used
-The developer of the classic TerraMine mod for various block textures
 thevortex for help with custom ore sight potions
 '''
 authors="Ryorama"
-description="Custom Content and Compat for The Minecraft: Overhaul/OverhaulCraft pack"
-
-# Start of user code block mod configuration
-# End of user code block mod configuration
+description="Custom Content and Compat for OverhaulCraft pack"
 
 [[dependencies.tstp_content]]
     modId="minecraft"

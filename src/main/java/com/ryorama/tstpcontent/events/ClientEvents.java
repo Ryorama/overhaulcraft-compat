@@ -2,7 +2,9 @@ package com.ryorama.tstpcontent.events;
 
 import com.mrcrayfish.furniture.refurbished.client.registration.ScreenRegister;
 import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.client.render.entity.RadsterEntityRenderer;
 import com.ryorama.tstpcontent.init.TstpConentModMenuTypes;
+import com.ryorama.tstpcontent.init.TstpContentEntityTypes;
 import com.ryorama.tstpcontent.inventory.RFElectricityGeneratorScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -13,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ClientEvents {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        TstpContentMod.LOGGER.info("Registering Tstp Stuff");
+        event.registerEntityRenderer(TstpContentEntityTypes.RADSTER.get(), RadsterEntityRenderer::new);
     }
 
     public static void registerScreens(ScreenRegister register) {

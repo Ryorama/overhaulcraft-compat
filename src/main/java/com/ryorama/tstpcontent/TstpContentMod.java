@@ -1,7 +1,5 @@
 package com.ryorama.tstpcontent;
 
-import com.ryorama.terrariamod.blocks.BlocksT;
-import com.ryorama.terrariamod.world.TerrariaChunkGenerator;
 import com.ryorama.tstpcontent.init.*;
 import com.ryorama.tstpcontent.recipes.oresight.DraconiumPotionRecipe;
 import com.ryorama.tstpcontent.recipes.oresight.NiterPotionRecipe;
@@ -53,6 +51,7 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
+		TstpContentEntityTypes.REGISTRY.register(bus);
 		bus.addListener(this::setup);
 		bus.addListener(this::postLoad);
 		GeckoLib.initialize();
@@ -66,7 +65,6 @@ public class TstpContentMod {
 
 	public void postLoad(FMLLoadCompleteEvent event) {
 		LOGGER.info("Setting Up Custom Terraria Ore Gen");
-		setupTerrariaOreGen();
 	}
 
 	private static void registerPotions() {
@@ -75,19 +73,5 @@ public class TstpContentMod {
 		BrewingRecipeRegistry.addRecipe(new DraconiumPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_DRACONIUM_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.DRACONIUM_SIGHT.get())));
 		BrewingRecipeRegistry.addRecipe(new SulfurPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_SULFUR_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.SULFUR_SIGHT.get())));
 		BrewingRecipeRegistry.addRecipe(new NiterPotionRecipe(Ingredient.of(PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.MUNDANE)), Ingredient.of(TstpContentModItems.CALCINATED_NITER_POWDER.get()), PotionUtils.setPotion(new ItemStack(Items.POTION), TstpContentModPotions.NITER_SIGHT.get())));
-	}
-
-	public void setupTerrariaOreGen() {
-		List<Block> replacingBlocks = new ArrayList<>();
-		replacingBlocks.add(BlocksT.STONE_BLOCK.get());
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.COAL_ORE_TERRARIA.get(), replacingBlocks, 800, 10, 30);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.LAPIS_ORE_TERRARIA.get(), replacingBlocks, 1300, 3, 8);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.REDSTONE_ORE_TERRARIA.get(), replacingBlocks, 1300, 3, 8);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.ALUMINUM_ORE_TERRARIA.get(), replacingBlocks, 1100, 4, 10);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.NICKEL_ORE_TERRARIA.get(), replacingBlocks, 1100, 4, 10);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.OSMIUM_ORE_TERRARIA.get(), replacingBlocks, 1100, 4, 10);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.URANIUM_ORE_TERRARIA.get(), replacingBlocks, 1500, 8, 25);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.ZINC_ORE_TERRARIA.get(), replacingBlocks, 1100, 4, 10);
-		TerrariaChunkGenerator.addCustomOreToWorldGen(TstpContentModBlocks.RANDOMIUM_ORE_TERRARIA.get(), replacingBlocks, 600, 1, 2);
 	}
 }

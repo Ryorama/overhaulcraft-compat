@@ -1,6 +1,5 @@
 package com.ryorama.tstpcontent.init;
 
-import com.ryorama.tstpcontent.item.SolarApocalypseItem;
 import com.thevortex.potionsmaster.items.powders.base.BasePowder;
 import com.thevortex.potionsmaster.items.powders.base.CalcinatedPowder;
 import net.minecraft.world.item.Item;
@@ -33,7 +32,9 @@ public class TstpContentModItems {
 
 	public static final RegistryObject<Item> FRIED_DRAGON_EGG = REGISTRY.register("fried_dragon_egg", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RANDOMIUM_ORE_CHUNK = REGISTRY.register("randomium_ore_chunk", () -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item> SOLAR_APOCALYPSE_ITEM = REGISTRY.register("solar_apocalypse_item", () -> new SolarApocalypseItem(new Item.Properties()));
+	public static final RegistryObject<Item> RAD_SEEDS = REGISTRY.register("rad_seed", () -> new Item(new Item.Properties()));
+
+	//Block Items
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);
 	public static final RegistryObject<Item> OSTRUM_MACHINE_CASING = block(TstpContentModBlocks.OSTRUM_MACHINE_CASING);
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK);
@@ -51,7 +52,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> COAL_ORE_DEMONSTONE = block(TstpContentModBlocks.COAL_ORE_DEMONSTONE);
 	public static final RegistryObject<Item> COAL_ORE_SHADOW = block(TstpContentModBlocks.COAL_ORE_SHADOW);
 	public static final RegistryObject<Item> COAL_ORE_YELLOWSTONE = block(TstpContentModBlocks.COAL_ORE_YELLOWSTONE);
-	public static final RegistryObject<Item> COAL_ORE_TERRARIA = block(TstpContentModBlocks.COAL_ORE_TERRARIA);
 	public static final RegistryObject<Item> COAL_ORE_DUST = block(TstpContentModBlocks.COAL_ORE_DUST);
 
 	//Iron
@@ -106,7 +106,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> LAPIS_ORE_SHADOW = block(TstpContentModBlocks.LAPIS_ORE_SHADOW);
 	public static final RegistryObject<Item> LAPIS_ORE_YELLOWSTONE = block(TstpContentModBlocks.LAPIS_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> LAPIS_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.LAPIS_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> LAPIS_ORE_TERRARIA = block(TstpContentModBlocks.LAPIS_ORE_TERRARIA);
 	public static final RegistryObject<Item> LAPIS_ORE_DUST = block(TstpContentModBlocks.LAPIS_ORE_DUST);
 
 	//Redstone
@@ -120,7 +119,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> REDSTONE_ORE_DEMONSTONE = block(TstpContentModBlocks.REDSTONE_ORE_DEMONSTONE);
 	public static final RegistryObject<Item> REDSTONE_ORE_SHADOW = block(TstpContentModBlocks.REDSTONE_ORE_SHADOW);
 	public static final RegistryObject<Item> REDSTONE_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.REDSTONE_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> REDSTONE_ORE_TERRARIA = block(TstpContentModBlocks.REDSTONE_ORE_TERRARIA);
 	public static final RegistryObject<Item> REDSTONE_ORE_DUST = block(TstpContentModBlocks.REDSTONE_ORE_DUST);
 
 	//Diamond
@@ -163,7 +161,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> ALUMINUM_ORE_SHADOW = block(TstpContentModBlocks.ALUMINUM_ORE_SHADOW);
 	public static final RegistryObject<Item> ALUMINUM_ORE_YELLOWSTONE = block(TstpContentModBlocks.ALUMINUM_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> ALUMINUM_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.ALUMINUM_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> ALUMINUM_ORE_TERRARIA = block(TstpContentModBlocks.ALUMINUM_ORE_TERRARIA);
 	public static final RegistryObject<Item> ALUMINUM_ORE_SKYRIUM = block(TstpContentModBlocks.ALUMINUM_ORE_SKYRIUM);
 	public static final RegistryObject<Item> ALUMINUM_ORE_DUST = block(TstpContentModBlocks.ALUMINUM_ORE_DUST);
 
@@ -198,7 +195,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> NICKEL_ORE_SHADOW = block(TstpContentModBlocks.NICKEL_ORE_SHADOW);
 	public static final RegistryObject<Item> NICKEL_ORE_YELLOWSTONE = block(TstpContentModBlocks.NICKEL_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> NICKEL_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.NICKEL_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> NICKEL_ORE_TERRARIA = block(TstpContentModBlocks.NICKEL_ORE_TERRARIA);
 	public static final RegistryObject<Item> NICKEL_ORE_SKYRIUM = block(TstpContentModBlocks.NICKEL_ORE_SKYRIUM);
 	public static final RegistryObject<Item> NICKEL_ORE_DUST = block(TstpContentModBlocks.NICKEL_ORE_DUST);
 
@@ -216,7 +212,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> OSMIUM_ORE_SHADOW = block(TstpContentModBlocks.OSMIUM_ORE_SHADOW);
 	public static final RegistryObject<Item> OSMIUM_ORE_YELLOWSTONE = block(TstpContentModBlocks.OSMIUM_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> OSMIUM_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.OSMIUM_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> OSMIUM_ORE_TERRARIA = block(TstpContentModBlocks.OSMIUM_ORE_TERRARIA);
 	public static final RegistryObject<Item> OSMIUM_ORE_SKYRIUM = block(TstpContentModBlocks.OSMIUM_ORE_SKYRIUM);
 	public static final RegistryObject<Item> OSMIUM_ORE_DUST = block(TstpContentModBlocks.OSMIUM_ORE_DUST);
 
@@ -285,7 +280,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> URANIUM_ORE_SHADOW = block(TstpContentModBlocks.URANIUM_ORE_SHADOW);
 	public static final RegistryObject<Item> URANIUM_ORE_YELLOWSTONE = block(TstpContentModBlocks.URANIUM_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> URANIUM_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.URANIUM_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> URANIUM_ORE_TERRARIA = block(TstpContentModBlocks.URANIUM_ORE_TERRARIA);
 	public static final RegistryObject<Item> URANIUM_ORE_SKYRIUM = block(TstpContentModBlocks.URANIUM_ORE_SKYRIUM);
 	public static final RegistryObject<Item> URANIUM_ORE_DUST = block(TstpContentModBlocks.URANIUM_ORE_DUST);
 
@@ -303,7 +297,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> ZINC_ORE_SHADOW = block(TstpContentModBlocks.ZINC_ORE_SHADOW);
 	public static final RegistryObject<Item> ZINC_ORE_YELLOWSTONE = block(TstpContentModBlocks.ZINC_ORE_YELLOWSTONE);
 	public static final RegistryObject<Item> ZINC_ORE_DEEP_GREENSTONE = block(TstpContentModBlocks.ZINC_ORE_DEEP_GREENSTONE);
-	public static final RegistryObject<Item> ZINC_ORE_TERRARIA = block(TstpContentModBlocks.ZINC_ORE_TERRARIA);
 	public static final RegistryObject<Item> ZINC_ORE_SKYRIUM = block(TstpContentModBlocks.ZINC_ORE_SKYRIUM);
 	public static final RegistryObject<Item> ZINC_ORE_DUST = block(TstpContentModBlocks.ZINC_ORE_DUST);
 
@@ -322,7 +315,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> RANDOMIUM_ORE_DEMONSTONE = block(TstpContentModBlocks.RANDOMIUM_ORE_DEMONSTONE);
 	public static final RegistryObject<Item> RANDOMIUM_ORE_SHADOW = block(TstpContentModBlocks.RANDOMIUM_ORE_SHADOW);
 	public static final RegistryObject<Item> RANDOMIUM_ORE_YELLOWSTONE = block(TstpContentModBlocks.RANDOMIUM_ORE_YELLOWSTONE);
-	public static final RegistryObject<Item> RANDOMIUM_ORE_TERRARIA = block(TstpContentModBlocks.RANDOMIUM_ORE_TERRARIA);
 	public static final RegistryObject<Item> RANDOMIUM_ORE_SKYRIUM = block(TstpContentModBlocks.RANDOMIUM_ORE_SKYRIUM);
 	public static final RegistryObject<Item> RANDOMIUM_ORE_DUST = block(TstpContentModBlocks.RANDOMIUM_ORE_DUST);
 

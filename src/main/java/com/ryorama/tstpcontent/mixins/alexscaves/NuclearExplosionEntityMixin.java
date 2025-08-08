@@ -1,5 +1,6 @@
 package com.ryorama.tstpcontent.mixins.alexscaves;
 
+import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
 import com.github.alexmodguy.alexscaves.server.entity.living.RaycatEntity;
@@ -7,19 +8,27 @@ import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.github.alexmodguy.alexscaves.server.misc.ACDamageTypes;
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
+import com.llamalad7.mixinextras.sugar.Local;
+import com.ryorama.tstpcontent.init.TstpContentModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Iterator;
 import java.util.Stack;
@@ -37,6 +46,30 @@ public abstract class NuclearExplosionEntityMixin extends Entity{
     public NuclearExplosionEntityMixin(EntityType<?> entityType, Level level) {
         super(entityType, level);
     }
+
+    @Shadow(remap = false)
+    public abstract int getChunksAffected();
+
+    @Shadow(remap = false)
+    public abstract boolean isDestroyable(BlockState state);
+
+    @Shadow(remap = false)
+    public abstract boolean isNoGriefing();
+
+    @Shadow(remap = false)
+    public abstract boolean isIntentionalGameDesign();
+
+    @Shadow(remap = false)
+    public abstract float getSize();
+
+    @Shadow(remap = false)
+    public abstract float calculateDamage(float dist, float max);
+
+    @Shadow(remap = false)
+    private void loadChunksAround(boolean load) {}
+
+    @Shadow(remap = false)
+    private void removeChunk(int radius) {}
 
     /**
      * @author Ryorama
@@ -97,7 +130,7 @@ public abstract class NuclearExplosionEntityMixin extends Entity{
                 }
             }
 
-            AABB killBox = this.getBoundingBox().inflate((double)((float)radius + (float)radius * 0.5F), (double)radius * 0.6, (double)((float)radius + (float)radius * 0.5F));
+            AABB killBox = this.getBoundingBox().inflate(((float)radius + (float)radius * 0.5F), (double)radius * 0.6, (double)((float)radius + (float)radius * 0.5F));
             float flingStrength = this.getSize() * 0.33F;
             float maximumDistance = (float)radius + (float)radius * 0.5F + 1.0F;
             Iterator var16 = this.level().getEntitiesOfClass(LivingEntity.class, killBox).iterator();
@@ -133,27 +166,18 @@ public abstract class NuclearExplosionEntityMixin extends Entity{
         }
     }
 
-    @Shadow(remap = false)
-    public abstract int getChunksAffected();
-
-    @Shadow(remap = false)
-    public abstract boolean isDestroyable(BlockState state);
-
-    @Shadow(remap = false)
-    public abstract boolean isNoGriefing();
-
-    @Shadow(remap = false)
-    public abstract boolean isIntentionalGameDesign();
-
-    @Shadow(remap = false)
-    public abstract float getSize();
-
-    @Shadow(remap = false)
-    public abstract float calculateDamage(float dist, float max);
-
-    @Shadow(remap = false)
-    private void loadChunksAround(boolean load) {}
-
-    @Shadow(remap = false)
-    private void removeChunk(int radius) {}
+    /*
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;destroyBlock(Lnet/minecraft/core/BlockPos;Z)Z"), method = "removeChunk", remap = false)
+    private void removeChunk(int radius, CallbackInfo ci, @Local BlockPos.MutableBlockPos carve) {
+        if (this.level().getBlockState(carve).is(Blocks.TALL_GRASS)) {
+            if (AlexsCaves.COMMON_CONFIG.nukesSpawnItemDrops.get()) {
+                if (this.level().getRandom().nextInt(0, 30) == 0) {
+                    ItemEntity radSeed = new ItemEntity(this.level(), carve.getX(), carve.getY(), carve.getZ(), new ItemStack(TstpContentModItems.RAD_SEEDS.get()));
+                    this.level().addFreshEntity(radSeed);
+                    radSeed.setPos(carve.getX(), carve.getY(), carve.getZ());
+                }
+            }
+        }
+    }
+     */
 }

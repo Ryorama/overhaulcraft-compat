@@ -1,6 +1,5 @@
 package com.ryorama.tstpcontent;
 
-import dev.ghen.thirst.foundation.config.CommonConfig;
 import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.Configurable;
 

@@ -4,7 +4,6 @@ import com.github.alexmodguy.alexscaves.server.block.ACSoundTypes;
 import com.kyanite.deeperdarker.content.DDSounds;
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
 import com.mrcrayfish.furniture.refurbished.block.MetalType;
-import com.ryorama.terrariamod.client.TAudio;
 import com.ryorama.tstpcontent.block.*;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.world.item.DyeColor;
@@ -48,7 +47,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> COAL_ORE_DEMONSTONE = REGISTRY.register("coal_ore_demonstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> COAL_ORE_SHADOW = REGISTRY.register("coal_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> COAL_ORE_YELLOWSTONE = REGISTRY.register("coal_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> COAL_ORE_TERRARIA = REGISTRY.register("coal_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> COAL_ORE_DUST = REGISTRY.register("coal_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
 	//Iron
@@ -103,7 +101,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> LAPIS_ORE_SHADOW = REGISTRY.register("lapis_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> LAPIS_ORE_YELLOWSTONE = REGISTRY.register("lapis_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> LAPIS_ORE_DEEP_GREENSTONE = REGISTRY.register("lapis_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> LAPIS_ORE_TERRARIA = REGISTRY.register("lapis_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> LAPIS_ORE_DUST = REGISTRY.register("lapis_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
 	//Redstone
@@ -117,7 +114,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> REDSTONE_ORE_DEMONSTONE = REGISTRY.register("redstone_ore_demonstone", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> REDSTONE_ORE_SHADOW = REGISTRY.register("redstone_ore_shadow", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> REDSTONE_ORE_DEEP_GREENSTONE = REGISTRY.register("redstone_ore_deep_greenstone", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> REDSTONE_ORE_TERRARIA = REGISTRY.register("redstone_ore_terraria", () -> new RedStoneOreBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> REDSTONE_ORE_DUST = REGISTRY.register("redstone_ore_dust", () -> new RedStoneOreBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
 	//Diamond
@@ -160,7 +156,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> ALUMINUM_ORE_SHADOW = REGISTRY.register("aluminum_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ALUMINUM_ORE_YELLOWSTONE = REGISTRY.register("aluminum_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ALUMINUM_ORE_DEEP_GREENSTONE = REGISTRY.register("aluminum_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> ALUMINUM_ORE_TERRARIA = REGISTRY.register("aluminum_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ALUMINUM_ORE_SKYRIUM = REGISTRY.register("aluminum_ore_skyrium", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> ALUMINUM_ORE_DUST = REGISTRY.register("aluminum_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
@@ -195,7 +190,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> NICKEL_ORE_SHADOW = REGISTRY.register("nickel_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> NICKEL_ORE_YELLOWSTONE = REGISTRY.register("nickel_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> NICKEL_ORE_DEEP_GREENSTONE = REGISTRY.register("nickel_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> NICKEL_ORE_TERRARIA = REGISTRY.register("nickel_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> NICKEL_ORE_SKYRIUM = REGISTRY.register("nickel_ore_skyrium", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> NICKEL_ORE_DUST = REGISTRY.register("nickel_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
@@ -213,7 +207,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> OSMIUM_ORE_SHADOW = REGISTRY.register("osmium_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> OSMIUM_ORE_YELLOWSTONE = REGISTRY.register("osmium_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> OSMIUM_ORE_DEEP_GREENSTONE = REGISTRY.register("osmium_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> OSMIUM_ORE_TERRARIA = REGISTRY.register("osmium_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> OSMIUM_ORE_SKYRIUM = REGISTRY.register("osmium_ore_skyrium", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> OSMIUM_ORE_DUST = REGISTRY.register("osmium_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
@@ -282,7 +275,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> URANIUM_ORE_SHADOW = REGISTRY.register("uranium_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> URANIUM_ORE_YELLOWSTONE = REGISTRY.register("uranium_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> URANIUM_ORE_DEEP_GREENSTONE = REGISTRY.register("uranium_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> URANIUM_ORE_TERRARIA = REGISTRY.register("uranium_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> URANIUM_ORE_SKYRIUM = REGISTRY.register("uranium_ore_skyrium", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> URANIUM_ORE_DUST = REGISTRY.register("uranium_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
@@ -300,7 +292,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> ZINC_ORE_SHADOW = REGISTRY.register("zinc_ore_shadow", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ZINC_ORE_YELLOWSTONE = REGISTRY.register("zinc_ore_yellowstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ZINC_ORE_DEEP_GREENSTONE = REGISTRY.register("zinc_ore_deep_greenstone", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
-	public static final RegistryObject<Block> ZINC_ORE_TERRARIA = REGISTRY.register("zinc_ore_terraria", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 	public static final RegistryObject<Block> ZINC_ORE_SKYRIUM = REGISTRY.register("zinc_ore_skyrium", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> ZINC_ORE_DUST = REGISTRY.register("zinc_ore_dust", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
@@ -319,7 +310,6 @@ public class TstpContentModBlocks {
 	public static final RegistryObject<Block> RANDOMIUM_ORE_DEMONSTONE = REGISTRY.register("randomium_ore_demonstone", () -> new RandomiumOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> RANDOMIUM_ORE_SHADOW = REGISTRY.register("randomium_ore_shadow", () -> new RandomiumOreBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> RANDOMIUM_ORE_YELLOWSTONE = REGISTRY.register("randomium_ore_yellowstone", () -> new RandomiumOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.ICE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
-	public static final RegistryObject<Block> RANDOMIUM_ORE_TERRARIA = REGISTRY.register("randomium_ore_terraria", () -> new RandomiumOreBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY).sound(TAudio.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> RANDOMIUM_ORE_SKYRIUM = REGISTRY.register("randomium_ore_skyrium", () -> new RandomiumOreBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	public static final RegistryObject<Block> RANDOMIUM_ORE_DUST = REGISTRY.register("randomium_ore_dust", () -> new RandomiumOreBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 
