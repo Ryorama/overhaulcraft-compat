@@ -1,5 +1,6 @@
 plugins {
-    id "dev.architectury.loom" version "1.9-SNAPSHOT" apply false
+    id 'dev.architectury.loom' version '1.10-SNAPSHOT'
+	id 'maven-publish'
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
@@ -12,15 +13,15 @@ allprojects {
     apply plugin: "dev.architectury.loom"
 
     java {
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
+        toolchain.languageVersion = JavaLanguageVersion.of(21)
         withSourcesJar()
     }
 
     repositories {
-        flatDir {
-            dirs 'libs'
-        }
-        maven { url = 'https://maven.minecraftforge.net/' }
+        maven {
+			name = 'NeoForged'
+			url = 'https://maven.neoforged.net/releases'
+		}
         maven {
             name = 'GeckoLib'
             url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -32,6 +33,7 @@ allprojects {
         maven {
             url 'https://maven.teamresourceful.com/repository/maven-public/'
         }
+        maven { url = "https://maven.createmod.net" }
         maven {
             url "https://cursemaven.com"
         }
@@ -67,9 +69,6 @@ allprojects {
         }
         maven {
             url = "https://maven.realrobotix.me/master/"
-            content {
-                includeGroup("com.rbasamoyai")
-            }
         }
         maven {
             name = "Illusive Soulworks maven"
@@ -81,7 +80,7 @@ allprojects {
     }
 
     dependencies {
-        minecraft "com.mojang:minecraft:1.20.1"
+        minecraft "com.mojang:minecraft:$project.minecraft_version"
     }
 }
 
@@ -96,12 +95,6 @@ sourceSets {
 
 loom {
     silentMojangMappingsLicense()
-    forge {
-        mixinConfig "tstp_content.mixins.json"
-    }
-    mixin {
-        defaultRefmapName.set("tstp_content.mixins.refmap.json")
-    }
     runs {
         client {
             client()
@@ -131,7 +124,7 @@ loom {
     
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-    options.release = 17
+    options.release = 21
 }
 
 configurations {
@@ -142,106 +135,63 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}
 dependencies {
-    forge "net.minecraftforge:forge:1.20.1-47.3.10"
+    neoForge "net.neoforged:neoforge:$project.neoforge_version"
     mappings loom.officialMojangMappings()
 
-    //Forge mods
-    modImplementation("com.ryorama.terrariamod:terrariamod:1.0.0")
-    modImplementation("net.lointain.cosmos:Cosmic-Horizons:0.0.7.3")
-    modImplementation("net.pixelbank.burnt:burnt:1.8.3")
-    modImplementation("com.jozufozu.flywheel:flywheel-forge-1.20.1:${flywheel_version}")
-    modImplementation("com.simibubi.create:create-1.20.1:${create_version}:slim") { transitive = false }
-    modImplementation("com.legacy:structure-gel:1.20.1-2.16.2")
-    modImplementation("com.rbasamoyai:ritchiesprojectilelib:2.0.0-dev+mc.1.20.1-forge-build.182") { transitive = false }
-    modImplementation("com.rbasamoyai:createbigcannons:5.6.0-dev+mc.1.20.1-forge-build.111")
-    modImplementation("org.valkyrienskies:valkyrienskies-120-forge:${vs2_version}")
-    modImplementation("dev.su5ed.sinytra:Connector:1.0.0-beta.43+1.20.1")
-    modImplementation("dev.su5ed.sinytra.fabric-api:fabric-api:0.92.2+1.11.9+1.20.1")
-    modImplementation("net.valent:sweet_calamity:${sweet_calamity_version}")
-    modImplementation("galena:nirvana-forge:0.0.0-dev")
+    modImplementation("net.pixelbank.burnt:burnt:1.9.0.3")
+    modImplementation("org.sinytra:connector:2.0.0-beta.7+1.21.1")
+    modImplementation("org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.1+1.21.1")
+    modImplementation("com.tiviacz.pizzadelight:pizzadelight:2.0.1")
 
-    modImplementation("curse.maven:refurbished-furniture-897116:6272885")
-    modImplementation('curse.maven:toughasnails-246391:4750298')
-    modImplementation('curse.maven:firstaid-276837:5127567')
-    modImplementation('curse.maven:geckolib-388172:5386948')
-    modImplementation('curse.maven:ballistix-443915:5022909')
-    modImplementation('curse.maven:electrodynamics-316867:5022907')
-    modImplementation('curse.maven:nuclearscience-318646:5022908')
-    modImplementation('curse.maven:framework-549225:5680064')
-    modImplementation('curse.maven:potion_master-356801:4722415')
-    modImplementation('curse.maven:cuisine_delight-893541:5300072')
-    modImplementation('curse.maven:farmers_delight-398521:5051242')
-    modImplementation('curse.maven:bos-757062:4727499')
-    modImplementation('curse.maven:architectury-419699:5137938')
-    modImplementation('curse.maven:butchery-973620:5746912')
-    modImplementation('curse.maven:randomium-523013:5431202')
-    modImplementation("curse.maven:alexs-caves-924854:5831476")
-    modImplementation("curse.maven:cbc-nuclear-1060244:5678978")
-    modImplementation("curse.maven:citadel-331936:5633260")
-    modImplementation("curse.maven:configuration-444699:4710266")
-    modImplementation("curse.maven:deeperdarker-659011:5698212")
-    modImplementation("curse.maven:haunted-harvest-541753:5212692")
-    modImplementation("curse.maven:crackers-wither-storm-mod-621405:5619741")
-    modImplementation("curse.maven:selene-499980:5863085")
-    modImplementation("curse.maven:mekanism-268560:5662583")
-    modImplementation("curse.maven:mrcrayfishs-gun-mod-unofficial-945471:5610926")
-    modImplementation("curse.maven:easy-villagers-400514:5724570")
-    modImplementation("curse.maven:ato-405593:5348605")
-    modImplementation("curse.maven:create-clockwork-807792:5580456")
-    modImplementation("curse.maven:aether-255308:5889509")
-    modImplementation("curse.maven:the-twilight-forest-227639:4865711")
-    modImplementation("curse.maven:blue-skies-312918:5010316")
-    modImplementation("curse.maven:the-forgotten-dimensions-461140:5813211")
-    modImplementation("curse.maven:shadowlands-398372:5386877")
-    modImplementation("curse.maven:toybox-997296:5971954")
-    modImplementation("curse.maven:astral-dimension-645743:5903628")
-    modImplementation("curse.maven:the-abyss-chapter-ii-440647:5129404")
-    modImplementation("curse.maven:the-undergarden-379849:5182632")
-    modImplementation("curse.maven:thirst-was-taken-679270:6328470")
-    modImplementation("curse.maven:some-assembly-required-422951:6343314")
-    modImplementation("curse.maven:ex-deorum-901420:5918825")
-    modImplementation("curse.maven:cloth-config-348521:5729105")
-    modImplementation("curse.maven:ftb-quests-forge-289412:6259628")
-    modImplementation("curse.maven:ftb-library-forge-404465:6164053")
-    modImplementation("curse.maven:create-radars-1152836:6065670")
-    modImplementation("curse.maven:weather-storms-tornadoes-237746:5244118")
-    modImplementation("curse.maven:croptopia-additions-702063:5558791")
-    modImplementation("curse.maven:minecraft-comes-alive-reborn-535291:6254999")
-    modImplementation("curse.maven:oreganized-769203:6373702")
-    modImplementation("curse.maven:caverns-and-chasms-438005:6040957")
-    modImplementation("curse.maven:copperative-867868:4685249")
-    modImplementation("curse.maven:galosphere-631098:4983871")
-    modImplementation("curse.maven:blueprint-382216:6408581")
+    modImplementation('curse.maven:refurbished-furniture-897116:6623948')
+    modImplementation('curse.maven:geckolib-388172:6659026')
+    modImplementation('curse.maven:ballistix-443915:6791729')
+    modImplementation('curse.maven:electrodynamics-316867:6792255')
+    modImplementation('curse.maven:nuclear-science-318646:6785829')
+    modImplementation('curse.maven:framework-549225:6531439')
+    modImplementation('curse.maven:potionsmaster-356801:6826199')
+    modImplementation('curse.maven:cuisine-delight-893541:6677783')
+    modImplementation('curse.maven:farmers-delight-398521:6597295')
+    modImplementation('curse.maven:architectury-api-419699:5786327')
+    modImplementation('curse.maven:butchery-973620:6668101')
+    modImplementation('curse.maven:randomium-ore-523013:6659375')
+    modImplementation('curse.maven:configuration-444699:6779573')
+    modImplementation('curse.maven:deeperdarker-659011:6463247')
+    //modImplementation('curse.maven:haunted-harvest-541753:6759795')
+    modImplementation('curse.maven:mekanism-268560:6486993')
+    modImplementation('curse.maven:easy-villagers-400514:6831416')
+    modImplementation('curse.maven:ato-405593:6799475')
+    modImplementation('curse.maven:aether-255308:6389857')
+    modImplementation('curse.maven:the-twilight-forest-227639:6472889')
+    modImplementation('curse.maven:astral-dimension-645743:6821091')
+    modImplementation('curse.maven:the-undergarden-379849:6687578')
+    modImplementation('curse.maven:thirst-was-taken-679270:6759289')
+    modImplementation('curse.maven:ex-deorum-901420:6614749')
+    modImplementation('curse.maven:cloth-config-348521:5729127')
+    modImplementation('curse.maven:ftb-quests-forge-289412:6829025')
+    modImplementation('curse.maven:ftb-library-forge-404465:6807431')
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))
     api(include(project("mod-bridge"))) { transitive = false }
     implementation(project("mod-bridge")) { targetConfiguration = "modRuntimeClasspathMainMapped" }
 
-    //Extra Stuff
-    implementation(include("dev.xkmc.l2library:l2library:2.4.14-slim"))
-    implementation(include("dev.xkmc.l2serial:l2serial:1.2.0"))
-    implementation(include("io.github.llamalad7:mixinextras-forge:0.4.1"))
-    implementation("org.valkyrienskies.core:api:${vs_core_version}")
-    implementation("org.valkyrienskies.core:impl:${vs_core_version}")
-    implementation("org.valkyrienskies.core:api-game:${vs_core_version}")
-    implementation("org.valkyrienskies.core:util:${vs_core_version}")
-    implementation('thedarkcolour:kotlinforforge:4.10.0')
-
-    modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1")
-    modImplementation("top.theillusivec4.curios:curios-forge:5.11.0+1.20.1:api")
-    modImplementation(include("com.tterrag.registrate:Registrate:MC1.20-1.3.3"))
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.2.0"))
     implementation(include("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.2.0"))
 }
 
 processResources {
-    inputs.property "version", project.version
+    inputs.property 'version', project.version
 
-    filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand version: project.version
     }
 }
 

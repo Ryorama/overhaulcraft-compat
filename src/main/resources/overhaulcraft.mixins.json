@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "com.ryorama.overhaulcraft.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "overhaulcraft.mixins.refmap.json",
+  "mixins": [
+    "mekanism.RadiationManagerMixin",
+    "pizzadelight.PizzaSliceItemMixin",
+    "potionmaster.BlockStoreBuilderMixin",
+    "potionmaster.PotionExpiryMixin",
+    "potionmaster.RenderEnqueueMixin",
+    "thirstwastaken.ThirstHelperMixin",
+    "EnderEyeItemMixin",
+    "FoodDataMixin",
+    "LevelMixin",
+    "PlayerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
