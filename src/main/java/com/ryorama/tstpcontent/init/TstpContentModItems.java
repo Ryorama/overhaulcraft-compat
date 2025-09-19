@@ -15,10 +15,6 @@ import com.ryorama.tstpcontent.TstpContentMod;
 
 public class TstpContentModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TstpContentMod.MODID);
-	public static final DeferredRegister<Item> REGISTRY_MC = DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
-
-	//1.21 Stuff
-	public static final RegistryObject<Item> ARMADILLO_SCUTE = REGISTRY_MC.register("armadillo_scute", () -> new Item(new Item.Properties()));
 
 	//Ore Sight Stuff
 	public static final RegistryObject<Item> RANDOMIUM_POWDER = REGISTRY.register("randomium_powder", () -> new BasePowder(new Item.Properties()));
@@ -38,8 +34,6 @@ public class TstpContentModItems {
 	public static final RegistryObject<Item> CALORITE_MACHINE_CASING = block(TstpContentModBlocks.CALORITE_MACHINE_CASING);
 	public static final RegistryObject<Item> OSTRUM_MACHINE_CASING = block(TstpContentModBlocks.OSTRUM_MACHINE_CASING);
 	public static final RegistryObject<Item> HVAC_BLOCK = block(TstpContentModBlocks.HVAC_BLOCK);
-	public static final RegistryObject<Item> LIGHT_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR);
-	public static final RegistryObject<Item> DARK_RF_ELECTRICITY_GENERATOR = block(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR);
 
 	//Coal
 	public static final RegistryObject<Item> COAL_ORE_ABYSS = block(TstpContentModBlocks.COAL_ORE_ABYSS);

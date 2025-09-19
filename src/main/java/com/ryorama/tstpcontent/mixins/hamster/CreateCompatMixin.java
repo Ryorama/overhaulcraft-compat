@@ -1,9 +1,11 @@
 package com.ryorama.tstpcontent.mixins.hamster;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.starfish_studios.hamsters.compat.CreateCompat;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
+@IfModLoaded("hamsters")
 @Mixin(CreateCompat.class)
 public class CreateCompatMixin {
 

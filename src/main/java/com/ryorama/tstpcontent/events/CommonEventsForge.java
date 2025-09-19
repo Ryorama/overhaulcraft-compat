@@ -6,12 +6,14 @@ import com.dreamcritting.toybox.init.ToyboxModBlocks;
 import com.kyanite.deeperdarker.content.DDBlocks;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.ryorama.tstpcontent.TstpContentMod;
+import com.ryorama.tstpcontent.command.GivePlayerCorpseCommand;
 import com.ryorama.tstpcontent.entities.RadsterEntity;
 import com.ryorama.tstpcontent.init.TstpContentEntityTypes;
 import net.mcreator.astraldimension.init.AstralDimensionModBlocks;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +30,11 @@ public class CommonEventsForge {
         if (TstpContentMod.CONFIG.restrictNetherAndEndToPlanets) {
             event.setCanceled(true);
         }
+    }
+
+    @SubscribeEvent
+    public static void registerCommands(RegisterCommandsEvent event) {
+        new GivePlayerCorpseCommand(event.getDispatcher());
     }
 
     @SubscribeEvent

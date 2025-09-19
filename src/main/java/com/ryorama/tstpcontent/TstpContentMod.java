@@ -12,7 +12,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.DistExecutor;
@@ -26,10 +25,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.common.MinecraftForge;
 import software.bernie.geckolib.GeckoLib;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Mod(TstpContentMod.MODID)
 public class TstpContentMod {
@@ -47,7 +42,6 @@ public class TstpContentMod {
 		TstpContentModEffects.REGISTRY.register(bus);
 		TstpContentModBlocks.REGISTRY.register(bus);
 		TstpContentModBlockEntities.REGISTRY.register(bus);
-		TstpContentModItems.REGISTRY_MC.register(bus);
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);

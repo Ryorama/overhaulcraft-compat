@@ -160,6 +160,7 @@ dependencies {
     modImplementation("net.valent:sweet_calamity:${sweet_calamity_version}")
     modImplementation("galena:nirvana-forge:0.0.0-dev")
     modImplementation("snackerpirater:cbc_nukes:3.0.0")
+    modImplementation("net.crustychunks:warium:1.0.6")
 
     modImplementation("curse.maven:refurbished-furniture-897116:6272885")
     modImplementation('curse.maven:toughasnails-246391:4750298')
@@ -174,7 +175,7 @@ dependencies {
     modImplementation('curse.maven:farmers_delight-398521:5051242')
     modImplementation('curse.maven:bos-757062:4727499')
     modImplementation('curse.maven:architectury-419699:5137938')
-    modImplementation('curse.maven:butchery-973620:5746912')
+    modImplementation('curse.maven:butchery-973620:6708255')
     modImplementation('curse.maven:randomium-523013:5431202')
     modImplementation("curse.maven:alexs-caves-924854:5831476")
     modImplementation("curse.maven:citadel-331936:5633260")
@@ -214,6 +215,9 @@ dependencies {
     modImplementation("curse.maven:blueprint-382216:6408581")
     modImplementation("curse.maven:brewin-and-chewin-637808:6237884")
     modImplementation("curse.maven:midnightlib-488090:4980331")
+    modImplementation("curse.maven:terramity-1084134:6054971")
+    modImplementation("curse.maven:voltaic-api-1237904:6791637")
+    modImplementation("curse.maven:hexcasting-569849:5937033")
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "tstp_content:randomium_formation",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 238090794,
+    "spacing": 300,
+    "separation": 50,
+    "type": "minecraft:random_spread"
+  }
+}

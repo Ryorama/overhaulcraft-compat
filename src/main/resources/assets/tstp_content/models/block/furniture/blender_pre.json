@@ -1,8 +1,0 @@
-{
-    "parent": "tstp_content:block/furniture/blender",
-    "textures": {
-        "1": "blocks/gray_concrete",
-        "2": "blocks/light_gray_concrete",
-        "3": "blocks/glass"
-    }
-}

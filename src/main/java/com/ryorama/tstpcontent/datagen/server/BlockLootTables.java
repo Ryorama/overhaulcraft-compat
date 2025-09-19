@@ -21,8 +21,6 @@ public class BlockLootTables extends VanillaBlockLoot {
         dropSelf(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
         dropSelf(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
         dropSelf(TstpContentModBlocks.HVAC_BLOCK.get());
-        dropSelf(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get());
-        dropSelf(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get());
         getKnownBlocks().forEach(this::dropRaw);
     }
 

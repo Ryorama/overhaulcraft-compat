@@ -1,8 +1,10 @@
 package com.ryorama.tstpcontent.init;
 
+import com.ryorama.tstpcontent.utils.ExtraFunc;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
 
+import com.thevortex.potionsmaster.init.ModRegistry;
 import galena.copperative.index.CItems;
 import net.mcreator.croptopiaadditions.init.CroptopiaAdditionsModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,11 +35,6 @@ public class TstpContentModTabs {
 	public static final RegistryObject<CreativeModeTab> TSTP_TAS = REGISTRY.register("tstp_tas",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_tas")).icon(() -> new ItemStack(TstpContentModBlocks.HVAC_BLOCK.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TstpContentModBlocks.HVAC_BLOCK.get().asItem());
-			}).build());
-	public static final RegistryObject<CreativeModeTab> TSTP_MRCF = REGISTRY.register("tstp_mrcf",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_mrcf")).icon(() -> new ItemStack(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get())).displayItems((parameters, tabData) -> {
-				tabData.accept(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get().asItem());
-				tabData.accept(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get().asItem());
 			}).build());
 
 	public static final RegistryObject<CreativeModeTab> TSTP_ORE_COMP = REGISTRY.register("tstp_ore_comp",
@@ -342,10 +339,15 @@ public class TstpContentModTabs {
 			tabData.getEntries().remove(GItems.SILVER_NUGGET.get().getDefaultInstance());
 			tabData.getEntries().remove(CCItems.SILVER_INGOT.get().getDefaultInstance());
 			tabData.getEntries().remove(GItems.SILVER_INGOT.get().getDefaultInstance());
+			tabData.getEntries().remove(CCItems.NETHERITE_NUGGET.get().getDefaultInstance());
+		}
+		if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+			tabData.getEntries().remove(ExtraFunc.getItemStackFromString("caverns_and_chasms", "cupric_campfire"));
 		}
 	}
 
 	public static void handleItemPlacements() {
-		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.INGREDIENTS).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE); //.tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
+		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ExtraFunc.getItemStackFromString("potionsmaster", "unobtainium_powder")), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ExtraFunc.getItemStackFromString("potionsmaster", "calcinatedunobtainium_powder")), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
+		CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.FUNCTIONAL_BLOCKS).addItemsAfter(Ingredient.of(Items.SOUL_CAMPFIRE), ExtraFunc.getItemStackFromString("caverns_and_chasms", "cupric_campfire").getItemHolder(), ExtraFunc.getItemStackFromString("dungeonsdelight", "living_campfire").getItemHolder(), ExtraFunc.getItemStackFromString("netherexp", "ancient_campfire").getItemHolder(), ExtraFunc.getItemStackFromString("occultism", "spirit_campfire").getItemHolder());
 	}
 }
