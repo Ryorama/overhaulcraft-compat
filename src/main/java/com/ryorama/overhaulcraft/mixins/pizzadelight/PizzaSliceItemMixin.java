@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.pizzadelight;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.tiviacz.pizzadelight.common.PizzaBlockCalculator;
 import com.tiviacz.pizzadelight.init.ModDataComponents;
 import com.tiviacz.pizzadelight.items.PizzaSliceItem;
@@ -17,6 +18,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import java.util.Collections;
 import java.util.Optional;
 
+@IfModLoaded("pizzadelight")
 @Mixin(PizzaSliceItem.class)
 public abstract class PizzaSliceItemMixin extends Item {
     public PizzaSliceItemMixin(Properties arg) {

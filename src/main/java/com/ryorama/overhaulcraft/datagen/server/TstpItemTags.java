@@ -1,17 +1,16 @@
-/*
-package com.ryorama.tstpcontent.datagen.server;
+package com.ryorama.overhaulcraft.datagen.server;
 
-import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.init.TstpContentModItems;
-import com.ryorama.tstpcontent.utils.TstpTags;
-import net.allthemods.alltheores.infos.ItemTagRegistry;
+import com.ryorama.overhaulcraft.TstpContentMod;
+import com.ryorama.overhaulcraft.init.TstpContentModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -30,64 +29,63 @@ public class TstpItemTags extends ItemTagsProvider {
     private void addOreTags(Item item) {
         String oretype = item.getDescription().toString();
         if(oretype.contains("aluminum")) {
-            tag(ItemTagRegistry.ALUMINUM_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("aluminum"))).add(item);
         }
         if(oretype.contains("lead")) {
-            tag(ItemTagRegistry.LEAD_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("lead"))).add(item);
         }
         if(oretype.contains("nickel")) {
-            tag(ItemTagRegistry.NICKEL_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("nickel"))).add(item);
         }
         if(oretype.contains("osmium")) {
-            tag(ItemTagRegistry.OSMIUM_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("osmium"))).add(item);
         }
         if(oretype.contains("platinum")) {
-            tag(ItemTagRegistry.PLATINUM_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("platinum"))).add(item);
         }
         if(oretype.contains("silver")) {
-            tag(ItemTagRegistry.SILVER_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("silver"))).add(item);
         }
         if(oretype.contains("tin_")) {
-            tag(ItemTagRegistry.TIN_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("tin"))).add(item);
         }
         if(oretype.contains("uranium")) {
-            tag(ItemTagRegistry.URANIUM_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("uranium"))).add(item);
         }
         if(oretype.contains("zinc")) {
-            tag(ItemTagRegistry.ZINC_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("zinc"))).add(item);
         }
         if(oretype.contains("coal")) {
-            tag(ItemTagRegistry.COAL_ORE_ITEM).add(item);
+            tag(ItemTags.COAL_ORES).add(item);
         }
         if(oretype.contains("copper")) {
-            tag(ItemTagRegistry.COPPER_ORE_ITEM).add(item);
+            tag(ItemTags.COPPER_ORES).add(item);
         }
         if(oretype.contains("diamond")) {
-            tag(ItemTagRegistry.DIAMOND_ORE_ITEM).add(item);
+            tag(ItemTags.DIAMOND_ORES).add(item);
         }
         if(oretype.contains("emerald")) {
-            tag(ItemTagRegistry.EMERALD_ORE_ITEM).add(item);
+            tag(ItemTags.EMERALD_ORES).add(item);
         }
         if(oretype.contains("gold")) {
-            tag(ItemTagRegistry.GOLD_ORE_ITEM).add(item);
+            tag(ItemTags.GOLD_ORES).add(item);
         }
         if(oretype.contains("iron")) {
-            tag(ItemTagRegistry.IRON_ORE_ITEM).add(item);
+            tag(ItemTags.IRON_ORES).add(item);
         }
         if(oretype.contains("lapis")) {
-            tag(ItemTagRegistry.LAPIS_ORE_ITEM).add(item);
+            tag(ItemTags.LAPIS_ORES).add(item);
         }
         if(oretype.contains("redstone")) {
-            tag(ItemTagRegistry.REDSTONE_ORE_ITEM).add(item);
+            tag(ItemTags.REDSTONE_ORES).add(item);
         }
         if (oretype.contains("randomium")) {
-            tag(TstpTags.RANDOMIUM_ORE_ITEM).add(item);
+            tag(ItemTags.create(ResourceLocation.parse("randomium"))).add(item);
         }
     }
 
     protected List<Item> getKnownItems()
     {
-        return TstpContentModItems.REGISTRY.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+        return TstpContentModItems.REGISTRY.getEntries().stream().map(DeferredHolder::get).collect(Collectors.toList());
     }
 }
- */

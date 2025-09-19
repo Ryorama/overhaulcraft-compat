@@ -1,5 +1,5 @@
 {
-  "parent": "tstp_content:block/hvac_block",
+  "parent": "overhaulcraft:block/hvac_block",
   "display": {
     "thirdperson": {
       "rotation": [

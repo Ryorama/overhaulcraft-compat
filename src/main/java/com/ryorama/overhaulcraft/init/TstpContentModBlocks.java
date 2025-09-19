@@ -1,24 +1,21 @@
 package com.ryorama.overhaulcraft.init;
 
 import com.mrcrayfish.framework.api.registry.RegistryContainer;
-import com.mrcrayfish.furniture.refurbished.block.MetalType;
 import com.ryorama.overhaulcraft.TstpContentMod;
-import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
-import net.minecraft.world.level.material.MapColor;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 
 @RegistryContainer
 public class TstpContentModBlocks {
-	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(TstpContentMod.MODID, Registries.BLOCK);
+	public static final DeferredRegister.Blocks REGISTRY = DeferredRegister.createBlocks(TstpContentMod.MODID);
 
-	public static final RegistrySupplier<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
-	public static final RegistrySupplier<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
+	public static final DeferredBlock<Block> CALORITE_MACHINE_CASING = REGISTRY.register("calorite_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
+	public static final DeferredBlock<Block> OSTRUM_MACHINE_CASING = REGISTRY.register("ostrum_machine_casing", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops()));
 	//public static final RegistrySupplier<Block> HVAC_BLOCK = REGISTRY.register("hvac_block", () -> new HVACBlockBlock());
 	//public static final RegistrySupplier<Block> LIGHT_RF_ELECTRICITY_GENERATOR = REGISTRY.register("light_rf_electricity_generator", () -> {
 		//return new RFElectricityGeneratorBlock(MetalType.LIGHT, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(5.0F, 6.0F).lightLevel((state) -> {
@@ -309,5 +306,5 @@ public class TstpContentModBlocks {
 	public static final RegistrySupplier<Block> RANDOMIUM_ORE_DUST = REGISTRY.register("randomium_ore_dust", () -> new RandomiumOreBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 	*/
 
-	public static final RegistrySupplier<Block> RANDOMIUM_ORE_NETHER = REGISTRY.register("randomium_ore_nether", () -> new RandomiumOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
+	public static final DeferredBlock<Block> RANDOMIUM_ORE_NETHER = REGISTRY.register("randomium_ore_nether", () -> new RandomiumOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
 }

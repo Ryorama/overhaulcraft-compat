@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.potionmaster;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.utils.TstpTags;
 import com.thevortex.potionsmaster.PotionsMaster;
 import com.thevortex.potionsmaster.reference.Ores;
@@ -24,6 +25,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.*;
 
+@IfModLoaded("potionsmaster")
 @Mixin(RenderEnqueue.class)
 public class RenderEnqueueMixin {
 

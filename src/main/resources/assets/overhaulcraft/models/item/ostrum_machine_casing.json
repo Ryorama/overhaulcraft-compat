@@ -1,5 +1,5 @@
 {
-  "parent": "tstp_content:block/ostrum_machine_casing",
+  "parent": "overhaulcraft:block/ostrum_machine_casing",
   "display": {
     "thirdperson": {
       "rotation": [

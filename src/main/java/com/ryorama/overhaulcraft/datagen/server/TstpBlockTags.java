@@ -1,20 +1,20 @@
-/*
-package com.ryorama.tstpcontent.datagen.server;
+package com.ryorama.overhaulcraft.datagen.server;
 
-import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.init.TstpContentModBlocks;
-import com.ryorama.tstpcontent.utils.TstpTags;
-import net.allthemods.alltheores.infos.ItemTagRegistry;
+import com.ryorama.overhaulcraft.TstpContentMod;
+import com.ryorama.overhaulcraft.init.TstpContentModBlocks;
+import com.ryorama.overhaulcraft.utils.TstpTags;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RedStoneOreBlock;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -28,11 +28,11 @@ public class TstpBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.HVAC_BLOCK.get());
+        //tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.HVAC_BLOCK.get());
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
 
-        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(TstpContentModBlocks.HVAC_BLOCK.get());
+        //tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(TstpContentModBlocks.HVAC_BLOCK.get());
         tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
         tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
 
@@ -44,47 +44,47 @@ public class TstpBlockTags extends BlockTagsProvider {
             String oretype = block.getName().toString();
             if(oretype.contains("aluminum")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-                tag(ItemTagRegistry.ALUMINUM_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("aluminum"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("lead")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-                tag(ItemTagRegistry.LEAD_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("lead"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("nickel")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-                tag(ItemTagRegistry.NICKEL_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("nickel"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("osmium")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-                tag(ItemTagRegistry.OSMIUM_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("osmium"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("platinum")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-                tag(ItemTagRegistry.PLATINUM_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("platinum"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("silver")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(block);
-                tag(ItemTagRegistry.SILVER_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("silver"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("tin_")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-                tag(ItemTagRegistry.TIN_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("tin"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("uranium")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_DIAMOND_TOOL).add(block);
-                tag(ItemTagRegistry.URANIUM_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("uranium"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("zinc")) {
                 tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(block);
-                tag(ItemTagRegistry.ZINC_ORE).add(block);
+                tag(BlockTags.create(ResourceLocation.parse("zinc"))).add(block);
                 tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(block);
             }
             if(oretype.contains("coal")) {
@@ -136,7 +136,6 @@ public class TstpBlockTags extends BlockTagsProvider {
 
     protected Iterable<Block> getKnownBlocks()
     {
-        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(RegistryObject::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
     }
 }
- */

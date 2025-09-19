@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "tstp_content:block/side",
-    "up": "tstp_content:block/side",
-    "north": "tstp_content:block/hvac_side",
-    "east": "tstp_content:block/hvac_side",
-    "south": "tstp_content:block/hvac_side",
-    "west": "tstp_content:block/hvac_side",
-    "particle": "tstp_content:block/side"
+    "down": "overhaulcraft:block/side",
+    "up": "overhaulcraft:block/side",
+    "north": "overhaulcraft:block/hvac_side",
+    "east": "overhaulcraft:block/hvac_side",
+    "south": "overhaulcraft:block/hvac_side",
+    "west": "overhaulcraft:block/hvac_side",
+    "particle": "overhaulcraft:block/side"
   },
   "render_type": "solid"
 }

@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.thirstwastaken;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import dev.ghen.thirst.api.ThirstHelper;
 import dev.ghen.thirst.foundation.config.KeyWordConfig;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@IfModLoaded("thirst")
 @Mixin(ThirstHelper.class)
 public class ThirstHelperMixin {
 

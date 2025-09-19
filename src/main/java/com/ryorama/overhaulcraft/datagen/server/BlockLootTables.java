@@ -1,29 +1,35 @@
-/*
-package com.ryorama.tstpcontent.datagen.server;
+package com.ryorama.overhaulcraft.datagen.server;
 
-import com.ryorama.tstpcontent.TstpContentMod;
-import com.ryorama.tstpcontent.init.TstpContentModBlocks;
-import net.allthemods.alltheores.blocks.BlockList;
+
+import com.ryorama.overhaulcraft.init.TstpContentModBlocks;
+import net.allthemods.alltheores.AllTheOres;
+import net.allthemods.alltheores.registry.ATORegistry;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RedStoneOreBlock;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.stream.Collectors;
 
 public class BlockLootTables extends VanillaBlockLoot {
+
+    public BlockLootTables(HolderLookup.Provider provider) {
+        super(provider);
+    }
+
     @Override
     public void generate()
     {
         dropSelf(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
         dropSelf(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
-        dropSelf(TstpContentModBlocks.HVAC_BLOCK.get());
-        dropSelf(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get());
-        dropSelf(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get());
+        //dropSelf(TstpContentModBlocks.HVAC_BLOCK.get());
+        //dropSelf(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get());
+        //dropSelf(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get());
         getKnownBlocks().forEach(this::dropRaw);
     }
 
@@ -31,31 +37,31 @@ public class BlockLootTables extends VanillaBlockLoot {
         if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
             String oretype = block.getName().toString();
             if(oretype.contains("aluminum")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.ALUMINUM_RAW.get());
+                return createOreDrop(block1, ATORegistry.ALUMINUM.RAW.get());
             }); }
             if(oretype.contains("lead")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.LEAD_RAW.get());
+                return createOreDrop(block1, ATORegistry.LEAD.RAW.get());
             }); }
             if(oretype.contains("nickel")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.NICKEL_RAW.get());
+                return createOreDrop(block1, ATORegistry.NICKEL.RAW.get());
             }); }
             if(oretype.contains("osmium")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.OSMIUM_RAW.get());
+                return createOreDrop(block1, ATORegistry.OSMIUM.RAW.get());
             }); }
             if(oretype.contains("platinum")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.PLATINUM_RAW.get());
+                return createOreDrop(block1, ATORegistry.PLATINUM.RAW.get());
             }); }
             if(oretype.contains("silver")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.SILVER_RAW.get());
+                return createOreDrop(block1, ATORegistry.SILVER.RAW.get());
             }); }
             if(oretype.contains("tin_")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.TIN_RAW.get());
+                return createOreDrop(block1, ATORegistry.TIN.RAW.get());
             }); }
             if(oretype.contains("uranium")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.URANIUM_RAW.get());
+                return createOreDrop(block1, ATORegistry.URANIUM.RAW.get());
             }); }
             if(oretype.contains("zinc")) { this.add(block, (block1) -> {
-                return createOreDrop(block1, BlockList.ZINC_RAW.get());
+                return createOreDrop(block1, ATORegistry.ZINC.RAW.get());
             }); }
             if(oretype.contains("coal")) { this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.COAL);
@@ -86,10 +92,6 @@ public class BlockLootTables extends VanillaBlockLoot {
     @Override
     protected Iterable<Block> getKnownBlocks()
     {
-        Iterable<Block> iterable = TstpContentModBlocks.REGISTRY.getEntries().stream().map(RegistryObject::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
-        TstpContentMod.LOGGER.info(iterable);
-        return iterable;
+        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
     }
 }
-
- */

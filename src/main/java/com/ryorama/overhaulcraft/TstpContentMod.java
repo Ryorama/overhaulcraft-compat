@@ -10,7 +10,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
-import net.neoforged.neoforge.common.NeoForge;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -25,11 +24,11 @@ public class TstpContentMod {
 	public TstpContentMod(IEventBus bus, ModContainer modContainer, Dist dist) {
 		CONFIG = Configuration.registerConfig(TstpContentModConfig.class, ConfigFormats.json()).getConfigInstance();
 
-		TstpContentModSounds.REGISTRY.register();
+		TstpContentModSounds.REGISTRY.register(bus);
 		TstpContentModEffects.REGISTRY.register();
-		TstpContentModBlocks.REGISTRY.register();
+		TstpContentModBlocks.REGISTRY.register(bus);
 		TstpContentModBlockEntities.REGISTRY.register();
-		TstpContentModItems.REGISTRY.register();
+		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register();
 		TstpContentModTabs.REGISTRY.register();
 		TstpContentEntityTypes.REGISTRY.register();

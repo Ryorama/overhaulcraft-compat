@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tstp_content:item/calcinatedrandomium_powder"
+    "layer0": "overhaulcraft:item/calcinatedrandomium_powder"
   }
 }

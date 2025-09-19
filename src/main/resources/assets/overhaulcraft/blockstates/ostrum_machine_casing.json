@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tstp_content:block/ostrum_machine_casing"
+      "model": "overhaulcraft:block/ostrum_machine_casing"
     }
   }
 }

@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tstp_content:block/ostrum_machine_casing",
-    "particle": "tstp_content:block/ostrum_machine_casing"
+    "all": "overhaulcraft:block/ostrum_machine_casing",
+    "particle": "overhaulcraft:block/ostrum_machine_casing"
   },
   "render_type": "solid"
 }

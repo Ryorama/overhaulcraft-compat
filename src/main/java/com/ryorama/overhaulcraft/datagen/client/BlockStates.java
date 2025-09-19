@@ -1,17 +1,18 @@
-/*
 package com.ryorama.overhaulcraft.datagen.client;
 
 import com.ryorama.overhaulcraft.TstpContentMod;
+import com.ryorama.overhaulcraft.init.TstpContentModBlocks;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RedStoneOreBlock;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.stream.Collectors;
 
@@ -26,12 +27,12 @@ public class BlockStates extends BlockStateProvider {
     }
 
     private void handleOres(Block block) {
-        if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
-            String oretype = Registries.BLOCK.getResourceKey(block).get().location().getPath();
+        if ((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
+            String oretype = BuiltInRegistries.BLOCK.getKey(block).getPath();
             if (oretype.contains("cake")) {
                 TstpContentMod.LOGGER.info("Block Name: " + oretype);
-                ResourceLocation side = new ResourceLocation(TstpContentMod.MODID, "block/" + oretype);
-                ResourceLocation top = new ResourceLocation(TstpContentMod.MODID, "block/" + oretype + "_top");
+                ResourceLocation side = ResourceLocation.fromNamespaceAndPath(TstpContentMod.MODID, "block/" + oretype);
+                ResourceLocation top = ResourceLocation.fromNamespaceAndPath(TstpContentMod.MODID, "block/" + oretype + "_top");
                 simpleBlockWithItem(block, models().cubeBottomTop(oretype, side, top, top));
             } else {
                 simpleBlockWithItem(block, cubeAll(block));
@@ -41,7 +42,6 @@ public class BlockStates extends BlockStateProvider {
 
     protected Iterable<Block> getKnownBlocks()
     {
-        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(RegistryObject::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
     }
 }
- */

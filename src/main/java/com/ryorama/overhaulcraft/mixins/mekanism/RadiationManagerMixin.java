@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.mekanism;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import mekanism.api.radiation.IRadiationManager;
 import mekanism.common.lib.radiation.RadiationManager;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,8 +10,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@IfModLoaded("mekanism")
 @Mixin(RadiationManager.class)
 public abstract class RadiationManagerMixin implements IRadiationManager {
+    /*
     @Shadow(remap = false) public abstract boolean isRadiationEnabled();
 
     @Inject(at = @At("HEAD"), method = "updateEntityRadiation", remap = false)
@@ -21,4 +24,5 @@ public abstract class RadiationManagerMixin implements IRadiationManager {
             }
         }
     }
+    */
 }

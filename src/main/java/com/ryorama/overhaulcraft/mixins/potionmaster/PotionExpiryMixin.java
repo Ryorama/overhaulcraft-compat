@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.potionmaster;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.utils.TstpTags;
 import com.thevortex.potionsmaster.events.PotionExpiry;
 import com.thevortex.potionsmaster.network.PacketHandler;
@@ -15,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@IfModLoaded("potionsmaster")
 @Mixin(PotionExpiry.class)
 public class PotionExpiryMixin {
     @Inject(at = @At("HEAD"), method = "sendAll", remap = false)

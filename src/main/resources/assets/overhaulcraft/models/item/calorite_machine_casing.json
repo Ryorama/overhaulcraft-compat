@@ -1,5 +1,5 @@
 {
-  "parent": "tstp_content:block/calorite_machine_casing",
+  "parent": "overhaulcraft:block/calorite_machine_casing",
   "display": {
     "thirdperson": {
       "rotation": [

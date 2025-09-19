@@ -16,6 +16,11 @@ public class TstpContentModConfig {
     @Configurable
     public boolean peacefulHunger = false;
     @Configurable
+    public boolean peacefulThirst = false;
+    @Configurable
     @Configurable.Comment("Max amount of items a hamster can consume")
     public int maxHamsterCheekSize = 3;
+    @Configurable
+    @Configurable.Comment("Plays all Terraria music when outside of deticated dimension")
+    public boolean playAllTerrariaMusic = false;
 }

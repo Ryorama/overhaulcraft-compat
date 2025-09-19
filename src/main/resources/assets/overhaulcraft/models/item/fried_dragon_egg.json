@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tstp_content:item/fried_dragon_egg"
+    "layer0": "overhaulcraft:item/fried_dragon_egg"
   }
 }

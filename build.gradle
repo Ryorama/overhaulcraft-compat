@@ -18,10 +18,24 @@ allprojects {
     }
 
     repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
         maven {
 			name = 'NeoForged'
 			url = 'https://maven.neoforged.net/releases'
 		}
+        maven {
+            // location of the maven that hosts JEI files since January 2023
+            name = "Jared's maven"
+            url = "https://maven.blamejared.com/"
+        }
+        maven {
+            // location of a maven mirror for JEI files, as a fallback
+            name = "ModMaven"
+            url = "https://modmaven.dev"
+        }
+        maven { // Registrate
+            url "https://maven.ithundxr.dev/snapshots"
+        }
         maven {
             name = 'GeckoLib'
             url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -74,8 +88,12 @@ allprojects {
             name = "Illusive Soulworks maven"
             url = "https://maven.theillusivec4.top/"
         }
+        repositories {
+            maven { url 'https://maven.wispforest.io' }
+        }
         maven { url = "https://maven.bawnorton.com/releases" }
         maven { url = "https://maven.su5ed.dev/releases" }
+        maven { url 'https://jitpack.io' }
         mavenLocal()
     }
 
@@ -149,13 +167,22 @@ dependencies {
     modImplementation("org.sinytra:connector:2.0.0-beta.7+1.21.1")
     modImplementation("org.sinytra.forgified-fabric-api:forgified-fabric-api:0.115.6+2.1.1+1.21.1")
     modImplementation("com.tiviacz.pizzadelight:pizzadelight:2.0.1")
+    modImplementation("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    modImplementation("software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}")
+    modImplementation("org.confluence:ConfluenceOtherworld:${confluence_version}")
+    modImplementation("org.confluence:confluence_dimension_patch:${confluence_dimension_version}")
+    modImplementation("org.confluence:terra_entity:${terra_entity_version}")
+    modImplementation("com.xiaohunao:terra_moment:1.21.1-${terra_moment_version}")
+    modImplementation("com.xiaohunao:heaven_destiny_moment:1.21.1-${heaven_destiny_moment_version}")
+    modImplementation("com.xiaohunao:xhn_lib:1.21.1-${xhn_lib_version}")
+    modImplementation("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
+    //modImplementation("builderb0y:vertigo:${vertigo_version}")
 
-    modImplementation('curse.maven:refurbished-furniture-897116:6623948')
-    modImplementation('curse.maven:geckolib-388172:6659026')
     modImplementation('curse.maven:ballistix-443915:6791729')
     modImplementation('curse.maven:electrodynamics-316867:6792255')
     modImplementation('curse.maven:nuclear-science-318646:6785829')
     modImplementation('curse.maven:framework-549225:6531439')
+    modImplementation("curse.maven:refurbished-furniture-897116:6623948")
     modImplementation('curse.maven:potionsmaster-356801:6826199')
     modImplementation('curse.maven:cuisine-delight-893541:6677783')
     modImplementation('curse.maven:farmers-delight-398521:6597295')
@@ -165,26 +192,28 @@ dependencies {
     modImplementation('curse.maven:configuration-444699:6779573')
     modImplementation('curse.maven:deeperdarker-659011:6463247')
     //modImplementation('curse.maven:haunted-harvest-541753:6759795')
-    modImplementation('curse.maven:mekanism-268560:6486993')
+    modImplementation('curse.maven:mekanism-268560:6895130')
     modImplementation('curse.maven:easy-villagers-400514:6831416')
     modImplementation('curse.maven:ato-405593:6799475')
     modImplementation('curse.maven:aether-255308:6389857')
     modImplementation('curse.maven:the-twilight-forest-227639:6472889')
-    modImplementation('curse.maven:astral-dimension-645743:6821091')
+    //modImplementation('curse.maven:astral-dimension-645743:6821091')
     modImplementation('curse.maven:the-undergarden-379849:6687578')
     modImplementation('curse.maven:thirst-was-taken-679270:6759289')
     modImplementation('curse.maven:ex-deorum-901420:6614749')
     modImplementation('curse.maven:cloth-config-348521:5729127')
     modImplementation('curse.maven:ftb-quests-forge-289412:6829025')
     modImplementation('curse.maven:ftb-library-forge-404465:6807431')
+    modImplementation("curse.maven:melody-938643:5453382")
 
     //Fabric mods
     runtimeOnly(project("mod-bridge"))
     api(include(project("mod-bridge"))) { transitive = false }
     implementation(project("mod-bridge")) { targetConfiguration = "modRuntimeClasspathMainMapped" }
 
-    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.2.0"))
-    implementation(include("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.2.0"))
+    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
+    implementation(include("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.3"))
+    include(implementation("com.moulberry:mixinconstraints:1.0.9"))
 }
 
 processResources {

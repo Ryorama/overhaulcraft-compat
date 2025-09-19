@@ -2,6 +2,7 @@
   "required": true,
   "package": "com.ryorama.overhaulcraft.mixins",
   "compatibilityLevel": "JAVA_16",
+  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "refmap": "overhaulcraft.mixins.refmap.json",
   "mixins": [
     "mekanism.RadiationManagerMixin",
@@ -9,11 +10,14 @@
     "potionmaster.BlockStoreBuilderMixin",
     "potionmaster.PotionExpiryMixin",
     "potionmaster.RenderEnqueueMixin",
+    "thirstwastaken.PlayerThirstMixin",
     "thirstwastaken.ThirstHelperMixin",
+    "ChunkGeneratorMixin",
     "EnderEyeItemMixin",
     "FoodDataMixin",
     "LevelMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "WaterFluidMixin"
   ],
   "client": [
   ],
