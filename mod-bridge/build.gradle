@@ -11,8 +11,4 @@ repositories {
 
 dependencies {
     mappings(loom.officialMojangMappings())
-
-    modImplementation("hamster:hamsters-fabric:1.1.0-1.20.1")
-    modImplementation("curse.maven:reborncore-237903:4708961")
-    modImplementation("curse.maven:solar-apocalypse-refabricated-480660:5917865")
 }

@@ -9,7 +9,6 @@
     "alexscaves.NuclearBombEntityMixin",
     "alexscaves.NuclearExplosionEntityMixin",
     "alexscaves.NucleeperEntityMixin",
-    "ballistix.BlastNuclearMixin",
     "butchery.DrainedPlayercorpseItemMixin",
     "butchery.DrainedPlayercorpseTileEntityMixin",
     "butchery.HangingDrainedPlayercorpseTileEntityMixin",
@@ -31,8 +30,6 @@
     "butchery.PlayerdropProcedureMixin",
     "butchery.PlayerplaceProcedureMixin",
     "easyvillagers.VillagerEventsMixin",
-    "hamster.CreateCompatMixin",
-    "hamster.HamsterMixin",
     "mekanism.RadiationManagerMixin",
     "nukeshell.NukeShellProjectileMixin",
     "potionmaster.BlockStoreBuilderMixin",
@@ -43,8 +40,7 @@
     "EnderEyeItemMixin",
     "FoodDataMixin",
     "LevelMixin",
-    "PlayerMixin",
-    "WaterFluidMixin"
+    "PlayerMixin"
   ],
   "client": [
     "butchery.DrainedPlayercorpseTileRendererMixin",

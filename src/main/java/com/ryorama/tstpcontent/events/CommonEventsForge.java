@@ -2,19 +2,15 @@ package com.ryorama.tstpcontent.events;
 
 import com.aetherteam.aether.block.AetherBlocks;
 import com.dreamcritting.shadowlands.init.ModBlocks;
-import com.dreamcritting.toybox.init.ToyboxModBlocks;
 import com.kyanite.deeperdarker.content.DDBlocks;
 import com.legacy.blue_skies.registries.SkiesBlocks;
 import com.ryorama.tstpcontent.TstpContentMod;
 import com.ryorama.tstpcontent.command.GivePlayerCorpseCommand;
-import com.ryorama.tstpcontent.entities.RadsterEntity;
-import com.ryorama.tstpcontent.init.TstpContentEntityTypes;
 import net.mcreator.astraldimension.init.AstralDimensionModBlocks;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -45,7 +41,6 @@ public class CommonEventsForge {
                     SkiesBlocks.everbright_portal.defaultBlockState(),
                     SkiesBlocks.everdawn_portal.defaultBlockState(),
                     AetherBlocks.AETHER_PORTAL.get().defaultBlockState(),
-                    ToyboxModBlocks.TOYBOX_PORTAL.get().defaultBlockState(),
                     DDBlocks.OTHERSIDE_PORTAL.get().defaultBlockState(),
                     TheabyssModBlocks.FROST_WORLD_PORTAL.get().defaultBlockState(),
                     TheabyssModBlocks.THE_ABYSS_PORTAL.get().defaultBlockState(),

@@ -45,7 +45,6 @@ public class TstpContentMod {
 		TstpContentModItems.REGISTRY.register(bus);
 		TstpContentModPotions.REGISTRY.register(bus);
 		TstpContentModTabs.REGISTRY.register(bus);
-		TstpContentEntityTypes.REGISTRY.register(bus);
 		bus.addListener(this::setup);
 		bus.addListener(this::postLoad);
 		GeckoLib.initialize();

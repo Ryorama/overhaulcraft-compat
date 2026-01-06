@@ -166,9 +166,6 @@ dependencies {
     modImplementation('curse.maven:toughasnails-246391:4750298')
     modImplementation('curse.maven:firstaid-276837:5127567')
     modImplementation('curse.maven:geckolib-388172:5386948')
-    modImplementation("curse.maven:ballistix-443915:6619565")
-    modImplementation('curse.maven:electrodynamics-316867:5022907')
-    modImplementation('curse.maven:nuclearscience-318646:5022908')
     modImplementation('curse.maven:framework-549225:5680064')
     modImplementation('curse.maven:potion_master-356801:4722415')
     modImplementation('curse.maven:cuisine_delight-893541:5300072')
@@ -194,7 +191,6 @@ dependencies {
     modImplementation("curse.maven:blue-skies-312918:5010316")
     modImplementation("curse.maven:the-forgotten-dimensions-461140:5813211")
     modImplementation("curse.maven:shadowlands-398372:5386877")
-    modImplementation("curse.maven:toybox-997296:5971954")
     modImplementation("curse.maven:astral-dimension-645743:5903628")
     modImplementation("curse.maven:the-abyss-chapter-ii-440647:5129404")
     modImplementation("curse.maven:the-undergarden-379849:5182632")
@@ -216,7 +212,6 @@ dependencies {
     modImplementation("curse.maven:brewin-and-chewin-637808:6237884")
     modImplementation("curse.maven:midnightlib-488090:4980331")
     modImplementation("curse.maven:terramity-1084134:6054971")
-    modImplementation("curse.maven:voltaic-api-1237904:6791637")
     modImplementation("curse.maven:hexcasting-569849:5937033")
 
     //Fabric mods
