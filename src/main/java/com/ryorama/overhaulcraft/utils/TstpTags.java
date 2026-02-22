@@ -29,6 +29,4 @@ public class TstpTags {
     //Draconium
     public static final TagKey<Block> DRACONIUM_ORE = BlockTags.create(Reference.ore("draconium"));
     public static final TagKey<Item> DRACONIUM_ORE_ITEM = ItemTags.create(Reference.ore("draconium"));
-
-    public static final TagKey<Item> FUEL_RODS = ItemTags.create(ResourceLocation.tryBuild("forge", "fuel_rods"));
 }

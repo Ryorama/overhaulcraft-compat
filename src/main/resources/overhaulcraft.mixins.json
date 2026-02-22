@@ -12,8 +12,6 @@
     "potionmaster.RenderEnqueueMixin",
     "thirstwastaken.PlayerThirstMixin",
     "thirstwastaken.ThirstHelperMixin",
-    "ChunkGeneratorMixin",
-    "EnderEyeItemMixin",
     "FoodDataMixin",
     "LevelMixin",
     "PlayerMixin",

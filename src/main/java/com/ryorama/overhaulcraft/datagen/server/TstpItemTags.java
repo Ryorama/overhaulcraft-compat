@@ -1,7 +1,7 @@
 package com.ryorama.overhaulcraft.datagen.server;
 
-import com.ryorama.overhaulcraft.TstpContentMod;
-import com.ryorama.overhaulcraft.init.TstpContentModItems;
+import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.init.OverhaulCraftItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class TstpItemTags extends ItemTagsProvider {
     public TstpItemTags(PackOutput packOutPut, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> tagLookup, ExistingFileHelper existingFileHelper) {
-        super(packOutPut, lookupProvider, tagLookup, TstpContentMod.MODID, existingFileHelper);
+        super(packOutPut, lookupProvider, tagLookup, OverhaulCraft.MODID, existingFileHelper);
     }
 
     @Override
@@ -86,6 +86,6 @@ public class TstpItemTags extends ItemTagsProvider {
 
     protected List<Item> getKnownItems()
     {
-        return TstpContentModItems.REGISTRY.getEntries().stream().map(DeferredHolder::get).collect(Collectors.toList());
+        return OverhaulCraftItems.REGISTRY.getEntries().stream().map(DeferredHolder::get).collect(Collectors.toList());
     }
 }

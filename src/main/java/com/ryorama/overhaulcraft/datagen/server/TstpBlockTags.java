@@ -1,7 +1,7 @@
 package com.ryorama.overhaulcraft.datagen.server;
 
-import com.ryorama.overhaulcraft.TstpContentMod;
-import com.ryorama.overhaulcraft.init.TstpContentModBlocks;
+import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.init.OverhaulCraftBlocks;
 import com.ryorama.overhaulcraft.utils.TstpTags;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
@@ -23,18 +23,16 @@ import java.util.stream.Collectors;
 public class TstpBlockTags extends BlockTagsProvider {
 
     public TstpBlockTags(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(packOutput, lookupProvider, TstpContentMod.MODID, existingFileHelper);
+        super(packOutput, lookupProvider, OverhaulCraft.MODID, existingFileHelper);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        //tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.HVAC_BLOCK.get());
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
+        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
+        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
 
-        //tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(TstpContentModBlocks.HVAC_BLOCK.get());
-        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
-        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
+        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
+        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
 
         getKnownBlocks().forEach(this::addOreTags);
     }
@@ -136,6 +134,6 @@ public class TstpBlockTags extends BlockTagsProvider {
 
     protected Iterable<Block> getKnownBlocks()
     {
-        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        return OverhaulCraftBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
     }
 }

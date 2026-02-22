@@ -1,8 +1,7 @@
 package com.ryorama.overhaulcraft.datagen.server;
 
 
-import com.ryorama.overhaulcraft.init.TstpContentModBlocks;
-import net.allthemods.alltheores.AllTheOres;
+import com.ryorama.overhaulcraft.init.OverhaulCraftBlocks;
 import net.allthemods.alltheores.registry.ATORegistry;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
@@ -25,11 +24,8 @@ public class BlockLootTables extends VanillaBlockLoot {
     @Override
     public void generate()
     {
-        dropSelf(TstpContentModBlocks.CALORITE_MACHINE_CASING.get());
-        dropSelf(TstpContentModBlocks.OSTRUM_MACHINE_CASING.get());
-        //dropSelf(TstpContentModBlocks.HVAC_BLOCK.get());
-        //dropSelf(TstpContentModBlocks.LIGHT_RF_ELECTRICITY_GENERATOR.get());
-        //dropSelf(TstpContentModBlocks.DARK_RF_ELECTRICITY_GENERATOR.get());
+        dropSelf(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
+        dropSelf(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
         getKnownBlocks().forEach(this::dropRaw);
     }
 
@@ -92,6 +88,6 @@ public class BlockLootTables extends VanillaBlockLoot {
     @Override
     protected Iterable<Block> getKnownBlocks()
     {
-        return TstpContentModBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        return OverhaulCraftBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
     }
 }

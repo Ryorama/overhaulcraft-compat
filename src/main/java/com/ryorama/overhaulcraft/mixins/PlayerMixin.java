@@ -1,6 +1,6 @@
 package com.ryorama.overhaulcraft.mixins;
 
-import com.ryorama.overhaulcraft.TstpContentMod;
+import com.ryorama.overhaulcraft.OverhaulCraft;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -13,7 +13,7 @@ public class PlayerMixin {
     //Thanks to Peaceful Hunger by jason13official for original code: https://legacy.curseforge.com/minecraft/mc-mods/peaceful-hunger
     @Redirect(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;"))
     private Difficulty peaceful_hunger$tickInject(Level instance) {
-        if (TstpContentMod.CONFIG.peacefulHunger) {
+        if (OverhaulCraft.CONFIG.peacefulHunger) {
             return Difficulty.EASY;
         }
         return instance.getDifficulty();

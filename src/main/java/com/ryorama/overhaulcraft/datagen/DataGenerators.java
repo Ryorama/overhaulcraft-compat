@@ -1,6 +1,6 @@
 package com.ryorama.overhaulcraft.datagen;
 
-import com.ryorama.overhaulcraft.TstpContentMod;
+import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.datagen.client.BlockStates;
 import com.ryorama.overhaulcraft.datagen.server.BlockLootTables;
 import com.ryorama.overhaulcraft.datagen.server.TstpBlockTags;
@@ -17,7 +17,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.Collections;
 import java.util.List;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = TstpContentMod.MODID)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = OverhaulCraft.MODID)
 public class DataGenerators {
     @SubscribeEvent
     public static void registerDataGenerators(GatherDataEvent event) {

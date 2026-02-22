@@ -170,6 +170,15 @@
       }
     ]
   },
+  "deerclops":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/deerclops",
+        "stream":true
+      }
+    ]
+  },
   "dungeon":{
     "category":"music",
     "sounds":[
@@ -193,6 +202,24 @@
     "sounds":[
       {
         "name":"overhaulcraft:music/goblin_army",
+        "stream":true
+      }
+    ]
+  },
+  "pumpkin_moon":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/pumpkin_moon",
+        "stream":true
+      }
+    ]
+  },
+  "frost_moon":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/frost_moon",
         "stream":true
       }
     ]

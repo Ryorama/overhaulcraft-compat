@@ -21,8 +21,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class PotionExpiryMixin {
     @Inject(at = @At("HEAD"), method = "sendAll", remap = false)
     private static void sendAll(Player player, CallbackInfo ci) {
-        PotionPacket pkt2 = new PotionPacket(TstpTags.RANDOMIUM_ORE.toString());
-        PacketHandler.sendTo(pkt2, (ServerPlayer)player);
+        PotionPacket pktrand = new PotionPacket(TstpTags.RANDOMIUM_ORE.toString());
+        PotionPacket pktdraconium = new PotionPacket(TstpTags.DRACONIUM_ORE.toString());
+        PotionPacket pktniter = new PotionPacket(TstpTags.NITER_ORE_ITEM.toString());
+        PotionPacket pktsulfur = new PotionPacket(TstpTags.SULFUR_ORE.toString());
+        PacketHandler.sendTo(pktrand, (ServerPlayer)player);
+        PacketHandler.sendTo(pktdraconium, (ServerPlayer)player);
+        PacketHandler.sendTo(pktniter, (ServerPlayer)player);
+        PacketHandler.sendTo(pktsulfur, (ServerPlayer)player);
     }
 
     /**
