@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "overhaulcraft:block/emerald_ore_holystone"
+  }
+}

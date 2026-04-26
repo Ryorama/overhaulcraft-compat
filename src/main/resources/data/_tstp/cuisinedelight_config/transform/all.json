@@ -27,7 +27,7 @@
       "stage": "COOKED"
     },
     "alexsdelight:kangaroo_shank": {
-      "next": "alexsdelight:cooked_shrimp",
+      "next": "alexsdelight:cooked_kangaroo_shank",
       "stage": "COOKED"
     },
 	"alexsdelight:loose_moose_rib": {

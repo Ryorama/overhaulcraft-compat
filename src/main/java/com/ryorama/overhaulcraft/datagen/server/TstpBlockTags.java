@@ -28,12 +28,6 @@ public class TstpBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
-
-        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
-        tag(net.minecraft.tags.BlockTags.NEEDS_IRON_TOOL).add(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
-
         getKnownBlocks().forEach(this::addOreTags);
     }
 

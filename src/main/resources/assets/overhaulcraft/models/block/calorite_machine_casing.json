@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "overhaulcraft:block/calorite_machine_casing",
-    "particle": "overhaulcraft:block/calorite_machine_casing"
-  },
-  "render_type": "solid"
-}

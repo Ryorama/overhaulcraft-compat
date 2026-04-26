@@ -3,7 +3,6 @@ package com.ryorama.overhaulcraft.events;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.kyanite.deeperdarker.content.DDBlocks;
 import com.ryorama.overhaulcraft.OverhaulCraft;
-import net.mcreator.astraldimension.init.AstralDimensionModBlocks;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -21,7 +20,6 @@ public class CommonEventsForge {
                     TFBlocks.TWILIGHT_PORTAL.get().defaultBlockState(),
                     AetherBlocks.AETHER_PORTAL.get().defaultBlockState(),
                     DDBlocks.OTHERSIDE_PORTAL.get().defaultBlockState(),
-                    AstralDimensionModBlocks.ASTRAL_DIMENSION_PORTAL.get().defaultBlockState(),
                     UGBlocks.UNDERGARDEN_PORTAL.get().defaultBlockState()
             };
 

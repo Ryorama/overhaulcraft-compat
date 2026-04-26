@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "overhaulcraft:block/emerald_ore_cake_top",
+    "side": "overhaulcraft:block/emerald_ore_cake",
+    "top": "overhaulcraft:block/emerald_ore_cake_top"
+  }
+}

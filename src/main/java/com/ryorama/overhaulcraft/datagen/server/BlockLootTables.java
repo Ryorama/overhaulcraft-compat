@@ -24,8 +24,6 @@ public class BlockLootTables extends VanillaBlockLoot {
     @Override
     public void generate()
     {
-        dropSelf(OverhaulCraftBlocks.CALORITE_MACHINE_CASING.get());
-        dropSelf(OverhaulCraftBlocks.OSTRUM_MACHINE_CASING.get());
         getKnownBlocks().forEach(this::dropRaw);
     }
 

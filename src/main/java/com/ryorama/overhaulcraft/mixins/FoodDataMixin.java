@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(FoodData.class)
 public class FoodDataMixin {
 
-    //Thanks to Peaceful Hunger by jason13official for original code: https://legacy.curseforge.com/minecraft/mc-mods/peaceful-hunger
     @Redirect(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getDifficulty()Lnet/minecraft/world/Difficulty;"))
     private Difficulty peaceful_hunger$tickInject(Level instance) {
         if (OverhaulCraft.CONFIG.peacefulHunger) {

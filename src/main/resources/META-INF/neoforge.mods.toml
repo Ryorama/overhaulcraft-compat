@@ -7,9 +7,10 @@ modId="overhaulcraft"
 displayName="OverhaulCraft Compat"
 version="1.0"
 authors="Ryorama"
-description='''Small things, improving Minecraft bit by bit.'''
+description='''The core mod for the Minecraft: Overhaul modpack.'''
 credits ='''
-The developers of all mods used
+The developers for some bits of code used
+ - sbom_xela | Alex Mod Guy
 thevortex for help with custom ore sight potions
 '''
 [[mixins]]

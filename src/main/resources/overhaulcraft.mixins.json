@@ -5,19 +5,20 @@
   "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "refmap": "overhaulcraft.mixins.refmap.json",
   "mixins": [
+    "alexscaves.ConversionCrucibleBlockEntityMixin",
+    "alexscaves.NuclearBombEntityMixin",
+    "alexscaves.NucleeperEntityMixin",
+    "easyvillagers.VillagerEventsMixin",
     "mekanism.RadiationManagerMixin",
     "pizzadelight.PizzaSliceItemMixin",
-    "potionmaster.BlockStoreBuilderMixin",
-    "potionmaster.PotionExpiryMixin",
-    "potionmaster.RenderEnqueueMixin",
-    "thirstwastaken.PlayerThirstMixin",
-    "thirstwastaken.ThirstHelperMixin",
     "FoodDataMixin",
     "LevelMixin",
-    "PlayerMixin",
-    "WaterFluidMixin"
+    "PlayerMixin"
   ],
   "client": [
+    "cobblemon.PartyOverlayDataControlMixin",
+    "cobblemon.PartyOverlayMixin",
+    "confluence.ClientUtilsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

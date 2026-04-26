@@ -5,12 +5,7 @@
   "item_group.overhaulcraft.tstp_ore_comp": "OverhaulCraft: Ore Component",
   "item_group.overhaulcraft.tstp_hamster": "OverhaulCraft: Hamsters Plus Component",
 
-  "block.overhaulcraft.calorite_machine_casing": "Calorite Machine Casing",
-  "block.overhaulcraft.ostrum_machine_casing": "Ostrum Machine Casing",
-  "block.overhaulcraft.hvac_block": "HVAC Block",
   "block.overhaulcraft.randomium_ore_nether": "Nether Randomium Ore",
-  "block.overhaulcraft.light_rf_electricity_generator": "Light RF Electricity Generator",
-  "block.overhaulcraft.dark_rf_electricity_generator": "Dark RF Electricity Generator",
   "block.overhaulcraft.hamster_wheel_generator": "Hamster Wheel Generator",
 
   "block.overhaulcraft.coal_ore_abyss": "Abyss Coal Ore",
@@ -290,14 +285,9 @@
   "item.overhaulcraft.fried_dragon_egg": "Fried Dragon Egg",
   "item.overhaulcraft.randomium_ore_chunk": "Randomium Ore Chunk",
 
-  "entity.overhaulcraft.radster": "Radster",
-
   "item.minecraft.potion.effect.randomium_sight": "RandomiumSight",
   "item.minecraft.splash_potion.effect.randomium_sight": "Splash Potion of RandomiumSight",
   "item.minecraft.lingering_potion.effect.randomium_sight": "Lingering Potion of RandomiumSight",
-
-  "item.minecraft.armadillo_scute": "Armadillo Scute",
-  "item.minecraft.wolf_armor": "Wolf Armor",
 
   "block.gtceu.cryo_freezer": "Cryo Freezer",
   "gtceu.cryo_freezer": "Cryo Freezer",
@@ -306,17 +296,14 @@
   "gtceu.basic_drilling_rig": "Baisc Ore Drilling Rig",
 
   "material.gtceu.boron_carbide": "Boron Carbide",
-  "material.gtceu.desh": "Desh",
-  "material.gtceu.ostrum": "Ostrum",
-  "material.gtceu.calorite": "Calorite",
 
   "effect.overhaulcraft.randomium_ore_sight_effect": "RandomiumSight",
 
-  "config.overhaulcraft.option.threadedNukeExplosion": "Threaded Nuke Explosion",
-  "config.overhaulcraft.option.conversionCrucibleRadius": "Conversion Crucible Radius",
   "config.overhaulcraft.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
   "config.overhaulcraft.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
   "config.overhaulcraft.option.peacefulHunger": "Enable Hunger in Peaceful Mode",
   "config.overhaulcraft.option.peacefulThirst": "Enable Thirst in Peaceful Mode",
-  "config.overhaulcraft.option.maxHamsterCheekSize": "Hamster Max Cheek Size"
+  "config.overhaulcraft.option.playBossMusic": "PLay Boss Music",
+  "config.overhaulcraft.option.playTerrariaMusic": "Play Terraria Music",
+  "config.overhaulcraft.option.moreTerrariaContent": "Extra Terraria Content"
 }
