@@ -2,23 +2,39 @@
   "required": true,
   "package": "com.ryorama.overhaulcraft.mixins",
   "compatibilityLevel": "JAVA_16",
-  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
+  "plugin": "com.ryorama.overhaulcraft.OverhaulCraftMixinPlugin",
   "refmap": "overhaulcraft.mixins.refmap.json",
   "mixins": [
     "alexscaves.ConversionCrucibleBlockEntityMixin",
     "alexscaves.NuclearBombEntityMixin",
     "alexscaves.NucleeperEntityMixin",
+    "confluence.LibUtilsMixin",
+    "confluence.OverworldUtilsMixin",
     "easyvillagers.VillagerEventsMixin",
     "mekanism.RadiationManagerMixin",
     "pizzadelight.PizzaSliceItemMixin",
+    "sablecollisiondamage.SablePreSolverDamage$UniversalFragileCallbackMixin",
+    "thirstwastaken.PlayerThirstMixin",
+    "BiomeSourceMixin",
+    "ChunkGeneratorMixin",
+    "ChunkGeneratorStructureStateMixin",
+    "ChunkMapMixin",
     "FoodDataMixin",
     "LevelMixin",
-    "PlayerMixin"
+    "LootTableMixin",
+    "ModBiomesMixin",
+    "NoiseBasedChunkGeneratorMixin",
+    "PlacedFeatureMixin",
+    "PlayerMixin",
+    "StructureSetMixin",
+    "SurfaceSystemMixin"
   ],
   "client": [
     "cobblemon.PartyOverlayDataControlMixin",
     "cobblemon.PartyOverlayMixin",
-    "confluence.ClientUtilsMixin"
+    "confluence.ClientUtilsMixin",
+    "confluence.TerraStyleManaHudMixin",
+    "create.AllKeysMixin"
   ],
   "injectors": {
     "defaultRequire": 1

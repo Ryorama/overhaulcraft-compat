@@ -1,9 +1,6 @@
 {
-  "item_group.overhaulcraft.tstp_gt": "OverhaulCraft: GT Component",
-  "item_group.overhaulcraft.tstp_tas": "OverhaulCraft: Tough As Nails Component",
-  "item_group.overhaulcraft.tstp_mrcf": "OverhaulCraft: Furniture Refurbished Component",
-  "item_group.overhaulcraft.tstp_ore_comp": "OverhaulCraft: Ore Component",
-  "item_group.overhaulcraft.tstp_hamster": "OverhaulCraft: Hamsters Plus Component",
+  "item_group.overhaulcraft.gt_compat": "OverhaulCraft: GT Component",
+  "item_group.overhaulcraft.ore_compat": "OverhaulCraft: Ore Component",
 
   "block.overhaulcraft.randomium_ore_nether": "Nether Randomium Ore",
   "block.overhaulcraft.hamster_wheel_generator": "Hamster Wheel Generator",
@@ -280,14 +277,8 @@
   "block.overhaulcraft.zinc_ore_dust": "Dust Zinc Ore",
   "block.overhaulcraft.randomium_ore_dust": "Dust Randomium Ore",
 
-  "item.overhaulcraft.calcinatedrandomium_powder": "Calcinated Randomium Powder",
-  "item.overhaulcraft.randomium_powder": "Randomium Powder",
   "item.overhaulcraft.fried_dragon_egg": "Fried Dragon Egg",
   "item.overhaulcraft.randomium_ore_chunk": "Randomium Ore Chunk",
-
-  "item.minecraft.potion.effect.randomium_sight": "RandomiumSight",
-  "item.minecraft.splash_potion.effect.randomium_sight": "Splash Potion of RandomiumSight",
-  "item.minecraft.lingering_potion.effect.randomium_sight": "Lingering Potion of RandomiumSight",
 
   "block.gtceu.cryo_freezer": "Cryo Freezer",
   "gtceu.cryo_freezer": "Cryo Freezer",
@@ -297,13 +288,13 @@
 
   "material.gtceu.boron_carbide": "Boron Carbide",
 
-  "effect.overhaulcraft.randomium_ore_sight_effect": "RandomiumSight",
-
   "config.overhaulcraft.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
   "config.overhaulcraft.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
+  "config.overhaulcraft.option.conversionCrucibleRadius": "Conversion Crucible Radius",
   "config.overhaulcraft.option.peacefulHunger": "Enable Hunger in Peaceful Mode",
   "config.overhaulcraft.option.peacefulThirst": "Enable Thirst in Peaceful Mode",
   "config.overhaulcraft.option.playBossMusic": "PLay Boss Music",
   "config.overhaulcraft.option.playTerrariaMusic": "Play Terraria Music",
-  "config.overhaulcraft.option.moreTerrariaContent": "Extra Terraria Content"
+  "config.overhaulcraft.option.moreTerrariaContent": "Extra Terraria Content",
+  "config.overhaulcraft.option.enableShipSpeedDamage": "Enable Ship Speed Damage"
 }

@@ -18,7 +18,9 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
     version = neoforge_version
-
+    accessTransformers {
+        file('src/main/resources/META-INF/accesstransformer.cfg')
+    }
     parchment {
         mappingsVersion = parchment_mappings_version
         minecraftVersion = minecraft_version
@@ -89,6 +91,8 @@ repositories {
     maven { url "https://maven.teamabnormals.com" }
     maven { url "https://chocolateminecraft.com/maven" }
     maven { url "https://maven.wispforest.io" }
+    maven { url "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"}
+    maven { url "https://maven.ryanhcode.dev/releases"}
     maven {
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
         content {
@@ -137,6 +141,8 @@ dependencies {
     implementation("io.wispforest:accessories-neoforge:${accessories_version}")
     implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    implementation("fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:21.1.3")
+    implementation("dev.ryanhcode.sable:sable-common-1.21.1:${sable_version}")
     implementation('com.github.thedarkcolour:ModKit:4f83c92767')
 
     implementation('curse.maven:framework-549225:6531439')
@@ -155,7 +161,7 @@ dependencies {
     implementation('curse.maven:aether-255308:6389857')
     implementation('curse.maven:the-twilight-forest-227639:6472889')
     implementation('curse.maven:the-undergarden-379849:7367597')
-    implementation('curse.maven:thirst-was-taken-679270:6759289')
+    implementation('curse.maven:thirst-was-taken-679270:7017923')
     implementation('curse.maven:ex-deorum-901420:6614749')
     implementation('curse.maven:cloth-config-348521:5729127')
     implementation('curse.maven:ftb-quests-forge-289412:6829025')
@@ -168,8 +174,14 @@ dependencies {
     implementation('curse.maven:galosphere-631098:7382684')
     implementation('curse.maven:citadel-331936:7476597')
     implementation('curse.maven:selene-499980:7943878')
+    implementation('curse.maven:atmospheric-362393:7119609')
+    implementation('curse.maven:sable-collision-damage-create-aeronautics-1521697:8026299')
     implementation('maven.modrinth:pizzadelight:1.21.1-2.0.2')
     implementation('maven.modrinth:eas-addon:0.16.4-serverfix')
+    implementation('maven.modrinth:moonlight:1.21.1-3.0.14')
+    implementation('maven.modrinth:supplementaries:1.21.1-3.6.5')
+    implementation('maven.modrinth:copycats:3.0.4+mc.1.21.1-neoforge')
+    implementation('maven.modrinth:integrated-api:1.7.3+1.21.1-neoforge')
 
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")

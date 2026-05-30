@@ -20,6 +20,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeResolver;
@@ -43,6 +45,26 @@ public class ExtraFunc {
 
     public static boolean isInDimensiom(Player player, ResourceLocation dimension) {
         return player.level().dimensionTypeRegistration().is(dimension);
+    }
+
+    public static boolean isConfluence(Level level) {
+        return level.dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("confluence_dimension_patch", "otherworld"));
+    }
+
+    public static boolean isCobblemonDim(Level level) {
+        return level.dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("overhaulcraft", "cobblemon_dim"));
+    }
+
+    public static boolean isPlayerInConfluence(Player player) {
+        return player.level().dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("confluence_dimension_patch", "otherworld"));
+    }
+
+    public static boolean isPlayerInCobblemonDim(Player player) {
+        return player.level().dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("overhaulcraft", "cobblemon_dim"));
+    }
+
+    public static ResourceLocation getLocationFromItemStack(ItemStack itemStack) {
+        return itemStack.getItemHolder().getKey().location();
     }
 
     //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
@@ -71,9 +93,9 @@ public class ExtraFunc {
 
     //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/block/blockentity/ConversionCrucibleBlockEntity.java#L322
     public static void convertToBiome(Level level, BlockPos blockPos, ResourceLocation biome, int size) {
+        size -= 1;
         Optional<Holder.Reference<Biome>> biomeHolder = level.registryAccess().registryOrThrow(Registries.BIOME).getHolder(biome);
         if (!biomeHolder.isEmpty()) {
-            AABB aabb = new AABB(blockPos.offset(-32, -32, -32).getCenter(), blockPos.offset(32, 32, 32).getCenter());
             List<ChunkAccess> list = new ArrayList();
             BoundingBox biomeConversionBox = new BoundingBox(blockPos.getX() - size, blockPos.getY() - size, blockPos.getZ() - size, blockPos.getX() + size, blockPos.getY() + size, blockPos.getZ() + size);
             if (level instanceof ServerLevel) {
@@ -183,7 +205,6 @@ public class ExtraFunc {
                 }
             }
         }
-        System.out.println("Music Block Count: " + blockCount);
         if (blockCount >= range) {
             return true;
         }
@@ -192,13 +213,10 @@ public class ExtraFunc {
 
     public static boolean canPlayTerrariaMusic(Player player) {
         if (OverhaulCraft.CONFIG.playTerrariaMusic) {
-            if (isModInstalled("confluence_dimension_patch")) {
-                if (isInDimensiom(player, ResourceLocation.fromNamespaceAndPath("confluence_dimension_patch", "otherworld"))) {
-                    return true;
-                }
-                return false;
+            if (isPlayerInConfluence(player)) {
+                return true;
             }
-            return true;
+            return false;
         }
         return false;
     }

@@ -1,6 +1,8 @@
 package com.ryorama.overhaulcraft.init;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.thevortex.potionsmaster.init.ModRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -8,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
@@ -15,8 +18,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 public class OverhaulCraftTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(OverhaulCraft.MODID, Registries.CREATIVE_MODE_TAB);
 	
-	public static final RegistrySupplier<CreativeModeTab> TSTP_ORE_COMP = REGISTRY.register("tstp_ore_comp",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.tstp_content.tstp_ore_comp")).icon(() -> new ItemStack(OverhaulCraftBlocks.RANDOMIUM_ORE_NETHER.get())).displayItems((parameters, tabData) -> {
+	public static final RegistrySupplier<CreativeModeTab> OVERHAULCRAFT_ORE_COMP = REGISTRY.register("ore_compat",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.overhaulcraft.ore_compat")).icon(() -> new ItemStack(OverhaulCraftBlocks.RANDOMIUM_ORE_NETHER.get())).displayItems((parameters, tabData) -> {
 				//Coal
 				tabData.accept(OverhaulCraftBlocks.COAL_ORE_ABYSS.get().asItem());
 				tabData.accept(OverhaulCraftBlocks.COAL_ORE_HOLYSTONE.get().asItem());
@@ -321,6 +324,6 @@ public class OverhaulCraftTabs {
 	}
 
 	public static void handleItemPlacements() {
-		//CreativeModeTabContentsPopulator.mod(TstpContentMod.MODID).tab(CreativeModeTabs.INGREDIENTS).addItemsAfter(Ingredient.of(Items.SCUTE), TstpContentModItems.ARMADILLO_SCUTE); //.tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
+		//CreativeModeTabContentsPopulator.mod(OverhaulCraft.MODID).tab(ModRegistry.CREATIVE_TAB.getKey()).addItemsAfter(Ingredient.of(ModRegistry.UNOBTAINIUM_POWDER.get()), TstpContentModItems.RANDOMIUM_POWDER).addItemsAfter(Ingredient.of(ModRegistry.CALCINATEDUNOBTAINIUM_POWDER.get()), TstpContentModItems.CALCINATED_RANDOMIUM_POWDER);
 	}
 }

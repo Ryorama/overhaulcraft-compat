@@ -2,6 +2,7 @@ package com.ryorama.overhaulcraft.mixins;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.utils.IOverhaulPlayerData;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -32,6 +33,18 @@ public abstract class PlayerMixin extends LivingEntity implements IOverhaulPlaye
             return Difficulty.EASY;
         }
         return instance.getDifficulty();
+    }
+
+    @Inject(at = @At("TAIL"), method = "readAdditionalSaveData")
+    public void readAdditionalSaveData(CompoundTag compound, CallbackInfo ci) {
+        setTerrariaFuncUnlocked(compound.getBoolean("terraria_func_unlocked"));
+        setCobblemonFuncUnlocked(compound.getBoolean("cobblemon_func_unlocked"));
+    }
+
+    @Inject(at = @At("TAIL"), method = "addAdditionalSaveData")
+    public void addAdditionalSaveData(CompoundTag compound, CallbackInfo ci) {
+        compound.putBoolean("terraria_func_unlocked", getTerrariaFuncUnlocked());
+        compound.putBoolean("cobblemon_func_unlocked", getCobblemonFuncUnlocked());
     }
 
     @Override
