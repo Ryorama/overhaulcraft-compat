@@ -43,9 +43,7 @@ public abstract class OverworldUtilsMixin {
 
     @Inject(method = "replaceBiome", at = @At("HEAD"), cancellable = true)
     private static void replaceBiome(MultiNoiseBiomeSource biomeSource, int x, int y, int z, CallbackInfoReturnable<Holder<Biome>> cir, Supplier<List<Holder<Biome>>> jungleGetter, Supplier<Pair<Holder<Biome>, Holder<Biome>>> biomePairGetter, Function<RegistryAccess, Holder<Biome>> protectionFactory, CallbackInfo ci) {
-        OverhaulCraft.LOGGER.info("OverworldUtilsMixin isConfluence1: " + IDimensionAccessor.of(biomeSource).oc$isConfluence());
-        if (IDimensionAccessor.of(biomeSource).oc$isConfluence()) {
-            OverhaulCraft.LOGGER.info("Ri");
+        if (IDimensionAccessor.of(biomeSource).oc$isOverworld() || IDimensionAccessor.of(biomeSource).oc$isCobblemon()) {
             MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
             if (server != null && cir.getReturnValue().is(ModTags.Biomes.IS_CONFLUENCE)) {
                 cir.setReturnValue(protectionFactory.apply(server.registryAccess()));

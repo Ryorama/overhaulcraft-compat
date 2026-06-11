@@ -3,9 +3,8 @@ package com.ryorama.overhaulcraft.mixins;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
-import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.mixed.IDimensionAccessor;
-import net.minecraft.resources.ResourceLocation;
+import com.ryorama.overhaulcraft.world.dimension.CobblemonDim;
 import net.minecraft.server.level.ChunkMap;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
@@ -37,7 +36,7 @@ public abstract class ChunkMapMixin {
 
         }
 
-        if (level.dimension().location().equals(ResourceLocation.fromNamespaceAndPath("overhaulcraft", "cobblemon_dim"))) {
+        if (level.dimension() == CobblemonDim.LEVEL) {
             IDimensionAccessor.of(original).oc$setIsCobblemon(true);
             IDimensionAccessor.of(generator.getBiomeSource()).oc$setIsCobblemon(true);
         }

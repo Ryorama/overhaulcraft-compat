@@ -1,17 +1,14 @@
 package com.ryorama.overhaulcraft.mixins.confluence;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import org.confluence.lib.util.LibUtils;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LibUtils.class)
 public class LibUtilsMixin {
-    /**
-     * @author Ryorama
-     * @reason Limit max stack size back to default
-     */
-    @Overwrite(remap = false)
-    public static int getMaxStackSize(int original) {
+    @ModifyReturnValue(at = @At("RETURN"), method = "getMaxStackSize", remap = false)
+    private static int getMaxStackSize(int original) {
         return original;
     }
 }

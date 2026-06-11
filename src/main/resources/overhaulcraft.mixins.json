@@ -20,7 +20,6 @@
     "confluence.CDPGameEventsMixin",
     "confluence.DeerclopsMixin",
     "confluence.EaterOfWorldsMixin",
-    "confluence.GuideVoodDooDollItemMixin",
     "confluence.KingSlimeMixin",
     "confluence.LibUtilsMixin",
     "confluence.OnlyInOtherworldRuleSourceMixin",
@@ -35,7 +34,6 @@
     "cobblemon.PartyOverlayDataControlMixin",
     "cobblemon.PartyOverlayMixin",
     "confluence.ClientUtilsMixin",
-    "confluence.LibGameEventsMixin",
     "confluence.TerraStyleManaHudMixin",
     "create.AllKeysMixin"
   ],

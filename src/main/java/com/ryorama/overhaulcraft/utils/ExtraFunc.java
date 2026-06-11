@@ -1,6 +1,7 @@
 package com.ryorama.overhaulcraft.utils;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.world.dimension.CobblemonDim;
 import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.sounds.MusicManager;
@@ -49,15 +50,15 @@ public class ExtraFunc {
     }
 
     public static boolean isCobblemonDim(Level level) {
-        return level.dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("overhaulcraft", "cobblemon_dim"));
+        return level.dimension() == CobblemonDim.LEVEL;
     }
 
     public static boolean isPlayerInConfluence(Player player) {
-        return player.level().dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("confluence_dimension_patch", "otherworld"));
+        return isConfluence(player.level());
     }
 
     public static boolean isPlayerInCobblemonDim(Player player) {
-        return player.level().dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("overhaulcraft", "cobblemon_dim"));
+        return isCobblemonDim(player.level());
     }
 
     public static ResourceLocation getLocationFromItemStack(ItemStack itemStack) {

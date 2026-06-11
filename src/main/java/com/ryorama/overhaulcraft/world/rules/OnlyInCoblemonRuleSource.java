@@ -17,9 +17,6 @@ public record OnlyInCoblemonRuleSource(SurfaceRules.RuleSource cobblemon_dim) im
 
     @Override
     public SurfaceRules.SurfaceRule apply(SurfaceRules.Context context) {
-        if (IDimensionAccessor.of(context.system).oc$isCobblemon()) {
-            return cobblemon_dim.apply(context);
-        }
-        return (x, y, z) -> null;
+        return IDimensionAccessor.of(context.system).oc$isCobblemon() ? cobblemon_dim.apply(context) : (x, y, z) -> null;
     }
 }

@@ -12,6 +12,7 @@ public class OverhaulCraftMixinCanceller implements MixinCanceller {
         mixinList.add("com.teamabnormals.atmospheric.core.mixin.CamelMixin");
         mixinList.add("com.teamabnormals.atmospheric.core.mixin.client.CamelRendererMixin");
         mixinList.add("org.confluence.mod.mixin.client.gui.WorldSelectionList$WorldListEntryMixin");
+        mixinList.add("org.confluence.mod.mixin.item.DataComponentsMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.BiomeSourceMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorStructureStateMixin");
