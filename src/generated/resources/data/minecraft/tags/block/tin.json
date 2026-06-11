@@ -1,19 +1,16 @@
 {
   "values": [
-    "overhaulcraft:tin_ore_abyss",
-    "overhaulcraft:tin_ore_astral",
-    "overhaulcraft:tin_ore_holystone",
-    "overhaulcraft:tin_ore_gloomslate",
-    "overhaulcraft:tin_ore_sculk",
-    "overhaulcraft:tin_ore_cake",
-    "overhaulcraft:tin_ore_lunar",
-    "overhaulcraft:tin_ore_turquoise",
-    "overhaulcraft:tin_ore_darkstone",
-    "overhaulcraft:tin_ore_demonstone",
-    "overhaulcraft:tin_ore_shadow",
-    "overhaulcraft:tin_ore_yellowstone",
-    "overhaulcraft:tin_ore_deep_greenstone",
-    "overhaulcraft:tin_ore_skyrium",
-    "overhaulcraft:tin_ore_dust"
+    "overhaulcraft:abyss_tin_ore",
+    "overhaulcraft:holystone_tin_ore",
+    "overhaulcraft:cake_layer_tin_ore",
+    "overhaulcraft:crimstone_tin_ore",
+    "overhaulcraft:ebonstone_tin_ore",
+    "overhaulcraft:pearlstone_tin_ore",
+    "overhaulcraft:gloomslate_tin_ore",
+    "overhaulcraft:sculk_stone_tin_ore",
+    "overhaulcraft:netherrack_tin_ore",
+    "overhaulcraft:end_stone_tin_ore",
+    "overhaulcraft:depthrock_tin_ore",
+    "overhaulcraft:shiverstone_tin_ore"
   ]
 }

@@ -1,17 +1,16 @@
 {
   "values": [
-    "overhaulcraft:copper_ore_abyss",
-    "overhaulcraft:copper_ore_astral",
-    "overhaulcraft:copper_ore_holystone",
-    "overhaulcraft:copper_ore_cake",
-    "overhaulcraft:copper_ore_lunar",
-    "overhaulcraft:copper_ore_turquoise",
-    "overhaulcraft:copper_ore_darkstone",
-    "overhaulcraft:copper_ore_demonstone",
-    "overhaulcraft:copper_ore_shadow",
-    "overhaulcraft:copper_ore_yellowstone",
-    "overhaulcraft:copper_ore_deep_greenstone",
-    "overhaulcraft:copper_ore_skyrium",
-    "overhaulcraft:copper_ore_dust"
+    "overhaulcraft:abyss_copper_ore",
+    "overhaulcraft:holystone_copper_ore",
+    "overhaulcraft:cake_layer_copper_ore",
+    "overhaulcraft:crimstone_copper_ore",
+    "overhaulcraft:ebonstone_copper_ore",
+    "overhaulcraft:pearlstone_copper_ore",
+    "overhaulcraft:gloomslate_copper_ore",
+    "overhaulcraft:sculk_stone_copper_ore",
+    "overhaulcraft:netherrack_copper_ore",
+    "overhaulcraft:end_stone_copper_ore",
+    "overhaulcraft:depthrock_copper_ore",
+    "overhaulcraft:shiverstone_copper_ore"
   ]
 }

@@ -1,19 +1,16 @@
 {
   "values": [
-    "overhaulcraft:osmium_ore_abyss",
-    "overhaulcraft:osmium_ore_astral",
-    "overhaulcraft:osmium_ore_holystone",
-    "overhaulcraft:osmium_ore_gloomslate",
-    "overhaulcraft:osmium_ore_sculk",
-    "overhaulcraft:osmium_ore_cake",
-    "overhaulcraft:osmium_ore_lunar",
-    "overhaulcraft:osmium_ore_turquoise",
-    "overhaulcraft:osmium_ore_darkstone",
-    "overhaulcraft:osmium_ore_demonstone",
-    "overhaulcraft:osmium_ore_shadow",
-    "overhaulcraft:osmium_ore_yellowstone",
-    "overhaulcraft:osmium_ore_deep_greenstone",
-    "overhaulcraft:osmium_ore_skyrium",
-    "overhaulcraft:osmium_ore_dust"
+    "overhaulcraft:abyss_osmium_ore",
+    "overhaulcraft:holystone_osmium_ore",
+    "overhaulcraft:cake_layer_osmium_ore",
+    "overhaulcraft:crimstone_osmium_ore",
+    "overhaulcraft:ebonstone_osmium_ore",
+    "overhaulcraft:pearlstone_osmium_ore",
+    "overhaulcraft:gloomslate_osmium_ore",
+    "overhaulcraft:sculk_stone_osmium_ore",
+    "overhaulcraft:netherrack_osmium_ore",
+    "overhaulcraft:end_stone_osmium_ore",
+    "overhaulcraft:depthrock_osmium_ore",
+    "overhaulcraft:shiverstone_osmium_ore"
   ]
 }

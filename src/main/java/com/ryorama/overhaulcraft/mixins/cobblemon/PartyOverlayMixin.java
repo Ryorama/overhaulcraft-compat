@@ -1,6 +1,7 @@
 package com.ryorama.overhaulcraft.mixins.cobblemon;
 
 import com.cobblemon.mod.common.client.gui.PartyOverlay;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.utils.IOverhaulPlayerData;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -10,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(value = PartyOverlay.class, remap = false)
 public class PartyOverlayMixin {
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)

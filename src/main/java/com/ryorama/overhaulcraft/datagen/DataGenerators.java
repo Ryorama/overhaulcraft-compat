@@ -3,8 +3,9 @@ package com.ryorama.overhaulcraft.datagen;
 import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.datagen.client.BlockStates;
 import com.ryorama.overhaulcraft.datagen.server.BlockLootTables;
-import com.ryorama.overhaulcraft.datagen.server.TstpBlockTags;
-import com.ryorama.overhaulcraft.datagen.server.TstpItemTags;
+import com.ryorama.overhaulcraft.datagen.server.OverhaulCraftBlockTags;
+import com.ryorama.overhaulcraft.datagen.server.OverhaulCraftEngLangProvider;
+import com.ryorama.overhaulcraft.datagen.server.OverhaulCraftItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -25,10 +26,11 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         if (event.includeServer()) {
-            TstpBlockTags blockTags = new TstpBlockTags(packOutput, event.getLookupProvider(), fileHelper);
+            OverhaulCraftBlockTags blockTags = new OverhaulCraftBlockTags(packOutput, event.getLookupProvider(), fileHelper);
 
+            generator.addProvider(true, new OverhaulCraftEngLangProvider(packOutput));
             generator.addProvider(true, blockTags);
-            generator.addProvider(true, new TstpItemTags(packOutput, event.getLookupProvider(), blockTags.contentsGetter(), fileHelper));
+            generator.addProvider(true, new OverhaulCraftItemTags(packOutput, event.getLookupProvider(), blockTags.contentsGetter(), fileHelper));
             generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)), event.getLookupProvider()));
         }
         if (event.includeClient()) {

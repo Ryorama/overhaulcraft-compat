@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.mixins.easyvillagers;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import de.maxhenkel.easyvillagers.events.VillagerEvents;
 import net.conczin.mca.entity.VillagerEntityMCA;
 import net.minecraft.world.entity.npc.Villager;
@@ -8,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+@IfModLoaded("easy_villagers")
 @Mixin(VillagerEvents.class)
 public class VillagerEventsMixin {
 

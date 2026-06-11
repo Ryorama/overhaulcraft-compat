@@ -1,6 +1,7 @@
 package com.ryorama.overhaulcraft.mixins.cobblemon;
 
 import com.cobblemon.mod.common.client.gui.PartyOverlayDataControl;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.utils.IOverhaulPlayerData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
@@ -10,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(value = PartyOverlayDataControl.class, remap = false)
 public class PartyOverlayDataControlMixin {
     @Inject(at = @At("HEAD"), method = "playSound", cancellable = true)

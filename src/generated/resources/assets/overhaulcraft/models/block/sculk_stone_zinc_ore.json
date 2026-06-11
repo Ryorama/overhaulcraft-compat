@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "overhaulcraft:block/sculk_stone_zinc_ore"
+  }
+}

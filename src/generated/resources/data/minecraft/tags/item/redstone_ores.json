@@ -1,15 +1,16 @@
 {
   "values": [
-    "overhaulcraft:redstone_ore_abyss",
-    "overhaulcraft:redstone_ore_astral",
-    "overhaulcraft:redstone_ore_holystone",
-    "overhaulcraft:redstone_ore_cake",
-    "overhaulcraft:redstone_ore_lunar",
-    "overhaulcraft:redstone_ore_turquoise",
-    "overhaulcraft:redstone_ore_darkstone",
-    "overhaulcraft:redstone_ore_demonstone",
-    "overhaulcraft:redstone_ore_shadow",
-    "overhaulcraft:redstone_ore_deep_greenstone",
-    "overhaulcraft:redstone_ore_dust"
+    "overhaulcraft:abyss_redstone_ore",
+    "overhaulcraft:holystone_redstone_ore",
+    "overhaulcraft:cake_layer_redstone_ore",
+    "overhaulcraft:crimstone_redstone_ore",
+    "overhaulcraft:ebonstone_redstone_ore",
+    "overhaulcraft:pearlstone_redstone_ore",
+    "overhaulcraft:gloomslate_redstone_ore",
+    "overhaulcraft:sculk_stone_redstone_ore",
+    "overhaulcraft:netherrack_redstone_ore",
+    "overhaulcraft:end_stone_redstone_ore",
+    "overhaulcraft:depthrock_redstone_ore",
+    "overhaulcraft:shiverstone_redstone_ore"
   ]
 }

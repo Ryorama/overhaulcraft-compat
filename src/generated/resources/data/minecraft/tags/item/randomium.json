@@ -1,23 +1,16 @@
 {
   "values": [
-    "overhaulcraft:randomium_powder",
-    "overhaulcraft:calcinatedrandomium_powder",
-    "overhaulcraft:randomium_ore_chunk",
-    "overhaulcraft:randomium_ore_nether",
-    "overhaulcraft:randomium_ore_abyss",
-    "overhaulcraft:randomium_ore_holystone",
-    "overhaulcraft:randomium_ore_cake",
-    "overhaulcraft:randomium_ore_astral",
-    "overhaulcraft:randomium_ore_lunar",
-    "overhaulcraft:randomium_ore_turquoise",
-    "overhaulcraft:randomium_ore_gloomslate",
-    "overhaulcraft:randomium_ore_sculk",
-    "overhaulcraft:randomium_ore_darkstone",
-    "overhaulcraft:randomium_ore_deep_greenstone",
-    "overhaulcraft:randomium_ore_demonstone",
-    "overhaulcraft:randomium_ore_shadow",
-    "overhaulcraft:randomium_ore_yellowstone",
-    "overhaulcraft:randomium_ore_skyrium",
-    "overhaulcraft:randomium_ore_dust"
+    "overhaulcraft:abyss_randomium_ore",
+    "overhaulcraft:holystone_randomium_ore",
+    "overhaulcraft:cake_layer_randomium_ore",
+    "overhaulcraft:crimstone_randomium_ore",
+    "overhaulcraft:ebonstone_randomium_ore",
+    "overhaulcraft:pearlstone_randomium_ore",
+    "overhaulcraft:gloomslate_randomium_ore",
+    "overhaulcraft:sculk_stone_randomium_ore",
+    "overhaulcraft:netherrack_randomium_ore",
+    "overhaulcraft:end_stone_randomium_ore",
+    "overhaulcraft:depthrock_randomium_ore",
+    "overhaulcraft:shiverstone_randomium_ore"
   ]
 }

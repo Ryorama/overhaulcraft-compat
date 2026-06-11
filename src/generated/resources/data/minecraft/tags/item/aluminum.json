@@ -1,19 +1,16 @@
 {
   "values": [
-    "overhaulcraft:aluminum_ore_abyss",
-    "overhaulcraft:aluminum_ore_astral",
-    "overhaulcraft:aluminum_ore_holystone",
-    "overhaulcraft:aluminum_ore_gloomslate",
-    "overhaulcraft:aluminum_ore_sculk",
-    "overhaulcraft:aluminum_ore_cake",
-    "overhaulcraft:aluminum_ore_lunar",
-    "overhaulcraft:aluminum_ore_turquoise",
-    "overhaulcraft:aluminum_ore_darkstone",
-    "overhaulcraft:aluminum_ore_demonstone",
-    "overhaulcraft:aluminum_ore_shadow",
-    "overhaulcraft:aluminum_ore_yellowstone",
-    "overhaulcraft:aluminum_ore_deep_greenstone",
-    "overhaulcraft:aluminum_ore_skyrium",
-    "overhaulcraft:aluminum_ore_dust"
+    "overhaulcraft:abyss_aluminum_ore",
+    "overhaulcraft:holystone_aluminum_ore",
+    "overhaulcraft:cake_layer_aluminum_ore",
+    "overhaulcraft:crimstone_aluminum_ore",
+    "overhaulcraft:ebonstone_aluminum_ore",
+    "overhaulcraft:pearlstone_aluminum_ore",
+    "overhaulcraft:gloomslate_aluminum_ore",
+    "overhaulcraft:sculk_stone_aluminum_ore",
+    "overhaulcraft:netherrack_aluminum_ore",
+    "overhaulcraft:end_stone_aluminum_ore",
+    "overhaulcraft:depthrock_aluminum_ore",
+    "overhaulcraft:shiverstone_aluminum_ore"
   ]
 }

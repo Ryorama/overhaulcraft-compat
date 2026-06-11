@@ -17,6 +17,7 @@ public class OverhaulCraftMixinCanceller implements MixinCanceller {
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorStructureStateMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkMapMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ModBiomesMixin");
+        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.OverworldUtilsMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.NoiseBasedChunkGeneratorMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.PlacedFeatureMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.StructureSetMixin");

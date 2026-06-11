@@ -3,6 +3,8 @@ package com.ryorama.overhaulcraft.mixins.confluence;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.datafixers.util.Pair;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.mixed.IDimensionAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -30,8 +32,10 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(value = OverworldUtils.class, remap = false)
 public abstract class OverworldUtilsMixin {
+
     @Inject(method = "dimension", at = @At("HEAD"), cancellable = true)
     private static void replace(CallbackInfoReturnable<ResourceKey<Level>> cir) {
         cir.setReturnValue(OtherWorld.LEVEL);
@@ -39,7 +43,9 @@ public abstract class OverworldUtilsMixin {
 
     @Inject(method = "replaceBiome", at = @At("HEAD"), cancellable = true)
     private static void replaceBiome(MultiNoiseBiomeSource biomeSource, int x, int y, int z, CallbackInfoReturnable<Holder<Biome>> cir, Supplier<List<Holder<Biome>>> jungleGetter, Supplier<Pair<Holder<Biome>, Holder<Biome>>> biomePairGetter, Function<RegistryAccess, Holder<Biome>> protectionFactory, CallbackInfo ci) {
-        if (!((IDimensionAccessor) biomeSource).oc$isOverworld()) {
+        OverhaulCraft.LOGGER.info("OverworldUtilsMixin isConfluence1: " + IDimensionAccessor.of(biomeSource).oc$isConfluence());
+        if (IDimensionAccessor.of(biomeSource).oc$isConfluence()) {
+            OverhaulCraft.LOGGER.info("Ri");
             MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
             if (server != null && cir.getReturnValue().is(ModTags.Biomes.IS_CONFLUENCE)) {
                 cir.setReturnValue(protectionFactory.apply(server.registryAccess()));

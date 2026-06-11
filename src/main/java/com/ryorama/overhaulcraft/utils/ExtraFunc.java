@@ -1,18 +1,11 @@
 package com.ryorama.overhaulcraft.utils;
 
-import com.github.alexmodguy.alexscaves.AlexsCaves;
-import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
-import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
 import com.ryorama.overhaulcraft.OverhaulCraft;
-import de.keksuccino.melody.resources.audio.MelodyAudioException;
-import de.keksuccino.melody.resources.audio.SimpleAudioFactory;
 import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.Music;
@@ -20,7 +13,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -30,25 +22,30 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.fml.ModList;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.confluence.mod.common.init.ModBiomes;
+import org.mesdag.confluence_dimension_patch.common.OtherWorld;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class ExtraFunc {
+
+    public static final String COBBLEMON_MODID = "cobblemon";
+
+    public static final Set<String> COBBLEMON_NAMESPACES = Set.of("cobblemon", "rctrainers");
+
+    public static <T> boolean isFromCobblemon(Registry<T> registry, T obj) {
+        ResourceLocation key = registry.getKey(obj);
+        return key != null && COBBLEMON_NAMESPACES.contains(key.getNamespace());
+    }
 
     public static boolean isInDimensiom(Player player, ResourceLocation dimension) {
         return player.level().dimensionTypeRegistration().is(dimension);
     }
 
     public static boolean isConfluence(Level level) {
-        return level.dimensionTypeRegistration().is(ResourceLocation.fromNamespaceAndPath("confluence_dimension_patch", "otherworld"));
+        return level.dimension() == OtherWorld.LEVEL;
     }
 
     public static boolean isCobblemonDim(Level level) {
@@ -67,29 +64,29 @@ public class ExtraFunc {
         return itemStack.getItemHolder().getKey().location();
     }
 
-    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
-    public static void createNukeExplosion(Level level, Entity baseEntity) {
-        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
-        explosion.copyPosition(baseEntity);
-        explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
-        level.addFreshEntity(explosion);
-        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
-        if (radiationManager.isRadiationEnabled()) {
-            radiationManager.radiate(level, baseEntity.getOnPos(), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
-        }
-    }
-
-    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
-    public static void createNukeExplosionWithSize(Level level, Entity baseEntity, float size) {
-        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
-        explosion.copyPosition(baseEntity);
-        explosion.setSize(size);
-        level.addFreshEntity(explosion);
-        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
-        if (radiationManager.isRadiationEnabled()) {
-            radiationManager.radiate(level, baseEntity.getOnPos(), size);
-        }
-    }
+//    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
+//    public static void createNukeExplosion(Level level, Entity baseEntity) {
+//        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
+//        explosion.copyPosition(baseEntity);
+//        explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
+//        level.addFreshEntity(explosion);
+//        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+//        if (radiationManager.isRadiationEnabled()) {
+//            radiationManager.radiate(level, baseEntity.getOnPos(), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+//        }
+//    }
+//
+//    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
+//    public static void createNukeExplosionWithSize(Level level, Entity baseEntity, float size) {
+//        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
+//        explosion.copyPosition(baseEntity);
+//        explosion.setSize(size);
+//        level.addFreshEntity(explosion);
+//        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+//        if (radiationManager.isRadiationEnabled()) {
+//            radiationManager.radiate(level, baseEntity.getOnPos(), size);
+//        }
+//    }
 
     //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/block/blockentity/ConversionCrucibleBlockEntity.java#L322
     public static void convertToBiome(Level level, BlockPos blockPos, ResourceLocation biome, int size) {
@@ -160,31 +157,7 @@ public class ExtraFunc {
     }
 
     public static boolean isPlayerInHell(Player player) {
-        if (player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_WASTELAND || player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_FOREST) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean enoughOfBlocksForMusic(Level level, Player player, int range, Block block) {
-        int blockCount = 0;
-        for(int x = -range; x < range; ++x) {
-            for (int y = -range; y < range; ++y) {
-                for (int z = -range; z < range; ++z) {
-                    BlockPos pos2 = new BlockPos((int) (player.position().x() + x), (int) (player.position().y() + y), (int) (player.position().z() + z));
-                    BlockState blockState = level.getBlockState(pos2);
-
-                    if (blockState.is(block)) {
-                        blockCount++;
-                    }
-                }
-            }
-        }
-        System.out.println("Music Block Count: " + blockCount);
-        if (blockCount >= range) {
-            return true;
-        }
-        return false;
+        return player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_WASTELAND || player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_FOREST;
     }
 
     public static boolean enoughOfBlocksForMusic(Level level, Player player, int range, Block... block) {
@@ -205,18 +178,15 @@ public class ExtraFunc {
                 }
             }
         }
-        if (blockCount >= range) {
-            return true;
-        }
-        return false;
+        return blockCount >= range;
     }
 
     public static boolean canPlayTerrariaMusic(Player player) {
         if (OverhaulCraft.CONFIG.playTerrariaMusic) {
-            if (isPlayerInConfluence(player)) {
-                return true;
+            if (isModInstalled("confluence_dimension_patch")) {
+                return isPlayerInConfluence(player);
             }
-            return false;
+            return true;
         }
         return false;
     }

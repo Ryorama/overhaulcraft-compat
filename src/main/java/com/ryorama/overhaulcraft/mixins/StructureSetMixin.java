@@ -1,11 +1,13 @@
 package com.ryorama.overhaulcraft.mixins;
 
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.mixed.IStructureSet;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(StructureSet.class)
 public abstract class StructureSetMixin implements IStructureSet {
     @Unique

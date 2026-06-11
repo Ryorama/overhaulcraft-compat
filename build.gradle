@@ -46,7 +46,6 @@ neoForge {
 
         data {
             data()
-            programArguments = ["-mixin.config=" + "aether.mixins.json"]
             programArguments.addAll '--mod', mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
@@ -143,7 +142,8 @@ dependencies {
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
     implementation("fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:21.1.3")
     implementation("dev.ryanhcode.sable:sable-common-1.21.1:${sable_version}")
-    implementation('com.github.thedarkcolour:ModKit:4f83c92767')
+    implementation("com.github.thedarkcolour:ModKit:4f83c92767")
+    //implementation files("../AlexsCaves/build/libs/alexscaves-2.0.2.jar")
 
     implementation('curse.maven:framework-549225:6531439')
     implementation('curse.maven:refurbished-furniture-897116:6623948')
@@ -168,20 +168,19 @@ dependencies {
     implementation('curse.maven:ftb-library-forge-404465:6807431')
     implementation('curse.maven:melody-938643:5453382')
     implementation('curse.maven:confluence-dimension-patch-1308724:7523135')
-    implementation('curse.maven:alexs-caves-unofficial-port-1420348:7518652')
     implementation('curse.maven:mca-535291:7702565')
     implementation('curse.maven:vista-1368607:7947609')
     implementation('curse.maven:galosphere-631098:7382684')
     implementation('curse.maven:citadel-331936:7476597')
     implementation('curse.maven:selene-499980:7943878')
-    implementation('curse.maven:atmospheric-362393:7119609')
-    implementation('curse.maven:sable-collision-damage-create-aeronautics-1521697:8026299')
+    compileOnly('curse.maven:atmospheric-362393:7119609')
     implementation('maven.modrinth:pizzadelight:1.21.1-2.0.2')
     implementation('maven.modrinth:eas-addon:0.16.4-serverfix')
     implementation('maven.modrinth:moonlight:1.21.1-3.0.14')
     implementation('maven.modrinth:supplementaries:1.21.1-3.6.5')
     implementation('maven.modrinth:copycats:3.0.4+mc.1.21.1-neoforge')
     implementation('maven.modrinth:integrated-api:1.7.3+1.21.1-neoforge')
+    implementation('maven.modrinth:sable-true-impact:1.1.0-gamma')
 
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")

@@ -1,14 +1,16 @@
 {
   "values": [
-    "overhaulcraft:gold_ore_holystone",
-    "overhaulcraft:gold_ore_cake",
-    "overhaulcraft:gold_ore_lunar",
-    "overhaulcraft:gold_ore_turquoise",
-    "overhaulcraft:gold_ore_darkstone",
-    "overhaulcraft:gold_ore_demonstone",
-    "overhaulcraft:gold_ore_shadow",
-    "overhaulcraft:gold_ore_yellowstone",
-    "overhaulcraft:gold_ore_deep_greenstone",
-    "overhaulcraft:gold_ore_dust"
+    "overhaulcraft:abyss_gold_ore",
+    "overhaulcraft:holystone_gold_ore",
+    "overhaulcraft:cake_layer_gold_ore",
+    "overhaulcraft:crimstone_gold_ore",
+    "overhaulcraft:ebonstone_gold_ore",
+    "overhaulcraft:pearlstone_gold_ore",
+    "overhaulcraft:gloomslate_gold_ore",
+    "overhaulcraft:sculk_stone_gold_ore",
+    "overhaulcraft:netherrack_gold_ore",
+    "overhaulcraft:end_stone_gold_ore",
+    "overhaulcraft:depthrock_gold_ore",
+    "overhaulcraft:shiverstone_gold_ore"
   ]
 }

@@ -1,6 +1,7 @@
 package com.ryorama.overhaulcraft.mixins;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.utils.ExtraFunc;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(LootTable.class)
 public class LootTableMixin {
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z"), method = "fill")

@@ -21,6 +21,4 @@ public class OverhaulCraftConfig {
     @Configurable
     @Configurable.Comment("Play Terraria Music when in the confluence dimension")
     public boolean playTerrariaMusic = false;
-    @Configurable
-    public boolean enableShipSpeedDamage = false;
 }

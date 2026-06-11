@@ -2,18 +2,15 @@ package com.ryorama.overhaulcraft.datagen.server;
 
 
 import com.ryorama.overhaulcraft.init.OverhaulCraftBlocks;
+import com.ryorama.overhaulcraft.init.OverhaulCraftOreBlocks;
 import net.allthemods.alltheores.registry.ATORegistry;
-import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.RedStoneOreBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlockLootTables extends VanillaBlockLoot {
 
@@ -22,70 +19,122 @@ public class BlockLootTables extends VanillaBlockLoot {
     }
 
     @Override
-    public void generate()
-    {
-        getKnownBlocks().forEach(this::dropRaw);
+    public void generate() {
+        OverhaulCraftOreBlocks.BLOCK_REGISTRY.getEntries().forEach(blockDeferredHolder -> createOreDrops(blockDeferredHolder.get()));
     }
 
-    private void dropRaw(Block block) {
-        if((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
-            String oretype = block.getName().toString();
-            if(oretype.contains("aluminum")) { this.add(block, (block1) -> {
+    private void createOreDrops(Block block) {
+        String ore = block.getName().toString();
+        if (ore.contains("aluminum")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.ALUMINUM.RAW.get());
-            }); }
-            if(oretype.contains("lead")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("lead")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.LEAD.RAW.get());
-            }); }
-            if(oretype.contains("nickel")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("nickel")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.NICKEL.RAW.get());
-            }); }
-            if(oretype.contains("osmium")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("osmium")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.OSMIUM.RAW.get());
-            }); }
-            if(oretype.contains("platinum")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("platinum")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.PLATINUM.RAW.get());
-            }); }
-            if(oretype.contains("silver")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("silver")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.SILVER.RAW.get());
-            }); }
-            if(oretype.contains("tin_")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("tin_")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.TIN.RAW.get());
-            }); }
-            if(oretype.contains("uranium")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("uranium")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.URANIUM.RAW.get());
-            }); }
-            if(oretype.contains("zinc")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("fluorite")) {
+            this.add(block, (block1) -> {
+                return createOreDrop(block1, ATORegistry.FLUORITE.GEM.get());
+            });
+        }
+        if (ore.contains("zinc")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, ATORegistry.ZINC.RAW.get());
-            }); }
-            if(oretype.contains("coal")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("coal")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.COAL);
-            }); }
-            if(oretype.contains("copper")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("copper")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.RAW_COPPER);
-            }); }
-            if(oretype.contains("diamond")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("diamond")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.DIAMOND);
-            }); }
-            if(oretype.contains("emerald")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("emerald")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.EMERALD);
-            }); }
-            if(oretype.contains("gold")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("gold")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.RAW_GOLD);
-            }); }
-            if(oretype.contains("iron")) { this.add(block, (block1) -> {
+            });
+        }
+        if (ore.contains("iron")) {
+            this.add(block, (block1) -> {
                 return createOreDrop(block1, Items.RAW_IRON);
-            }); }
-            if(oretype.contains("lapis")) { this.add(block, this::createLapisOreDrops); }
-            if(oretype.contains("redstone")) { this.add(block, this::createRedstoneOreDrops); }
-            if(oretype.contains("randomium")) {
-                dropWhenSilkTouch(block);
-            }
+            });
+        }
+        if (ore.contains("lapis")) {
+            this.add(block, this::createLapisOreDrops);
+        }
+        if (ore.contains("redstone")) {
+            this.add(block, this::createRedstoneOreDrops);
+        }
+        if (ore.contains("randomium")) {
+            dropWhenSilkTouch(block);
+        }
+        if (ore.contains("ruby")) {
+            this.add(block, (block1) -> {
+                return createOreDrop(block1, ATORegistry.RUBY.GEM.get());
+            });
+        }
+        if (ore.contains("sapphire")) {
+            this.add(block, (block1) -> {
+                return createOreDrop(block1, ATORegistry.SAPPHIRE.GEM.get());
+            });
+        }
+        if (ore.contains("draconium")) {
+            dropSelf(block);
         }
     }
 
     @Override
     protected Iterable<Block> getKnownBlocks()
     {
-        return OverhaulCraftBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        List<Block> blocks = new ArrayList<>();
+        OverhaulCraftBlocks.REGISTRY.getEntries().forEach(blockDeferredHolder -> blocks.add(blockDeferredHolder.get()));
+        OverhaulCraftOreBlocks.BLOCK_REGISTRY.getEntries().forEach(blockDeferredHolder -> blocks.add(blockDeferredHolder.get()));
+        return blocks;
     }
 }

@@ -1,15 +1,16 @@
 {
   "values": [
-    "overhaulcraft:iron_ore_holystone",
-    "overhaulcraft:iron_ore_astral",
-    "overhaulcraft:iron_ore_cake",
-    "overhaulcraft:iron_ore_lunar",
-    "overhaulcraft:iron_ore_darkstone",
-    "overhaulcraft:iron_ore_demonstone",
-    "overhaulcraft:iron_ore_shadow",
-    "overhaulcraft:iron_ore_yellowstone",
-    "overhaulcraft:iron_ore_deep_greenstone",
-    "overhaulcraft:iron_ore_skyrium",
-    "overhaulcraft:iron_ore_dust"
+    "overhaulcraft:abyss_iron_ore",
+    "overhaulcraft:holystone_iron_ore",
+    "overhaulcraft:cake_layer_iron_ore",
+    "overhaulcraft:crimstone_iron_ore",
+    "overhaulcraft:ebonstone_iron_ore",
+    "overhaulcraft:pearlstone_iron_ore",
+    "overhaulcraft:gloomslate_iron_ore",
+    "overhaulcraft:sculk_stone_iron_ore",
+    "overhaulcraft:netherrack_iron_ore",
+    "overhaulcraft:end_stone_iron_ore",
+    "overhaulcraft:depthrock_iron_ore",
+    "overhaulcraft:shiverstone_iron_ore"
   ]
 }

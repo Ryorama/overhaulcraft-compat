@@ -8,25 +8,25 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(BiomeSource.class)
 public abstract class BiomeSourceMixin implements IDimensionAccessor {
     @Unique
-    private boolean oc$notOverworld = false;
+    private boolean oc$isOverworld = false;
     @Unique
     private boolean oc$isConfluence = false;
     @Unique
     private boolean oc$isCobblemon = false;
 
     @Override
-    public void oc$setIsNotOverworld() {
-        this.oc$notOverworld = true;
+    public void oc$setIsOverworld(boolean value) {
+        this.oc$isOverworld = value;
     }
 
     @Override
-    public boolean oc$isNotOverworld() {
-        return oc$notOverworld;
+    public boolean oc$isOverworld() {
+        return oc$isOverworld;
     }
 
     @Override
-    public void oc$setIsConfluence() {
-        this.oc$isConfluence = false;
+    public void oc$setIsConfluence(boolean value) {
+        this.oc$isConfluence = value;
     }
 
     @Override
@@ -35,8 +35,8 @@ public abstract class BiomeSourceMixin implements IDimensionAccessor {
     }
 
     @Override
-    public void oc$setIsCobblemon() {
-        this.oc$isCobblemon = false;
+    public void oc$setIsCobblemon(boolean value) {
+        this.oc$isCobblemon = value;
     }
 
     @Override

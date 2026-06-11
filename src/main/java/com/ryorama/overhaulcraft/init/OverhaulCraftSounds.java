@@ -36,5 +36,4 @@ public class OverhaulCraftSounds {
 	public static final DeferredHolder<SoundEvent, SoundEvent> EERIE = REGISTRY.register("eerie", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "eerie")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> PUMPKIN_MOON = REGISTRY.register("pumpkin_moon", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "pumpkin_moon")));
 	public static final DeferredHolder<SoundEvent, SoundEvent> FROST_MOON = REGISTRY.register("frost_moon", () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "frost_moon")));
-
 }

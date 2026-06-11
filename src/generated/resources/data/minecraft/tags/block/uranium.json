@@ -1,19 +1,16 @@
 {
   "values": [
-    "overhaulcraft:uranium_ore_abyss",
-    "overhaulcraft:uranium_ore_astral",
-    "overhaulcraft:uranium_ore_holystone",
-    "overhaulcraft:uranium_ore_gloomslate",
-    "overhaulcraft:uranium_ore_sculk",
-    "overhaulcraft:uranium_ore_cake",
-    "overhaulcraft:uranium_ore_lunar",
-    "overhaulcraft:uranium_ore_turquoise",
-    "overhaulcraft:uranium_ore_darkstone",
-    "overhaulcraft:uranium_ore_demonstone",
-    "overhaulcraft:uranium_ore_shadow",
-    "overhaulcraft:uranium_ore_yellowstone",
-    "overhaulcraft:uranium_ore_deep_greenstone",
-    "overhaulcraft:uranium_ore_skyrium",
-    "overhaulcraft:uranium_ore_dust"
+    "overhaulcraft:abyss_uranium_ore",
+    "overhaulcraft:holystone_uranium_ore",
+    "overhaulcraft:cake_layer_uranium_ore",
+    "overhaulcraft:crimstone_uranium_ore",
+    "overhaulcraft:ebonstone_uranium_ore",
+    "overhaulcraft:pearlstone_uranium_ore",
+    "overhaulcraft:gloomslate_uranium_ore",
+    "overhaulcraft:sculk_stone_uranium_ore",
+    "overhaulcraft:netherrack_uranium_ore",
+    "overhaulcraft:end_stone_uranium_ore",
+    "overhaulcraft:depthrock_uranium_ore",
+    "overhaulcraft:shiverstone_uranium_ore"
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "overhaulcraft:block/gloomslate_nickel_ore"
+  }
+}

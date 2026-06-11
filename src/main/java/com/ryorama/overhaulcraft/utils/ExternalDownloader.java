@@ -18,9 +18,11 @@ import java.util.Map;
 //Download external mods from curseforge on startup
 public class ExternalDownloader {
     public HashMap<String, String> externalDownloads = new HashMap<>();
-    public File modsFolder = new File(Minecraft.getInstance().gameDirectory + "/mods");
+    public File modsFolder;
 
     public ExternalDownloader() {
+        //modsFolder = new File(Minecraft.getInstance().gameDirectory + "/mods");
+
         externalDownloads.put("advanced-chimneys", "8032509");
         externalDownloads.put("ato", "7825464");
         externalDownloads.put("alexs-delight", "7612806");

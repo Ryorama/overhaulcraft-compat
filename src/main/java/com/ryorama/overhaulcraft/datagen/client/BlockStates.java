@@ -2,6 +2,7 @@ package com.ryorama.overhaulcraft.datagen.client;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.init.OverhaulCraftBlocks;
+import com.ryorama.overhaulcraft.init.OverhaulCraftOreBlocks;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
@@ -23,25 +24,16 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        getKnownBlocks().forEach(this::handleOres);
-    }
+        OverhaulCraftOreBlocks.BLOCK_REGISTRY.getEntries().forEach(blockDeferredHolder -> {
+            String id = blockDeferredHolder.get().builtInRegistryHolder().getKey().location().getPath();
+            if (id.contains("cake")) {
+                ResourceLocation side = ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "block/ores/" + id);
+                ResourceLocation top = ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "block/ores/" + id + "_top");
 
-    private void handleOres(Block block) {
-        if ((block instanceof DropExperienceBlock) || (block instanceof RedStoneOreBlock) || (block instanceof RandomiumOreBlock)) {
-            String oretype = BuiltInRegistries.BLOCK.getKey(block).getPath();
-            if (oretype.contains("cake")) {
-                OverhaulCraft.LOGGER.info("Block Name: " + oretype);
-                ResourceLocation side = ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "block/" + oretype);
-                ResourceLocation top = ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "block/" + oretype + "_top");
-                simpleBlockWithItem(block, models().cubeBottomTop(oretype, side, top, top));
+                simpleBlockWithItem(blockDeferredHolder.get(), models().cubeBottomTop(id, side, top, top));
             } else {
-                simpleBlockWithItem(block, cubeAll(block));
+                simpleBlockWithItem(blockDeferredHolder.get(), cubeAll(blockDeferredHolder.get()));
             }
-        }
-    }
-
-    protected Iterable<Block> getKnownBlocks()
-    {
-        return OverhaulCraftBlocks.REGISTRY.getEntries().stream().map(DeferredHolder::get).filter(block -> !(block instanceof LiquidBlock)).collect(Collectors.toList());
+        });
     }
 }

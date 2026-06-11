@@ -1,42 +1,44 @@
 package com.ryorama.overhaulcraft.mixins;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ryorama.overhaulcraft.mixed.IDimensionAccessor;
 import net.minecraft.world.level.levelgen.SurfaceSystem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
+@IfModLoaded("confluence_dimension_patch")
 @Mixin(SurfaceSystem.class)
 public class SurfaceSystemMixin implements IDimensionAccessor {
-    @Unique
-    private boolean oc$notOverworld = false;
     @Unique
     private boolean oc$isConfluence = false;
     @Unique
     private boolean oc$isCobblemon = false;
+    @Unique
+    private boolean oc$isOverworld = false;
 
     @Override
-    public void oc$setIsNotOverworld() {
-        this.oc$notOverworld = true;
+    public void oc$setIsOverworld(boolean value) {
+        this.oc$isOverworld = value;
     }
 
     @Override
-    public boolean oc$isNotOverworld() {
-        return oc$notOverworld;
+    public void oc$setIsConfluence(boolean value) {
+        this.oc$isConfluence = value;
     }
 
     @Override
-    public void oc$setIsConfluence() {
-        this.oc$isConfluence = false;
+    public void oc$setIsCobblemon(boolean value) {
+        this.oc$isCobblemon = value;
+    }
+
+    @Override
+    public boolean oc$isOverworld() {
+        return oc$isOverworld;
     }
 
     @Override
     public boolean oc$isConfluence() {
         return oc$isConfluence;
-    }
-
-    @Override
-    public void oc$setIsCobblemon() {
-        this.oc$isCobblemon = false;
     }
 
     @Override

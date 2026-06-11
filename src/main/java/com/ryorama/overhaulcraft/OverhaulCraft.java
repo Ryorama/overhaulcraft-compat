@@ -28,6 +28,7 @@ public class OverhaulCraft {
 
 		OverhaulCraftSounds.REGISTRY.register(bus);
 		OverhaulCraftBlocks.REGISTRY.register(bus);
+		OverhaulCraftOreBlocks.init(bus);
 		OverhaulCraftBlockEntities.REGISTRY.register();
 		OverhaulCraftItems.REGISTRY.register(bus);
 		OverhaulCraftTabs.REGISTRY.register();
