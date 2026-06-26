@@ -12,7 +12,7 @@ public class CobblemonDim {
     public static final ResourceKey<Level> LEVEL;
 
     static {
-        DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "otherworld"));
-        LEVEL = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "otherworld"));
+        DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "cobblemon_dim"));
+        LEVEL = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(OverhaulCraft.MODID, "cobblemon_dim"));
     }
 }

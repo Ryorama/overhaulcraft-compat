@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/crimstone_diamond_ore"
+    "all": "overhaulcraft:block/ores/crimstone_diamond_ore"
   }
 }

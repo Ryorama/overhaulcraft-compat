@@ -1,12 +1,10 @@
 package com.ryorama.overhaulcraft.datagen.server;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
-import com.ryorama.overhaulcraft.init.OverhaulCraftBlocks;
 import com.ryorama.overhaulcraft.init.OverhaulCraftItems;
 import com.ryorama.overhaulcraft.init.OverhaulCraftOreBlocks;
-import com.ryorama.overhaulcraft.utils.TstpTags;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -28,7 +26,7 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
         add("config.overhaulcraft.option.conversionCrucibleRadius", "Conversion Crucible Radius");
         add("config.overhaulcraft.option.peacefulHunger", "Enable Hunger in Peaceful Mode");
         add("config.overhaulcraft.option.peacefulThirst", "Enable Thirst in Peaceful Mode");
-        add("config.overhaulcraft.option.playBossMusic", "PLay Boss Music");
+        add("config.overhaulcraft.option.playBossMusic", "Play Boss Music");
         add("config.overhaulcraft.option.playTerrariaMusic", "Play Terraria Music");
         add("config.overhaulcraft.option.moreTerrariaContent", "Extra Terraria Content");
         add("config.overhaulcraft.option.enableShipSpeedDamage", "Enable Ship Speed Damage");
@@ -45,9 +43,16 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
     private void addOreBlock(DeferredHolder<Block, ?> block) {
         String ore = block.get().builtInRegistryHolder().getKey().location().getPath().toString();
 
+        OverhaulCraft.LOGGER.info("Location: " + block.get().builtInRegistryHolder().getKey().location());
+        if (block.get().builtInRegistryHolder().getKey().location().equals(ResourceLocation.parse("overhaulcraft:uranium_ore"))) {
+            addBlock(block, "Uranium Ore");
+        }
         for (String id : OverhaulCraftOreBlocks.oreVarIds) {
             if (ore.contains("aluminum") && ore.contains(id)) {
                 addBlock(block, getNameFromId(id) + " Aluminum Ore");
+            }
+            if (ore.contains("fluorite") && ore.contains(id)) {
+                addBlock(block, getNameFromId(id) + " Fluorite Ore");
             }
             if (ore.contains("lead") && ore.contains(id)) {
                 addBlock(block, getNameFromId(id) + " Lead Ore");
@@ -100,6 +105,15 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
             if (ore.contains("randomium") && ore.contains(id)) {
                 addBlock(block, getNameFromId(id) + " Randomium Ore");
             }
+            if (ore.contains("ruby") && ore.contains(id)) {
+                addBlock(block, getNameFromId(id) + " Ruby Ore");
+            }
+            if (ore.contains("sapphire") && ore.contains(id)) {
+                addBlock(block, getNameFromId(id) + " Sapphire Ore");
+            }
+            if (ore.contains("amethyst") && ore.contains(id)) {
+                addBlock(block, getNameFromId(id) + " Amethyst Ore");
+            }
             if (ore.contains("draconium") && ore.contains(id)) {
                 addBlock(block, getNameFromId(id) + " Draconium Ore");
             }
@@ -108,19 +122,9 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
 
     public String getNameFromId(String id) {
         String id1;
-        id1 = id.substring(0, 1).toUpperCase() + id.substring(1);
-        if (id.equals("cake_layer")) {
-            id1 = "Cake Layer";
-        }
+        id1 = id.substring(id.indexOf("/") + 1);
+        String id2 = id1.substring(0, 1).toUpperCase() + id1.substring(1);
 
-        if (id.equals("sculk_stone")) {
-            id1 = "Sculk";
-        }
-
-        if (id.equals("end_stone")) {
-            id1 = "End";
-        }
-
-        return id1.replace("_", " ");
+        return id2.replace("_", " ");
     }
 }

@@ -1,16 +1,16 @@
 {
   "values": [
+    "overhaulcraft:sulfur_gold_ore",
+    "overhaulcraft:cinnabar_gold_ore",
+    "overhaulcraft:end_gold_ore",
     "overhaulcraft:abyss_gold_ore",
     "overhaulcraft:holystone_gold_ore",
-    "overhaulcraft:cake_layer_gold_ore",
+    "overhaulcraft:cake_gold_ore",
     "overhaulcraft:crimstone_gold_ore",
     "overhaulcraft:ebonstone_gold_ore",
     "overhaulcraft:pearlstone_gold_ore",
     "overhaulcraft:gloomslate_gold_ore",
-    "overhaulcraft:sculk_stone_gold_ore",
-    "overhaulcraft:netherrack_gold_ore",
-    "overhaulcraft:end_stone_gold_ore",
-    "overhaulcraft:depthrock_gold_ore",
+    "overhaulcraft:sculk_gold_ore",
     "overhaulcraft:shiverstone_gold_ore"
   ]
 }

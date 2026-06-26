@@ -1,15 +1,17 @@
 {
   "values": [
+    "overhaulcraft:sulfur_zinc_ore",
+    "overhaulcraft:cinnabar_zinc_ore",
+    "overhaulcraft:netherrack_zinc_ore",
+    "overhaulcraft:end_zinc_ore",
     "overhaulcraft:abyss_zinc_ore",
     "overhaulcraft:holystone_zinc_ore",
-    "overhaulcraft:cake_layer_zinc_ore",
+    "overhaulcraft:cake_zinc_ore",
     "overhaulcraft:crimstone_zinc_ore",
     "overhaulcraft:ebonstone_zinc_ore",
     "overhaulcraft:pearlstone_zinc_ore",
     "overhaulcraft:gloomslate_zinc_ore",
-    "overhaulcraft:sculk_stone_zinc_ore",
-    "overhaulcraft:netherrack_zinc_ore",
-    "overhaulcraft:end_stone_zinc_ore",
+    "overhaulcraft:sculk_zinc_ore",
     "overhaulcraft:depthrock_zinc_ore",
     "overhaulcraft:shiverstone_zinc_ore"
   ]

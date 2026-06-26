@@ -1,15 +1,20 @@
 {
   "values": [
+    "overhaulcraft:diorite_platinum_ore",
+    "overhaulcraft:andesite_platinum_ore",
+    "overhaulcraft:granite_platinum_ore",
+    "overhaulcraft:sulfur_platinum_ore",
+    "overhaulcraft:cinnabar_platinum_ore",
+    "overhaulcraft:netherrack_platinum_ore",
+    "overhaulcraft:end_platinum_ore",
     "overhaulcraft:abyss_platinum_ore",
     "overhaulcraft:holystone_platinum_ore",
-    "overhaulcraft:cake_layer_platinum_ore",
+    "overhaulcraft:cake_platinum_ore",
     "overhaulcraft:crimstone_platinum_ore",
     "overhaulcraft:ebonstone_platinum_ore",
     "overhaulcraft:pearlstone_platinum_ore",
     "overhaulcraft:gloomslate_platinum_ore",
-    "overhaulcraft:sculk_stone_platinum_ore",
-    "overhaulcraft:netherrack_platinum_ore",
-    "overhaulcraft:end_stone_platinum_ore",
+    "overhaulcraft:sculk_platinum_ore",
     "overhaulcraft:depthrock_platinum_ore",
     "overhaulcraft:shiverstone_platinum_ore"
   ]

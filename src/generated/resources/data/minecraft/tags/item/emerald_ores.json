@@ -1,15 +1,17 @@
 {
   "values": [
+    "overhaulcraft:sulfur_emerald_ore",
+    "overhaulcraft:cinnabar_emerald_ore",
+    "overhaulcraft:netherrack_emerald_ore",
+    "overhaulcraft:end_emerald_ore",
     "overhaulcraft:abyss_emerald_ore",
     "overhaulcraft:holystone_emerald_ore",
-    "overhaulcraft:cake_layer_emerald_ore",
+    "overhaulcraft:cake_emerald_ore",
     "overhaulcraft:crimstone_emerald_ore",
     "overhaulcraft:ebonstone_emerald_ore",
     "overhaulcraft:pearlstone_emerald_ore",
     "overhaulcraft:gloomslate_emerald_ore",
-    "overhaulcraft:sculk_stone_emerald_ore",
-    "overhaulcraft:netherrack_emerald_ore",
-    "overhaulcraft:end_stone_emerald_ore",
+    "overhaulcraft:sculk_emerald_ore",
     "overhaulcraft:depthrock_emerald_ore",
     "overhaulcraft:shiverstone_emerald_ore"
   ]

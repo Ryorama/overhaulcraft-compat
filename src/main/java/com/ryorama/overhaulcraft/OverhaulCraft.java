@@ -23,17 +23,21 @@ public class OverhaulCraft {
 	public static final boolean isDev = true;
 	public static OverhaulCraftConfig CONFIG;
 
+	//Pack Edition
+	//0 - Normal
+	//1 - Hardcore Version
+	public static int packEd = 0;
+
 	public OverhaulCraft(IEventBus bus, ModContainer modContainer, Dist dist) {
 		CONFIG = Configuration.registerConfig(OverhaulCraftConfig.class, ConfigFormats.json()).getConfigInstance();
 
-		OverhaulCraftSounds.REGISTRY.register(bus);
+		OverhaulCraftMusic.REGISTRY.register(bus);
 		OverhaulCraftBlocks.REGISTRY.register(bus);
 		OverhaulCraftOreBlocks.init(bus);
 		OverhaulCraftBlockEntities.REGISTRY.register();
 		OverhaulCraftItems.REGISTRY.register(bus);
 		OverhaulCraftTabs.REGISTRY.register();
 		OverhaulCraftEntityTypes.REGISTRY.register();
-		OverhaulCraftChunkGenerators.REGISTRY.register();
 
 		bus.addListener(this::constructModEvent);
 		bus.addListener(this::loadCompleteEvent);

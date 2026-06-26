@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/depthrock_copper_ore"
+    "all": "overhaulcraft:block/ores/depthrock_copper_ore"
   }
 }

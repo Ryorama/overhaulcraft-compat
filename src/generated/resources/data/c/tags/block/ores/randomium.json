@@ -1,15 +1,20 @@
 {
   "values": [
+    "overhaulcraft:diorite_randomium_ore",
+    "overhaulcraft:andesite_randomium_ore",
+    "overhaulcraft:granite_randomium_ore",
+    "overhaulcraft:sulfur_randomium_ore",
+    "overhaulcraft:cinnabar_randomium_ore",
+    "overhaulcraft:netherrack_randomium_ore",
+    "overhaulcraft:end_randomium_ore",
     "overhaulcraft:abyss_randomium_ore",
     "overhaulcraft:holystone_randomium_ore",
-    "overhaulcraft:cake_layer_randomium_ore",
+    "overhaulcraft:cake_randomium_ore",
     "overhaulcraft:crimstone_randomium_ore",
     "overhaulcraft:ebonstone_randomium_ore",
     "overhaulcraft:pearlstone_randomium_ore",
     "overhaulcraft:gloomslate_randomium_ore",
-    "overhaulcraft:sculk_stone_randomium_ore",
-    "overhaulcraft:netherrack_randomium_ore",
-    "overhaulcraft:end_stone_randomium_ore",
+    "overhaulcraft:sculk_randomium_ore",
     "overhaulcraft:depthrock_randomium_ore",
     "overhaulcraft:shiverstone_randomium_ore"
   ]

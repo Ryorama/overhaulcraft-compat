@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "overhaulcraft:block/ores/cake_zinc_ore_top",
+    "side": "overhaulcraft:block/ores/cake_zinc_ore",
+    "top": "overhaulcraft:block/ores/cake_zinc_ore_top"
+  }
+}

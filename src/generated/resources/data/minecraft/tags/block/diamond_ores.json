@@ -1,16 +1,16 @@
 {
   "values": [
+    "overhaulcraft:sulfur_diamond_ore",
+    "overhaulcraft:cinnabar_diamond_ore",
+    "overhaulcraft:netherrack_diamond_ore",
+    "overhaulcraft:end_diamond_ore",
     "overhaulcraft:abyss_diamond_ore",
     "overhaulcraft:holystone_diamond_ore",
-    "overhaulcraft:cake_layer_diamond_ore",
+    "overhaulcraft:cake_diamond_ore",
     "overhaulcraft:crimstone_diamond_ore",
     "overhaulcraft:ebonstone_diamond_ore",
     "overhaulcraft:pearlstone_diamond_ore",
     "overhaulcraft:gloomslate_diamond_ore",
-    "overhaulcraft:sculk_stone_diamond_ore",
-    "overhaulcraft:netherrack_diamond_ore",
-    "overhaulcraft:end_stone_diamond_ore",
-    "overhaulcraft:depthrock_diamond_ore",
-    "overhaulcraft:shiverstone_diamond_ore"
+    "overhaulcraft:sculk_diamond_ore"
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "overhaulcraft:block/sculk_redstone_ore"
+    }
+  }
+}

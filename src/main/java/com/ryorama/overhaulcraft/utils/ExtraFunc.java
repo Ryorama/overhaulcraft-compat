@@ -1,8 +1,8 @@
 package com.ryorama.overhaulcraft.utils;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.init.OverhaulCraftMusic;
 import com.ryorama.overhaulcraft.world.dimension.CobblemonDim;
-import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.core.*;
@@ -11,8 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -146,6 +144,19 @@ public class ExtraFunc {
                 musicManager.stopPlaying();
                 musicManager.startPlaying(music);
             }
+        }
+    }
+
+    public static void stopCustomMusic(Level level) {
+        if (level.isClientSide()) {
+            MusicManager musicManager = Minecraft.getInstance().getMusicManager();
+            OverhaulCraftMusic.REGISTRY.getEntries().forEach(soundEventDeferredHolder -> {
+                if (musicManager.currentMusic != null) {
+                    if (musicManager.currentMusic.getLocation().equals(soundEventDeferredHolder.get().getLocation())) {
+                        musicManager.stopPlaying();
+                    }
+                }
+            });
         }
     }
 

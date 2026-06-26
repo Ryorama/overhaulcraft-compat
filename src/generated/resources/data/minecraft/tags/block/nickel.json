@@ -1,15 +1,20 @@
 {
   "values": [
+    "overhaulcraft:diorite_nickel_ore",
+    "overhaulcraft:andesite_nickel_ore",
+    "overhaulcraft:granite_nickel_ore",
+    "overhaulcraft:sulfur_nickel_ore",
+    "overhaulcraft:cinnabar_nickel_ore",
+    "overhaulcraft:netherrack_nickel_ore",
+    "overhaulcraft:end_nickel_ore",
     "overhaulcraft:abyss_nickel_ore",
     "overhaulcraft:holystone_nickel_ore",
-    "overhaulcraft:cake_layer_nickel_ore",
+    "overhaulcraft:cake_nickel_ore",
     "overhaulcraft:crimstone_nickel_ore",
     "overhaulcraft:ebonstone_nickel_ore",
     "overhaulcraft:pearlstone_nickel_ore",
     "overhaulcraft:gloomslate_nickel_ore",
-    "overhaulcraft:sculk_stone_nickel_ore",
-    "overhaulcraft:netherrack_nickel_ore",
-    "overhaulcraft:end_stone_nickel_ore",
+    "overhaulcraft:sculk_nickel_ore",
     "overhaulcraft:depthrock_nickel_ore",
     "overhaulcraft:shiverstone_nickel_ore"
   ]

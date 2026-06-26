@@ -1,15 +1,20 @@
 {
   "values": [
+    "overhaulcraft:diorite_tin_ore",
+    "overhaulcraft:andesite_tin_ore",
+    "overhaulcraft:granite_tin_ore",
+    "overhaulcraft:sulfur_tin_ore",
+    "overhaulcraft:cinnabar_tin_ore",
+    "overhaulcraft:netherrack_tin_ore",
+    "overhaulcraft:end_tin_ore",
     "overhaulcraft:abyss_tin_ore",
     "overhaulcraft:holystone_tin_ore",
-    "overhaulcraft:cake_layer_tin_ore",
+    "overhaulcraft:cake_tin_ore",
     "overhaulcraft:crimstone_tin_ore",
     "overhaulcraft:ebonstone_tin_ore",
     "overhaulcraft:pearlstone_tin_ore",
     "overhaulcraft:gloomslate_tin_ore",
-    "overhaulcraft:sculk_stone_tin_ore",
-    "overhaulcraft:netherrack_tin_ore",
-    "overhaulcraft:end_stone_tin_ore",
+    "overhaulcraft:sculk_tin_ore",
     "overhaulcraft:depthrock_tin_ore",
     "overhaulcraft:shiverstone_tin_ore"
   ]

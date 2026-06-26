@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -28,6 +29,9 @@ public class OverhaulCraftItemTags extends ItemTagsProvider {
         String ore = item.getDescription().toString();
         if(ore.contains("aluminum")) {
             tag(ItemTags.create(ResourceLocation.parse("aluminum"))).add(item);
+        }
+        if (ore.contains("fluorite")) {
+            tag(ItemTags.create(ResourceLocation.parse("fluorite"))).add(item);
         }
         if(ore.contains("lead")) {
             tag(ItemTags.create(ResourceLocation.parse("lead"))).add(item);
@@ -80,8 +84,17 @@ public class OverhaulCraftItemTags extends ItemTagsProvider {
         if (ore.contains("randomium")) {
             tag(ItemTags.create(ResourceLocation.parse("randomium"))).add(item);
         }
+        if (ore.contains("ruby")) {
+            tag(ItemTags.create(ResourceLocation.parse("ruby"))).add(item);
+        }
+        if (ore.contains("sapphire")) {
+            tag(ItemTags.create(ResourceLocation.parse("sapphire"))).add(item);
+        }
+        if (ore.contains("amethyst")) {
+            tag(ItemTags.create(ResourceLocation.parse("amethyst"))).add(item);
+        }
         if (ore.contains("draconium")) {
-            tag(TstpTags.RANDOMIUM_ORE_ITEM);
+            tag(TstpTags.DRACONIUM_ORE_ITEM);
         }
     }
 }

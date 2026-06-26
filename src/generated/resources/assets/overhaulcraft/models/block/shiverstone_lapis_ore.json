@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/shiverstone_lapis_ore"
+    "all": "overhaulcraft:block/ores/shiverstone_lapis_ore"
   }
 }

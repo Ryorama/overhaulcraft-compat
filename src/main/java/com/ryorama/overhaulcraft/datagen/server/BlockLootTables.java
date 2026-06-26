@@ -124,6 +124,11 @@ public class BlockLootTables extends VanillaBlockLoot {
                 return createOreDrop(block1, ATORegistry.SAPPHIRE.GEM.get());
             });
         }
+        if (ore.contains("amethyst")) {
+            this.add(block, (block1) -> {
+                return createOreDrop(block1, Items.AMETHYST_SHARD);
+            });
+        }
         if (ore.contains("draconium")) {
             dropSelf(block);
         }

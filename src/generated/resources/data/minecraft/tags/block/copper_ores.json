@@ -1,15 +1,17 @@
 {
   "values": [
+    "overhaulcraft:sulfur_copper_ore",
+    "overhaulcraft:cinnabar_copper_ore",
+    "overhaulcraft:netherrack_copper_ore",
+    "overhaulcraft:end_copper_ore",
     "overhaulcraft:abyss_copper_ore",
     "overhaulcraft:holystone_copper_ore",
-    "overhaulcraft:cake_layer_copper_ore",
+    "overhaulcraft:cake_copper_ore",
     "overhaulcraft:crimstone_copper_ore",
     "overhaulcraft:ebonstone_copper_ore",
     "overhaulcraft:pearlstone_copper_ore",
     "overhaulcraft:gloomslate_copper_ore",
-    "overhaulcraft:sculk_stone_copper_ore",
-    "overhaulcraft:netherrack_copper_ore",
-    "overhaulcraft:end_stone_copper_ore",
+    "overhaulcraft:sculk_copper_ore",
     "overhaulcraft:depthrock_copper_ore",
     "overhaulcraft:shiverstone_copper_ore"
   ]

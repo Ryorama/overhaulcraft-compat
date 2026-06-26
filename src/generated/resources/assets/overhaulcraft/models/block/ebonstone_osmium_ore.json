@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/ebonstone_osmium_ore"
+    "all": "overhaulcraft:block/ores/ebonstone_osmium_ore"
   }
 }

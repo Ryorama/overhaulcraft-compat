@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "overhaulcraft:block/depthrock_iron_ore"
-  }
-}

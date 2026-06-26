@@ -1,15 +1,17 @@
 {
   "values": [
+    "overhaulcraft:sulfur_lapis_ore",
+    "overhaulcraft:cinnabar_lapis_ore",
+    "overhaulcraft:netherrack_lapis_ore",
+    "overhaulcraft:end_lapis_ore",
     "overhaulcraft:abyss_lapis_ore",
     "overhaulcraft:holystone_lapis_ore",
-    "overhaulcraft:cake_layer_lapis_ore",
+    "overhaulcraft:cake_lapis_ore",
     "overhaulcraft:crimstone_lapis_ore",
     "overhaulcraft:ebonstone_lapis_ore",
     "overhaulcraft:pearlstone_lapis_ore",
     "overhaulcraft:gloomslate_lapis_ore",
-    "overhaulcraft:sculk_stone_lapis_ore",
-    "overhaulcraft:netherrack_lapis_ore",
-    "overhaulcraft:end_stone_lapis_ore",
+    "overhaulcraft:sculk_lapis_ore",
     "overhaulcraft:depthrock_lapis_ore",
     "overhaulcraft:shiverstone_lapis_ore"
   ]

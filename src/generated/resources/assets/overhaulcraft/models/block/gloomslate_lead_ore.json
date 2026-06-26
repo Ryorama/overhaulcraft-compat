@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/gloomslate_lead_ore"
+    "all": "overhaulcraft:block/ores/gloomslate_lead_ore"
   }
 }

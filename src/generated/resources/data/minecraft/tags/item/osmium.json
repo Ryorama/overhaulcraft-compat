@@ -1,15 +1,20 @@
 {
   "values": [
+    "overhaulcraft:diorite_osmium_ore",
+    "overhaulcraft:andesite_osmium_ore",
+    "overhaulcraft:granite_osmium_ore",
+    "overhaulcraft:sulfur_osmium_ore",
+    "overhaulcraft:cinnabar_osmium_ore",
+    "overhaulcraft:netherrack_osmium_ore",
+    "overhaulcraft:end_osmium_ore",
     "overhaulcraft:abyss_osmium_ore",
     "overhaulcraft:holystone_osmium_ore",
-    "overhaulcraft:cake_layer_osmium_ore",
+    "overhaulcraft:cake_osmium_ore",
     "overhaulcraft:crimstone_osmium_ore",
     "overhaulcraft:ebonstone_osmium_ore",
     "overhaulcraft:pearlstone_osmium_ore",
     "overhaulcraft:gloomslate_osmium_ore",
-    "overhaulcraft:sculk_stone_osmium_ore",
-    "overhaulcraft:netherrack_osmium_ore",
-    "overhaulcraft:end_stone_osmium_ore",
+    "overhaulcraft:sculk_osmium_ore",
     "overhaulcraft:depthrock_osmium_ore",
     "overhaulcraft:shiverstone_osmium_ore"
   ]

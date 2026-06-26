@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/holystone_draconium_ore"
+    "all": "overhaulcraft:block/ores/holystone_draconium_ore"
   }
 }

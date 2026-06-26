@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "overhaulcraft:block/gloomslate_emerald_ore"
+    "all": "overhaulcraft:block/ores/gloomslate_emerald_ore"
   }
 }

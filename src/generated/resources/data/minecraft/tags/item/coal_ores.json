@@ -1,16 +1,16 @@
 {
   "values": [
+    "overhaulcraft:sulfur_coal_ore",
+    "overhaulcraft:cinnabar_coal_ore",
+    "overhaulcraft:netherrack_coal_ore",
+    "overhaulcraft:end_coal_ore",
     "overhaulcraft:abyss_coal_ore",
     "overhaulcraft:holystone_coal_ore",
-    "overhaulcraft:cake_layer_coal_ore",
+    "overhaulcraft:cake_coal_ore",
     "overhaulcraft:crimstone_coal_ore",
     "overhaulcraft:ebonstone_coal_ore",
     "overhaulcraft:pearlstone_coal_ore",
     "overhaulcraft:gloomslate_coal_ore",
-    "overhaulcraft:sculk_stone_coal_ore",
-    "overhaulcraft:netherrack_coal_ore",
-    "overhaulcraft:end_stone_coal_ore",
-    "overhaulcraft:depthrock_coal_ore",
-    "overhaulcraft:shiverstone_coal_ore"
+    "overhaulcraft:sculk_coal_ore"
   ]
 }

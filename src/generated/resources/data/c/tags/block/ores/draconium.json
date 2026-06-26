@@ -1,15 +1,18 @@
 {
   "values": [
+    "overhaulcraft:diorite_draconium_ore",
+    "overhaulcraft:andesite_draconium_ore",
+    "overhaulcraft:granite_draconium_ore",
+    "overhaulcraft:sulfur_draconium_ore",
+    "overhaulcraft:cinnabar_draconium_ore",
     "overhaulcraft:abyss_draconium_ore",
     "overhaulcraft:holystone_draconium_ore",
-    "overhaulcraft:cake_layer_draconium_ore",
+    "overhaulcraft:cake_draconium_ore",
     "overhaulcraft:crimstone_draconium_ore",
     "overhaulcraft:ebonstone_draconium_ore",
     "overhaulcraft:pearlstone_draconium_ore",
     "overhaulcraft:gloomslate_draconium_ore",
-    "overhaulcraft:sculk_stone_draconium_ore",
-    "overhaulcraft:netherrack_draconium_ore",
-    "overhaulcraft:end_stone_draconium_ore",
+    "overhaulcraft:sculk_draconium_ore",
     "overhaulcraft:depthrock_draconium_ore",
     "overhaulcraft:shiverstone_draconium_ore"
   ]

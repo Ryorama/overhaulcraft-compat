@@ -1,15 +1,17 @@
 {
   "values": [
+    "overhaulcraft:sulfur_redstone_ore",
+    "overhaulcraft:cinnabar_redstone_ore",
+    "overhaulcraft:netherrack_redstone_ore",
+    "overhaulcraft:end_redstone_ore",
     "overhaulcraft:abyss_redstone_ore",
     "overhaulcraft:holystone_redstone_ore",
-    "overhaulcraft:cake_layer_redstone_ore",
+    "overhaulcraft:cake_redstone_ore",
     "overhaulcraft:crimstone_redstone_ore",
     "overhaulcraft:ebonstone_redstone_ore",
     "overhaulcraft:pearlstone_redstone_ore",
     "overhaulcraft:gloomslate_redstone_ore",
-    "overhaulcraft:sculk_stone_redstone_ore",
-    "overhaulcraft:netherrack_redstone_ore",
-    "overhaulcraft:end_stone_redstone_ore",
+    "overhaulcraft:sculk_redstone_ore",
     "overhaulcraft:depthrock_redstone_ore",
     "overhaulcraft:shiverstone_redstone_ore"
   ]

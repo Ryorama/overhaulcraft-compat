@@ -16,7 +16,6 @@ public class OnlyInOtherworldRuleSourceMixin {
 
     @ModifyReturnValue(at = @At("RETURN"), method = "apply(Lnet/minecraft/world/level/levelgen/SurfaceRules$Context;)Lnet/minecraft/world/level/levelgen/SurfaceRules$SurfaceRule;", remap = false)
     public SurfaceRules.SurfaceRule apply(SurfaceRules.SurfaceRule original, SurfaceRules.Context context) {
-        OverhaulCraft.LOGGER.info("OnlyInOtherworldRuleSourceMixin: isConfluence" + IDimensionAccessor.of(context.system).oc$isConfluence());
         return IDimensionAccessor.of(context.system).oc$isConfluence() ? otherworld.apply(context) : (x, y, z) -> null;
     }
 }

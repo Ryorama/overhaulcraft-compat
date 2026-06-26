@@ -1,7 +1,7 @@
 package com.ryorama.overhaulcraft.datagen;
 
 import com.ryorama.overhaulcraft.OverhaulCraft;
-import com.ryorama.overhaulcraft.datagen.client.BlockStates;
+import com.ryorama.overhaulcraft.datagen.client.OverhaulCraftBlockStateProvider;
 import com.ryorama.overhaulcraft.datagen.server.BlockLootTables;
 import com.ryorama.overhaulcraft.datagen.server.OverhaulCraftBlockTags;
 import com.ryorama.overhaulcraft.datagen.server.OverhaulCraftEngLangProvider;
@@ -34,7 +34,7 @@ public class DataGenerators {
             generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(BlockLootTables::new, LootContextParamSets.BLOCK)), event.getLookupProvider()));
         }
         if (event.includeClient()) {
-            generator.addProvider(true, new BlockStates(generator, fileHelper));
+            generator.addProvider(true, new OverhaulCraftBlockStateProvider(generator, fileHelper));
         }
     }
 }
