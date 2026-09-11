@@ -9,11 +9,11 @@ public class OverhaulCraftMixinCanceller implements MixinCanceller {
     List<String> mixinList = new ArrayList<>();
 
     public OverhaulCraftMixinCanceller() {
-        mixinList.add("com.teamabnormals.atmospheric.core.mixin.CamelMixin");
-        mixinList.add("com.teamabnormals.atmospheric.core.mixin.client.CamelRendererMixin");
         mixinList.add("com.terraformersmc.biolith.impl.mixin.MixinMultiNoiseBiomeSource");
         mixinList.add("org.confluence.mod.mixin.client.gui.WorldSelectionList$WorldListEntryMixin");
+        mixinList.add("org.confluence.mod.mixin.item.ArrowItemMixin");
         mixinList.add("org.confluence.mod.mixin.item.DataComponentsMixin");
+        mixinList.add("org.confluence.mod.mixin.item.InventoryMixin");
         mixinList.add("net.lerariemann.infinity.mixin.fixes.ColllisionShapeMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.BiomeSourceMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorMixin");
@@ -25,6 +25,7 @@ public class OverhaulCraftMixinCanceller implements MixinCanceller {
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.PlacedFeatureMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.StructureSetMixin");
         mixinList.add("org.mesdag.confluence_dimension_patch.mixin.SurfaceSystemMixin");
+        mixinList.add("weather2.mixin.client.RenderParticlesOverride");
     }
 
     @Override

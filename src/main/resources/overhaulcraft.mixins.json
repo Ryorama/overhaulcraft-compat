@@ -17,7 +17,8 @@
     "PlayerMixin",
     "StructureSetMixin",
     "SurfaceSystemMixin",
-    "biolith.MixinMultiNoiseBiomeSourceMixin",
+    "biolith.TerraBlenderCompatNeoForgeMixin",
+    "confluence.ArrowItemMixin",
     "confluence.BossSummonsItemMixin",
     "confluence.CDPGameEventsMixin",
     "confluence.CrimsonHeartMixin",
@@ -27,16 +28,17 @@
     "confluence.OverworldUtilsMixin",
     "confluence.ShadowOrbMixin",
     "easyvillagers.VillagerEventsMixin",
-    "infinitedimensions.ColllisionShapeMixin",
     "mekanism.RadiationManagerMixin",
-    "pizzadelight.PizzaSliceItemMixin",
-    "thirstwastaken.PlayerThirstMixin"
+    "thirstwastaken.PlayerThirstMixin",
+    "windswept.WoodenBucketItemMixin"
   ],
   "client": [
     "cobblemon.PartyOverlayDataControlMixin",
     "cobblemon.PartyOverlayMixin",
     "confluence.ClientUtilsMixin",
+    "confluence.GameClientEventsMixin",
     "confluence.TerraStyleManaHudMixin",
+    "cosmonautics.SkyHandlerMixin",
     "create.AllKeysMixin"
   ],
   "injectors": {

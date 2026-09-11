@@ -69,7 +69,7 @@ public abstract class ChunkGeneratorStructureStateMixin implements IDimensionAcc
         for (Holder<StructureSet> holder : this.possibleStructureSets) {
             ResourceKey<StructureSet> key = holder.getKey();
             IStructureSet.of(holder.value()).oc$setIsNotFromConfluence(key == null || !Confluence.MODID.equals(key.location().getNamespace()));
-            IStructureSet.of(holder.value()).oc$setIsNotFromCobblemon(key == null || !ExtraFunc.COBBLEMON_MODID.equals(key.location().getNamespace()));
+            IStructureSet.of(holder.value()).oc$setIsNotFromCobblemon(key == null || !ExtraFunc.isFromCobblemon(key.location().getNamespace()));
         }
     }
 }

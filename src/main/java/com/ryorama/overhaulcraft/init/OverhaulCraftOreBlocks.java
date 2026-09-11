@@ -1,5 +1,6 @@
 package com.ryorama.overhaulcraft.init;
 
+import com.blackgear.vanillabackport.client.registries.ModSoundTypes;
 import com.ryorama.overhaulcraft.OverhaulCraft;
 import com.ryorama.overhaulcraft.utils.ExtraFunc;
 import net.mehvahdjukaar.randomium.common.RandomiumOreBlock;
@@ -41,7 +42,6 @@ public class OverhaulCraftOreBlocks {
         oreVarIds.add("depthrock");
         oreVarIds.add("shiverstone");
 
-        BLOCK_REGISTRY.register("uranium_ore", () -> new DropExperienceBlock(UniformInt.of(2, 5), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops().strength(3, 3)));
         for (String id : oreVarIds) {
             registerOre("coal", id, 3, 3);
             registerOre("copper", id, 5, 6);
@@ -111,7 +111,7 @@ public class OverhaulCraftOreBlocks {
     }
 
     public static void registerRandomiumOre(String id, float destroyTime, float explosionResistance) {
-        if (ExtraFunc.isModInstalled("randomium")) {
+        if (ExtraFunc.isModLoaded("randomium")) {
             BLOCK_REGISTRY.register(id + "_randomium_ore", () -> new RandomiumOreBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).requiresCorrectToolForDrops().strength(destroyTime, explosionResistance)));
         } else {
             BLOCK_REGISTRY.register(id + "_randomium_ore", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(getModOreSound(id)).requiresCorrectToolForDrops().strength(destroyTime, explosionResistance)));
@@ -127,8 +127,16 @@ public class OverhaulCraftOreBlocks {
         if (id.equals("netherrack")) {
             return SoundType.NETHERRACK;
         }
-        if (id.equals("cake_layer")) {
+        if (id.equals("cake")) {
             return SoundType.WOOL;
+        }
+        if (ExtraFunc.isModLoaded("vanillabackport")) {
+            if (id.equals("sulfur")) {
+                return ModSoundTypes.SULFUR;
+            }
+            if (id.equals("cinnabar")) {
+                return ModSoundTypes.CINNABAR;
+            }
         }
         return SoundType.STONE;
     }

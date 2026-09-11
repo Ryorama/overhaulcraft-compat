@@ -22,6 +22,7 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforgespi.language.IModInfo;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.confluence.mod.common.init.ModBiomes;
 import org.mesdag.confluence_dimension_patch.common.OtherWorld;
@@ -32,11 +33,20 @@ public class ExtraFunc {
 
     public static final String COBBLEMON_MODID = "cobblemon";
 
-    public static final Set<String> COBBLEMON_NAMESPACES = Set.of("cobblemon", "rctrainers");
+    public static final Set<String> COBBLEMON_NAMESPACES = Set.of("cobblemon", "rctmod", "mega_showdown");
 
     public static <T> boolean isFromCobblemon(Registry<T> registry, T obj) {
         ResourceLocation key = registry.getKey(obj);
         return key != null && COBBLEMON_NAMESPACES.contains(key.getNamespace());
+    }
+
+    public static boolean isFromCobblemon(String namespace) {
+        for (String modid : COBBLEMON_NAMESPACES) {
+            if (namespace.contains(modid)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean isInDimensiom(Player player, ResourceLocation dimension) {
@@ -160,8 +170,17 @@ public class ExtraFunc {
         }
     }
 
-    public static boolean isModInstalled(String modid) {
+    public static boolean isModLoaded(String modid) {
         return ModList.get().isLoaded(modid);
+    }
+
+    public static boolean isModInstalled(String modid) {
+        for (IModInfo mod : ModList.get().getMods()) {
+            if (mod.getModId().equals(modid)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean accurateIsDay(Level level) {
@@ -195,7 +214,7 @@ public class ExtraFunc {
 
     public static boolean canPlayTerrariaMusic(Player player) {
         if (OverhaulCraft.CONFIG.playTerrariaMusic) {
-            if (isModInstalled("confluence_dimension_patch")) {
+            if (isModLoaded("confluence_dimension_patch")) {
                 return isPlayerInConfluence(player);
             }
             return true;

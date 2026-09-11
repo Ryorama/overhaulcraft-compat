@@ -34,7 +34,7 @@ public abstract class PlacedFeatureMixin {
                }
            }
            if (IDimensionAccessor.of(context.generator().getBiomeSource()).oc$isConfluence()) {
-               if (ExtraFunc.COBBLEMON_MODID.equals(feature.getKey().location().getNamespace())) {
+               if (ExtraFunc.isFromCobblemon(feature.getKey().location().getNamespace())) {
                    cir.setReturnValue(false);
                }
            }

@@ -25,7 +25,7 @@ public abstract class NoiseBasedChunkGeneratorMixin extends ChunkGenerator {
     @ModifyExpressionValue(method = "applyCarvers", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/BiomeGenerationSettings;getCarvers(Lnet/minecraft/world/level/levelgen/GenerationStep$Carving;)Ljava/lang/Iterable;"))
     private Iterable<Holder<ConfiguredWorldCarver<?>>> filter(Iterable<Holder<ConfiguredWorldCarver<?>>> original) {
         if (IDimensionAccessor.of(getBiomeSource()).oc$isOverworld()) {
-            return Iterables.filter(original, holder -> holder.getKey() != null && (!Confluence.MODID.equals(holder.getKey().location().getNamespace()) || !ExtraFunc.COBBLEMON_MODID.equals(holder.getKey().location().getNamespace())));
+            return Iterables.filter(original, holder -> holder.getKey() != null && (!Confluence.MODID.equals(holder.getKey().location().getNamespace()) || !ExtraFunc.isFromCobblemon(holder.getKey().location().getNamespace())));
         }
         return original;
     }

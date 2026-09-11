@@ -316,7 +316,6 @@
   "block.overhaulcraft.sulfur_tin_ore": "Sulfur Tin Ore",
   "block.overhaulcraft.sulfur_uranium_ore": "Sulfur Uranium Ore",
   "block.overhaulcraft.sulfur_zinc_ore": "Sulfur Zinc Ore",
-  "block.overhaulcraft.uranium_ore": "Uranium Ore",
   "config.overhaulcraft.option.conversionCrucibleRadius": "Conversion Crucible Radius",
   "config.overhaulcraft.option.enableShipSpeedDamage": "Enable Ship Speed Damage",
   "config.overhaulcraft.option.moreTerrariaContent": "Extra Terraria Content",
@@ -326,6 +325,10 @@
   "config.overhaulcraft.option.playTerrariaMusic": "Play Terraria Music",
   "config.overhaulcraft.option.restrictDimensionTravelToPlanets": "Restrict Dimension Travel To Planets",
   "config.overhaulcraft.option.restrictNetherAndEndToPlanets": "Restrict Nether And End To Planets",
+  "item.overhaulcraft.cobbledim_teleport_item": "Mysterious Ball",
+  "item.overhaulcraft.customization_globe": "Customization Globe",
   "item.overhaulcraft.randomium_ore_chunk": "Randomium Ore Chunk",
-  "item_group.overhaulcraft.ore_compat": "OverhaulCraft: Ore Component"
+  "item_group.overhaulcraft.ore_compat": "OverhaulCraft: Ore Component",
+  "tooltip.overhaulcraft.item.customization_globe.1": "Use to customize your character",
+  "tooltip.overhaulcraft.item.customization_globe.2": "Consumed on use"
 }

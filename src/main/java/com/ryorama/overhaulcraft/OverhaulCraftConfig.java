@@ -23,4 +23,7 @@ public class OverhaulCraftConfig {
     public boolean playTerrariaMusic = false;
     @Configurable
     public boolean enableGregtechRecipes = false;
+    @Configurable
+    @Configurable.Comment("How many second delay until the cosmonautics plasma renderer is run again")
+    public int cosmonauticsPlasmaRendererDelayPerSeconds = 2;
 }

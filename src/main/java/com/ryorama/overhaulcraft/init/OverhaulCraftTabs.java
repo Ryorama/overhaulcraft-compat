@@ -24,17 +24,21 @@ public class OverhaulCraftTabs {
 	
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+		if (tabData.getTabKey().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
+			tabData.accept(OverhaulCraftItems.COBBLEDIM_TELEPORT_ITEM.get().getDefaultInstance());
+			tabData.accept(OverhaulCraftItems.CUSTOMIZATION_GLOBE.get().getDefaultInstance());
+		}
+		if (tabData.getTabKey().equals(CreativeModeTabs.SPAWN_EGGS)) {
 			//tabData.remove(CroptopiaAdditionsModItems.CURRY_POWDER.get().getDefaultInstance());
 			//tabData.remove(CroptopiaAdditionsModItems.RICE_FLOUR.get().getDefaultInstance());
 			//tabData.remove(CroptopiaAdditionsModItems.RICE_NOODLE.get().getDefaultInstance());
 		}
-		if (tabData.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+		if (tabData.getTabKey().equals(CreativeModeTabs.FOOD_AND_DRINKS)) {
 			//tabData.accept(CroptopiaAdditionsModItems.CURRY_POWDER);
 			//tabData.accept(CroptopiaAdditionsModItems.RICE_FLOUR);
 			//tabData.accept(CroptopiaAdditionsModItems.RICE_NOODLE);
 		}
-		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+		if (tabData.getTabKey().equals(CreativeModeTabs.INGREDIENTS)) {
 			//tabData.remove(CCItems.RAW_SILVER.get().getDefaultInstance());
 			//tabData.remove(GItems.RAW_SILVER.get().getDefaultInstance());
 			//tabData.remove(CCItems.COPPER_NUGGET.get().getDefaultInstance());
@@ -43,9 +47,6 @@ public class OverhaulCraftTabs {
 			//tabData.remove(GItems.SILVER_NUGGET.get().getDefaultInstance());
 			//tabData.remove(CCItems.SILVER_INGOT.get().getDefaultInstance());
 			//tabData.remove(GItems.SILVER_INGOT.get().getDefaultInstance());
-		}
-		if (tabData.getTabKey() == ModTabs.NATURAL_BLOCKS.getKey()) {
-			//tabData.remove(NatureBlocks.CORRUPT_GRASS.get().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
 		}
 	}
 

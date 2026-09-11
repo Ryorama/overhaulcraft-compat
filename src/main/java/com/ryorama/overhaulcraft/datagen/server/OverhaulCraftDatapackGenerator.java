@@ -1,5 +1,8 @@
 //package com.ryorama.overhaulcraft.datagen.server;
 //
+//import net.allthemods.alltheores.datagen.data.ATOBiomeModiferProvider;
+//import net.allthemods.alltheores.datagen.data.worldgen.ATOConfiguredFeatureProvider;
+//import net.allthemods.alltheores.datagen.data.worldgen.ATOPlacedFeatureProvider;
 //import net.minecraft.core.RegistrySetBuilder;
 //import net.minecraft.core.registries.Registries;
 //import net.minecraft.data.PackOutput;

@@ -24,8 +24,7 @@ public abstract class ChunkGeneratorMixin {
             if (IDimensionAccessor.of(structureState).oc$isCobblemon() && !IStructureSet.of(holder.value()).oc$isNotFromCobblemon()) {
                 return true;
             }
-        }
-
+        } else return original && IDimensionAccessor.of(structureState).oc$isOverworld() && (IStructureSet.of(holder.value()).oc$isNotFromCobblemon() && IStructureSet.of(holder.value()).oc$isNotFromConfluence());
         return false;
     }
 }

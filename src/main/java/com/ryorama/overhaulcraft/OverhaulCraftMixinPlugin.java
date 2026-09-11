@@ -25,6 +25,25 @@ public class OverhaulCraftMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        if (targetClassName.equals("net.minecraft.world.level.biome.BiomeSource")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into BiomeSource");
+        }
+        if (targetClassName.equals("net.minecraft.world.level.chunk.ChunkGenerator")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into ChunkGenerator");
+        }
+        if (targetClassName.equals("net.minecraft.server.level.ChunkMap")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into ChunkMap");
+        }
+        if (targetClassName.equals("net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into NoiseBasedChunkGenerator");
+        }
+        if (targetClassName.equals("net.minecraft.world.level.levelgen.structure.StructureSet")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into StructureSet");
+        }
+        if (targetClassName.equals("net.minecraft.world.level.levelgen.SurfaceSystem")) {
+            OverhaulCraft.LOGGER.info(mixinClassName + " Mixing into SurfaceSystem");
+        }
+
         if (this.mixinPackage != null && !mixinClassName.startsWith(this.mixinPackage)) {
             return true;
         }
@@ -43,6 +62,7 @@ public class OverhaulCraftMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+
     }
 
     @Override

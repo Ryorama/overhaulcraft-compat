@@ -30,10 +30,15 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
         add("config.overhaulcraft.option.playTerrariaMusic", "Play Terraria Music");
         add("config.overhaulcraft.option.moreTerrariaContent", "Extra Terraria Content");
         add("config.overhaulcraft.option.enableShipSpeedDamage", "Enable Ship Speed Damage");
+
+        add("tooltip.overhaulcraft.item.customization_globe.1", "Use to customize your character");
+        add("tooltip.overhaulcraft.item.customization_globe.2", "Consumed on use");
     }
 
     private void addItems() {
         addItem(OverhaulCraftItems.RANDOMIUM_ORE_CHUNK, "Randomium Ore Chunk");
+        addItem(OverhaulCraftItems.COBBLEDIM_TELEPORT_ITEM, "Mysterious Ball");
+        addItem(OverhaulCraftItems.CUSTOMIZATION_GLOBE, "Customization Globe");
     }
 
     private void addBlocks() {
@@ -43,10 +48,6 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
     private void addOreBlock(DeferredHolder<Block, ?> block) {
         String ore = block.get().builtInRegistryHolder().getKey().location().getPath().toString();
 
-        OverhaulCraft.LOGGER.info("Location: " + block.get().builtInRegistryHolder().getKey().location());
-        if (block.get().builtInRegistryHolder().getKey().location().equals(ResourceLocation.parse("overhaulcraft:uranium_ore"))) {
-            addBlock(block, "Uranium Ore");
-        }
         for (String id : OverhaulCraftOreBlocks.oreVarIds) {
             if (ore.contains("aluminum") && ore.contains(id)) {
                 addBlock(block, getNameFromId(id) + " Aluminum Ore");

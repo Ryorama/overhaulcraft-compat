@@ -37,16 +37,14 @@ public class OverhaulCraft {
 		OverhaulCraftBlockEntities.REGISTRY.register();
 		OverhaulCraftItems.REGISTRY.register(bus);
 		OverhaulCraftTabs.REGISTRY.register();
-		OverhaulCraftEntityTypes.REGISTRY.register();
+		//OverhaulCraftEntityTypes.REGISTRY.register();
 
 		bus.addListener(this::constructModEvent);
 		bus.addListener(this::loadCompleteEvent);
 	}
 
 	public void constructModEvent(FMLConstructModEvent event) {
-		if (!isDev) {
-			externalDownloader.handleExternalMods();
-		}
+
 	}
 
 	public void loadCompleteEvent(FMLLoadCompleteEvent event) {
