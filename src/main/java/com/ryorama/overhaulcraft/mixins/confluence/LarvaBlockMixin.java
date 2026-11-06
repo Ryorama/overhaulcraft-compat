@@ -5,7 +5,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.confluence.mod.common.block.natural.LarvaBlock;
-import org.confluence.terraentity.init.TESounds;
+import org.confluence.mod.common.init.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LarvaBlock.class)
 public class LarvaBlockMixin {
-    @Inject(at = @At(value = "INVOKE", target = "Lorg/confluence/mod/util/ModUtils;summonBoss(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lorg/confluence/terraentity/entity/boss/AbstractTerraBossBase;Z)V"), method = "onRemove")
+    @Inject(at = @At(value = "INVOKE", target = "Lorg/confluence/mod/util/ModUtils;summonBoss(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lorg/confluence/mod/common/entity/boss/BaseBoss;Z)V"), method = "onRemove")
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston, CallbackInfo ci) {
-        level.playSound(null, pos, TESounds.ROAR.get(), SoundSource.BLOCKS);
+        level.playSound(null, pos, ModSoundEvents.ROAR.get(), SoundSource.BLOCKS);
     }
 }

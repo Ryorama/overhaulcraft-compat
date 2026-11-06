@@ -10,6 +10,6 @@ public class ExternalDownloader {
     public File modsFolder;
 
     public ExternalDownloader() {
-        modsFolder = new File(Minecraft.getInstance().gameDirectory + "/mods");
+        //modsFolder = new File(Minecraft.getInstance().gameDirectory + "/mods");
     }
 }

@@ -1,17 +1,27 @@
 package com.ryorama.overhaulcraft.utils;
 
+import com.almostreliable.unified.api.AlmostUnified;
+import com.github.alexmodguy.alexscaves.AlexsCaves;
+import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
+import com.github.alexmodguy.alexscaves.server.entity.item.NuclearExplosionEntity;
 import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.OverhaulCraftClientConfig;
 import com.ryorama.overhaulcraft.init.OverhaulCraftMusic;
 import com.ryorama.overhaulcraft.world.dimension.CobblemonDim;
+import mekanism.api.radiation.IRadiationManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.core.*;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -21,10 +31,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforgespi.language.IModInfo;
 import org.apache.commons.lang3.mutable.MutableInt;
-import org.confluence.mod.common.init.ModBiomes;
+import org.apache.commons.lang3.stream.Streams;
 import org.mesdag.confluence_dimension_patch.common.OtherWorld;
 
 import java.util.*;
@@ -33,7 +45,7 @@ public class ExtraFunc {
 
     public static final String COBBLEMON_MODID = "cobblemon";
 
-    public static final Set<String> COBBLEMON_NAMESPACES = Set.of("cobblemon", "rctmod", "mega_showdown");
+    public static final Set<String> COBBLEMON_NAMESPACES = Set.of("cobblemon", "mega_showdown");
 
     public static <T> boolean isFromCobblemon(Registry<T> registry, T obj) {
         ResourceLocation key = registry.getKey(obj);
@@ -49,7 +61,15 @@ public class ExtraFunc {
         return false;
     }
 
-    public static boolean isInDimensiom(Player player, ResourceLocation dimension) {
+    public static boolean hasSecondsPassed(long gameTime, int seconds) {
+        return gameTime % (seconds * 20L) == 0;
+    }
+
+    public static boolean isBossAlive(ServerLevel level) {
+        return Streams.of(level.getAllEntities()).anyMatch(entity -> entity.getTags().contains("overhaulcraft:boss_entity"));
+    }
+
+    public static boolean isPlayerInDimension(Player player, ResourceLocation dimension) {
         return player.level().dimensionTypeRegistration().is(dimension);
     }
 
@@ -73,29 +93,33 @@ public class ExtraFunc {
         return itemStack.getItemHolder().getKey().location();
     }
 
-//    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
-//    public static void createNukeExplosion(Level level, Entity baseEntity) {
-//        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
-//        explosion.copyPosition(baseEntity);
-//        explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
-//        level.addFreshEntity(explosion);
-//        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
-//        if (radiationManager.isRadiationEnabled()) {
-//            radiationManager.radiate(level, baseEntity.getOnPos(), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
-//        }
-//    }
-//
-//    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
-//    public static void createNukeExplosionWithSize(Level level, Entity baseEntity, float size) {
-//        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
-//        explosion.copyPosition(baseEntity);
-//        explosion.setSize(size);
-//        level.addFreshEntity(explosion);
-//        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
-//        if (radiationManager.isRadiationEnabled()) {
-//            radiationManager.radiate(level, baseEntity.getOnPos(), size);
-//        }
-//    }
+    public static ItemStack getItemStackFromResourceLocation(ResourceLocation resourceLocation) {
+        return new ItemStack(BuiltInRegistries.ITEM.get(resourceLocation));
+    }
+
+    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
+    public static void createNukeExplosion(Level level, Entity baseEntity) {
+        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
+        explosion.copyPosition(baseEntity);
+        explosion.setSize((AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get()).floatValue());
+        level.addFreshEntity(explosion);
+        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+        if (radiationManager.isRadiationEnabled()) {
+            radiationManager.radiate(level, baseEntity.getOnPos(), 10 * AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get());
+        }
+    }
+
+    //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/entity/item/NuclearBombEntity.java#L102
+    public static void createNukeExplosionWithSize(Level level, Entity baseEntity, float size) {
+        NuclearExplosionEntity explosion = (NuclearExplosionEntity)((EntityType) ACEntityRegistry.NUCLEAR_EXPLOSION.get()).create(level);
+        explosion.copyPosition(baseEntity);
+        explosion.setSize(size);
+        level.addFreshEntity(explosion);
+        IRadiationManager radiationManager = IRadiationManager.INSTANCE;
+        if (radiationManager.isRadiationEnabled()) {
+            radiationManager.radiate(level, baseEntity.getOnPos(), size);
+        }
+    }
 
     //Method from Alex's Caves | https://github.com/AlexModGuy/AlexsCaves/blob/4718f4287c65b810aecb211789b45f54d405a94d/src/main/java/com/github/alexmodguy/alexscaves/server/block/blockentity/ConversionCrucibleBlockEntity.java#L322
     public static void convertToBiome(Level level, BlockPos blockPos, ResourceLocation biome, int size) {
@@ -147,27 +171,28 @@ public class ExtraFunc {
 
 
     public static void updateCurrentMusic(Holder<SoundEvent> soundEvent, Level level) {
-        if (level.isClientSide()) {
-            MusicManager musicManager = Minecraft.getInstance().getMusicManager();
-            Music music = new Music(soundEvent, 1, 2, true);
-            if (!musicManager.isPlayingMusic(music)) {
+        MusicManager musicManager = Minecraft.getInstance().getMusicManager();
+        Music music = new Music(soundEvent, 1, 2, true);
+
+        if (musicManager.currentMusic != null) {
+            if (!musicManager.currentMusic.getLocation().equals(BuiltInRegistries.SOUND_EVENT.get(soundEvent.getKey()).getLocation())) {
                 musicManager.stopPlaying();
                 musicManager.startPlaying(music);
             }
+        } else {
+            musicManager.startPlaying(music);
         }
     }
 
     public static void stopCustomMusic(Level level) {
-        if (level.isClientSide()) {
-            MusicManager musicManager = Minecraft.getInstance().getMusicManager();
-            OverhaulCraftMusic.REGISTRY.getEntries().forEach(soundEventDeferredHolder -> {
-                if (musicManager.currentMusic != null) {
-                    if (musicManager.currentMusic.getLocation().equals(soundEventDeferredHolder.get().getLocation())) {
-                        musicManager.stopPlaying();
-                    }
+        MusicManager musicManager = Minecraft.getInstance().getMusicManager();
+        OverhaulCraftMusic.REGISTRY.getEntries().forEach(soundEventDeferredHolder -> {
+            if (musicManager.currentMusic != null) {
+                if (musicManager.currentMusic.getLocation().equals(soundEventDeferredHolder.get().getLocation())) {
+                    musicManager.stopPlaying();
                 }
-            });
-        }
+            }
+        });
     }
 
     public static boolean isModLoaded(String modid) {
@@ -188,7 +213,7 @@ public class ExtraFunc {
     }
 
     public static boolean isPlayerInHell(Player player) {
-        return player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_WASTELAND || player.level().getBiome(player.getOnPos()) == ModBiomes.ASH_FOREST;
+        return player.position().y() <= 0;
     }
 
     public static boolean enoughOfBlocksForMusic(Level level, Player player, int range, Block... block) {
@@ -213,12 +238,27 @@ public class ExtraFunc {
     }
 
     public static boolean canPlayTerrariaMusic(Player player) {
-        if (OverhaulCraft.CONFIG.playTerrariaMusic) {
+        if (OverhaulCraftClientConfig.PLAY_TERRARIA_MUSIC.get()) {
             if (isModLoaded("confluence_dimension_patch")) {
                 return isPlayerInConfluence(player);
             }
             return true;
         }
         return false;
+    }
+
+    public static Item getReplacementForItem(Item item) {
+        Item replacement = AlmostUnified.INSTANCE.getVariantItemTarget(item);
+        if (replacement == null) return item;
+        return replacement;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static boolean isResourcePackLoaded(String id) {
+        return Minecraft.getInstance().getResourcePackRepository().getSelectedPacks().stream().anyMatch(pack -> pack.getId().equals(id));
+    }
+
+    public static boolean isInDespawnDistance(int pos, int ownerPos, int simulationDistance) {
+        return pos > (ownerPos + simulationDistance - 1);
     }
 }

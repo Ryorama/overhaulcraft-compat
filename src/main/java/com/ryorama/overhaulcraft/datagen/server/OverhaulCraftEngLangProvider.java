@@ -30,15 +30,18 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
         add("config.overhaulcraft.option.playTerrariaMusic", "Play Terraria Music");
         add("config.overhaulcraft.option.moreTerrariaContent", "Extra Terraria Content");
         add("config.overhaulcraft.option.enableShipSpeedDamage", "Enable Ship Speed Damage");
+        add("config.overhaulcraft.option.statDecreaseDuringBoss", "Stat Decrease During Boss Fight");
 
         add("tooltip.overhaulcraft.item.customization_globe.1", "Use to customize your character");
         add("tooltip.overhaulcraft.item.customization_globe.2", "Consumed on use");
+        add("tooltip.overhaulcraft.insect_repellent", "Applies the insect repellent effect for five minutes");
     }
 
     private void addItems() {
         addItem(OverhaulCraftItems.RANDOMIUM_ORE_CHUNK, "Randomium Ore Chunk");
         addItem(OverhaulCraftItems.COBBLEDIM_TELEPORT_ITEM, "Mysterious Ball");
         addItem(OverhaulCraftItems.CUSTOMIZATION_GLOBE, "Customization Globe");
+        addItem(OverhaulCraftItems.MOSQUITO_REPELLING_CHARM, "Mosquito Repelling Charm");
     }
 
     private void addBlocks() {
@@ -122,6 +125,9 @@ public class OverhaulCraftEngLangProvider extends LanguageProvider {
     }
 
     public String getNameFromId(String id) {
+        if (id.contains("netherrack")) {
+            return "Nether";
+        }
         String id1;
         id1 = id.substring(id.indexOf("/") + 1);
         String id2 = id1.substring(0, 1).toUpperCase() + id1.substring(1);

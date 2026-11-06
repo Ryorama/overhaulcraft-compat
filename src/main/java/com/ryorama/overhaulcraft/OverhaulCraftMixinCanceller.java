@@ -4,37 +4,24 @@ import com.bawnorton.mixinsquared.api.MixinCanceller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class OverhaulCraftMixinCanceller implements MixinCanceller {
-    List<String> mixinList = new ArrayList<>();
-
-    public OverhaulCraftMixinCanceller() {
-        mixinList.add("com.terraformersmc.biolith.impl.mixin.MixinMultiNoiseBiomeSource");
-        mixinList.add("org.confluence.mod.mixin.client.gui.WorldSelectionList$WorldListEntryMixin");
-        mixinList.add("org.confluence.mod.mixin.item.ArrowItemMixin");
-        mixinList.add("org.confluence.mod.mixin.item.DataComponentsMixin");
-        mixinList.add("org.confluence.mod.mixin.item.InventoryMixin");
-        mixinList.add("net.lerariemann.infinity.mixin.fixes.ColllisionShapeMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.BiomeSourceMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkGeneratorStructureStateMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ChunkMapMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.ModBiomesMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.OverworldUtilsMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.NoiseBasedChunkGeneratorMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.PlacedFeatureMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.StructureSetMixin");
-        mixinList.add("org.mesdag.confluence_dimension_patch.mixin.SurfaceSystemMixin");
-        mixinList.add("weather2.mixin.client.RenderParticlesOverride");
-    }
+    Set<String> mixinList = Set.of(
+            "com.terraformersmc.biolith.impl.mixin.MixinMultiNoiseBiomeSource",
+            "org.confluence.mod.mixin.client.gui.WorldSelectionList$WorldListEntryMixin",
+            "org.confluence.mod.mixin.item.DataComponentsMixin",
+            "org.confluence.mod.mixin.item.InventoryMixin",
+            "org.mesdag.confluence_dimension_patch.mixin.BiomeSourceMixin",
+            "org.mesdag.confluence_dimension_patch.mixin.ChunkMapMixin",
+            "org.mesdag.confluence_dimension_patch.mixin.NoiseBasedChunkGeneratorMixin",
+            "org.mesdag.confluence_dimension_patch.mixin.RandomStateMixin",
+            "org.mesdag.confluence_dimension_patch.mixin.RegistryDataLoader$RegistryDataMixin",
+            "weather2.mixin.client.RenderParticlesOverride"
+    );
 
     @Override
     public boolean shouldCancel(List<String> targetClassNames, String mixinClassName) {
-        for (String mixin : mixinList) {
-            if (mixinClassName.equals(mixin)) {
-                return true;
-            }
-        }
-        return false;
+        return mixinList.contains(mixinClassName);
     }
 }

@@ -79,7 +79,6 @@ repositories {
     maven { url "https://maven.theillusivec4.top/" }
     maven { url "https://maven.moddinglegacy.com/maven" }
     maven { url "https://maven.realrobotix.me/master/" }
-    maven { url "https://maven.theillusivec4.top/" }
     maven { url "https://maven.wispforest.io" }
     maven { url "https://maven.bawnorton.com/releases" }
     maven { url "https://maven.sinytra.org/" }
@@ -93,6 +92,9 @@ repositories {
     maven { url "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"}
     maven { url "https://maven.ryanhcode.dev/releases"}
     maven { url "https://maven.terraformersmc.com/" }
+    maven { url "https://artefacts.cobblemon.com/snapshots" }
+    maven { url "https://artefacts.cobblemon.com/releases" }
+    maven { url "https://maven.enjarai.dev/mirrors" }
     maven {
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
         content {
@@ -121,21 +123,19 @@ dependencies {
     runtimeOnly "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.116.7+2.2.4+1.21.1"
 
     implementation("com.github.thedarkcolour:ModKit:4f83c92767")
+    compileOnly("com.cobblemon:neoforge:${cobblemon_version}")
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     compileOnly("software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}")
-    compileOnly("org.confluence.mod:ConfluenceOtherworld:${confluence_version}")
-    compileOnly("org.confluence.lib:Confluence-Magic-Lib:${confluence_lib_version}")
-    compileOnly("org.confluence:TerraEntity:${terra_entity_version}")
+    //compileOnly("org.confluence.mod:ConfluenceOtherworld:${confluence_version}")
+    compileOnly("org.confluence.lib:ConfluenceMagicLib-neoforge-1.21.1:${confluence_lib_version}")
     compileOnly("org.confluence:TerraFurniture:${minecraft_version}-${terra_furniture_version}")
     compileOnly("org.confluence:TerraGuns:${minecraft_version}-${terra_guns_version}")
-    compileOnly("org.confluence:TerraEntity:${terra_entity_version}")
     compileOnly("org.confluence:TerraCurio:${terra_curio_version}")
     compileOnly("com.xiaohunao:xhn_lib:1.21.1-${xhn_lib_version}")
     compileOnly("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
     compileOnly("nowebsite.makertechno:TheTrackers:${minecraft_version}-${trackers_version}")
-    compileOnly("org.mesdag:ParticleStorm:${particle_storm_version}")
-    compileOnly("org.mesdag.thr_dim_particle:ThreeDimensionParticle-core:${tdpc_version}")
-    compileOnly("com.cobblemon:neoforge:${cobblemon_version}")
+    compileOnly("org.mesdag:ParticleStorm-neoforge-1.21.1:${particle_storm_version}")
+    compileOnly("org.mesdag:ThreeDimensionParticle-neoforge-1.21.1:${tdpc_version}")
     compileOnly("xaero.lib:xaerolib-neoforge-1.21.1:${xaerolib_version}")
     compileOnly("io.wispforest:accessories-neoforge:${accessories_version}")
     compileOnly("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
@@ -143,10 +143,16 @@ dependencies {
     compileOnly("fuzs.forgeconfigapiport:forgeconfigapiport-common-neoforgeapi:21.1.3")
     compileOnly("dev.ryanhcode.sable:sable-common-1.21.1:${sable_version}")
     compileOnly("com.terraformersmc:biolith-neoforge:${biolith_version}")
-    //implementation files("../AlexsCaves/build/libs/alexscaves-2.0.2.jar")
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    compileOnly files("libs/ConfluenceOtherworld-neoforge-${confluence_version}.jar")
+    compileOnly files("libs/confluence_dimension_patch-${confluence_dim_patch_version}.jar")
+    compileOnly files("libs/burnt_additions-neoforge-1.21.1-0.1.2.jar")
+    compileOnly files("libs/burnt_basic-1.10.4.1.jar")
+    compileOnly files("AlexsMobs/build/libs/alexsmobs-1.22.9.jar")
+    compileOnly files("AlexsCaves/build/libs/alexscaves-2.0.2.jar")
 
     implementation('curse.maven:architectury-api-419699:5786327')
-    implementation('curse.maven:configuration-444699:6779573')
     implementation('curse.maven:ato-405593:7825464')
     implementation('curse.maven:mekanism-268560:6895130')
     implementation('curse.maven:mca-535291:8547552')
@@ -160,27 +166,26 @@ dependencies {
     compileOnly('curse.maven:deeperdarker-659011:7940538')
     compileOnly('curse.maven:easy-villagers-400514:6831416')
     compileOnly('curse.maven:aether-255308:6389857')
-    compileOnly('curse.maven:the-twilight-forest-227639:6472889')
     compileOnly('curse.maven:the-undergarden-379849:7367597')
     compileOnly('curse.maven:ex-deorum-901420:6614749')
     compileOnly('curse.maven:cloth-config-348521:5729127')
     compileOnly('curse.maven:ftb-quests-forge-289412:6829025')
     compileOnly('curse.maven:ftb-library-forge-404465:6807431')
     compileOnly('curse.maven:melody-938643:5453382')
-    compileOnly('curse.maven:confluence-dimension-patch-1308724:7523135')
+    //compileOnly('curse.maven:confluence-dimension-patch-1308724:7523135')
     compileOnly('curse.maven:vista-1368607:7947609')
     compileOnly('curse.maven:galosphere-631098:7382684')
     compileOnly('curse.maven:citadel-331936:7476597')
     compileOnly('curse.maven:selene-499980:7943878')
     compileOnly('curse.maven:atmospheric-362393:7119609')
-    compileOnly('curse.maven:mcacobblemon-1520228:7998119')
+    compileOnly('curse.maven:twilightforest-227639:7797302')
     compileOnly('maven.modrinth:pizzadelight:1.21.1-2.0.2')
     compileOnly('maven.modrinth:moonlight:1.21.1-3.0.14')
     compileOnly('maven.modrinth:supplementaries:1.21.1-3.6.5')
     compileOnly('maven.modrinth:copycats:3.0.4+mc.1.21.1-neoforge')
     compileOnly('maven.modrinth:integrated-api:1.7.3+1.21.1-neoforge')
     compileOnly('maven.modrinth:sable-true-impact:1.1.0-gamma')
-    compileOnly('maven.modrinth:infinite-dimensions:2.7.1+1.21.1-neoforge')
+    compileOnly('maven.modrinth:infinite-dimensions:2.7.3+1.21.1-neoforge')
     compileOnly('maven.modrinth:enderio:Tfs8aJPH')
     compileOnly('maven.modrinth:vanillabackport:rUSWdBok')
     compileOnly('maven.modrinth:grassier-grass:1.4.5')
@@ -188,11 +193,17 @@ dependencies {
     compileOnly('maven.modrinth:weather-storms-tornadoes:1.21.0-2.8.7')
     compileOnly('maven.modrinth:create-cosmonatics:HuCMavv8')
     compileOnly('maven.modrinth:windswept:4.0.0')
+    compileOnly("maven.modrinth:rctmod:0.19.0-beta")
+    compileOnly("maven.modrinth:tfmg-community-edition:1.2.4b")
+    compileOnly("maven.modrinth:cobbleloots:RTFvBl1a")
+    compileOnly("maven.modrinth:devourer-of-gods:1.2.0-hotfix1")
+    compileOnly("maven.modrinth:almostunified:e8iYxxI3")
+    compileOnly("maven.modrinth:supplementaries:1.21.1-3.9.9")
+    compileOnly("maven.modrinth:enhanced-celestials-2-core:2.0.3.3-neoforge")
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
     implementation("com.teamabnormals:blueprint:${blueprint_version}")
-
 
     compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.7-beta.1"))
     implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:0.3.7-beta.1")) {

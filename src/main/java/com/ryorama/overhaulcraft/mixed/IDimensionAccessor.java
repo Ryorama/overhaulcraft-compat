@@ -1,11 +1,11 @@
 package com.ryorama.overhaulcraft.mixed;
 
 public interface IDimensionAccessor {
-    void oc$setIsOverworld(boolean value);
-    boolean oc$isOverworld();
-    void oc$setIsConfluence(boolean value);
+    void oc$setIsNotReplacable();
+    boolean oc$IsNotReplacable();
+    void oc$setIsConfluence();
     boolean oc$isConfluence();
-    void oc$setIsCobblemon(boolean value);
+    void oc$setIsCobblemon();
     boolean oc$isCobblemon();
 
     static IDimensionAccessor of(Object o) {

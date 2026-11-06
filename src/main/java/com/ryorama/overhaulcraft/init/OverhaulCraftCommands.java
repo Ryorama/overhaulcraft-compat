@@ -6,7 +6,6 @@ import com.ryorama.overhaulcraft.utils.IOverhaulPlayerData;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
 
 public class OverhaulCraftCommands {

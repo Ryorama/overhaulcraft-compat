@@ -107,6 +107,87 @@
       }
     ]
   },
+  "rain":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/rain",
+        "stream":true
+      }
+    ]
+  },
+  "dungeon":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/dungeon",
+        "stream":true
+      }
+    ]
+  },
+  "underworld":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/underworld",
+        "stream":true
+      }
+    ]
+  },
+  "hallow":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/hallow",
+        "stream":true
+      }
+    ]
+  },
+  "underground_hallow":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/underground_hallow",
+        "stream":true
+      }
+    ]
+  },
+  "crimson":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/crimson",
+        "stream":true
+      }
+    ]
+  },
+  "ocean":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/ocean",
+        "stream":true
+      }
+    ]
+  },
+  "jungle":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/jungle",
+        "stream":true
+      }
+    ]
+  },
+  "aether":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/aether",
+        "stream":true
+      }
+    ]
+  },
   "eerie":{
     "category":"music",
     "sounds":[
@@ -179,15 +260,7 @@
       }
     ]
   },
-  "dungeon":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/dungeon",
-        "stream":true
-      }
-    ]
-  },
+
   "slime_rain":{
     "category":"music",
     "sounds":[
@@ -220,60 +293,6 @@
     "sounds":[
       {
         "name":"overhaulcraft:music/frost_moon",
-        "stream":true
-      }
-    ]
-  },
-  "underworld":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/underworld",
-        "stream":true
-      }
-    ]
-  },
-  "hallow":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/hallow",
-        "stream":true
-      }
-    ]
-  },
-  "underground_hallow":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/underground_hallow",
-        "stream":true
-      }
-    ]
-  },
-  "crimson":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/crimson",
-        "stream":true
-      }
-    ]
-  },
-  "ocean":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/ocean",
-        "stream":true
-      }
-    ]
-  },
-  "jungle":{
-    "category":"music",
-    "sounds":[
-      {
-        "name":"overhaulcraft:music/jungle",
         "stream":true
       }
     ]
@@ -314,11 +333,74 @@
       }
     ]
   },
-  "rain":{
+  "eater_of_worlds":{
     "category":"music",
     "sounds":[
       {
-        "name":"overhaulcraft:music/rain",
+        "name":"overhaulcraft:music/eater_of_worlds",
+        "stream":true
+      }
+    ]
+  },
+  "king_slime":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/king_slime",
+        "stream":true
+      }
+    ]
+  },
+  "lunatic_cultist":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/lunatic_cultist",
+        "stream":true
+      }
+    ]
+  },
+  "queen_bee":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/queen_bee",
+        "stream":true
+      }
+    ]
+  },
+  "skeletron":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/skeletron",
+        "stream":true
+      }
+    ]
+  },
+  "skeletron_prime":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/skeletron_prime",
+        "stream":true
+      }
+    ]
+  },
+  "the_destroyer":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/the_destroyer",
+        "stream":true
+      }
+    ]
+  },
+  "the_twins":{
+    "category":"music",
+    "sounds":[
+      {
+        "name":"overhaulcraft:music/the_twins",
         "stream":true
       }
     ]

@@ -5,4 +5,8 @@ public interface IOverhaulPlayerData {
     boolean getTerrariaFuncUnlocked();
     void setCobblemonFuncUnlocked(boolean f);
     boolean getCobblemonFuncUnlocked();
+    void setTerrariaComplete(boolean f);
+    boolean getTerrariaComplete();
+    void setCobblemonComplete(boolean f);
+    boolean getCobblemonComplete();
 }

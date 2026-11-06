@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "c:plates/iron"
+    },
+    "M": {
+      "tag": "c:crops/mint"
+    },
+    "W": {
+      "tag": "c:buckets/water"
+    }
+  },
+  "pattern": [
+    " P ",
+    "MWM",
+    " P "
+  ],
+  "result": {
+    "id": "overhaulcraft:mosquito_repelling_charm",
+    "count": 1
+  },
+  "show_notification": true
+}

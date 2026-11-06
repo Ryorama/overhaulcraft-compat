@@ -1,6 +1,7 @@
 package com.ryorama.overhaulcraft.mixins.cosmonautics;
 
-import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.OverhaulCraftClientConfig;
+import com.ryorama.overhaulcraft.utils.ExtraFunc;
 import dev.devce.rocketnautics.client.SkyHandler;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,9 +15,7 @@ public class SkyHandlerMixin {
     private static void ensureStarPlasmaTexture(CallbackInfo ci) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.level != null) {
-            long ticks = minecraft.level.getGameTime();
-            int delay = OverhaulCraft.CONFIG.cosmonauticsPlasmaRendererDelayPerSeconds * 20;
-            if (!(ticks % delay == 0)) {
+            if (!ExtraFunc.hasSecondsPassed(minecraft.level.getGameTime(), OverhaulCraftClientConfig.COSMONAUTICS_PLASMA_RENDERER_DELAY_PER_SECONDS.get())) {
                 ci.cancel();
             }
         }

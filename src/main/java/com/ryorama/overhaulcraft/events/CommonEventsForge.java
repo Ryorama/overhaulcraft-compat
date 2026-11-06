@@ -3,6 +3,7 @@ package com.ryorama.overhaulcraft.events;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.kyanite.deeperdarker.content.DDBlocks;
 import com.ryorama.overhaulcraft.OverhaulCraft;
+import com.ryorama.overhaulcraft.OverhaulCraftCommonConfig;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -15,7 +16,7 @@ import twilightforest.init.TFBlocks;
 public class CommonEventsForge {
     @SubscribeEvent
     public static void blockstateUpdatedEvent(BlockStateUpdatedEvent event) {
-        if (OverhaulCraft.CONFIG.restrictDimensionTravelToPlanets) {
+        if (OverhaulCraftCommonConfig.RESTRICT_DIMENSION_TRAVEL_TO_PLANETS.get()) {
             BlockState[] portalBlocks = {
                     TFBlocks.TWILIGHT_PORTAL.get().defaultBlockState(),
                     AetherBlocks.AETHER_PORTAL.get().defaultBlockState(),
@@ -30,7 +31,7 @@ public class CommonEventsForge {
             }
         }
 
-        if (OverhaulCraft.CONFIG.restrictNetherAndEndToPlanets) {
+        if (OverhaulCraftCommonConfig.RESTRICT_NETHER_AND_END_TO_PLANETS.get()) {
             BlockState[] portalBlocks = {
                     Blocks.NETHER_PORTAL.defaultBlockState(),
                     Blocks.END_PORTAL.defaultBlockState()
